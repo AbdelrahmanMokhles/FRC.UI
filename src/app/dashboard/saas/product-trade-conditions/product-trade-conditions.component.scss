@@ -1,0 +1,201 @@
+.product-trade-conditions-card {
+    .trezo-card-content {
+        .chart {
+            margin: {
+                left: -13px;
+                bottom: 5px;
+                top: -20px;
+            };
+        }
+        .info {
+            .item {
+                margin-right: 30px;
+                padding-right: 30px;
+                border-right: 1px solid var(--borderColor);
+
+                h3 {
+                    font-size: 24px;
+                }
+                .title {
+                    gap: 10px;
+                    margin-top: 9px;
+                }
+                &:last-child {
+                    margin-right: 0;
+                    padding-right: 0;
+                    border-right-width: 0;
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .info {
+                .item {
+                    border: {
+                        right-width: 0;
+                        left: 1px solid var(--borderColor);
+                    };
+                    margin: {
+                        right: 0;
+                        left: 30px;
+                    };
+                    padding: {
+                        right: 0;
+                        left: 30px;
+                    };
+                    &:last-child {
+                        margin-left: 0;
+                        padding-left: 0;
+                        border-left-width: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .product-trade-conditions-card {
+        .trezo-card-content {
+            .info {
+                .item {
+                    padding-right: 0;
+                    border-right-width: 0;
+                    margin: {
+                        right: 0;
+                        bottom: 17px;
+                    };
+                    h3 {
+                        font-size: 20px;
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .info {
+                    .item {
+                        padding-left: 0;
+                        border-left-width: 0;
+                        margin: {
+                            left: 0;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .product-trade-conditions-card {
+        .trezo-card-content {
+            .info {
+                .item {
+                    margin-right: 25px;
+                    padding-right: 25px;
+    
+                    h3 {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .info {
+                    .item {
+                        margin: {
+                            right: 0;
+                            left: 25px;
+                        };
+                        padding: {
+                            right: 0;
+                            left: 25px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .product-trade-conditions-card {
+        .trezo-card-content {
+            .info {
+                .item {
+                    margin-right: 25px;
+                    padding-right: 25px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .info {
+                    .item {
+                        margin: {
+                            right: 0;
+                            left: 25px;
+                        };
+                        padding: {
+                            right: 0;
+                            left: 25px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .product-trade-conditions-card {
+        .trezo-card-content {
+            .info {
+                .item {
+                    margin-right: 25px;
+                    padding-right: 25px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .info {
+                    .item {
+                        margin: {
+                            right: 0;
+                            left: 25px;
+                        };
+                        padding: {
+                            right: 0;
+                            left: 25px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

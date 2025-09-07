@@ -1,0 +1,290 @@
+.crypto-exchange-card {
+    background: #F3E8FF;
+
+    .trezo-card-header {
+        border-bottom: 1px solid #D5D9E2;
+        padding: {
+            left: 25px;
+            right: 25px;
+            bottom: 8px;
+        };
+        margin: {
+            left: -25px;
+            right: -25px;
+        };
+        .button {
+            color: #5F6368;
+
+            &:hover {
+                color: var(--primaryColor);
+            }
+        }
+    }
+    .trezo-card-content {
+        padding-bottom: 15px;
+
+        .item {
+            margin-bottom: 25px;
+
+            .title {
+                margin-bottom: 12px;
+            }
+            .cryptocurrency-types {
+                .button {
+                    font-size: 16px;
+
+                    span {
+                        img {
+                            margin-right: 10px;
+                        }
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+                    &::before {
+                        transform: translateY(-50%);
+                        position: absolute;
+                        content: "\ea4e";
+                        right: -4px;
+                        top: 50%;
+                        font: {
+                            size: 22px;
+                            family: remixicon;
+                        };
+                    }
+                }
+                .dropdown-menu {
+                    margin-top: 10px;
+                    right: auto;
+                    width: 100%;
+                    left: 0;
+    
+                    li {
+                        .dropdown-item {
+                            img {
+                                width: 22px;
+                                margin-right: 8px;
+                            }
+                            span {
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                }
+            }
+            .form-floating {
+                margin: {
+                    top: 15px;
+                    bottom: 0;
+                };
+                label {
+                    margin-top: 0;
+                    padding: {
+                        left: 20px;
+                        right: 20px;
+                    };
+                    &::after {
+                        display: none;
+                    }
+                }
+                .form-control {
+                    height: 50px;
+                    min-height: 50px;
+                    border-color: var(--whiteColor);
+                    padding: {
+                        left: 20px;
+                        right: 20px;
+                    };
+                    &::placeholder {
+                        color: var(--blackColor);
+                    }
+                    &:focus {
+                        border-color: var(--primaryColor);
+                    }
+                }
+                .value {
+                    top: 50%;
+                    right: 20px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        .exchange-btn {
+            padding: 11px 30px;
+            font-size: 16px;
+        }
+    }
+    &.component-dark-theme {
+        background: #0A0E19;
+
+        .trezo-card-header {
+            border-color: var(--borderColor);
+            
+            .button {
+                color: var(--whiteColor);
+            }
+        }
+        .trezo-card-content {
+            .item {
+                .form-floating {
+                    .form-control {
+                        border-color: #0C1427;
+                        background-color: #0C1427;
+                        
+                        &::placeholder {
+                            color: var(--whiteColor);
+                        }
+                        &:focus {
+                            border-color: var(--primaryColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .item {
+                .cryptocurrency-types {
+                    .button {
+                        span {
+                            img {
+                                margin: {
+                                    right: 0;
+                                    left: 10px;
+                                };
+                            }
+                            span {
+                                margin: {
+                                    left: 0;
+                                    right: 5px;
+                                };
+                            }
+                        }
+                        &::before {
+                            right: auto;
+                            left: -4px;
+                        }
+                    }
+                    .dropdown-menu {
+                        left: auto;
+                        right: 0;
+        
+                        li {
+                            .dropdown-item {
+                                img {
+                                    margin: {
+                                        right: 0;
+                                        left: 8px;
+                                    };
+                                }
+                                span {
+                                    margin: {
+                                        left: 0;
+                                        right: 3px;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-floating {
+                    .value {
+                        left: 20px;
+                        right: auto;
+                    }
+                }
+            }
+        }
+    }
+    &.component-body-bg-color {
+        box-shadow: unset !important;
+    }
+    &.component-card-with-box-shadow {
+        box-shadow: unset !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .crypto-exchange-card {
+        .trezo-card-header {
+            padding: {
+                left: 17px;
+                right: 17px;
+            };
+            margin: {
+                left: -17px;
+                right: -17px;
+            };
+            .button {
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+        .trezo-card-content {
+            padding-bottom: 0 !important;
+
+            .item {
+                margin-bottom: 17px;
+
+                .title {
+                    margin-bottom: 10px;
+                }
+                .cryptocurrency-types {
+                    .button {
+                        font-size: 14px;
+                    }
+                }
+                .form-floating {
+                    .form-control {
+                        padding: {
+                            left: 15px;
+                            right: 15px;
+                        };
+                    }
+                    .value {
+                        right: 15px;
+                    }
+                }
+            }
+            .exchange-btn {
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .crypto-exchange-card {
+        .trezo-card-header {
+            padding: {
+                left: 20px;
+                right: 20px;
+            };
+            margin: {
+                left: -20px;
+                right: -20px;
+            };
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

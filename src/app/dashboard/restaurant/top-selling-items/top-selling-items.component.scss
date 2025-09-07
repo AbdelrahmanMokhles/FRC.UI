@@ -1,0 +1,81 @@
+.top-selling-items-card {
+    .trezo-card-content {
+        .item {
+            .rating {
+                border-radius: 30px;
+                position: absolute;
+                padding: 1.5px 5px;
+                font-size: 12px;
+                right: 3px;
+                gap: 3px;
+                top: 3px;
+
+                i {
+                    color: #FD5812;
+                    font-size: 14px;
+                }
+            }
+            .image {
+                height: 137px;
+                margin-bottom: 15px;
+                border-radius: 10px;
+                background: {
+                    position: center center;
+                    repeat: no-repeat;
+                    size: cover;
+                };
+            }
+            h6 {
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .item {
+                .rating {
+                    right: auto;
+                    left: 3px;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .top-selling-items-card {
+        .trezo-card-content {
+            margin-bottom: -15px;
+
+            .item {
+                margin-bottom: 15px;
+
+                .image {
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

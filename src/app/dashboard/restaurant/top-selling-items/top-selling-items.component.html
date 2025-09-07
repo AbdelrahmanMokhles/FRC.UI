@@ -1,0 +1,112 @@
+<div
+    class="top-selling-items-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Top Selling Items
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn bg-gray border-0 transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Weekly
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Weekly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Monthly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Yearly
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="item position-relative">
+                    <div class="rating fw-semibold d-flex align-items-center bg-dark text-white">
+                        <i class="ri-star-fill"></i>
+                        5.0
+                    </div>
+                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block image" style="background-image: url(images/products/product28.jpg);"></a>
+                    <h6 class="fw-semibold">
+                        <a routerLink="/dashboard/restaurant-page/dish-details">
+                            Thai Bean Soup
+                        </a>
+                    </h6>
+                    <span class="d-block">
+                        1235 sold
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="item position-relative">
+                    <div class="rating fw-semibold d-flex align-items-center bg-dark text-white">
+                        <i class="ri-star-fill"></i>
+                        4.8
+                    </div>
+                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block image" style="background-image: url(images/products/product29.jpg);"></a>
+                    <h6 class="fw-semibold">
+                        <a routerLink="/dashboard/restaurant-page/dish-details">
+                            Meat Lasagnia
+                        </a>
+                    </h6>
+                    <span class="d-block">
+                        1045 sold
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="item position-relative">
+                    <div class="rating fw-semibold d-flex align-items-center bg-dark text-white">
+                        <i class="ri-star-fill"></i>
+                        4.9
+                    </div>
+                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block image" style="background-image: url(images/products/product30.jpg);"></a>
+                    <h6 class="fw-semibold">
+                        <a routerLink="/dashboard/restaurant-page/dish-details">
+                            Veg Sandwich
+                        </a>
+                    </h6>
+                    <span class="d-block">
+                        1015 sold
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="item position-relative">
+                    <div class="rating fw-semibold d-flex align-items-center bg-dark text-white">
+                        <i class="ri-star-fill"></i>
+                        4.7
+                    </div>
+                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block image" style="background-image: url(images/products/product31.jpg);"></a>
+                    <h6 class="fw-semibold">
+                        <a routerLink="/dashboard/restaurant-page/dish-details">
+                            Creamy Fish
+                        </a>
+                    </h6>
+                    <span class="d-block">
+                        996 sold
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1367 @@
+<div
+    class="campaigns-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Campaigns
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button class="add-btn d-inline-block transition fw-medium border-radius" type="button" (click)="toggleClass()">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add Campaign
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="campaigns-tabs p-0 list-unstyled">
+            <li class="d-inline-block">
+                <button id="tab1" (click)="switchTab($event, 'tab1')" [ngClass]="{'active': currentTab === 'tab1'}" type="button">
+                    All (05)
+                </button>
+            </li>
+            <li class="d-inline-block">
+                <button id="tab2" (click)="switchTab($event, 'tab2')" [ngClass]="{'active': currentTab === 'tab2'}" type="button">
+                    Pending (03)
+                </button>
+            </li>
+            <li class="d-inline-block">
+                <button id="tab3" (click)="switchTab($event, 'tab3')" [ngClass]="{'active': currentTab === 'tab3'}" type="button">
+                    Completed (02)
+                </button>
+            </li>
+        </ul>
+        @if (currentTab === 'tab1') {
+            <div class="tab-pane">
+                <div class="basic-table table-responsive">
+                    <table class="table mb-0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            Christmas Eve
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 10 Oct - 15 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/facebook3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/instagram2.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/google3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/linkedin2.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge pInProgress rounded-0 fw-medium">
+                                        Live Now
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user53.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user54.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user56.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user57.jpg" />
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center rounded-circle bg-black text-white fw-medium">
+                                            +3
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            Teacher’s Day
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 08 Oct - 12 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/facebook3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/instagram2.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge shipped rounded-0 fw-medium">
+                                        Reviewing
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user52.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user51.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user50.jpg" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            ThanksGiving
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 01 Oct - 05 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/facebook3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/instagram2.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/linkedin2.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge rounded-0 fw-medium">
+                                        Paused
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user1.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user2.jpg" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            Team Gateway
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 05 Oct - 17 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/google3.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge pInProgress rounded-0 fw-medium">
+                                        Live Now
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user3.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user4.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user5.jpg" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            Halloween
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 20 Oct - 31 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/facebook3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/instagram2.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/google3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/linkedin2.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge shipped rounded-0 fw-medium">
+                                        Reviewing
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user45.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user46.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user47.jpg" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        @if (currentTab === 'tab2') {
+            <div class="tab-pane">
+                <div class="basic-table table-responsive">
+                    <table class="table mb-0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            Teacher’s Day
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 08 Oct - 12 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/facebook3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/instagram2.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge shipped rounded-0 fw-medium">
+                                        Reviewing
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user52.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user51.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user50.jpg" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            ThanksGiving
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 01 Oct - 05 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/facebook3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/instagram2.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/linkedin2.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge rounded-0 fw-medium">
+                                        Paused
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user1.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user2.jpg" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            Halloween
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 20 Oct - 31 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/facebook3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/instagram2.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/google3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/linkedin2.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge shipped rounded-0 fw-medium">
+                                        Reviewing
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user45.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user46.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user47.jpg" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        @if (currentTab === 'tab3') {
+            <div class="tab-pane">
+                <div class="basic-table table-responsive">
+                    <table class="table mb-0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            Christmas Eve
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 10 Oct - 15 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/facebook3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/instagram2.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/google3.svg">
+                                        </a>
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/linkedin2.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge pInProgress rounded-0 fw-medium">
+                                        Live Now
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user53.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user54.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user56.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user57.jpg" />
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center rounded-circle bg-black text-white fw-medium">
+                                            +3
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info position-relative">
+                                        <span class="d-block text-black fw-semibold">
+                                            Team Gateway
+                                        </span>
+                                        <span class="d-block text-body">
+                                            From 05 Oct - 17 Oct, 25
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="socials d-flex align-items-center">
+                                        <a href="#" class="d-inline-block" target="_blank">
+                                            <img alt="social" src="images/icons/google3.svg">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="trezo-badge pInProgress rounded-0 fw-medium">
+                                        Live Now
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="assignees d-flex align-items-center">
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user3.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user4.jpg" />
+                                        </div>
+                                        <div>
+                                            <img alt="user-image" class="rounded-circle" src="images/users/user5.jpg" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <button type="button" class="link-btn d-inline-block rounded-circle position-relative" (click)="toggleClass2()">
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Add New Campaign -->
+<div
+    class="add-new-popup style-two"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Create Campaign
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content mx-auto">
+                <ul class="campaign-details-tabs p-0 list-unstyled">
+                    <li class="d-inline-block">
+                        <button id="campaignTab1" (click)="switchTab2($event, 'campaignTab1')" [ngClass]="{'active': currentTab2 === 'campaignTab1'}" type="button">
+                            Campaign Details
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button id="campaignTab2" (click)="switchTab2($event, 'campaignTab2')" [ngClass]="{'active': currentTab2 === 'campaignTab2'}" type="button">
+                            Creative Uploads
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button id="campaignTab3" (click)="switchTab2($event, 'campaignTab3')" [ngClass]="{'active': currentTab2 === 'campaignTab3'}" type="button">
+                            Audiences
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button id="campaignTab4" (click)="switchTab2($event, 'campaignTab4')" [ngClass]="{'active': currentTab2 === 'campaignTab4'}" type="button">
+                            Budget Estimates
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button id="campaignTab5" (click)="switchTab2($event, 'campaignTab5')" [ngClass]="{'active': currentTab2 === 'campaignTab5'}" type="button">
+                            Completed
+                        </button>
+                    </li>
+                </ul>
+                @if (currentTab2 === 'campaignTab1') {
+                    <div class="tab-pane">
+                        <h5>
+                            Campaign Details
+                        </h5>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Campaign Name <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control style-two" value="Christmas Eve">
+                        </div>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Company Logo <span class="text-danger">*</span>
+                            </label>
+                            <div class="icon position-relative d-inline-block">
+                                <div class="icon-inner d-flex align-items-center justify-content-center">
+                                    <i class="material-symbols-outlined">
+                                        perm_media
+                                    </i>
+                                </div>
+                                <div class="plus-icon rounded-circle bg-white text-primary d-flex align-items-center justify-content-center">
+                                    <i class="material-symbols-outlined">
+                                        add
+                                    </i>
+                                </div>
+                                <input type="file">
+                            </div>
+                            <span class="d-block">
+                                Allowed file types: png, jpg, jpeg. Max size: 1 MB
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Campaign Goal <span class="text-danger">*</span>
+                            </label>
+                            <div class="campaign-goal-checks">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="campaignGoalRadio" id="getMoreVisitors" checked>
+                                    <label class="form-check-label" for="getMoreVisitors">
+                                        <span class="d-block fw-medium text-black">
+                                            Get more visitors
+                                        </span>
+                                        Increase impression traffic onto the platform
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="campaignGoalRadio" id="getMoreMessages">
+                                    <label class="form-check-label" for="getMoreMessages">
+                                        <span class="d-block fw-medium text-black">
+                                            Get more messages on chat
+                                        </span>
+                                        Increase community interaction and communication
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="campaignGoalRadio" id="getMoreCalls">
+                                    <label class="form-check-label" for="getMoreCalls">
+                                        <span class="d-block fw-medium text-black">
+                                            Get more calls
+                                        </span>
+                                        Boost telecommunication feedback to provide precise and accurate information
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="campaignGoalRadio" id="getMoreLikes">
+                                    <label class="form-check-label" for="getMoreLikes">
+                                        <span class="d-block fw-medium text-black">
+                                            Get more likes
+                                        </span>
+                                        Increase positive interactivity on social media platforms
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="campaignGoalRadio" id="leadGeneration">
+                                    <label class="form-check-label" for="leadGeneration">
+                                        <span class="d-block fw-medium text-black">
+                                            Lead generation
+                                        </span>
+                                        Collect contact information for potential customers
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons-list d-flex align-items-center justify-content-between">
+                            <span></span>
+                            <button type="button" class="btn btn-primary">
+                                <span class="d-flex align-items-center">
+                                    Continue
+                                    <i class="ri-arrow-right-line"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                }
+                @if (currentTab2 === 'campaignTab2') {
+                    <div class="tab-pane">
+                        <h5 class="mb-17">
+                            Upload Files
+                        </h5>
+                        <file-upload class="file-uploader" [multiple]="multiple"></file-upload>
+                        <h5 class="mb-17">
+                            Uploaded Files
+                        </h5>
+                        <div class="items-list">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <div class="title d-flex align-items-center">
+                                    <img src="images/icons/pdf.png" alt="pdf">
+                                    <div>
+                                        <span class="d-block text-black fw-medium">
+                                            Campaign Requirements
+                                        </span>
+                                        <span class="d-block">
+                                            Increase impression traffic onto the platform
+                                        </span>
+                                    </div>
+                                </div>
+                                <button type="button">
+                                    <span class="d-flex align-items-center">
+                                        Edit
+                                        <i class="ri-pencil-line"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <div class="title d-flex align-items-center">
+                                    <img src="images/icons/doc.png" alt="doc">
+                                    <div>
+                                        <span class="d-block text-black fw-medium">
+                                            Campaign’s mission and vision
+                                        </span>
+                                        <span class="d-block">
+                                            Increase impression traffic onto the platform
+                                        </span>
+                                    </div>
+                                </div>
+                                <button type="button">
+                                    <span class="d-flex align-items-center">
+                                        Edit
+                                        <i class="ri-pencil-line"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <div class="title d-flex align-items-center">
+                                    <img src="images/icons/gif.svg" alt="gif">
+                                    <div>
+                                        <span class="d-block text-black fw-medium">
+                                            Campaign Banner
+                                        </span>
+                                        <span class="d-block">
+                                            Increase impression traffic onto the platform
+                                        </span>
+                                    </div>
+                                </div>
+                                <button type="button">
+                                    <span class="d-flex align-items-center">
+                                        Edit
+                                        <i class="ri-pencil-line"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <div class="title d-flex align-items-center">
+                                    <img src="images/icons/jpg.png" alt="jpg">
+                                    <div>
+                                        <span class="d-block text-black fw-medium">
+                                            Campaign Image
+                                        </span>
+                                        <span class="d-block">
+                                            Increase impression traffic onto the platform
+                                        </span>
+                                    </div>
+                                </div>
+                                <button type="button">
+                                    <span class="d-flex align-items-center">
+                                        Edit
+                                        <i class="ri-pencil-line"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="buttons-list d-flex align-items-center justify-content-between">
+                            <button type="button" class="btn btn-danger">
+                                <span class="d-flex align-items-center">
+                                    <i class="ri-arrow-left-line"></i>
+                                    Back
+                                </span>
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                                <span class="d-flex align-items-center">
+                                    Continue
+                                    <i class="ri-arrow-right-line"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                }
+                @if (currentTab2 === 'campaignTab3') {
+                    <div class="tab-pane">
+                        <h5>
+                            Configure Audiences
+                        </h5>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Gender
+                            </label>
+                            <div class="gender-checks">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genderRadio" id="allGender" checked>
+                                    <label class="form-check-label fw-medium text-black" for="allGender">
+                                        All
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genderRadio" id="maleGender">
+                                    <label class="form-check-label fw-medium text-black" for="maleGender">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genderRadio" id="femaleGender">
+                                    <label class="form-check-label fw-medium text-black" for="femaleGender">
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Age
+                            </label>
+                            <div class="range-slider">
+                                <div class="number-group d-flex align-items-center justify-content-between">
+                                    <input
+                                        [(ngModel)]="rangeValues[0]"
+                                        class="number-input fw-semibold"
+                                        type="number"
+                                        [min]="minValue"
+                                        [max]="maxValue"
+                                        (input)="onNumberInput()"
+                                    />
+                                    <input
+                                        [(ngModel)]="rangeValues[1]"
+                                        class="number-input fw-semibold"
+                                        type="number"
+                                        [min]="minValue"
+                                        [max]="maxValue"
+                                        (input)="onNumberInput()"
+                                    />
+                                </div>
+                                <div class="range-group position-relative">
+                                    <input
+                                        [(ngModel)]="rangeValues[0]"
+                                        class="range-input"
+                                        type="range"
+                                        [min]="minValue"
+                                        [max]="maxValue"
+                                        [step]="stepValue"
+                                        (input)="onRangeInput()"
+                                    />
+                                    <input
+                                        [(ngModel)]="rangeValues[1]"
+                                        class="range-input"
+                                        type="range"
+                                        [min]="minValue"
+                                        [max]="maxValue"
+                                        [step]="stepValue"
+                                        (input)="onRangeInput()"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Location
+                            </label>
+                            <select class="form-select style-two">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option>
+                                    United States
+                                </option>
+                                <option>
+                                    Switzerland
+                                </option>
+                                <option>
+                                    Germany
+                                </option>
+                                <option>
+                                    Sweden
+                                </option>
+                                <option>
+                                    Denmark
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Media
+                            </label>
+                            <select class="form-select style-two">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option>
+                                    Facebook
+                                </option>
+                                <option>
+                                    Instagram
+                                </option>
+                                <option>
+                                    LinkedIn
+                                </option>
+                                <option>
+                                    Twitter
+                                </option>
+                                <option>
+                                    Threads
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Team Member
+                            </label>
+                            <select class="form-select style-two">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option>
+                                    Olivia Smith
+                                </option>
+                                <option>
+                                    Jason Smith
+                                </option>
+                                <option>
+                                    Alina Lyes
+                                </option>
+                                <option>
+                                    Jonathon Ronan
+                                </option>
+                                <option>
+                                    Walter White
+                                </option>
+                            </select>
+                        </div>
+                        <div class="buttons-list d-flex align-items-center justify-content-between">
+                            <button type="button" class="btn btn-danger">
+                                <span class="d-flex align-items-center">
+                                    <i class="ri-arrow-left-line"></i>
+                                    Back
+                                </span>
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                                <span class="d-flex align-items-center">
+                                    Continue
+                                    <i class="ri-arrow-right-line"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                }
+                @if (currentTab2 === 'campaignTab4') {
+                    <div class="tab-pane">
+                        <h5>
+                            Budgets Estimates
+                        </h5>
+                        <div class="form-group">
+                            <div class="budgets-estimates-checks">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genderRadio" id="allGender" checked>
+                                    <label class="form-check-label" for="allGender">
+                                        <span class="d-block text-black fw-medium">
+                                            Continuous Duration
+                                        </span>
+                                        Your Ad will run continuously for a daily budget.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genderRadio" id="maleGender">
+                                    <label class="form-check-label" for="maleGender">
+                                        <span class="d-block text-black fw-medium">
+                                            Fixed Duration
+                                        </span>
+                                        Your Ad will run only specified dates only.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium">
+                                Daily Budget
+                            </label>
+                            <div class="range-slider">
+                                <div class="number-group d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span class="d-inline-block fw-semibold text-black">
+                                            $
+                                        </span>
+                                        <input
+                                            [(ngModel)]="rangeValues[0]"
+                                            class="number-input fw-semibold"
+                                            type="number"
+                                            [min]="minValue"
+                                            [max]="maxValue"
+                                            (input)="onNumberInput()"
+                                        />
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="d-inline-block fw-semibold text-black">
+                                            $
+                                        </span>
+                                        <input
+                                            [(ngModel)]="rangeValues[1]"
+                                            class="number-input fw-semibold"
+                                            type="number"
+                                            [min]="minValue"
+                                            [max]="maxValue"
+                                            (input)="onNumberInput()"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="range-group style-two position-relative">
+                                    <input
+                                        [(ngModel)]="rangeValues[0]"
+                                        class="range-input"
+                                        type="range"
+                                        [min]="minValue"
+                                        [max]="maxValue"
+                                        [step]="stepValue"
+                                        (input)="onRangeInput()"
+                                    />
+                                    <input
+                                        [(ngModel)]="rangeValues[1]"
+                                        class="range-input"
+                                        type="range"
+                                        [min]="minValue"
+                                        [max]="maxValue"
+                                        [step]="stepValue"
+                                        (input)="onRangeInput()"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons-list d-flex align-items-center justify-content-between">
+                            <button type="button" class="btn btn-danger">
+                                <span class="d-flex align-items-center">
+                                    <i class="ri-arrow-left-line"></i>
+                                    Back
+                                </span>
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                                <span class="d-flex align-items-center">
+                                    Continue
+                                    <i class="ri-arrow-right-line"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                }
+                @if (currentTab2 === 'campaignTab5') {
+                    <div class="tab-pane">
+                        <div class="completed-content text-center">
+                            <img src="images/created.png" alt="created-image">
+                            <h3>
+                                Campaign Created!
+                            </h3>
+                            <p>
+                                You will receive an email with with the summary of your newly created campaign!
+                            </p>
+                            <div class="buttons-list d-flex align-items-center justify-content-center">
+                                <button type="button" class="btn btn-danger">
+                                    <span class="d-flex align-items-center">
+                                        <i class="ri-arrow-left-line"></i>
+                                        Create New Campaign
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary">
+                                    <span class="d-flex align-items-center">
+                                        View Campaign
+                                        <i class="ri-arrow-right-line"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- View Campaign -->
+<div
+    class="add-new-popup style-three"
+    [class.active]="classApplied2"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <img src="images/icons/supabase.svg" alt="supabase">
+                    </div>
+                    <div>
+                        <h5>
+                            Christmas Eve
+                        </h5>
+                        <span class="d-block fw-medium">
+                            From 10 Oct - 15 Oct, 25
+                        </span>
+                    </div>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass2()"
+                        class="p-0 border-0 lh-1 bg-transparent transition close-btn"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content mx-auto">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="trezo-card mb-25 border-radius d-block border-0 shadow-none">
+                            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                                <div class="trezo-card-title">
+                                    <h5 class="mb-0">
+                                        Campaign Goal:
+                                    </h5>
+                                </div>
+                                <div class="trezo-card-subtitle">
+                                    <div class="trezo-card-header-menu position-relative">
+                                        <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        @if (isCardHeaderOpen) {
+                                            <ul class="dropdown-menu border-radius border-0 show">
+                                                <li>
+                                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                        Update
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                        Delete
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trezo-card-content">
+                                <span class="d-block text-black fw-medium mb-5">
+                                    Get more visitors
+                                </span>
+                                <p>
+                                    Increase impression traffic onto the platform
+                                </p>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="trezo-card mb-25 border-radius d-block border-0 shadow-none">
+                            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                                <div class="trezo-card-title">
+                                    <h5 class="mb-0">
+                                        Team Members:
+                                    </h5>
+                                </div>
+                                <div class="trezo-card-subtitle">
+                                    <div class="trezo-card-header-menu position-relative">
+                                        <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu2()">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        @if (isCardHeaderOpen2) {
+                                            <ul class="dropdown-menu border-radius border-0 show">
+                                                <li>
+                                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                        Update
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                        Delete
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trezo-card-content">
+                                <div class="team-members-list">
+                                    <div class="item d-inline-block fw-medium text-black">
+                                        <div class="d-flex align-items-center">
+                                            <img src="images/users/user1.jpg" class="rounded-circle" alt="use-image">
+                                            Jonathon Ronan
+                                        </div>
+                                    </div>
+                                    <div class="item d-inline-block fw-medium text-black">
+                                        <div class="d-flex align-items-center">
+                                            <img src="images/users/user2.jpg" class="rounded-circle" alt="use-image">
+                                            Walter White
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="height: 113px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="trezo-card mb-25 border-radius d-block border-0 shadow-none">
+                            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                                <div class="trezo-card-title">
+                                    <h5 class="mb-0">
+                                        Audiences:
+                                    </h5>
+                                </div>
+                                <div class="trezo-card-subtitle">
+                                    <div class="trezo-card-header-menu position-relative">
+                                        <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu3()">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        @if (isCardHeaderOpen3) {
+                                            <ul class="dropdown-menu border-radius border-0 show">
+                                                <li>
+                                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                        Update
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                        Delete
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trezo-card-content">
+                                <div class="audiences-list">
+                                    <div class="item">
+                                        <span class="fw-medium text-black">
+                                            Gender:
+                                        </span>
+                                        All
+                                    </div>
+                                    <div class="item">
+                                        <span class="fw-medium text-black">
+                                            Age Range:
+                                        </span>
+                                        18-60
+                                    </div>
+                                    <div class="item">
+                                        <span class="fw-medium text-black">
+                                            Location:
+                                        </span>
+                                        Canada, USA
+                                    </div>
+                                    <div class="item">
+                                        <span class="fw-medium text-black">
+                                            Media:
+                                        </span>
+                                        Facebook, Instagram
+                                    </div>
+                                </div>
+                                <div style="height: 174px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="trezo-card mb-25 border-radius d-block border-0 shadow-none">
+                            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                                <div class="trezo-card-title">
+                                    <h5 class="mb-0">
+                                        Uploaded Files:
+                                    </h5>
+                                </div>
+                                <div class="trezo-card-subtitle">
+                                    <div class="trezo-card-header-menu position-relative">
+                                        <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu4()">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        @if (isCardHeaderOpen4) {
+                                            <ul class="dropdown-menu border-radius border-0 show">
+                                                <li>
+                                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                        Update
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                        Delete
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trezo-card-content">
+                                <div class="uploaded-files-list">
+                                    <div class="item position-relative">
+                                        <img src="images/icons/pdf.png" alt="pdf">
+                                        <span class="d-block fw-medium text-black mb-5">
+                                            Campaign_Requirements.pdf
+                                        </span>
+                                        <p>
+                                            Increase impression traffic onto the platform.
+                                        </p>
+                                        <button type="button">
+                                            <i class="ri-download-2-line"></i>
+                                        </button>
+                                    </div>
+                                    <div class="item position-relative">
+                                        <img src="images/icons/doc.png" alt="doc">
+                                        <span class="d-block fw-medium text-black mb-5">
+                                            Campaigns_mission_and_vision.txt
+                                        </span>
+                                        <p>
+                                            Increase impression traffic onto the platform.
+                                        </p>
+                                        <button type="button">
+                                            <i class="ri-download-2-line"></i>
+                                        </button>
+                                    </div>
+                                    <div class="item position-relative">
+                                        <img src="images/icons/gif.svg" alt="gif">
+                                        <span class="d-block fw-medium text-black mb-5">
+                                            Campaign_Banner.gif
+                                        </span>
+                                        <p>
+                                            Increase impression traffic onto the platform.
+                                        </p>
+                                        <button type="button">
+                                            <i class="ri-download-2-line"></i>
+                                        </button>
+                                    </div>
+                                    <div class="item position-relative">
+                                        <img src="images/icons/jpg.png" alt="jpg">
+                                        <span class="d-block fw-medium text-black mb-5">
+                                            Campaign_Image.jpg
+                                        </span>
+                                        <p>
+                                            Increase impression traffic onto the platform.
+                                        </p>
+                                        <button type="button">
+                                            <i class="ri-download-2-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

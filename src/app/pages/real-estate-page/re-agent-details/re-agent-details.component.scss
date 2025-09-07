@@ -1,0 +1,217 @@
+.agent-details-card {
+    .trezo-card-header {
+        margin-bottom: 15px;
+    }
+    .trezo-card-content {
+        h5 {
+            margin: {
+                top: 25px;
+                bottom: 15px;
+            };
+        }
+        .list {
+            margin-top: 17px;
+
+            li {
+                padding-left: 17px;
+                margin-bottom: 12px;
+
+                &::before {
+                    left: 0;
+                    top: 50%;
+                    width: 7px;
+                    height: 7px;
+                    content: '';
+                    position: absolute;
+                    border-radius: 50%;
+                    transform: translateY(-50%);
+                    background-color: var(--primaryColor);
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .testimonial-item {
+            margin-bottom: 15px;
+            padding-bottom: 13px;
+            border-bottom: 1px solid var(--borderColor);
+
+            .user {
+                gap: 12px;
+                margin-bottom: 12px;
+
+                div {
+                    span {
+                        &:nth-child(1) {
+                            font-size: 15px;
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+            .ratings {
+                color: #fd5812;
+                gap: 3px;
+            }
+            p {
+                max-width: 550px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom-width: 0;
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .list {
+                li {
+                    padding: {
+                        left: 0;
+                        right: 17px;
+                    };
+                    &::before {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.agent-info-card {
+    .trezo-card-content {
+        .bg-color {
+            height: 120px;
+            border-radius: 7px 7px 0 0;
+            background: linear-gradient(101deg, #FE7A36 0%, #FD5812 100%);
+
+            img {
+                border-radius: 7px 0 0 0;
+            }
+        }
+        .content {
+            margin-top: -83px;
+            padding: {
+                left: 25px;
+                right: 25px;
+                bottom: 25px;
+            };
+            .user-image {
+                width: 167px;
+            }
+            h3 {
+                font-size: 16px;
+                margin: {
+                    top: 17px;
+                    bottom: 5px;
+                };
+            }
+            .socials-link {
+                margin-top: 17px;
+    
+                a {
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    color: var(--whiteColor);
+                    background-color: var(--primaryColor);
+                    margin: {
+                        left: 5px;
+                        right: 5px;
+                    };
+                    i {
+                        left: 0;
+                        right: 0;
+                        top: 50%;
+                        position: absolute;
+                        transform: translateY(-50%);
+                    }
+                    &.facebook {
+                        background-color: #3A559F;
+                    }
+                    &.x {
+                        background-color: #03A9F4;
+                    }
+                    &.linkedin {
+                        background-color: #007AB9;
+                    }
+                    &.mail {
+                        background-color: #2196F3;
+                    }
+                }
+            }
+            .list {
+                margin-top: 17px;
+
+                li {
+                    margin-bottom: 11px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .agent-info-card {
+        .trezo-card-content {
+            .content {
+                padding: {
+                    left: 17px;
+                    right: 17px;
+                    bottom: 17px;
+                };
+                h3 {
+                    margin: {
+                        top: 15px;
+                        bottom: 6px;
+                    };
+                }
+                .socials-link {
+                    margin-top: 15px;
+                }
+                .list {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .agent-info-card {
+        .trezo-card-content {
+            .content {
+                padding: {
+                    left: 20px;
+                    right: 20px;
+                    bottom: 20px;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

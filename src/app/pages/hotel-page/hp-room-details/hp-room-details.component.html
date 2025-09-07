@@ -1,0 +1,212 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Room Details
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Hotel
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Rooms
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Room Details
+        </li>
+    </ol>
+</div>
+
+<!-- Room Details -->
+<div class="row">
+    <div class="col-lg-4">
+        <div class="room-details-images-card trezo-card border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <owl-carousel-o [options]="{items: 1, dots: false, animateIn: 'fadeIn', margin: 15, animateOut: 'fadeOut'}" #owlCar>
+                    <ng-container>
+                        @for (image of roomImages; track $index) {
+                            <ng-template carouselSlide [id]="image.url">
+                                <img [src]="image.url" [alt]="image.url" class="border-radius">
+                            </ng-template>
+                        }
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+        <owl-carousel-o [options]="{items: 4, dots: false, margin: 15, autoWidth: true}">
+            <ng-container>
+                @for (image of roomImages; let i = $index; track $index) {
+                    <ng-template carouselSlide [id]="image.url+i">
+                        <a
+                            (click)="owlCar.to(image.url); changeImage(image.url+i)"
+                            class="border-radius cursor-pointer"
+                        >
+                            <img [src]="image.url" [alt]="image.url" class="border-radius">
+                        </a>
+                    </ng-template>
+                }
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+    <div class="col-lg-8">
+        <div
+            class="room-details-card trezo-card border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-content">
+                <div class="author-info d-md-flex align-items-center">
+                    <img src="images/users/user80.jpg" class="rounded-circle" alt="user-image">
+                    <div>
+                        <span class="d-block text-xs">
+                            Code: TRZ-32
+                        </span>
+                        <h3>
+                            Serenity Suite
+                        </h3>
+                        <ul class="p-0 m-0 list-unstyled">
+                            <li class="d-inline-block position-relative">
+                                <i class="ri-phone-fill"></i>
+                                +321 1245 6457
+                            </li>
+                            <li class="d-inline-block position-relative">
+                                <i class="ri-mail-line"></i>
+                                anderson350&#64;gmail.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-top"></div>
+                <div class="check-in-out-info d-md-flex">
+                    <div class="date d-flex align-items-center">
+                        <img src="images/icons/schedule.svg" alt="schedule">
+                        <div>
+                            <span class="d-block text-xs">
+                                Check In
+                            </span>
+                            <span class="d-block text-black fw-semibold">
+                                23 June 2025, 15:12 AM
+                            </span>
+                        </div>
+                    </div>
+                    <div class="date d-flex align-items-center">
+                        <img src="images/icons/schedule.svg" alt="schedule">
+                        <div>
+                            <span class="d-block text-xs">
+                                Check Out
+                            </span>
+                            <span class="d-block text-black fw-semibold">
+                                25 June 2025, 14:20 PM
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top"></div>
+                <h4>
+                    Room Info
+                </h4>
+                <div class="room-info">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Room Code
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">L1-15</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Room Name
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">Moonlight</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Air Conditioner
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">Yes</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Rate
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">$156</span>/night
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Free WiFi
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">Yes</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Bathroom
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">2</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Bed
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">2</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Heater
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">No</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>
+                    Description
+                </h4>
+                <p>
+                    This room captures the essence of boundless potential, symbolized by a surreal landscape where the sky meets the earth in a dazzling fusion of colors. The intricate design features flowing lines that blend together, representing the limitless paths we can take in life.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-25"></div>
+
+<!-- Reviews -->
+<app-reviews />

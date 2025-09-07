@@ -1,0 +1,263 @@
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Tracking Orders
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Last 30 Days
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 7 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 15 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 30 Days
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-medium">
+                                Order ID
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Customer Name
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Order Date
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Current Location
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Tracking Number
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #OR045
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Mark Blake
+                            </td>
+                            <td class="text-body">
+                                30 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Chicago, IL
+                            </td>
+                            <td class="text-body">
+                                #TRK001
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Delivered
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #OR085
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Cheryl Myers
+                            </td>
+                            <td class="text-body">
+                                29 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                London, UK
+                            </td>
+                            <td class="text-body">
+                                #TRK002
+                            </td>
+                            <td>
+                                <span class="trezo-badge sPending">
+                                    In Transit
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #OR099
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Marc Bradley
+                            </td>
+                            <td class="text-body">
+                                28 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Paris, France
+                            </td>
+                            <td class="text-body">
+                                #TRK003
+                            </td>
+                            <td>
+                                <span class="trezo-badge pPending">
+                                    On The Way
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #OR125
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Ryan Vasquez
+                            </td>
+                            <td class="text-body">
+                                N/A
+                            </td>
+                            <td class="text-body">
+                                N/A
+                            </td>
+                            <td class="text-body">
+                                N/A
+                            </td>
+                            <td>
+                                <span class="trezo-badge rejected">
+                                    Cancelled
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #OR245
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Donald Ness
+                            </td>
+                            <td class="text-body">
+                                26 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Tokyo, Japan
+                            </td>
+                            <td class="text-body">
+                                #TRK004
+                            </td>
+                            <td>
+                                <span class="trezo-badge">
+                                    Pending
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 5 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

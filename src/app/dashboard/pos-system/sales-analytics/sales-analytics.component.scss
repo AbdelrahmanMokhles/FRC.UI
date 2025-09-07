@@ -1,0 +1,235 @@
+.sales-analytics-card {
+    .trezo-card-header {
+        .trezo-card-title {
+            h5 {
+                font-size: 16px;
+            }
+        }
+    }
+    .trezo-card-content {
+        .content {
+            .icon {
+                width: 44px;
+                height: 44px;
+                border-radius: 4px;
+                background: #DDE4FF;
+            }
+            .info {
+                margin: {
+                    left: 10px;
+                    right: 15px;
+                };
+                h3 {
+                    margin-top: 2px;
+                }
+            }
+            .info-badge {
+                color: #1E8308;
+                padding: 3px 9px;
+                border-radius: 4px;
+                background-color: #D8FFC8;
+
+                &.down {
+                    color: var(--dangerColor);
+                    background-color: #FFE1DD;
+                }
+            }
+            p {
+                margin-top: 20px;
+                line-height: 1.45;
+            }
+        }
+        .chart {
+            margin: {
+                left: 50px;
+                top: -10px;
+                bottom: -10px;
+            };
+        }
+        .top-performing-content {
+            padding: {
+                top: 15px;
+                left: 175px;
+                bottom: 15px;
+            };
+            .chart {
+                left: 0;
+                margin: 0;
+                max-width: 150px;
+                position: absolute;
+            }
+            h5 {
+                font-size: 16px;
+                margin-bottom: 20px;
+
+                span {
+                    font-size: 14px;
+                }
+            }
+            .item {
+                gap: 10px;
+
+                .icon {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 4px;
+                    color: var(--purpleColor);
+                    background-color: #F3E8FF;
+                }
+                span {
+                    margin-bottom: 2px;
+                }
+                h4 {
+                    font-size: 20px;
+                }
+            }
+            .col-sm-4 {
+                &:nth-child(2) {
+                    .item {
+                        .icon {
+                            color: var(--successColor);
+                            background-color: #D8FFC8;
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    .item {
+                        .icon {
+                            color: var(--secondaryColor);
+                            background-color: #DAEBFF;
+                        }
+                    }
+                }
+            }
+        }
+        &.border-top {
+            border-color: var(--borderColor) !important;
+            border-radius: 0 0 5px 5px;
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .content {
+                .icon {
+                    background: #0A0E19;
+                }
+                .info-badge {
+                    background-color: #15203c;
+    
+                    &.down {
+                        background-color: #15203c;
+                    }
+                }
+            }
+            .top-performing-content {
+                .item {
+                    .icon {
+                        background-color: #0A0E19;
+                    }
+                }
+                .col-sm-4 {
+                    &:nth-child(2) {
+                        .item {
+                            .icon {
+                                background-color: #0A0E19;
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        .item {
+                            .icon {
+                                background-color: #0A0E19;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .content {
+                .info {
+                    margin: {
+                        left: 15px;
+                        right: 10px;
+                    };
+                }
+            }
+            .chart {
+                margin: {
+                    left: 0;
+                    right: 50px;
+                };
+            }
+            .top-performing-content {
+                padding: {
+                    left: 0;
+                    right: 175px;
+                };
+                .chart {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .sales-analytics-card {
+        .trezo-card-content {
+            .chart {
+                margin-left: 0;
+            }
+            .top-performing-content {
+                padding: {
+                    top: 0;
+                    left: 0;
+                    bottom: 15px;
+                };
+                .chart {
+                    height: 115px;
+                    max-width: 100%;
+                    position: relative;
+                }
+                h5 {
+                    margin-bottom: 0;
+                }
+                .item {
+                    margin-top: 15px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .chart {
+                    margin-right: 0;
+                }
+                .top-performing-content {
+                    padding: {
+                        right: 0;
+                    };
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

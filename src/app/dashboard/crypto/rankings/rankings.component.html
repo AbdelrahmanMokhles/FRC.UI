@@ -1,0 +1,352 @@
+<div
+    class="crypto-rankings-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Crypto Rankings
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Oct 01 - Oct 31, 2025
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Sep 01 - Sep 30, 2025
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Aug 01 - Aug 31, 2025
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Jul 01 - Jul 31, 2025
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th class="fw-medium">
+                            Rank
+                        </th>
+                        <th class="fw-medium">
+                            Cryptocurrency
+                        </th>
+                        <th class="fw-medium">
+                            Market Cap
+                        </th>
+                        <th class="fw-medium">
+                            Price
+                        </th>
+                        <th class="fw-medium">
+                            24h Change %
+                        </th>
+                        <th class="fw-medium">
+                            7d Change %
+                        </th>
+                        <th class="fw-medium">
+                            Value 24h
+                        </th>
+                        <th class="fw-medium">
+                            Circulating Supply
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="cryptocurrency-image" src="images/cryptocurrencies/bitcoin.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Bitcoin
+                                    <span class="text-body fw-normal">(BTC)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $520B
+                        </td>
+                        <td class="fw-medium">
+                            $27,500
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_24h up">
+                                +2.3%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_7d up">
+                                +10.2%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $35B
+                        </td>
+                        <td class="fw-medium">
+                            19M BTC
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="cryptocurrency-image" src="images/cryptocurrencies/ethereum.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Ethereum
+                                    <span class="text-body fw-normal">(ETH)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $210B
+                        </td>
+                        <td class="fw-medium">
+                            $1,750
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_24h down">
+                                -1.2%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_7d up">
+                                +6.3%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $20B
+                        </td>
+                        <td class="fw-medium">
+                            120M ETH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="cryptocurrency-image" src="images/cryptocurrencies/binance.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Binance
+                                    <span class="text-body fw-normal">(BNB)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $40B
+                        </td>
+                        <td class="fw-medium">
+                            $250
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_24h up">
+                                +1.5%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_7d up">
+                                +7.8%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $1.8B
+                        </td>
+                        <td class="fw-medium">
+                            160M BNB
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="cryptocurrency-image" src="images/cryptocurrencies/tether.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Tether
+                                    <span class="text-body fw-normal">(USDT)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $83B
+                        </td>
+                        <td class="fw-medium">
+                            $1.00
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_24h up">
+                                +0.01%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_7d up">
+                                +0.02%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $45B
+                        </td>
+                        <td class="fw-medium">
+                            83B USDT
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="cryptocurrency-image" src="images/cryptocurrencies/xrp.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    XRP <span class="text-body fw-normal">(XRP)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $25B
+                        </td>
+                        <td class="fw-medium">
+                            $0.50
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_24h up">
+                                +0.9%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_7d down">
+                                -8.6%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $2.2B
+                        </td>
+                        <td class="fw-medium">
+                            50B XRP
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="cryptocurrency-image" src="images/cryptocurrencies/solana.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Solana
+                                    <span class="text-body fw-normal">(SOL)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $12B
+                        </td>
+                        <td class="fw-medium">
+                            $35
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_24h up">
+                                +5.8%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            <span class="change_7d up">
+                                +15.5%
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $3.5B
+                        </td>
+                        <td class="fw-medium">
+                            400M SOL
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 6 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

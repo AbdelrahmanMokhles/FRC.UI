@@ -1,0 +1,54 @@
+.rooms-availability-card {
+    .trezo-card-content {
+        margin: {
+            left: -25px;
+            right: -25px;
+        };
+        .chart {
+            margin-top: -40px;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .rooms-availability-card {
+        .trezo-card-content {
+            margin: {
+                left: -17px;
+                right: -17px;
+            };
+            .chart {
+                margin-top: -30px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .rooms-availability-card {
+        .trezo-card-content {
+            margin: {
+                left: -20px;
+                right: -20px;
+            };
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

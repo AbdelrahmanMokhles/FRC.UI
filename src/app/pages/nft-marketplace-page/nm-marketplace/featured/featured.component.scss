@@ -1,0 +1,171 @@
+.featured-card {
+    &.component-card-borderd {
+        border-width: 0 !important;
+
+        .trezo-card-content {
+            .nft-item {
+                border: 1px solid var(--borderColor) !important;
+            }
+        }
+    }
+    &.component-card-with-box-shadow {
+        box-shadow: unset !important;
+
+        .trezo-card-content {
+            .nft-item {
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+            }
+        }
+    }
+    .trezo-card-header {
+        margin-bottom: 20px;
+    }
+    .nft-item {
+        padding: 10px;
+
+        .image {
+            .bid-btn {
+                top: 50%;
+                left: 50%;
+                border: 0;
+                opacity: 0;
+                padding: 9px 20px;
+                visibility: hidden;
+                border-radius: 4px;
+                position: absolute;
+                display: inline-block;
+                color: var(--whiteColor);
+                transition: var(--transition);
+                background-color: var(--primaryColor);
+                transform: translateX(-50%) translateY(-50%);
+                font: {
+                    size: 16px;
+                    weight: 500;
+                };
+            }
+        }
+        .content {
+            margin-top: 13px;
+
+            .title {
+                gap: 10px;
+
+                img {
+                    width: 27px;
+                }
+                span {
+                    font-size: 12px;
+                }
+            }
+            .verified {
+                width: 20px;
+            }
+            .bid {
+                font-size: 12px;
+                padding-top: 13px;
+                border-top: 1px solid var(--borderColor);
+                margin: {
+                    top: 12px;
+                    bottom: 5px;
+                };
+                span {
+                    margin-left: 2px;
+                }
+            }
+            .info {
+                margin-bottom: 8px;
+
+                .rating {
+                    font-size: 12px;
+                    padding-left: 22px;
+
+                    i {
+                        left: 0;
+                        top: 50%;
+                        font-size: 18px;
+                        color: #ee3e08;
+                        position: absolute;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+        &:hover {
+            .image {
+                .bid-btn {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .nft-item {
+            .content {
+                .bid {
+                    span {
+                        margin: {
+                            left: 0;
+                            right: 2px;
+                        };
+                    }
+                }
+                .info {
+                    .rating {
+                        padding: {
+                            left: 0;
+                            right: 22px;
+                        };
+                        i {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-card-without-border-radius {
+        .trezo-card-content {
+            .nft-item {
+                border-radius: 0 !important;
+            }
+        }
+    }
+    &.component-body-bg-color {
+        border-width: 0 !important;
+        box-shadow: unset !important;
+
+        .trezo-card-content {
+            .nft-item {
+                box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.05) !important;
+                border: 1px solid var(--borderColor) !important;
+            }
+        }
+        &.component-card-with-box-shadow {
+            .trezo-card-content {
+                .nft-item {
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

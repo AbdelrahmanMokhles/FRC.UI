@@ -1,0 +1,110 @@
+<div
+    class="bed-occupancy-rate-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Bed Occupancy Rate
+            </h5>
+            <p class="fw-normal text-body">
+                Currently occupied vs. available.
+            </p>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        {{ selectedTimeframe }}
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Day')">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Week')">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Month')">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Year')">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <ul class="content m-0 p-0 list-unstyled">
+                    <li class="d-flex align-items-center">
+                        <div class="icon d-flex align-items-center justify-content-center border-radius text-secondary bg-secondary-100">
+                            <i class="material-symbols-outlined">
+                                airplay
+                            </i>
+                        </div>
+                        <div>
+                            <h3>
+                                1,275
+                            </h3>
+                            <span class="d-block text-body">
+                                Total Beds
+                            </span>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <div class="icon d-flex align-items-center justify-content-center border-radius text-purple bg-purple-100">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                        </div>
+                        <div>
+                            <h3>
+                                825
+                            </h3>
+                            <span class="d-block text-body">
+                                Occupied Beds
+                            </span>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <div class="icon d-flex align-items-center justify-content-center border-radius text-success bg-success-100">
+                            <i class="material-symbols-outlined">
+                                featured_seasonal_and_gifts
+                            </i>
+                        </div>
+                        <div>
+                            <h3>
+                                450
+                            </h3>
+                            <span class="d-block text-body">
+                                Available Beds
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <div class="chart text-center">
+                    <div id="bed_occupancy_rate_chart"></div>
+                    <p class="mx-auto">
+                        The donut or pie chart representing the occupancy rate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

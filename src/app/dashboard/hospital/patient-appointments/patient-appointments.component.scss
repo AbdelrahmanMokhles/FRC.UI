@@ -1,0 +1,143 @@
+.patient-appointments-card {
+    .trezo-card-content {
+        .basic-table {
+            table {
+                thead {
+                    tr {
+                        th {
+                            font-size: 12px;
+                            text-align: end;
+                            color: var(--bodyColor);
+                            background-color: transparent;
+                            padding: {
+                                top: 0;
+                                left: 14px;
+                                bottom: 8px;
+                                right: 14px;
+                            };
+                            &:first-child {
+                                text-align: start;
+                                padding-left: 0;
+                            }
+                            &:nth-child(4) {
+                                text-align: start;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            text-align: end;
+                            padding: 6.6px 14px;
+                            border: {
+                                left-width: 0;
+                                right-width: 0;
+                            };
+                            .customer-info {
+                                .img {
+                                    width: 34px;
+                                }
+                                span {
+                                    margin-left: 8px;
+                                }
+                            }
+                            &:first-child {
+                                text-align: start;
+                                padding-left: 0;
+                            }
+                            &:nth-child(4) {
+                                text-align: start;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .trezo-card-pagination {
+            border-radius: 0;
+            padding: 10px 0 0 0;
+            border: {
+                left-width: 0;
+                right-width: 0;
+                bottom-width: 0;
+            };
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .basic-table {
+                table {
+                    thead {
+                        tr {
+                            th {
+                                &:first-child {
+                                    padding: {
+                                        left: 0;
+                                        right: 14px;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        left: 0;
+                                        right: 14px;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                .customer-info {
+                                    span {
+                                        margin: {
+                                            left: 0;
+                                            right: 8px;
+                                        };
+                                    }
+                                }
+                                &:first-child {
+                                    padding: {
+                                        left: 0;
+                                        right: 14px;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        left: 0;
+                                        right: 14px;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,329 @@
+<div
+    class="transactions-history-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Transactions History
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Oct 01 - Oct 31, 2025
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Sep 01 - Sep 30, 2025
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Aug 01 - Aug 31, 2025
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Jul 01 - Jul 31, 2025
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th class="fw-medium">
+                            Coin
+                        </th>
+                        <th class="fw-medium">
+                            Date
+                        </th>
+                        <th class="fw-medium">
+                            Amount
+                        </th>
+                        <th class="fw-medium">
+                            Price
+                        </th>
+                        <th class="fw-medium">
+                            Type
+                        </th>
+                        <th class="fw-medium">
+                            Total Value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="coin-image" src="images/cryptocurrencies/bitcoin.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Bitcoin
+                                    <span class="text-body fw-normal">(BTC)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            2025-09-10
+                        </td>
+                        <td class="fw-medium">
+                            0.50 BTC
+                        </td>
+                        <td class="fw-medium">
+                            $27,500
+                        </td>
+                        <td>
+                            <span class="trezo-badge shipped">
+                                Buy
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $13,500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="coin-image" src="images/cryptocurrencies/ethereum.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Ethereum
+                                    <span class="text-body fw-normal">(ETH)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            2025-09-08
+                        </td>
+                        <td class="fw-medium">
+                            5.00 ETH
+                        </td>
+                        <td class="fw-medium">
+                            $1,750
+                        </td>
+                        <td>
+                            <span class="trezo-badge rejected">
+                                Sell
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $8,750
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="coin-image" src="images/cryptocurrencies/binance.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Binance
+                                    <span class="text-body fw-normal">(BNB)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            2025-09-05
+                        </td>
+                        <td class="fw-medium">
+                            100 SOL
+                        </td>
+                        <td class="fw-medium">
+                            $250
+                        </td>
+                        <td>
+                            <span class="trezo-badge shipped">
+                                Buy
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $3,500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="coin-image" src="images/cryptocurrencies/tether.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Tether
+                                    <span class="text-body fw-normal">(USDT)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            2025-08-30
+                        </td>
+                        <td class="fw-medium">
+                            10 BNB
+                        </td>
+                        <td class="fw-medium">
+                            $1.00
+                        </td>
+                        <td>
+                            <span class="trezo-badge shipped">
+                                Buy
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $2,500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="coin-image" src="images/cryptocurrencies/xrp.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    XRP
+                                    <span class="text-body fw-normal">(XRP)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            2025-08-25
+                        </td>
+                        <td class="fw-medium">
+                            1,000 ADA
+                        </td>
+                        <td class="fw-medium">
+                            $0.50
+                        </td>
+                        <td>
+                            <span class="trezo-badge rejected">
+                                Sell
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $250
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="coin-image" src="images/cryptocurrencies/solana.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Solana
+                                    <span class="text-body fw-normal">(SOL)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            2025-08-20
+                        </td>
+                        <td class="fw-medium">
+                            0.40 BTC
+                        </td>
+                        <td class="fw-medium">
+                            $35
+                        </td>
+                        <td>
+                            <span class="trezo-badge rejected">
+                                Sell
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $11,800
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="coin-image" src="images/cryptocurrencies/usdc.png">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    USDC
+                                    <span class="text-body fw-normal">(USDC)</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            2025-08-15
+                        </td>
+                        <td class="fw-medium">
+                            3.00 USDC
+                        </td>
+                        <td class="fw-medium">
+                            $0.9999
+                        </td>
+                        <td>
+                            <span class="trezo-badge shipped">
+                                Buy
+                            </span>
+                        </td>
+                        <td class="fw-medium">
+                            $5,400
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 7 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+.top-creators-card {
+    &.component-card-borderd {
+        border-width: 0 !important;
+
+        .trezo-card-content {
+            .nft-item {
+                border: 1px solid var(--borderColor) !important;
+            }
+        }
+    }
+    &.component-card-with-box-shadow {
+        box-shadow: unset !important;
+
+        .trezo-card-content {
+            .nft-item {
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+            }
+        }
+    }
+    .trezo-card-header {
+        margin-bottom: 20px;
+    }
+    &.component-body-bg-color {
+        border-width: 0 !important;
+        box-shadow: unset !important;
+
+        .creator-card {
+            box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.05) !important;
+            border: 1px solid var(--borderColor) !important;
+        }
+        &.component-card-with-box-shadow {
+            .trezo-card-content {
+                .creator-card {
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+                }
+            }
+        }
+    }
+}
+.creator-card {
+    padding: 10px 10px 15px;
+
+    .trezo-card-content {
+        .content {
+            margin-top: -34px;
+
+            .author {
+                margin-bottom: 15px;
+
+                .verified {
+                    right: 0;
+                    bottom: 0;
+                    position: absolute;
+                }
+            }
+            h5 {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            span {
+                font-size: 12px;
+            }
+            .border-top {
+                border-color: var(--borderColor) !important;
+                padding-top: 15px;
+                margin-top: 15px;
+            }
+            .follow-btn {
+                border: 0;
+                padding: 6px 17px;
+                border-radius: 7px;
+                display: inline-block;
+                color: var(--whiteColor);
+                background-color: var(--primaryColor);
+                font: {
+                    size: 16px;
+                    weight: 500;
+                };
+                &.unfollow {
+                    background-color: #8695aa;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .creator-card {
+        .trezo-card-content {
+            .content {
+                .follow-btn {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .creators-filter-card {
+        padding-bottom: 2px !important;
+
+        .trezo-card-content {
+            .form-group {
+                margin-bottom: 15px !important;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .creators-filter-card {
+        padding-bottom: 5px !important;
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .creator-card {
+        .trezo-card-content {
+            .content {
+                .follow-btn {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

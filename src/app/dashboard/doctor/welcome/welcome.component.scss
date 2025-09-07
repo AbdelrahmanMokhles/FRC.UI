@@ -1,0 +1,187 @@
+.doctor-welcome-card {
+    padding: 8px 50px 0 50px;
+    background: linear-gradient(272deg, #1F64F1 31.27%, #123A8B 98.4%);
+
+    .trezo-card-content {
+        .content {
+            padding-top: 40px;
+
+            .sub-title {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            h1 {
+                margin-bottom: 10px;
+                font: {
+                    size: 28px;
+                    weight: 900;
+                };
+            }
+            .designation {
+                font-size: 12px;
+                padding-left: 20px;
+                margin-bottom: 9px;
+
+                img {
+                    left: 0;
+                    top: 50%;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+            }
+            p {
+                color: #B1BBC8;
+
+                span {
+                    color: var(--whiteColor);
+                }
+            }
+        }
+        .image {
+            text-align: end;
+        }
+    }
+    .shape {
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        position: absolute;
+    }
+    .star {
+        top: 60px;
+        right: 85px;
+        z-index: -1;
+        position: absolute;
+    }
+    &.component-rtl-enabled {
+        .shape {
+            transform: scaleX(-1);
+            right: auto;
+            left: 0;
+        }
+        .star {
+            transform: scaleX(-1);
+            right: auto;
+            left: 85px;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .doctor-welcome-card {
+        padding: 25px 17px 0;
+        text-align: center;
+    
+        .trezo-card-content {
+            .content {
+                padding-top: 0;
+    
+                .sub-title {
+                    font-size: 14px;
+                }
+                h1 {
+                    font-size: 22px;
+                }
+            }
+            .image {
+                margin-top: 15px;
+                text-align: center;
+            }
+        }
+        .star {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .doctor-welcome-card {
+        padding: 25px 20px 0;
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .doctor-welcome-card {
+        padding-top: 40px;
+    
+        .trezo-card-content {
+            .content {
+                padding-top: 0;
+                text-align: center;
+    
+                .sub-title {
+                    font-size: 16px;
+                }
+                h1 {
+                    font-size: 24px;
+                }
+            }
+            .image {
+                margin-top: 15px;
+                text-align: center;
+            }
+        }
+        .star {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .doctor-welcome-card {
+        .trezo-card-content {
+            .row {
+                align-items: center;
+            }
+            .content {
+                padding-top: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .doctor-welcome-card {
+        .trezo-card-content {
+            .row {
+                align-items: center;
+            }
+            .content {
+                padding-top: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .doctor-welcome-card {
+        padding: {
+            left: 105px;
+            right: 80px;
+        };
+        &.component-rtl-enabled {
+            padding: {
+                left: 80px;
+                right: 105px;
+            };
+        }
+    }
+
+}

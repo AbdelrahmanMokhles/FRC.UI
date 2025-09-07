@@ -1,0 +1,264 @@
+.employee-work-format-card {
+    .trezo-card-content {
+        .chart {
+            margin-top: 43px;
+        }
+        .basic-table {
+            margin: {
+                top: 25px;
+                left: -25px;
+                right: -25px;
+                bottom: -13px;
+            };
+            .table, table {
+                tbody {
+                    tr {
+                        td {
+                            padding: {
+                                top: 13px;
+                                bottom: 13px;
+                            };
+                            border: {
+                                left-width: 0;
+                                right-width: 0;
+                            };
+                            &:first-child {
+                                padding-left: 25px;
+                            }
+                            &:last-child {
+                                padding-right: 25px;
+                            }
+                            .title {
+                                gap: 8px;
+
+                                div {
+                                    width: 8px;
+                                    height: 8px;
+                                }
+                            }
+                            .number {
+                                padding-right: 24px;
+
+                                i {
+                                    right: 0;
+                                    top: 50%;
+                                    font-size: 20px;
+                                    position: absolute;
+                                    transform: translateY(-50%);
+                                }
+                            }
+                        }
+                        &:last-child {
+                            td {
+                                border-bottom-width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .basic-table {
+                table {
+                    tbody {
+                        tr {
+                            td {
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 25px;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 25px;
+                                    };
+                                }
+                                .number {
+                                    padding: {
+                                        right: 0;
+                                        left: 24px;
+                                    };
+                                    i {
+                                        right: auto;
+                                        left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .employee-work-format-card {
+        .trezo-card-content {
+            .chart {
+                margin-top: 0;
+            }
+            .basic-table {
+                margin: {
+                    top: 15px;
+                    left: -17px;
+                    right: -17px;
+                };
+                table {
+                    tbody {
+                        tr {
+                            td {
+                                &:first-child {
+                                    padding-left: 17px;
+                                }
+                                &:last-child {
+                                    padding-right: 17px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table {
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 17px;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 17px;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .employee-work-format-card {
+        .trezo-card-content {
+            .basic-table {
+                margin: {
+                    left: -20px;
+                    right: -20px;
+                };
+                table {
+                    tbody {
+                        tr {
+                            td {
+                                &:first-child {
+                                    padding-left: 20px;
+                                }
+                                &:last-child {
+                                    padding-right: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table {
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 20px;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 20px;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .employee-work-format-card {
+        .trezo-card-content {
+            .chart {
+                margin-top: 0;
+            }
+            .basic-table {
+                margin-top: 15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .employee-work-format-card {
+        .trezo-card-content {
+            .chart {
+                margin-top: 0;
+            }
+            .basic-table {
+                margin-top: 15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .employee-work-format-card {
+        .trezo-card-content {
+            .chart {
+                margin-top: 0;
+            }
+            .basic-table {
+                margin-top: 15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

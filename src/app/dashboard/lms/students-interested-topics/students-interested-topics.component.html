@@ -1,0 +1,57 @@
+<div class="students-interested-topics-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Student’s Interested Topics
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        {{ selectedTimeframe }}
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 2 Months')">
+                                Last 2 Months
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 4 Months')">
+                                Last 4 Months
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 6 Months')">
+                                Last 6 Months
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 8 Months')">
+                                Last 8 Months
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 10 Months')">
+                                Last 10 Months
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 12 Months')">
+                                Last 12 Months
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="chart">
+            <div id="lms_students_interested_topics_chart"></div>
+        </div>
+    </div>
+</div>

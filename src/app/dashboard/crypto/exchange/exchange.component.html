@@ -1,0 +1,154 @@
+<div
+    class="crypto-exchange-card trezo-card mb-25 border-radius d-block border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-body-bg-color]="themeService.isBodyBG()"
+    [class.component-card-with-box-shadow]="themeService.isCardWithBoxShadow()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Exchange
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button type="button" class="button bg-transparent p-0 border-0 lh-1 transition">
+                <i class="material-symbols-outlined">
+                    refresh
+                </i>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="item">
+            <div class="title d-flex justify-content-between align-items-center">
+                <span class="d-block text-body text-uppercase">
+                    Selling
+                </span>
+                <span class="d-block text-body text-uppercase">
+                    Max 4,238
+                </span>
+            </div>
+            <div class="cryptocurrency-types one position-relative">
+                <button class="button d-block w-100 p-0 border-0 bg-transparent text-black position-relative text-uppercase fw-medium" (click)="toggleCryptocurrencyTypesMenu1()">
+                    <span class="d-flex align-items-center">
+                        <img src="images/cryptocurrencies/big-ethereum.svg" alt="ethereum">
+                        Ethereum
+                        <span class="fw-normal text-body">(ETH)</span>
+                    </span>
+                </button>
+                @if (isCryptocurrencyTypesOpen1) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/ethereum.svg" alt="ethereum">
+                                Ethereum
+                                <span class="fw-normal text-body">(ETH)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/bitcoin.svg" alt="bitcoin">
+                                Bitcoin
+                                <span class="fw-normal text-body">(BTC)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/solana.svg" alt="solana">
+                                Solana
+                                <span class="fw-normal text-body">(SOL)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/cardano.png" alt="cardano">
+                                Cardano
+                                <span class="fw-normal text-body">(ADA)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/binance.svg" alt="binance">
+                                Binance
+                                <span class="fw-normal text-body">(BNB)</span>
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+            <div class="form-floating position-relative">
+                <input type="email" class="form-control fw-bold" id="floatingInput" value="1">
+                <label for="floatingInput">ETH</label>
+                <span class="d-inline-block value text-body">
+                    $1750
+                </span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title d-flex justify-content-between align-items-center">
+                <span class="d-block text-body text-uppercase">
+                    Buying
+                </span>
+            </div>
+            <div class="cryptocurrency-types two position-relative">
+                <button class="button d-block w-100 p-0 border-0 bg-transparent text-black position-relative text-uppercase fw-medium" (click)="toggleCryptocurrencyTypesMenu2()">
+                    <span class="d-flex align-items-center">
+                        <img src="images/cryptocurrencies/big-solana.svg" alt="solana">
+                        Solana
+                        <span class="fw-normal text-body">(SOL)</span>
+                    </span>
+                </button>
+                @if (isCryptocurrencyTypesOpen2) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/ethereum.svg" alt="ethereum">
+                                Ethereum
+                                <span class="fw-normal text-body">(ETH)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/bitcoin.svg" alt="bitcoin">
+                                Bitcoin
+                                <span class="fw-normal text-body">(BTC)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/solana.svg" alt="solana">
+                                Solana
+                                <span class="fw-normal text-body">(SOL)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/cardano.png" alt="cardano">
+                                Cardano
+                                <span class="fw-normal text-body">(ADA)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/binance.svg" alt="binance">
+                                Binance
+                                <span class="fw-normal text-body">(BNB)</span>
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+            <div class="form-floating position-relative">
+                <input type="email" class="form-control fw-bold" id="floatingInput" value="75">
+                <label for="floatingInput">SOL</label>
+                <span class="d-inline-block value text-body">
+                    $35
+                </span>
+            </div>
+        </div>
+        <button type="button" class="exchange-btn d-block w-100 fw-medium border-0 border-radius bg-primary text-white">
+            Exchange
+        </button>
+    </div>
+</div>

@@ -1,0 +1,207 @@
+<div class="live-price-tracker-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Live Price Tracker
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/bitcoin.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Bitcoin
+                                        <span class="text-body fw-normal text-xs m-0">(BTC)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                $68848.92
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/ethereum.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Ethereum
+                                        <span class="text-body fw-normal text-xs m-0">(ETH)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                $2565.77
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/binance.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Binance
+                                        <span class="text-body fw-normal text-xs m-0">(BNB)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                $2565.77
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/tether.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Tether
+                                        <span class="text-body fw-normal text-xs m-0">(USDT)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                $1.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/xrp.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        XRP
+                                        <span class="text-body fw-normal text-xs m-0">(XRP)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                $0.529105
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/solana.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Solana
+                                        <span class="text-body fw-normal text-xs m-0">(SOL)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                $179.44
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/usdc.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        USDC
+                                        <span class="text-body fw-normal text-xs m-0">(USDC)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                $1.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/tron.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Tron
+                                        <span class="text-body fw-normal text-xs m-0">(TRX)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                $0.192391
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 8 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,384 @@
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Latest Transactions
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Last 30 Days
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 7 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 15 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 30 Days
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-medium">
+                                Customer ID
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Customer Name
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Property
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Date
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Price
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Status
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Payment
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0015
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user1.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Sarah Johnson
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Industrial
+                            </td>
+                            <td class="text-body">
+                                30 Apr 2025
+                            </td>
+                            <td>
+                                $500,000
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                Master Card
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0099
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user2.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Michael Smith
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Office
+                            </td>
+                            <td class="text-body">
+                                29 Apr 2025
+                            </td>
+                            <td>
+                                $1,200,000
+                            </td>
+                            <td>
+                                <span class="trezo-badge sPending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                Paypal
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0145
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user3.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Emily Brown
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Multi-Family
+                            </td>
+                            <td class="text-body">
+                                28 Apr 2025
+                            </td>
+                            <td>
+                                $350,000
+                            </td>
+                            <td>
+                                <span class="trezo-badge cancelled">
+                                    Cancelled
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                Wise
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0247
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user4.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Jason Lee
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Residential
+                            </td>
+                            <td class="text-body">
+                                27 Apr 2025
+                            </td>
+                            <td>
+                                $220,000
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                Payoneer
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0299
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user5.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Ashley Davis
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Commercial
+                            </td>
+                            <td class="text-body">
+                                26 Apr 2025
+                            </td>
+                            <td>
+                                $1,500,000
+                            </td>
+                            <td>
+                                <span class="trezo-badge rejected">
+                                    Rejected
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                Credit Card
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 5 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

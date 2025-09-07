@@ -1,0 +1,765 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Properties
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Real Estate Agent
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Properties
+        </li>
+    </ol>
+</div>
+
+<!-- Properties -->
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button class="add-btn d-inline-block transition fw-medium border-radius" type="button" (click)="toggleClass()">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add New Property
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-medium">
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                Code
+                            </div>
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Property
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Address
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Views
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Date
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Status
+                        </th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-32
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property15.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Luxury Apartment
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        The Golden Haven
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            123 Sunshine Boulevard, Vancouver, BC
+                        </td>
+                        <td>
+                            1450
+                        </td>
+                        <td>
+                            12 Nov, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-35
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property16.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        High-End Villa
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        Tranquil Meadows
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            456 Whispering Pines Lane, Toronto, ON
+                        </td>
+                        <td>
+                            1890
+                        </td>
+                        <td>
+                            10 Nov, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-36
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property17.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Beachfront House
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        Aurora Heights
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            789 Northern Lights Drive, Calgary, AB
+                        </td>
+                        <td>
+                            1320
+                        </td>
+                        <td>
+                            08 Nov, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-37
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property18.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Mountain Cabin
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        Crystal Cove Villas
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            234 Seaside Avenue, Halifax, NS
+                        </td>
+                        <td>
+                            1124
+                        </td>
+                        <td>
+                            10 Nov, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius rejected py-0">
+                                Inactive
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-39
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property19.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Business Center
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        Verdant Valley Estates
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            567 Greenfield Circle, Winnipeg, MB
+                        </td>
+                        <td>
+                            1532
+                        </td>
+                        <td>
+                            18 Oct, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-42
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property20.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Conference & Event Venue
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        Summit Business Hub
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            890 Innovation Street, Ottawa, ON
+                        </td>
+                        <td>
+                            7721
+                        </td>
+                        <td>
+                            17 Oct, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-46
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property21.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Luxury Resort
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        Pinnacle Plaza
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            345 Cityscape Road, Edmonton, AB
+                        </td>
+                        <td>
+                            5214
+                        </td>
+                        <td>
+                            13 Oct, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius rejected py-0">
+                                Inactive
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-32
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property22.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Beachfront Resort
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        The Nexus Tower
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            123 Sunshine Boulevard, Vancouver, BC
+                        </td>
+                        <td>
+                            1450
+                        </td>
+                        <td>
+                            12 Nov, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-32
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property23.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Eco-Friendly Hotel
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        Golden Sands Lodge
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            456 Whispering Pines Lane, Toronto, ON	
+                        </td>
+                        <td>
+                            1890
+                        </td>
+                        <td>
+                            10 Nov, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-32
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/properties/property24.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <span class="d-block text-body">
+                                        Boutique Hotel
+                                    </span>
+                                    <a routerLink="/dashboard/real-estate-agent-page/property-details" class="fw-medium d-inline-block">
+                                        Azure Bay Inn
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            789 Northern Lights Drive, Calgary, AB
+                        </td>
+                        <td>
+                            1320
+                        </td>
+                        <td>
+                            08 Nov, 25
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/real-estate-agent-page/property-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 10 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Add New Property
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Code
+                            </label>
+                            <input type="text" class="form-control" placeholder="TRZ-32">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Property Name
+                            </label>
+                            <input type="text" class="form-control" placeholder="Golden Sun Room">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Address
+                            </label>
+                            <input type="text" class="form-control" placeholder="789 Northern Lights Drive, Calgary, AB">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Views
+                            </label>
+                            <input type="text" class="form-control" placeholder="2012">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Date
+                            </label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Status
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option value="1">
+                                    Active
+                                </option>
+                                <option value="2">
+                                    Inactive
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Upload Property Images
+                            </label>
+                            <file-upload class="file-uploader"></file-upload>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button
+                        (click)="toggleClass()"
+                        class="warn d-inline-block fw-medium border-0 border-radius transition"
+                    >
+                        Cancel
+                    </button>
+                    <button class="primary d-inline-block fw-medium border-0 border-radius transition">
+                        <span class="position-relative d-inline-block">
+                            <i class="material-symbols-outlined">
+                                add
+                            </i>
+                            Create
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

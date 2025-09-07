@@ -1,0 +1,816 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Rooms List
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Hotel
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Rooms List
+        </li>
+    </ol>
+</div>
+
+<!-- Rooms List -->
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button class="add-btn d-inline-block transition fw-medium border-radius" type="button" (click)="toggleClass()">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add New Room
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="d-flex align-items-center fw-medium">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                            Code
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Room Name
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Bed Type
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Floor
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Facilities
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Rate
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Status
+                        </th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-32
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room1.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Serenity Suite
+                                    </a>
+                                    <span class="d-block text-body">
+                                        Elysian Grand
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Double Bed
+                        </td>
+                        <td>
+                            G-02
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $157/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-35
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room2.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Cozy Book Nook
+                                    </a>
+                                    <span class="d-block text-body">
+                                        Celestial Haven
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Single Bed
+                        </td>
+                        <td>
+                            G-01
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $146/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-36
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room3.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Velvet Orchid
+                                    </a>
+                                    <span class="d-block text-body">
+                                        Opulent Orchid
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Master Bed
+                        </td>
+                        <td>
+                            L1-15
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $125/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-37
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room4.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Vintage Studio
+                                    </a>
+                                    <span class="d-block text-body">
+                                        The Aurelia
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Double Bed
+                        </td>
+                        <td>
+                            L1-17
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $159/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius rejected py-0">
+                                Not Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-39
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room5.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Blissful Dream
+                                    </a>
+                                    <span class="d-block text-body">
+                                        Regal Horizon
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Master Bed
+                        </td>
+                        <td>
+                            L2-22
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $120/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-42
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room6.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Rustic Hearth
+                                    </a>
+                                    <span class="d-block text-body">
+                                        Velvet Vista
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Single Bed
+                        </td>
+                        <td>
+                            L2-24
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $100/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-46
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room7.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Enchanted Forest
+                                    </a>
+                                    <span class="d-block text-body">
+                                        The Ember Nest
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Double Bed
+                        </td>
+                        <td>
+                            L2-28
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $145/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius rejected py-0">
+                                Not Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-32
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room8.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Serenity Suite
+                                    </a>
+                                    <span class="d-block text-body">
+                                        Azure Retreat
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Double Bed
+                        </td>
+                        <td>
+                            G-02
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $157/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-32
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room9.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Serenity Suite
+                                    </a>
+                                    <span class="d-block text-body">
+                                        Nocturne Haven
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Double Bed
+                        </td>
+                        <td>
+                            G-02
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $157/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                TRZ-32
+                            </div>
+                        </td>
+                        <td>
+                            <div class="product-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="images/rooms/room1.jpg" alt="room-image">
+                                </div>
+                                <div class="info">
+                                    <a routerLink="/dashboard/hotel-page/room-details" class="fw-medium d-inline-block">
+                                        Serenity Suite
+                                    </a>
+                                    <span class="d-block text-body">
+                                        Luna Essence
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            Double Bed
+                        </td>
+                        <td>
+                            G-02
+                        </td>
+                        <td class="facilities">
+                            <p>
+                                High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)
+                            </p>
+                        </td>
+                        <td>
+                            $157/night
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border border-radius finished py-0">
+                                Available
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex align-items-center">
+                                <a routerLink="/dashboard/hotel-page/room-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 10 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Add New Room
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Code
+                            </label>
+                            <input type="text" class="form-control" placeholder="TRZ-32">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Room Name
+                            </label>
+                            <input type="text" class="form-control" placeholder="Golden Sun Room">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Level
+                            </label>
+                            <input type="text" class="form-control" placeholder="L2-24">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Rate
+                            </label>
+                            <input type="text" class="form-control" placeholder="157/night">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Facilities
+                            </label>
+                            <input type="text" class="form-control" placeholder="High-speed Wi-Fi, Comfortable bedding and pillows, Temperature control (AC/heating)">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Status
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option value="1">
+                                    Available
+                                </option>
+                                <option value="2">
+                                    Not Available
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Upload Room Images
+                            </label>
+                            <file-upload class="file-uploader"></file-upload>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button
+                        (click)="toggleClass()"
+                        class="warn d-inline-block fw-medium border-0 border-radius transition"
+                    >
+                        Cancel
+                    </button>
+                    <button class="primary d-inline-block fw-medium border-0 border-radius transition">
+                        <span class="position-relative d-inline-block">
+                            <i class="material-symbols-outlined">
+                                add
+                            </i>
+                            Create
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

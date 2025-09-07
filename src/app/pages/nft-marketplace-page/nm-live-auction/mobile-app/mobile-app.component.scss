@@ -1,0 +1,120 @@
+.mobile-app-card {
+    background: linear-gradient(153deg, #FAD2D2 0%, #6FA3EC 100%);
+
+    .trezo-card-content {
+        max-width: 245px;
+        
+        h3 {
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: var(--blackColor);
+        }
+        img {
+            display: block;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+        .link-btn {
+            margin-top: 25px;
+            padding: 6px 16px;
+            display: inline-block;
+            border-radius: 0.375rem;
+            color: var(--whiteColor);
+            background-color: var(--primaryColor);
+            font: {
+                size: 16px;
+                weight: 500;
+            };
+            &:hover {
+                background-color: var(--blackColor);
+            }
+        }
+    }
+    &::before {
+        left: 0;
+        top: 50%;
+        right: 0;
+        z-index: -1;
+        content: '';
+        opacity: .15;
+        width: 201px;
+        height: 201px;
+        border-radius: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+        background-color: var(--whiteColor);
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .mobile-app-card {
+        .trezo-card-content {
+            h3 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            .link-btn {
+                margin-top: 20px;
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .mobile-app-card {
+        .trezo-card-content {
+            h3 {
+                font-size: 22px;
+            }
+            .link-btn {
+                font-size: 15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .mobile-app-card {
+        .trezo-card-content {
+            h3 {
+                font-size: 18px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .mobile-app-card {
+        .trezo-card-content {
+            h3 {
+                font-size: 18px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

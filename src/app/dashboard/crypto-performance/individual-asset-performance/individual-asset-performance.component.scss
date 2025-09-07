@@ -1,0 +1,21 @@
+.basic-table {
+    table, .table {
+        tbody {
+            tr {
+                td {
+                    padding: {
+                        bottom: 8px;
+                        top: 8px;
+                    };
+                    .customer-info {
+                        gap: 8px;
+                    
+                        .img {
+                            width: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

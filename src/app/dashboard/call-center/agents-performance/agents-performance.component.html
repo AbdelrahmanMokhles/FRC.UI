@@ -1,0 +1,236 @@
+<div
+    class="agents-performance-overview-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Agents Performance Overview
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Last Month
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <span class="d-block">
+            Top Performing Agent
+        </span>
+        <div class="top-agent">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <div class="d-flex align-items-center">
+                        <div class="caller-info d-flex align-items-center">
+                            <img src="images/users/user61.jpg" alt="user-image">
+                            <div class="position-relative">
+                                <span class="d-block fw-semibold text-black">
+                                    John Smith
+                                </span>
+                                <span class="d-block">
+                                    380 Calls
+                                </span>
+                                <div class="dot bg-success"></div>
+                                <!-- <div class="dot bg-orange"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="d-block">
+                            Customer Satisfaction (CSAT)
+                        </span>
+                        <span class="d-block">
+                            92%
+                        </span>
+                    </div>
+                    <div class="progress trezo-progress w-100" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-success" style="width: 92%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-style-four">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="caller-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user62.jpg">
+                                    </div>
+                                    <div class="position-relative">
+                                        <span class="d-block fw-medium">
+                                            Sarah Davis
+                                        </span>
+                                        <span class="d-block text-body">
+                                            65 Calls
+                                        </span>
+                                        <div class="dot bg-success"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Avg. Call Duration
+                                <span class="d-block fw-medium text-black">
+                                    4 mins 10 secs
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                FCR
+                                <span class="d-block text-black">
+                                    85%
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                CSAT
+                                <span class="d-block text-black">
+                                    90%
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="caller-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user63.jpg">
+                                    </div>
+                                    <div class="position-relative">
+                                        <span class="d-block fw-medium">
+                                            Michael Brown
+                                        </span>
+                                        <span class="d-block text-body">
+                                            58 Calls
+                                        </span>
+                                        <div class="dot bg-orange"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Avg. Call Duration
+                                <span class="d-block fw-medium text-black">
+                                    5 mins 20 secs
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                FCR
+                                <span class="d-block text-black">
+                                    82%
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                CSAT
+                                <span class="d-block text-black">
+                                    87%
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="caller-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user64.jpg">
+                                    </div>
+                                    <div class="position-relative">
+                                        <span class="d-block fw-medium">
+                                            Emily Johnson
+                                        </span>
+                                        <span class="d-block text-body">
+                                            72 Calls
+                                        </span>
+                                        <div class="dot bg-success"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Avg. Call Duration
+                                <span class="d-block fw-medium text-black">
+                                    4 mins 30 secs
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                FCR
+                                <span class="d-block text-black">
+                                    88%
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                CSAT
+                                <span class="d-block text-black">
+                                    90%
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="caller-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user65.jpg">
+                                    </div>
+                                    <div class="position-relative">
+                                        <span class="d-block fw-medium">
+                                            David Lee
+                                        </span>
+                                        <span class="d-block text-body">
+                                            53 Calls
+                                        </span>
+                                        <div class="dot bg-orange"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Avg. Call Duration
+                                <span class="d-block fw-medium text-black">
+                                    3 mins 50 secs
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                FCR
+                                <span class="d-block text-black">
+                                    80%
+                                </span>
+                            </td>
+                            <td class="text-body">
+                                CSAT
+                                <span class="d-block text-black">
+                                    85%
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

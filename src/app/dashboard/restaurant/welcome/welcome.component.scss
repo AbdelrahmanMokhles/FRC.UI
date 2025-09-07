@@ -1,0 +1,234 @@
+.restaurant-welcome-card {
+    background-color: #FE7A36;
+
+    .trezo-card-content {
+        padding: {
+            top: 23.5px;
+            bottom: 23.5px;
+        };
+        .content {
+            margin-right: -55px;
+
+            .sub-title {
+                font-size: 16px;
+                color: #FFE8D4;
+                padding: 1px 13px;
+                margin-bottom: 12px;
+                background-color: var(--darkColor);
+            }
+            h1 {
+                font-size: 28px;
+                margin-bottom: 0;
+                letter-spacing: -0.5px;
+            }
+            .stats {
+                margin-top: 25px;
+                gap: 25px;
+
+                .item {
+                    padding-left: 33px;
+
+                    i {
+                        color: var(--whiteColor);
+                        position: absolute;
+                        top: 2px;
+                        left: 0;
+                    }
+                    h6 {
+                        font-size: 16px;
+                        margin-top: 3px;
+                    }
+                }
+            }
+        }
+        .image {
+            text-align: end;
+            max-width: 217px;
+            margin-left: auto;
+            padding: {
+                top: 10px;
+                right: 22px;
+                bottom: 10px;
+            };
+            .main-image {
+                animation: spin 5s linear infinite;
+            }
+            .shape1 {
+                right: 0;
+                bottom: 0;
+                position: absolute;
+            }
+            .shape2 {
+                top: 0;
+                left: 0;
+                position: absolute;
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .content {
+                margin: {
+                    right: 0;
+                    left: -55px;
+                };
+                .stats {
+                    .item {
+                        padding: {
+                            left: 0;
+                            right: 33px;
+                        };
+                        i {
+                            right: 0;
+                            left: auto;
+                        }
+                    }
+                }
+            }
+            .image {
+                margin: {
+                    right: auto;
+                    left: 0;
+                };
+                padding: {
+                    right: 0;
+                    left: 22px;
+                };
+                .shape1 {
+                    transform: scaleX(-1);
+                    right: auto;
+                    left: 0;
+                }
+                .shape2 {
+                    transform: scaleX(-1);
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .restaurant-welcome-card {
+        .trezo-card-content {
+            text-align: center;
+            padding: {
+                top: 5px;
+                bottom: 5px;
+            };
+            .content {
+                margin: {
+                    right: 0;
+                    bottom: 17px;
+                };
+                .sub-title {
+                    font-size: 14px;
+                }
+                h1 {
+                    font-size: 24px;
+                }
+                .stats {
+                    justify-content: center;
+                    margin-top: 12px;
+                    gap: 17px;
+                }
+            }
+            .image {
+                text-align: center;
+                margin-right: auto;
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .content {
+                    margin-left: 0;
+                }
+                .image {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .restaurant-welcome-card {
+        .trezo-card-content {
+            .content {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .restaurant-welcome-card {
+        .trezo-card-content {
+            padding: {
+                top: 20px;
+                bottom: 20px;
+            };
+            .content {
+                margin-right: 0;
+    
+                h1 {
+                    font-size: 26px;
+                }
+                .stats {
+                    margin-top: 20px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .content {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .restaurant-welcome-card {
+        .trezo-card-content {
+            .content {
+                max-width: 330px;
+                margin-right: 0;
+                
+                h1 {
+                    font-size: 32px;
+                }
+                .stats {
+                    gap: 40px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .content {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+}

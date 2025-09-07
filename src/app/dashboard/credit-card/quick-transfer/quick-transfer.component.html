@@ -1,0 +1,33 @@
+<div
+    class="quick-transfer-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Quick Transfer
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <form>
+            <div class="form-group">
+                <label class="form-label text-xs">
+                    Card Number
+                </label>
+                <input type="text" class="form-control fw-semibold" value="**** **** **** 1580">
+            </div>
+            <div class="form-group position-relative">
+                <label class="form-label text-xs">
+                    Transfer Amount
+                </label>
+                <input type="text" class="form-control fw-semibold" value="$1,580">
+                <button type="button" class="send-btn p-0 transition d-flex align-items-center justify-content-center border-0 border-radius">
+                    <i class="material-symbols-outlined">
+                        send_money
+                    </i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

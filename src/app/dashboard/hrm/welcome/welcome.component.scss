@@ -1,0 +1,89 @@
+.hrm-welcome-card {
+    .trezo-card-content {
+        h5 {
+            margin-bottom: 4px;
+            font-size: 20px;
+        }
+        .buttons-list {
+            gap: 10px;
+
+            button {
+                padding: 4.5px 12px;
+                color: var(--purpleColor);
+                background-color: #F3E8FF;
+
+                span {
+                    gap: 4px;
+                    display: flex;
+                    align-items: center;
+                    
+                    i {
+                        font-size: 18px;
+                        line-height: 1;
+                    }
+                }
+                &:nth-child(2) {
+                    color: var(--orangeColor);
+                    background-color: #ffe8d4;
+                }
+            }
+        }
+    }
+    &.component-card-borderd, &.component-body-bg-color {
+        border-width: 0 !important;
+    }
+    &.component-card-with-box-shadow, &.component-body-bg-color {
+        box-shadow: unset !important;
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .buttons-list {
+                button {
+                    background-color: #15203c;
+    
+                    &:nth-child(2) {
+                        background-color: #15203c;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .hrm-welcome-card {
+        .trezo-card-content {
+            .buttons-list {
+                margin-top: 13px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .hrm-welcome-card {
+        .trezo-card-content {
+            .buttons-list {
+                margin-top: 13px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

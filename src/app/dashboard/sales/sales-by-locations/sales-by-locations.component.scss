@@ -1,0 +1,303 @@
+.sales-by-locations-card {
+    border: 1px solid var(--borderColor);
+    
+    .trezo-card-content {
+        .basic-table {
+            margin-top: 10px;
+
+            table {
+                thead {
+                    tr {
+                        th {
+                            font-size: 12px;
+                            text-align: end;
+                            color: var(--bodyColor);
+                            background-color: transparent;
+                            padding: {
+                                top: 0;
+                                bottom: 7px;
+                            };
+                            &:first-child {
+                                text-align: start;
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            text-align: end;
+                            border: {
+                                left-width: 0;
+                                right-width: 0;
+                            };
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            };
+                            .customer-info {
+                                .img {
+                                    width: 22px;
+                                    border-radius: 0;
+        
+                                    img {
+                                        border-radius: 0;
+                                        margin-bottom: 2px;
+                                    }
+                                }
+                                span {
+                                    margin-left: 8px;
+                                }
+                            }
+                            &:first-child {
+                                text-align: start;
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                        &:last-child {
+                            td {
+                                padding-bottom: 0;
+                                border-bottom-width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .basic-table {
+                table {
+                    thead {
+                        tr {
+                            th {
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                .customer-info {
+                                    span {
+                                        margin: {
+                                            left: 0;
+                                            right: 8px;
+                                        };
+                                    }
+                                }
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-card-with-box-shadow {
+        &.shadow-none {
+            box-shadow: unset !important;
+        }
+    }
+    &.component-body-bg-color {
+        box-shadow: unset !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .sales-by-locations-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 217px0px;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .sales-by-locations-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .sales-by-locations-card {
+        .trezo-card-content {
+            .basic-table {
+                table {
+                    thead {
+                        tr {
+                            th {
+                                padding: {
+                                    bottom: 9px;
+                                };
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                padding: {
+                                    top: 12px;
+                                    bottom: 12px;
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .sales-by-locations-card {
+        .trezo-card-content {
+            .basic-table {
+                table {
+                    thead {
+                        tr {
+                            th {
+                                padding: {
+                                    bottom: 9px;
+                                };
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                padding: {
+                                    top: 12px;
+                                    bottom: 12px;
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

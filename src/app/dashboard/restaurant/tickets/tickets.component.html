@@ -1,0 +1,181 @@
+<div class="tickets-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Tickets
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <!-- <thead>
+                    <tr>
+                        <th scope="col" class="fw-bold"></th>
+                        <th scope="col" class="fw-bold"></th>
+                        <th scope="col" class="fw-bold"></th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #3242
+                        </td>
+                        <td class="reviews">
+                            <span class="ticket-title d-block fw-semibold">
+                                Order delayed for 5 mins
+                            </span>
+                            <p>
+                                Updated on: 10 Nov, 2025
+                            </p>
+                        </td>
+                        <td>
+                            <span class="trezo-badge finished">
+                                Solved
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #3243
+                        </td>
+                        <td class="reviews">
+                            <span class="ticket-title d-block fw-semibold">
+                                Provide rotten Burger
+                            </span>
+                            <p>
+                                Updated on: 10 Nov, 2025
+                            </p>
+                        </td>
+                        <td>
+                            <span class="trezo-badge pPending">
+                                Pending
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #3244
+                        </td>
+                        <td class="reviews">
+                            <span class="ticket-title d-block fw-semibold">
+                                Too much salt in pizza
+                            </span>
+                            <p>
+                                Updated on: 10 Nov, 2025
+                            </p>
+                        </td>
+                        <td>
+                            <span class="trezo-badge finished">
+                                Solved
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #3245
+                        </td>
+                        <td class="reviews">
+                            <span class="ticket-title d-block fw-semibold">
+                                Order delayed for 5 mins
+                            </span>
+                            <p>
+                                Updated on: 10 Nov, 2025
+                            </p>
+                        </td>
+                        <td>
+                            <span class="trezo-badge finished">
+                                Solved
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #3246
+                        </td>
+                        <td class="reviews">
+                            <span class="ticket-title d-block fw-semibold">
+                                Delivery man misbehaved
+                            </span>
+                            <p>
+                                Updated on: 10 Nov, 2025
+                            </p>
+                        </td>
+                        <td>
+                            <span class="trezo-badge pPending">
+                                Pending
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #3247
+                        </td>
+                        <td class="reviews">
+                            <span class="ticket-title d-block fw-semibold">
+                                App doesn’t work
+                            </span>
+                            <p>
+                                Updated on: 10 Nov, 2025
+                            </p>
+                        </td>
+                        <td>
+                            <span class="trezo-badge finished">
+                                Solved
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #3244
+                        </td>
+                        <td class="reviews">
+                            <span class="ticket-title d-block fw-semibold">
+                                Too much salt in pizza
+                            </span>
+                            <p>
+                                Updated on: 10 Nov, 2025
+                            </p>
+                        </td>
+                        <td>
+                            <span class="trezo-badge finished">
+                                Solved
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

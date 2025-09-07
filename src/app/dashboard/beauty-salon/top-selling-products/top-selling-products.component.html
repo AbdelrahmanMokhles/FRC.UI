@@ -1,0 +1,250 @@
+<div
+    class="top-selling-products-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Top Selling Products
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative" id="menu1">
+                <button class="menu-btn bg-gray border-0 transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        This Month
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <owl-carousel-o [options]="topSellingProductsSlides">
+            <ng-template carouselSlide>
+                <div class="product-item">
+                    <a routerLink="/dashboard/ecommerce-page/product-details" class="image d-block border-radius" style="background-image: url(images/products/product24.jpg);"></a>
+                    <div class="content d-flex justify-content-between">
+                        <div class="title">
+                            <h6 class="fw-semibold">
+                                <a routerLink="/dashboard/ecommerce-page/product-details">
+                                    Hair Treatment
+                                </a>
+                            </h6>
+                            <span class="price d-block fw-semibold">
+                                $23.50
+                            </span>
+                        </div>
+                        <div class="sold">
+                            <span class="trezo-badge shipped">
+                                321
+                            </span>
+                            <span class="d-block">
+                                sold
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="product-item">
+                    <a routerLink="/dashboard/ecommerce-page/product-details" class="image d-block border-radius" style="background-image: url(images/products/product25.jpg);"></a>
+                    <div class="content d-flex justify-content-between">
+                        <div class="title">
+                            <h6 class="fw-semibold">
+                                <a routerLink="/dashboard/ecommerce-page/product-details">
+                                    Facial Kit
+                                </a>
+                            </h6>
+                            <span class="price d-block fw-semibold">
+                                $20.50
+                            </span>
+                        </div>
+                        <div class="sold">
+                            <span class="trezo-badge shipped">
+                                124
+                            </span>
+                            <span class="d-block">
+                                sold
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="product-item">
+                    <a routerLink="/dashboard/ecommerce-page/product-details" class="image d-block border-radius" style="background-image: url(images/products/product26.jpg);"></a>
+                    <div class="content d-flex justify-content-between">
+                        <div class="title">
+                            <h6 class="fw-semibold">
+                                <a routerLink="/dashboard/ecommerce-page/product-details">
+                                    Winter Cream
+                                </a>
+                            </h6>
+                            <span class="price d-block fw-semibold">
+                                $12.43
+                            </span>
+                        </div>
+                        <div class="sold">
+                            <span class="trezo-badge shipped">
+                                99
+                            </span>
+                            <span class="d-block">
+                                sold
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="product-item">
+                    <a routerLink="/dashboard/ecommerce-page/product-details" class="image d-block border-radius" style="background-image: url(images/products/product27.jpg);"></a>
+                    <div class="content d-flex justify-content-between">
+                        <div class="title">
+                            <h6 class="fw-semibold">
+                                <a routerLink="/dashboard/ecommerce-page/product-details">
+                                    Perfume
+                                </a>
+                            </h6>
+                            <span class="price d-block fw-semibold">
+                                $22.12
+                            </span>
+                        </div>
+                        <div class="sold">
+                            <span class="trezo-badge shipped">
+                                23
+                            </span>
+                            <span class="d-block">
+                                sold
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="product-item">
+                    <a routerLink="/dashboard/ecommerce-page/product-details" class="image d-block border-radius" style="background-image: url(images/products/product24.jpg);"></a>
+                    <div class="content d-flex justify-content-between">
+                        <div class="title">
+                            <h6 class="fw-semibold">
+                                <a routerLink="/dashboard/ecommerce-page/product-details">
+                                    Hair Treatment
+                                </a>
+                            </h6>
+                            <span class="price d-block fw-semibold">
+                                $23.50
+                            </span>
+                        </div>
+                        <div class="sold">
+                            <span class="trezo-badge shipped">
+                                321
+                            </span>
+                            <span class="d-block">
+                                sold
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="product-item">
+                    <a routerLink="/dashboard/ecommerce-page/product-details" class="image d-block border-radius" style="background-image: url(images/products/product25.jpg);"></a>
+                    <div class="content d-flex justify-content-between">
+                        <div class="title">
+                            <h6 class="fw-semibold">
+                                <a routerLink="/dashboard/ecommerce-page/product-details">
+                                    Facial Kit
+                                </a>
+                            </h6>
+                            <span class="price d-block fw-semibold">
+                                $20.50
+                            </span>
+                        </div>
+                        <div class="sold">
+                            <span class="trezo-badge shipped">
+                                124
+                            </span>
+                            <span class="d-block">
+                                sold
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="product-item">
+                    <a routerLink="/dashboard/ecommerce-page/product-details" class="image d-block border-radius" style="background-image: url(images/products/product26.jpg);"></a>
+                    <div class="content d-flex justify-content-between">
+                        <div class="title">
+                            <h6 class="fw-semibold">
+                                <a routerLink="/dashboard/ecommerce-page/product-details">
+                                    Winter Cream
+                                </a>
+                            </h6>
+                            <span class="price d-block fw-semibold">
+                                $12.43
+                            </span>
+                        </div>
+                        <div class="sold">
+                            <span class="trezo-badge shipped">
+                                99
+                            </span>
+                            <span class="d-block">
+                                sold
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="product-item">
+                    <a routerLink="/dashboard/ecommerce-page/product-details" class="image d-block border-radius" style="background-image: url(images/products/product27.jpg);"></a>
+                    <div class="content d-flex justify-content-between">
+                        <div class="title">
+                            <h6 class="fw-semibold">
+                                <a routerLink="/dashboard/ecommerce-page/product-details">
+                                    Perfume
+                                </a>
+                            </h6>
+                            <span class="price d-block fw-semibold">
+                                $22.12
+                            </span>
+                        </div>
+                        <div class="sold">
+                            <span class="trezo-badge shipped">
+                                23
+                            </span>
+                            <span class="d-block">
+                                sold
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>

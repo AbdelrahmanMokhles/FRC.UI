@@ -1,0 +1,348 @@
+<div
+    class="featured-card trezo-card p-0 d-block border-0 shadow-none"
+    [class.component-card-borderd]="themeService.isCardBordered()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-card-with-box-shadow]="themeService.isCardWithBoxShadow()"
+    [class.component-card-without-border-radius]="themeService.isCardWithoutBorderRadius()"
+    [class.component-body-bg-color]="themeService.isBodyBG()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Featured NFT Artworks
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <a routerLink="/dashboard/nft-marketplace-page/explore-all" class="view-all-btn d-inline-block">
+                <span class="d-inline-block position-relative">
+                    Browse All
+                    <i class="ri-arrow-right-s-line"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="row">
+            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                <div class="nft-item mb-25 bg-white border-radius">
+                    <div class="image position-relative border-radius">
+                        <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="d-block border-radius">
+                            <img src="images/nfts/featured1.jpg" class="border-radius" alt="nft-image">
+                        </a>
+                        <button type="button" class="bid-btn">
+                            Place Bid
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35246
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Christmas Eve
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">9.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                5.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.2/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                <div class="nft-item mb-25 bg-white border-radius">
+                    <div class="image position-relative border-radius">
+                        <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="d-block border-radius">
+                            <img src="images/nfts/featured2.jpg" class="border-radius" alt="nft-image">
+                        </a>
+                        <button type="button" class="bid-btn">
+                            Place Bid
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35247
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Humming Bird
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">10.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                12.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.5/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                <div class="nft-item mb-25 bg-white border-radius">
+                    <div class="image position-relative border-radius">
+                        <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="d-block border-radius">
+                            <img src="images/nfts/featured3.jpg" class="border-radius" alt="nft-image">
+                        </a>
+                        <button type="button" class="bid-btn">
+                            Place Bid
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35228
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Naughty Pool
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">8.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                9.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.7/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                <div class="nft-item mb-25 bg-white border-radius">
+                    <div class="image position-relative border-radius">
+                        <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="d-block border-radius">
+                            <img src="images/nfts/featured4.jpg" class="border-radius" alt="nft-image">
+                        </a>
+                        <button type="button" class="bid-btn">
+                            Place Bid
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35227
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Hello Thumbs
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">9.30 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                8.15 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.3/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                <div class="nft-item mb-25 bg-white border-radius">
+                    <div class="image position-relative border-radius">
+                        <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="d-block border-radius">
+                            <img src="images/nfts/featured5.jpg" class="border-radius" alt="nft-image">
+                        </a>
+                        <button type="button" class="bid-btn">
+                            Place Bid
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35248
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Pixel Watermelon
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">1.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                3.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.1/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                <div class="nft-item mb-25 bg-white border-radius">
+                    <div class="image position-relative border-radius">
+                        <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="d-block border-radius">
+                            <img src="images/nfts/featured6.gif" class="border-radius" alt="nft-image">
+                        </a>
+                        <button type="button" class="bid-btn">
+                            Place Bid
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35258
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        BDancing Cookies
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">10.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                12.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.1/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                <div class="nft-item mb-25 bg-white border-radius">
+                    <div class="image position-relative border-radius">
+                        <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="d-block border-radius">
+                            <img src="images/nfts/featured7.jpg" class="border-radius" alt="nft-image">
+                        </a>
+                        <button type="button" class="bid-btn">
+                            Place Bid
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35158
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Rotating Flower
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">3.95 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                6.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">8.7/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                <div class="nft-item mb-25 bg-white border-radius">
+                    <div class="image position-relative border-radius">
+                        <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="d-block border-radius">
+                            <img src="images/nfts/featured8.jpg" class="border-radius" alt="nft-image">
+                        </a>
+                        <button type="button" class="bid-btn">
+                            Place Bid
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35782
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Flying Bulb
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">8.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                9.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.7/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

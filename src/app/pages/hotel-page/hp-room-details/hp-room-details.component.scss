@@ -1,0 +1,218 @@
+.room-details-images-card {
+    padding: 13px;
+    margin-bottom: 15px;
+}
+.room-details-card {
+    height: 100%;
+
+    .trezo-card-content {
+        .author-info {
+            gap: 15px;
+
+            img {
+                width: 85px;
+            }
+            h3 {
+                font-size: 24px;
+                margin: {
+                    top: 6px;
+                    bottom: 10px;
+                };
+            }
+            ul {
+                li {
+                    margin-right: 20px;
+                    padding-left: 25px;
+
+                    i {
+                        left: 0;
+                        top: 50%;
+                        font-size: 18px;
+                        position: absolute;
+                        color: var(--orangeColor);
+                        transform: translateY(-50%);
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        .check-in-out-info {
+            gap: 40px;
+
+            .date {
+                gap: 10px;
+            }
+        }
+        .border-top {
+            border-color: var(--borderColor) !important;
+            margin: {
+                top: 25px;
+                bottom: 25px;
+            };
+        }
+        h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .room-info {
+            margin: {
+                bottom: 25px;
+                top: 15px;
+            };
+            .item {
+                padding: 10px 20px;
+                border: 1px solid var(--borderColor);
+            }
+            .col-md-6 {
+                &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+                    .item {
+                        border-bottom-width: 0;
+                    }
+                }
+                &:nth-child(1), &:nth-child(3), &:nth-child(5), &:nth-child(7), &:nth-child(9), &:nth-child(11) {
+                    .item {
+                        border-right-width: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .author-info {
+                ul {
+                    li {
+                        margin: {
+                            right: 0;
+                            left: 20px;
+                        };
+                        padding: {
+                            left: 0;
+                            right: 25px;
+                        };
+                        i {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .room-details-card {
+        height: auto;
+        margin-top: 25px;
+    
+        .trezo-card-content {
+            .author-info {
+                img {
+                    margin-bottom: 15px;
+                }
+                h3 {
+                    font-size: 20px;
+                    margin: {
+                        top: 5px;
+                        bottom: 8px;
+                    };
+                }
+                ul {
+                    li {
+                        margin: 8px 0 0;
+                        display: block !important;
+                    }
+                }
+            }
+            .check-in-out-info {
+                .date {
+                    margin-bottom: 15px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .border-top {
+                margin: {
+                    top: 17px;
+                    bottom: 17px;
+                };
+            }
+            h4 {
+                font-size: 16px;
+            }
+            .room-info {
+                margin: {
+                    bottom: 17px;
+                    top: 15px;
+                };
+                .item {
+                    padding: 10px 15px;
+                }
+                .col-md-6 {
+                    &:nth-child(7) {
+                        .item {
+                            border-bottom-width: 0;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5), &:nth-child(7), &:nth-child(9), &:nth-child(11) {
+                        .item {
+                            border-right-width: 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .room-details-card {
+        .trezo-card-content {
+            .border-top {
+                margin: {
+                    top: 20px;
+                    bottom: 20px;
+                };
+            }
+            .room-info {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .room-details-card {
+        height: auto;
+        margin-top: 25px;
+    
+        .trezo-card-content {
+            h4 {
+                font-size: 17px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

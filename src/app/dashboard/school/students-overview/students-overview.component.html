@@ -1,0 +1,78 @@
+<div
+    class="students-overview-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Students Overview
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        {{ selectedTimeframe }}
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last Day')">
+                                Last Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last Week')">
+                                Last Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last Month')">
+                                Last Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last Year')">
+                                Last Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="chart">
+            <div id="students_overview_chart"></div>
+        </div>
+        <div class="info d-flex align-items-center">
+            <div class="item d-flex align-items-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <img src="images/icons/boys.svg" alt="boys">
+                </div>
+                <div>
+                    <span class="d-block">
+                        Boys
+                    </span>
+                    <h5 class="mb-0 fw-semibold">
+                        980
+                    </h5>
+                </div>
+            </div>
+            <div class="item d-flex align-items-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <img src="images/icons/girls.svg" alt="girls">
+                </div>
+                <div>
+                    <span class="d-block">
+                        Girls
+                    </span>
+                    <h5 class="mb-0 fw-semibold">
+                        675
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

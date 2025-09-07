@@ -1,0 +1,194 @@
+.my-featured-listings-card {
+    background-color: #FFE8D4;
+
+    .trezo-card-content {
+        .image {
+            height: 202px;
+            border-radius: 7px 7px 0 0;
+            background: {
+                position: center center;
+                repeat: no-repeat;
+                size: cover;
+            };
+            .trezo-badge {
+                top: 10px;
+                left: 10px;
+                position: absolute;
+            }
+        }
+        .content {
+            padding: 20px;
+            border-radius: 0 0 7px 7px;
+
+            h6 {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+            ul {
+                margin-top: 13px;
+
+                li {
+                    padding-left: 23px;
+
+                    i {
+                        left: 0;
+                        top: 50%;
+                        font-size: 18px;
+                        position: absolute;
+                        color: var(--bodyColor);
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            .info {
+                border-top: 1px solid var(--borderColor);
+                padding-top: 13px;
+                margin-top: 13px;
+
+                .price {
+                    font-size: 16px;
+                }
+                .link-btn {
+                    width: 30px;
+                    height: 30px;
+                    color: var(--bodyColor);
+                    background-color: var(--borderColor);
+
+                    &:hover {
+                        color: var(--whiteColor);
+                        background-color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .image {
+                .trezo-badge {
+                    right: 10px;
+                    left: auto;
+                }
+            }
+            .content {
+                direction: rtl;
+    
+                ul {
+                    li {
+                        padding: {
+                            left: 0;
+                            right: 23px;
+                        };
+                        i {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        background-color: #15203c;
+    }
+}
+::ng-deep {
+    .my-featured-listings-card {
+        .trezo-card-content {
+            .owl-theme {
+                .owl-nav {
+                    &.disabled + .owl-dots {
+                        margin-top: 0;
+                    }
+                }
+                .owl-dots {
+                    align-items: center;
+                    position: absolute;
+                    display: flex;
+                    top: -37px;
+                    gap: 5px;
+                    right: 0;
+
+                    .owl-dot {
+                        span {
+                            background-color: var(--whiteColor);
+                            height: 5px;
+                            width: 5px;
+                            margin: 0;
+                        }
+                        &.active {
+                            span {
+                                width: 24px;
+                                background-color: var(--orangeColor);
+                            }
+                        }
+                        &:hover {
+                            span {
+                                background-color: var(--orangeColor);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-dots {
+                        right: auto;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .my-featured-listings-card {
+        .trezo-card-content {
+            .content {
+                padding: 17px;
+            }
+        }
+    }
+    ::ng-deep {
+        .my-featured-listings-card {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-dots {
+                        top: -29px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .my-featured-listings-card {
+        .trezo-card-content {
+            .content {
+                padding: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

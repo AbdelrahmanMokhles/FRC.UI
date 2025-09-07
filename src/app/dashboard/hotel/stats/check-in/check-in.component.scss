@@ -1,0 +1,80 @@
+.check-in-card {
+    padding: 20px;
+
+    .trezo-card-content {
+        h1 {
+            font: {
+                size: 28px;
+                weight: 900;
+            };
+            margin: {
+                top: 6px;
+                bottom: 11px;
+            };
+        }
+        .trezo-badge {
+            border-radius: 30px;
+        }
+        .icon {
+            width: 79px;
+            height: 79px;
+            margin: {
+                left: auto;
+                top: -15px;
+            };
+        }
+    }
+    &.component-dark-theme {
+        background-color: #0A0E19 !important;
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .icon {
+                margin: {
+                    left: 0;
+                    right: auto;
+                };
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .check-in-card {
+        padding: 17px;
+    
+        .trezo-card-content {
+            h1 {
+                font-size: 26px;
+                margin-top: 5px;
+            }
+            .icon {
+                margin-top: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .check-in-card {
+        padding: 20px;
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

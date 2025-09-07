@@ -1,0 +1,87 @@
+<div
+    class="linkedin-net-followers-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                LinkedIn Net Followers
+            </h5>
+            <p class="fw-normal">
+                Net followers growth: <span class="text-primary">+275</span>
+            </p>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        {{ selectedTimeframe }}
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last Day')">
+                                Last Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last Week')">
+                                Last Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last Month')">
+                                Last Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last Year')">
+                                Last Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="funfacts-list d-sm-flex align-items-center p-0 m-0 list-unstyled">
+            <li>
+                <span class="fw-medium text-black">
+                    56,100
+                </span>
+                <span class="d-block text-xs">
+                    Starting Followers
+                </span>
+            </li>
+            <li>
+                <span class="fw-medium text-black">
+                    300
+                </span>
+                <span class="d-block text-xs">
+                    New Followers
+                </span>
+            </li>
+            <li>
+                <span class="fw-medium text-black">
+                    25
+                </span>
+                <span class="d-block text-xs">
+                    Unfollows
+                </span>
+            </li>
+            <li>
+                <span class="fw-medium text-black">
+                    56,375
+                </span>
+                <span class="d-block text-xs">
+                    Ending Followers
+                </span>
+            </li>
+        </ul>
+        <div class="chart">
+            <div id="linkedin_net_followers_chart"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,140 @@
+<div
+    class="cc-overview-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Overview
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        This Year
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="overview-tabs row aling-items-center p-0 mt-0 mb-0 list-unstyled">
+            <li class="col-md-4">
+                <button id="tab1" (click)="switchTab($event, 'tab1')" type="button" [ngClass]="{'active': currentTab === 'tab1'}">
+                    <div class="top d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="d-block">
+                                Total Calls
+                            </span>
+                            <h5 class="mb-0 fw-semibold">
+                                26,435
+                            </h5>
+                        </div>
+                        <img src="images/icons/call5.svg" alt="call">
+                        <img src="images/icons/call4.svg" class="d-none" alt="call">
+                    </div>
+                    <span class="trending d-block fw-medium position-relative">
+                        <i class="material-symbols-outlined">
+                            trending_up
+                        </i>
+                        +15%
+                        <span class="fw-normal">
+                            last year
+                        </span>
+                    </span>
+                </button>
+            </li>
+            <li class="col-md-4">
+                <button id="tab2" (click)="switchTab($event, 'tab2')" type="button" [ngClass]="{'active': currentTab === 'tab2'}">
+                    <div class="top d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="d-block">
+                                Answered Calls
+                            </span>
+                            <h5 class="mb-0 fw-semibold">
+                                18,520
+                            </h5>
+                        </div>
+                        <img src="images/icons/call3.svg" alt="call">
+                        <img src="images/icons/call6.svg" class="d-none" alt="call">
+                    </div>
+                    <span class="trending d-block fw-medium position-relative">
+                        <i class="material-symbols-outlined">
+                            trending_up
+                        </i>
+                        +7.5%
+                        <span class="fw-normal">
+                            last year
+                        </span>
+                    </span>
+                </button>
+            </li>
+            <li class="col-md-4">
+                <button id="tab3" (click)="switchTab($event, 'tab3')" type="button" [ngClass]="{'active': currentTab === 'tab3'}">
+                    <div class="top d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="d-block">
+                                Missed Calls
+                            </span>
+                            <h5 class="mb-0 fw-semibold">
+                                3,735
+                            </h5>
+                        </div>
+                        <img src="images/icons/call7.svg" alt="call">
+                        <img src="images/icons/call8.svg" class="d-none" alt="call">
+                    </div>
+                    <span class="trending down d-block fw-medium position-relative">
+                        <i class="material-symbols-outlined">
+                            trending_down
+                        </i>
+                        -25%
+                        <span class="fw-normal">
+                            last year
+                        </span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+        @if (currentTab === 'tab1') {
+            <div class="tab-pane">
+                <app-total-calls />
+            </div>
+        }
+        @if (currentTab === 'tab2') {
+            <div class="tab-pane">
+                <app-answered-calls />
+            </div>
+        }
+        @if (currentTab === 'tab3') {
+            <div class="tab-pane">
+                <app-missed-calls />
+            </div>
+        }
+    </div>
+</div>

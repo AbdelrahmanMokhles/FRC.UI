@@ -1,0 +1,172 @@
+// Today's Schedule
+.todays-schedule-card {
+    .trezo-card-content {
+        .calendar {
+            .header {
+                margin-bottom: 20px;
+
+                button {
+                    background-color: var(--borderColor);
+                    color: var(--blackColor);
+                    height: 30px;
+                    width: 30px;
+
+                    &:hover {
+                        background-color: var(--primaryColor);
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+            .weekdays {
+                margin-bottom: 6px;
+            }
+            .weekdays, .days {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+            }
+            .days {
+                div {
+                    width: 32px;
+                    height: 32px;
+                    cursor: pointer;
+                    line-height: 31px;
+                    border-radius: 50%;
+                    margin: {
+                        top: 7px;
+                        left: auto;
+                        bottom: 7px;
+                        right: auto;
+                    };
+                }
+                .current-day {
+                    background-color: var(--primaryColor);
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .calendar {
+                .header {
+                    button {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .calendar {
+                .header {
+                    button {
+                        i {
+                            transform: scaleX(-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.component-body-bg-color, .component-card-with-box-shadow {
+    &.shadow-none {
+        box-shadow: unset !important;
+    }
+}
+.component-body-bg-color, .component-card-borderd {
+    &.shadow-none {
+        border-width: 0 !important;
+    }
+}
+
+// Add New Popup
+.add-new-popup {
+    .popup-dialog {
+        .trezo-card {
+            .trezo-card-content {
+                ul {
+                    li {
+                        font-size: 16px;
+                        margin-bottom: 25px;
+
+                        span {
+                            font-size: var(--fontSize);
+                            margin-bottom: 4px;
+                        }
+                        &.time {
+                            font: {
+                                size: 28px;
+                                weight: 900;
+                            };
+                        }
+                        .patient-name {
+                            gap: 8px;
+
+                            img {
+                                width: 24px;
+                            }
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                        .trezo-badge {
+                            border-radius: 30px;
+                            padding: 1px 10px;
+                            font-size: 12px;
+                        }
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    // Add New Popup
+    .add-new-popup {
+        .popup-dialog {
+            .trezo-card {
+                .trezo-card-content {
+                    ul {
+                        li {
+                            font-size: 15px;
+                            margin-bottom: 20px;
+
+                            &.time {
+                                font-size: 24px;
+                            }
+                            .patient-name {
+                                span {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

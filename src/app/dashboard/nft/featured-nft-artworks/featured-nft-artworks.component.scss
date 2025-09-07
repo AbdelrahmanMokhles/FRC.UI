@@ -1,0 +1,245 @@
+.featured-nft-artworks-card {
+    .trezo-card-header {
+        .trezo-card-title {
+            padding-top: 3px;
+        }
+    }
+    .trezo-card-content {
+        .nft-item {
+            padding: 10px;
+
+            .image {
+                height: 178px;
+                background: {
+                    position: center center;
+                    repeat: no-repeat;
+                    size: cover;
+                };
+            }
+            .content {
+                margin-top: 12px;
+
+                .title {
+                    gap: 10px;
+
+                    img {
+                        width: 27px;
+                    }
+                    span {
+                        font-size: 12px;
+                    }
+                }
+                .verified {
+                    width: 20px;
+                }
+                .bid {
+                    font-size: 12px;
+                    padding-top: 13px;
+                    border-top: 1px solid var(--borderColor);
+                    margin: {
+                        top: 12px;
+                        bottom: 5px;
+                    };
+                    span {
+                        margin-left: 2px;
+                    }
+                }
+                .info {
+                    margin-bottom: 7px;
+
+                    .rating {
+                        font-size: 12px;
+                        padding-left: 22px;
+
+                        i {
+                            left: 0;
+                            top: 50%;
+                            font-size: 18px;
+                            color: #ee3e08;
+                            position: absolute;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .nft-item {
+                direction: rtl;
+                
+                .content {
+                    .bid {
+                        span {
+                            margin: {
+                                left: 0;
+                                right: 2px;
+                            };
+                        }
+                    }
+                    .info {
+                        .rating {
+                            padding: {
+                                left: 0;
+                                right: 22px;
+                            };
+                            i {
+                                left: auto;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-card-borderd {
+        border-width: 0 !important;
+
+        .trezo-card-content {
+            .nft-item {
+                border: 1px solid var(--borderColor) !important;
+            }
+        }
+    }
+    &.component-card-with-box-shadow {
+        box-shadow: unset !important;
+
+        .trezo-card-content {
+            .nft-item {
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+            }
+        }
+    }
+    &.component-card-without-border-radius {
+        .trezo-card-content {
+            .nft-item {
+                border-radius: 0 !important;
+            }
+        }
+    }
+    &.component-body-bg-color {
+        border-width: 0 !important;
+        box-shadow: unset !important;
+
+        .trezo-card-content {
+            .nft-item {
+                box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.05) !important;
+                border: 1px solid var(--borderColor) !important;
+            }
+        }
+        &.component-card-with-box-shadow {
+            .trezo-card-content {
+                .nft-item {
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+                }
+            }
+        }
+    }
+}
+::ng-deep {
+    .featured-nft-artworks-card {
+        .trezo-card-content {
+            .owl-theme {
+                .owl-nav {
+                    right: 0;
+                    top: -48px;
+                    margin-top: 0;
+                    position: absolute;
+
+                    [class*=owl-] {
+                        padding: 0;
+                        width: 30px;
+                        height: 30px;
+                        margin: 0 5px;
+                        font-size: 18px;
+                        line-height: 28px;
+                        border-radius: 50%;
+                        color: var(--blackColor);
+                        transition: var(--transition);
+                        background-color: transparent;
+                        border: 1px solid var(--blackColor);
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &:hover {
+                            color: var(--whiteColor);
+                            border-color: var(--primaryColor);
+                            background-color: var(--primaryColor);
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-nav {
+                        right: auto;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .featured-nft-artworks-card {
+        .trezo-card-header {
+            .trezo-card-title {
+                padding-top: 0;
+            }
+        }
+    }
+    ::ng-deep {
+        .featured-nft-artworks-card {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-nav {
+                        top: 0;
+                        margin-top: 15px;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    ::ng-deep {
+        .featured-nft-artworks-card {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-nav {
+                        top: -45px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

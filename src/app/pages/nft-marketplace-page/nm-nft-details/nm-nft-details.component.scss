@@ -1,0 +1,432 @@
+.nft-details-images-card {
+    padding: 13px;
+    margin-bottom: 15px;
+}
+.place-bid-btn {
+    background-color: var(--primaryColor);
+    transition: var(--transition);
+    color: var(--whiteColor);
+    padding: 8px 25px;
+    margin-top: 15px;
+    font-size: 16px;
+
+    &:hover {
+        background-color: var(--secondaryColor);
+    }
+}
+.nft-details-card {
+    .trezo-card-content {
+        h2 {
+            font-size: 24px;
+            margin-top: 3px;
+        }
+        .author-info {
+            gap: 40px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--borderColor);
+
+            .author {
+                gap: 10px;
+
+                .img {
+                    padding-right: 7px;
+
+                    .verified {
+                        right: 0;
+                        bottom: 0;
+                        margin-bottom: 0;
+                        position: absolute;
+                    }
+                }
+            }
+            .date {
+                gap: 10px;
+            }
+        }
+        .item-info {
+            margin-top: 20px;
+            padding: 20px 25px;
+            background-color: #f6f7f9;
+        }
+        h3 {
+            font-size: 18px;
+            margin: {
+                top: 40px;
+                bottom: 12px;
+            };
+        }
+        .nft-details-tabs {
+            margin: {
+                top: 20px;
+                bottom: 14px;
+            };
+            li {
+                margin-right: 40px;
+
+                button {
+                    background-color: transparent;
+                    text-transform: uppercase;
+                    color: var(--bodyColor);
+                    display: inline-block;
+                    letter-spacing: 2px;
+                    padding: 0;
+                    border: 0;
+                    font: {
+                        size: 12px;
+                        weight: 600;
+                    };
+                    &:hover, &.active {
+                        color: var(--primaryColor);
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        .basic-table {
+            table, .table {
+                thead {
+                    tr {
+                        th {
+                            font-size: 10px;
+                            letter-spacing: 1px;
+                            color: var(--bodyColor);
+                            text-transform: uppercase;
+                            background-color: transparent;
+                            padding: {
+                                bottom: 11px;
+                                top: 0;
+                            };
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                                text-align: end;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            font-size: 12px;
+                            padding: {
+                                top: 11px;
+                                bottom: 11px;
+                            };
+                            border: {
+                                left-width: 0;
+                                right-width: 0;
+                            };
+                            .employee-info {
+                                gap: 10px;
+                                
+                                .img {
+                                    width: 48px;
+                                }
+                                span {
+                                    &:nth-child(1) {
+                                        margin-bottom: 1px;
+                                        font-size: var(--fontSize);
+                                    }
+                                }
+                            }
+                            .link-btn {
+                                width: 30px;
+                                height: 30px;
+                                font-size: 18px;
+                                background-color: var(--borderColor);
+
+                                &:hover {
+                                    background-color: var(--primaryColor);
+                                }
+                            }
+                            .ratings {
+                                line-height: 1;
+                                font-size: var(--fontSize);
+
+                                .number {
+                                    top: 1.7px;
+                                    font-size: 12px;
+                                    margin-left: 2px;
+                                }
+                            }
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                                text-align: end;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .additional-information-list {
+            border: 1px solid var(--borderColor);
+
+            li {
+                padding: 12px 20px;
+                border-bottom: 1px solid var(--borderColor);
+
+                &:last-child {
+                    border-bottom-width: 0;
+                }
+            }
+        }
+        .details-info {
+            border: 1px solid var(--borderColor);
+            padding: 15px;
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .item-info {
+                background-color: #0a0e19;
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .author-info {
+                .author {
+                    .img {
+                        padding: {
+                            right: 0;
+                            left: 7px;
+                        };
+                        .verified {
+                            right: auto;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+            .nft-details-tabs {
+                li {
+                    margin: {
+                        right: 0;
+                        left: 35px;
+                    };
+                    &:last-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+            .basic-table {
+                table, .table {
+                    thead {
+                        tr {
+                            th {
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                .ratings {
+                                    .number {
+                                        margin: {
+                                            left: 0;
+                                            right: 2px;
+                                        };
+                                    }
+                                }
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .place-bid-btn {
+        font-size: 14px;
+    }
+    .nft-details-card {
+        .trezo-card-content {
+            h2 {
+                font-size: 20px;
+            }
+            .author-info {
+                margin-top: 13px;
+                padding-top: 13px;
+    
+                .author {
+                    margin-bottom: 15px;
+                }
+            }
+            .item-info {
+                margin-top: 17px;
+                padding: 17px;
+
+                .item {
+                    margin-top: 17px;
+                }
+            }
+            h3 {
+                font-size: 16px;
+                margin: {
+                    top: 20px;
+                    bottom: 10px;
+                };
+            }
+            .nft-details-tabs {
+                li {
+                    margin-right: 15px;
+    
+                    button {
+                        letter-spacing: .3px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .nft-details-tabs {
+                li {
+                    margin: {
+                        right: 0;
+                        left: 15px;
+                    };
+                }
+            }
+            .basic-table {
+                table, .table {
+                    thead {
+                        tr {
+                            th {
+                                &:first-child {
+                                    padding: {
+                                        left: 17px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 17px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                &:first-child {
+                                    padding: {
+                                        left: 17px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 17px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .nft-details-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table, .table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

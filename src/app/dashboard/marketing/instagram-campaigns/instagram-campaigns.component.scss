@@ -1,0 +1,109 @@
+.instagram-campaigns-card {
+    .trezo-card-header {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .trezo-card-content {
+        .items {
+            gap: 25px;
+
+            .item {
+                .d-flex {
+                    gap: 5px;
+                    margin-bottom: 6px;
+                }
+                .dot {
+                    width: 10px;
+                    height: 10px;
+                    display: block;
+                    border-radius: 50%;
+                }
+                span {
+                    &:nth-child(2) {
+                        font-size: 13px;
+                    }
+                }
+                h3 {
+                    font-size: 20px;
+                }
+            }
+        }
+        .chart {
+            height: 79px;
+
+            .inner {
+                left: 0;
+                right: 0;
+                bottom: -55px;
+                position: absolute;
+                margin: {
+                    left: -37px;
+                    right: -35px;
+                };
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .instagram-campaigns-card {
+        .trezo-card-content {
+            .items {
+                gap: 15px;
+    
+                .item {
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+            }
+            .chart {
+                .inner {
+                    bottom: -55px;
+                    margin: {
+                        left: -29px;
+                        right: -27px;
+                    };
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .instagram-campaigns-card {
+        .trezo-card-content {
+            .items {
+                gap: 17px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .instagram-campaigns-card {
+        .trezo-card-content {
+            .items {
+                gap: 7px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

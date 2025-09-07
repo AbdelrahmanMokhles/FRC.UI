@@ -1,0 +1,234 @@
+::ng-deep {
+    .analytics-overview-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                button {
+                    font-size: 14px;
+                    border-radius: 0;
+                    padding: 1.5px 15px;
+                    color: var(--bodyColor);
+                    transition: var(--transition);
+                    background-color: transparent;
+                    border: 1px solid var(--borderColor);
+                    
+                    &.active, &:hover {
+                        background-color: #ECF0FF;
+                    }
+                    &:first-child {
+                        border-right-width: 0;
+                        border-radius: 7px 0 0 7px;
+                    }
+                    &:last-child {
+                        border-radius: 0 7px 7px 0;
+                        border-left-width: 0;
+                    }
+                }
+            }
+        }
+        .trezo-card-content {
+            margin-top: -22px;
+    
+            p {
+                font-size: 12px;
+            }
+            .chart {
+                margin: {
+                    left: -15px;
+                    bottom: -18px;
+                };
+            }
+            .content {
+                margin: 19px 0 0 -22px;
+
+                li {
+                    margin-bottom: 24px;
+
+                    span {
+                        font-size: 12px;
+                        margin-bottom: 3px;
+                    }
+                    h5 {
+                        font-size: 16px;
+                    }
+                    .progress {
+                        margin-top: 11px;
+                    }
+                    .page-views-progressbar {
+                        --bs-progress-bar-bg: var(--purpleColor);
+                    }
+                    .page-sessions-progressbar {
+                        --bs-progress-bar-bg: var(--secondaryColor);
+                    }
+                    .bounce-rate-progressbar {
+                        --bs-progress-bar-bg: var(--orangeColor);
+                    }
+                }
+            }
+        }
+        &.component-dark-theme {
+            .trezo-card-header {
+                .trezo-card-subtitle {
+                    button {
+                        &.active, &:hover {
+                            background-color: #15203c;
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-header {
+                .trezo-card-subtitle {
+                    button {
+                        &:first-child {
+                            border-radius: 0 7px 7px 0;
+                            border: {
+                                right-width: 1px;
+                                left-width: 0;
+                            };
+                        }
+                        &:last-child {
+                            border-radius: 7px 0 0 7px;
+                            border: {
+                                right-width: 0;
+                                left-width: 1px;
+                            };
+                        }
+                    }
+                }
+            }
+            .trezo-card-content {
+                .chart {
+                    margin: {
+                        left: 0;
+                        right: -15px;
+                    };
+                }
+                .content {
+                    margin: {
+                        left: 0;
+                        right: -22px;
+                    };
+                }
+            }
+        }
+    }
+}
+::ng-deep {
+    .analytics-overview-card {
+        .apexcharts-canvas {
+            .apexcharts-tooltip-series-group {
+                &.apexcharts-active {
+                    padding-bottom: 4px;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .analytics-overview-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                margin-top: 12px;
+
+                button {
+                    font-size: 12px;
+                    padding: 1.5px 13px;
+                }
+            }
+        }
+        .trezo-card-content {
+            margin-top: -5px;
+    
+            .chart {
+                margin: {
+                    top: -15px;
+                    bottom: -15px;
+                };
+            }
+            .content {
+                margin: 15px 0 0 0;
+
+                li {
+                    margin-bottom: 15px;
+
+                    h5 {
+                        font-size: 14px;
+                    }
+                    .progress {
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .content {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .analytics-overview-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                margin-top: 0;
+            }
+        }
+        .trezo-card-content {
+            margin-top: -18px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .analytics-overview-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                button {
+                    font-size: 13px;
+                }
+            }
+        }
+        .trezo-card-content {
+            margin-top: -20px;
+    
+            .content {
+                margin: 20px 0 0 0;
+
+                li {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .content {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

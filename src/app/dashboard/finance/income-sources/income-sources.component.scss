@@ -1,0 +1,69 @@
+.income-sources-card {
+    background: linear-gradient(120deg, #343A46 0%, #23272E 99.29%);
+
+    .trezo-card-content {
+        .chart {
+            margin: {
+                top: -10px;
+                bottom: -15px;
+            };
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .income-sources-card {
+        .trezo-card-content {
+            .chart {
+                margin: {
+                    top: 0;
+                    bottom: -7px;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .income-sources-card {
+        .trezo-card-content {
+            .chart {
+                margin: {
+                    top: -2px;
+                    bottom: -10px;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .income-sources-card {
+        .trezo-card-content {
+            .chart {
+                margin: {
+                    top: -2px;
+                    bottom: -10px;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

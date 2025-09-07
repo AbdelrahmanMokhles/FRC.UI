@@ -1,0 +1,38 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Appointments
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Doctor
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Appointments
+        </li>
+    </ol>
+</div>
+
+<!-- Appointments -->
+<div class="row">
+    <div class="col-lg-4">
+
+        <!-- Today's Schedule -->
+        <app-todays-schedule />
+
+    </div>
+    <div class="col-lg-8">
+
+        <!-- Today's Appointments -->
+        <app-todays-appointments />
+
+    </div>
+</div>

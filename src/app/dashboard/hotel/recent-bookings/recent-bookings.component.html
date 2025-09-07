@@ -1,0 +1,281 @@
+<div
+    class="recent-bookings-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Recent Bookings
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn bg-gray border-0 transition d-inline-block bg-transparent border-radius">
+                    <span class="d-block position-relative">
+                        {{ formattedDate }}
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="calendar">
+            <div class="header d-flex align-items-center justify-content-between">
+                <button (click)="previousMonth()" class="p-0 border-0 d-flex align-items-center justify-content-center rounded-circle transition">
+                    <i class="material-symbols-outlined">
+                        chevron_left
+                    </i>
+                </button>
+                <span class="fw-medium text-black">
+                    {{ monthNames[currentMonth] }} {{ currentYear }}
+                </span>
+                <button (click)="nextMonth()" class="p-0 border-0 d-flex align-items-center justify-content-center rounded-circle transition">
+                    <i class="material-symbols-outlined">
+                        chevron_right
+                    </i>
+                </button>
+            </div>
+            <div class="weekdays text-center">
+                @for (day of weekdays; track day) {
+                    <div>
+                        {{ day }}
+                    </div>
+                }
+            </div>
+            <div class="days text-center">
+                @for (day of daysInMonth; track day) {
+                    <div
+                        class="mx-auto text-black fw-medium border-radius"
+                        [ngClass]="{ 'current-day': isToday(day) }"
+                    >
+                        @if (day !== null) {
+                            <span>
+                                {{ day }}
+                            </span>
+                        }
+                        @if (day === null) {
+                            <span class="blank-day">
+                                &nbsp;
+                            </span> <!-- Placeholder for empty days -->
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="bookings-list">
+            <ng-scrollbar visibility="visible">
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room1.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                Duluxe Room - G - 3215
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Angela Carter</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            10 Dec - 15 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room2.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                The Garden Suite 101
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Jack Smith</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            12 Dec - 16 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room3.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                The Tranquil S-02
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Jennifer Anderson</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            15 Dec - 20 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room4.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                The Queen - X - 231
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Angela Carter</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            11 Dec - 14 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room5.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                The Velvet - F - 32045
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Skyler White</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            11 Dec - 14 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room1.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                Duluxe Room - G - 3215
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Angela Carter</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            10 Dec - 15 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room2.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                The Garden Suite 101
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Jack Smith</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            12 Dec - 16 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room3.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                The Tranquil S-02
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Jennifer Anderson</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            15 Dec - 20 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room4.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                The Queen - X - 231
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Angela Carter</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            11 Dec - 14 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="room-item position-relative d-flex align-items-center">
+                    <a routerLink="." class="image d-block">
+                        <img src="images/rooms/room5.jpg" alt="room-image">
+                    </a>
+                    <div class="content">
+                        <h6 class="fw-semibold">
+                            <a routerLink=".">
+                                The Velvet - F - 32045
+                            </a>
+                        </h6>
+                        <span class="d-block text-xs">
+                            Booked by <strong class="fw-semibold">Skyler White</strong>
+                        </span>
+                        <span class="trezo-badge">
+                            11 Dec - 14 Dec
+                        </span>
+                    </div>
+                    <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </ng-scrollbar>
+        </div>
+    </div>
+</div>

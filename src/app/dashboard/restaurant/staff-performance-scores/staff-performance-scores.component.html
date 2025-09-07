@@ -1,0 +1,207 @@
+<div class="staff-performance-scores-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Staff Performance Scores
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <!-- <thead>
+                    <tr>
+                        <th scope="col" class="fw-bold"></th>
+                        <th scope="col" class="fw-bold"></th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user58.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Joanna Watson
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            98
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user59.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Angela Carter
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            97
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user60.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Walter White
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            96
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user61.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Gary Simon
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            88
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user62.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Zinia Anderson
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            85
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user63.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Loren Walter
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            82
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user64.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Jessy Pinkman
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            80
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user65.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Handy Curter
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            77
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user66.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Skyler Lorensa
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-body">
+                            75
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

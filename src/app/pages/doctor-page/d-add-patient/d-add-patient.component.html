@@ -1,0 +1,128 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Add Patient
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Doctor
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Patients
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Add Patient
+        </li>
+    </ol>
+</div>
+
+<!-- Add Patient -->
+<form>
+    <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+        <div class="trezo-card-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            ID
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter ID">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            First Name
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter First Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Last Name
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter Last Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Email Address
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter Email Address">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Phone Number
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter Phone Number">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Disease Description
+                        </label>
+                        <div class="NgxEditor__Wrapper">
+                            @if (editor) {
+                                <ng-container>
+                                    <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"></ngx-editor-menu>
+                                    <ngx-editor [editor]="editor"></ngx-editor>
+                                </ng-container>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Appointment Date
+                        </label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group mb-0">
+                        <label class="main-label d-block fw-medium text-black">
+                            Add Avatar
+                        </label>
+                        <file-upload class="file-uploader"></file-upload>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="trezo-card mb-25 border-radius d-block bg-transparent p-0 border-0 shadow-none"
+        [class.component-body-bg-color]="themeService.isBodyBG()"
+        [class.component-card-borderd]="themeService.isCardBordered()"
+        [class.component-card-with-box-shadow]="themeService.isCardWithBoxShadow()"
+    >
+        <div class="trezo-card-content">
+            <div class="form-btn-box">
+                <button type="button" class="warn d-inline-block fw-medium border-radius border-0 transition">
+                    Cancel
+                </button>
+                <button type="button" class="primary d-inline-block fw-medium border-radius border-0 transition">
+                    <span class="d-inline-block position-relative">
+                        <i class="material-symbols-outlined">
+                            add
+                        </i>
+                        Add Patient
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,84 @@
+<div
+    class="agent-avg-earnings-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-sm-flex justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Agent Avg. Earnings
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Day')">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Week')">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Month')">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Year')">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="buttons-list d-flex align-items-center">
+            <button (click)="onTimeframeChange('This Day')" [ngClass]="{'active': activeTimeframe === 'This Day'}">
+                1d
+            </button>
+            <button (click)="onTimeframeChange('This Week')" [ngClass]="{'active': activeTimeframe === 'This Week'}">
+                1w
+            </button>
+            <button (click)="onTimeframeChange('This Month')" [ngClass]="{'active': activeTimeframe === 'This Month'}">
+                1m
+            </button>
+            <button (click)="onTimeframeChange('This Year')" [ngClass]="{'active': activeTimeframe === 'This Year'}">
+                1y
+            </button>
+        </div>
+        <div class="chart">
+            <div id="agent_avg_earnings_chart"></div>
+        </div>
+        <div class="info d-flex align-items-center">
+            <div class="item d-flex align-items-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <img src="images/icons/money.svg" alt="money">
+                </div>
+                <div>
+                    <h5 class="fw-semibold lh-1">
+                        $2,534
+                    </h5>
+                    <span class="d-block">
+                        Last month earning
+                    </span>
+                </div>
+            </div>
+            <span class="trending d-block text-black fw-medium position-relative">
+                <i class="material-symbols-outlined">
+                    trending_up
+                </i>
+                +8.7%
+            </span>
+        </div>
+    </div>
+</div>

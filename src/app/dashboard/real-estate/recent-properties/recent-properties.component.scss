@@ -1,0 +1,174 @@
+.recent-properties-card {
+    .trezo-card-content {
+        .image {
+            height: 110px;
+            border-radius: 5px;
+            background: {
+                position: center center;
+                repeat: no-repeat;
+                size: cover;
+            };
+        }
+        .title {
+            margin: {
+                top: 15px;
+                bottom: 9px;
+            };
+            h3 {
+                font-size: 18px;
+            }
+        }
+        .location {
+            padding: {
+                left: 22px;
+                top: 1px;
+            };
+            i {
+                top: 50%;
+                left: -2px;
+                font-size: 19px;
+                position: absolute;
+                color: var(--primaryColor);
+                transform: translateY(-50%);
+            }
+        }
+        ul {
+            margin-top: 10px;
+
+            li {
+                padding-left: 24px;
+                margin-right: 20px;
+
+                i {
+                    left: 0;
+                    top: 50%;
+                    font-size: 18px;
+                    position: absolute;
+                    color: var(--primaryColor);
+                    transform: translateY(-50%);
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .location {
+                padding: {
+                    left: 0;
+                    right: 22px;
+                };
+                i {
+                    left: auto;
+                    right: -2px;
+                }
+            }
+            ul {
+                li {
+                    padding: {
+                        left: 0;
+                        right: 24px;
+                    };
+                    margin: {
+                        right: 0;
+                        left: 20px;
+                    };
+                    i {
+                        left: auto;
+                        right: 0;
+                    }
+                    &:last-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+::ng-deep {
+    .recent-properties-card {
+        .trezo-card-content {
+            .owl-theme {
+                .owl-dots {
+                    text-align: start;
+                    margin-top: 15px;
+
+                    .owl-dot {
+                        span {
+                            margin: {
+                                left: 3px;
+                                right: 3px;
+                            };
+                        }
+                        &:first-child {
+                            span {
+                                margin-left: 0;
+                            }
+                        }
+                        &:last-child {
+                            span {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-dots {
+                        text-align: end;
+                    }
+                }
+            }
+            .owl-item {
+                direction: rtl;
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .recent-properties-card {
+        .trezo-card-content {
+            ul {
+                li {
+                    margin-right: 15px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                ul {
+                    li {
+                        margin: {
+                            right: 0;
+                            left: 15px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

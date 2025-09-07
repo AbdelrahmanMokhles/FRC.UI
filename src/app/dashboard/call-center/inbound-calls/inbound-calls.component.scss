@@ -1,0 +1,121 @@
+.inbound-calls-card {
+    .trezo-card-header {
+        p {
+            font-size: 12px;
+            margin-top: 2px;
+        }
+    }
+    .trezo-card-content {
+        .chart {
+            margin: {
+                top: -45px;
+                bottom: -27px;
+            };
+        }
+        .info {
+            gap: 30px;
+
+            .icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 5px;
+                border: 1px solid #eceef2;
+                background-color: #f6f7f9;
+            }
+            h5 {
+                font-size: 28px;
+                margin-bottom: 1px;
+            }
+            .item {
+                gap: 15px;
+            }
+            .trending {
+                padding-left: 27px;
+
+                i {
+                    left: 0;
+                    top: 50%;
+                    font-size: 20px;
+                    position: absolute;
+                    color: var(--successColor);
+                    transform: translateY(-50%);
+                }
+                &.down {
+                    i {
+                        color: var(--dangerColor);
+                    }
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .info {
+                .icon {
+                    border-color: var(--borderColor);
+                    background-color: #0A0E19;
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .info {
+                .trending {
+                    padding: {
+                        left: 0;
+                        right: 27px;
+                    };
+                    i {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .inbound-calls-card {
+        .trezo-card-content {
+            .info {
+                gap: 20px;
+    
+                h5 {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .inbound-calls-card {
+        .trezo-card-content {
+            .info {
+                h5 {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,25 @@
+<div
+    class="todays-shipments-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <span class="d-block">
+                Today's Shipments
+            </span>
+            <h5 class="mb-0">
+                9,120 Ton
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <span class="info-badge d-inline-block">
+                +5%
+            </span>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="chart">
+            <div id="todays_shipments_chart"></div>
+        </div>
+    </div>
+</div>

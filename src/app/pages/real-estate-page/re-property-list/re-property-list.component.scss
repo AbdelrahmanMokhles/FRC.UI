@@ -1,0 +1,193 @@
+.property-card {
+    .trezo-card-header {
+        margin-bottom: 20px;
+    }
+    .trezo-card-content {
+        .content {
+            margin-top: 20px;
+
+            h3 {
+                font-size: 18px;
+            }
+            .location {
+                margin-top: 10px;
+                padding: {
+                    left: 22px;
+                    top: 1px;
+                };
+                i {
+                    top: 50%;
+                    left: -2px;
+                    font-size: 19px;
+                    position: absolute;
+                    color: var(--primaryColor);
+                    transform: translateY(-50%);
+                }
+            }
+            ul {
+                margin-top: 15px;
+                border: {
+                    top: 1px solid var(--borderColor);
+                    bottom: 1px solid var(--borderColor);
+                };
+                padding: {
+                    top: 11px;
+                    bottom: 11px;
+                };
+                li {
+                    padding-left: 24px;
+                    margin-right: 25px;
+    
+                    i {
+                        left: 0;
+                        top: 50%;
+                        font-size: 18px;
+                        position: absolute;
+                        color: var(--primaryColor);
+                        transform: translateY(-50%);
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .info {
+                margin-top: 20px;
+
+                .author {
+                    gap: 12px;
+
+                    div {
+                        span {
+                            &:nth-child(1) {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+                .link-btn {
+                    font-size: 16px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .content {
+                .location {
+                    padding: {
+                        left: 0;
+                        right: 22px;
+                    };
+                    i {
+                        left: auto;
+                        right: -2px;
+                    }
+                }
+                ul {
+                    li {
+                        padding: {
+                            left: 0;
+                            right: 24px;
+                        };
+                        margin: {
+                            right: 0;
+                            left: 20px;
+                        };
+                        i {
+                            left: auto;
+                            right: 0;
+                        }
+                        &:last-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .property-card {
+        .trezo-card-header {
+            margin-bottom: 15px;
+        }
+        .trezo-card-content {
+            .content {
+                margin-top: 12px;
+    
+                h3 {
+                    font-size: 16px;
+                }
+                ul {
+                    margin-top: 15px;
+                }
+                .info {
+                    margin-top: 17px;
+    
+                    .author {
+                        div {
+                            span {
+                                &:nth-child(1) {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                    .link-btn {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .property-card {
+        .trezo-card-content {
+            .content {
+                h3 {
+                    font-size: 17px;
+                }
+                .info {
+                    .author {
+                        div {
+                            span {
+                                &:nth-child(1) {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                    .link-btn {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

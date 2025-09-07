@@ -1,0 +1,307 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Property Details
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Real Estate Agent
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Properties
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Property Details
+        </li>
+    </ol>
+</div>
+
+<!-- Property Details -->
+<div class="row">
+    <div class="col-lg-4">
+        <div class="
+            property-details-images-card trezo-card border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-content position-relative">
+                <owl-carousel-o [options]="{items: 1, dots: false, animateIn: 'fadeIn', margin: 15, animateOut: 'fadeOut'}" #owlCar>
+                    <ng-container>
+                        @for (image of propertyImages; track $index) {
+                            <ng-template carouselSlide [id]="image.url">
+                                <img [src]="image.url" [alt]="image.url" class="border-radius">
+                            </ng-template>
+                        }
+                    </ng-container>
+                </owl-carousel-o>
+                <span class="trezo-badge z-1">
+                    For Sale
+                </span>
+            </div>
+        </div>
+        <owl-carousel-o [options]="{items: 4, dots: false, margin: 15, autoWidth: true}">
+            <ng-container>
+                @for (image of propertyImages; let i = $index; track $index) {
+                    <ng-template carouselSlide [id]="image.url+i">
+                        <a
+                            (click)="owlCar.to(image.url); changeImage(image.url+i)"
+                            class="border-radius cursor-pointer"
+                        >
+                            <img [src]="image.url" [alt]="image.url" class="border-radius">
+                        </a>
+                    </ng-template>
+                }
+            </ng-container>
+        </owl-carousel-o>
+        <div class="mb-25"></div>
+    </div>
+    <div class="col-lg-8">
+        <div
+            class="property-details-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-content">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="d-block text-xs">
+                            Code: TRZ-32
+                        </span>
+                        <h3>
+                            The Golden Haven
+                        </h3>
+                        <span class="location fw-semibold d-block position-relative">
+                            <i class="ri-map-pin-line"></i>
+                            123 Sunshine Boulevard, Vancouver, BC
+                        </span>
+                    </div>
+                    <div class="ratings lh-1">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span class="d-inline-block lh-1 text-xs text-body">
+                            5.0
+                        </span>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <ul class="m-0 list-unstyled p-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                open_run
+                            </i>
+                            425 sft
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            3 Beds
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            2 Baths
+                        </li>
+                    </ul>
+                    <div class="price fw-bold text-black">
+                        $4,274/m
+                    </div>
+                </div>
+                <h4>
+                    Property Description
+                </h4>
+                <p>
+                    Nestled in a serene neighborhood, this modern 3-bedroom home boasts an open-concept layout with abundant natural light. The chef’s kitchen features state-of-the-art appliances and a spacious island for entertaining.
+                </p>
+                <p>
+                    Enjoy the tranquility of a private backyard oasis with a patio and lush landscaping. Located minutes from top-rated schools, shopping, and parks, it offers convenience and comfort. This home is the perfect blend of style and functionality.
+                </p>
+                <div class="mb-25"></div>
+                <h4>
+                    Property Details
+                </h4>
+                <div class="property-details-info">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Beds
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">03</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Ceiling Height
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">3.20</span> m
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Baths
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">02</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Property Type
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">Villa</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Floor
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">Ground</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Year Built
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">2010</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Garage
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">Yes</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Status
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">For Sale</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>
+                    Amenities
+                </h4>
+                <div class="amenities-list">
+                    <div class="row">
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                A/C & Heating
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Parking
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                WiFi
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Pet Friendly
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Furniture
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Ceiling Height
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Play Ground
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Elevator
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Garage
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Fireplace
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Garden
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 col-sm-4">
+                            <div class="item position-relative">
+                                <i class="ri-check-line"></i>
+                                Disabled Access
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-25"></div>
+                <h4>
+                    Location
+                </h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.94539481518!2d-74.26675559025065!3d40.69739290398433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1678355274384!5m2!1sen!2sbd" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reviews -->
+<app-reviews />

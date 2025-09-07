@@ -1,0 +1,190 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Write a Prescription
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Doctor
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Prescriptions
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Write a Prescription
+        </li>
+    </ol>
+</div>
+
+<!-- Write a Prescription -->
+<div
+    class="write-prescription-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-content">
+        <div class="doctor-info d-md-flex justify-content-between">
+            <div>
+                <h4 class="fw-semibold">
+                    Dr. Walter White
+                </h4>
+                <span class="d-block">
+                    MBBS, MD, MS (Reg No: 321456)
+                </span>
+                <span class="d-block text-black">
+                    Mobile No: +321 4567 5643
+                </span>
+            </div>
+            <div>
+                <img src="images/logo.svg" class="logo" alt="logo">
+                <img src="images/white-logo.svg" class="logo d-none" alt="logo">
+                <span class="d-block">
+                    S. Arrowhead Court Branford9
+                </span>
+                <span class="d-block">
+                    +1 444 266 5599
+                </span>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Select Date
+                        </label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Patient ID
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter Patient ID">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Patient First Name
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter First Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Patient Last Name
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter Last Name">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Patient Address
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter Address">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Temperature (Farenhite)
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter Temperature">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Blood Pressure
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter Blood Pressure">
+                    </div>
+                </div>
+            </div>
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-normal text-body position-relative z-1">
+                                Medicine Name
+                            </th>
+                            <th scope="col" class="fw-normal text-body position-relative z-1">
+                                Dosage
+                            </th>
+                            <th scope="col" class="fw-normal text-body position-relative z-1">
+                                Duration
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Enter Medicine Name">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Morning: 01 Tablet">
+                                <input type="text" class="form-control" placeholder="Night: 01 Tablet">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Enter Total Days">
+                                <input type="text" class="form-control" placeholder="Enter Total Tablets">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary">
+                                    + Add More Medicine
+                                </button>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Advice
+                        </label>
+                        <textarea class="form-control" placeholder="It makes me feel..."></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Upload Signature
+                        </label>
+                        <file-upload class="file-uploader"></file-upload>
+                    </div>
+                </div>
+            </div>
+            <div class="form-btn-box">
+                <button type="button" class="warn d-inline-block fw-medium border-radius border-0 transition">
+                    Cancel
+                </button>
+                <button type="button" class="primary d-inline-block fw-medium border-radius border-0 transition">
+                    <span class="d-inline-block position-relative">
+                        <i class="material-symbols-outlined">
+                            add
+                        </i>
+                        Create Prescription
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

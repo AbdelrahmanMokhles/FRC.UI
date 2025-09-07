@@ -1,0 +1,290 @@
+.my-recent-patients-card {
+    .trezo-card-content {
+        .basic-table {
+            table, .table {
+                thead {
+                    tr {
+                        th {
+                            font-size: 10px;
+                            letter-spacing: 1px;
+                            color: var(--bodyColor);
+                            text-transform: uppercase;
+                            background-color: transparent;
+                            padding: {
+                                bottom: 9px;
+                                top: 0;
+                            };
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                                text-align: end;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            font-size: 12px;
+                            padding: {
+                                top: 9px;
+                                bottom: 9px;
+                            };
+                            border: {
+                                left-width: 0;
+                                right-width: 0;
+                            };
+                            .employee-info {
+                                gap: 10px;
+
+                                .img {
+                                    width: 40px;
+                                }
+                                span {
+                                    &:nth-child(1) {
+                                        font-size: var(--fontSize);
+                                        margin-bottom: 2px;
+                                    }
+                                }
+                            }
+                            .trezo-badge {
+                                padding: 1px 10px;
+                            }
+                            .action-dropdown-menu {
+                                .dot-menu {
+                                    font-size: 20px;
+                                    color: var(--bodyColor);
+
+                                    &:hover {
+                                        color: var(--primaryColor);
+                                    }
+                                }
+                                .dropdown-menu {
+                                    right: 0;
+                                    top: 100%;
+                                    text-align: start;
+                                    position: absolute;
+                                    transition: var(--transition);
+                                    border: 1px solid var(--borderColor) !important;
+
+                                    li {
+                                        .dropdown-item {
+                                            i {
+                                                color: var(--primaryColor);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                                text-align: end;
+
+                                .action-dropdown-menu {
+                                    text-align: end;
+                                }
+                            }
+                        }
+                        &:last-child, &:nth-child(4) {
+                            td {
+                                .action-dropdown-menu {
+                                    .dropdown-menu {
+                                        top: auto;
+                                        bottom: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .trezo-card-pagination {
+            border-width: 0;
+            border-radius: 0;
+            padding: {
+                left: 0;
+                right: 0;
+                top: 10px;
+                bottom: 0;
+            };
+            p {
+                font: {
+                    size: 12px;
+                    weight: 500;
+                };
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .basic-table {
+                table, .table {
+                    thead {
+                        tr {
+                            th {
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                .action-dropdown-menu {
+                                    .dropdown-menu {
+                                        right: auto;
+                                        left: 0;
+                                    }
+                                }
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .my-recent-patients-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table, .table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .my-recent-patients-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table, .table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

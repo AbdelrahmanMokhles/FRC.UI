@@ -1,0 +1,78 @@
+.upgrade-plan-card {
+    background: linear-gradient(90deg, #4936F5 0%, #4737D6 100%);
+    padding: {
+        top: 18.5px;
+        bottom: 18.5px;
+    };
+    .trezo-card-content {
+        h3 {
+            font-size: 20px;
+            line-height: 1.5;
+            max-width: 250px;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .upgrade-plan-card {
+        text-align: center;
+        padding: {
+            top: 17px;
+            bottom: 17px;
+        };
+        .trezo-card-content {
+            h3 {
+                font-size: 16px;
+                max-width: 100%;
+                margin-bottom: 15px !important;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .upgrade-plan-card {
+        text-align: start;
+        padding: {
+            top: 20px;
+            bottom: 20px;
+        };
+        .trezo-card-content {
+            h3 {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .upgrade-plan-card {
+        padding: {
+            top: 20px;
+            bottom: 20px;
+        };
+        .trezo-card-content {
+            h3 {
+                font-size: 18px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

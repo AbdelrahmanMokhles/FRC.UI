@@ -1,0 +1,54 @@
+<div
+    class="employee-attendance-trends-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Employee Attendance Trends
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button type="button" class="date-btn pe-none d-inline-block bg-gray border-radius text-body m-0">
+                <span class="d-inline-block position-relative">
+                    <i class="ri-calendar-line"></i>
+                    July 01 - July 31, 2025
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="m-0 list-unstyled p-0">
+            <li class="d-inline-block">
+                Avg. Daily Attend:
+                <span class="fw-semibold">
+                    320
+                </span>
+            </li>
+            <li class="d-inline-block">
+                <div class="dash"></div>
+            </li>
+            <li class="d-inline-block">
+                High. Attend:
+                <span class="fw-semibold">
+                    340
+                </span>
+                (October 5th) 
+            </li>
+            <li class="d-inline-block">
+                <div class="dash"></div>
+            </li>
+            <li class="d-inline-block">
+                Low. Attend:
+                <span class="fw-semibold">
+                    290
+                </span>
+                (October 1st)
+            </li>
+        </ul>
+        <div class="chart">
+            <div id="employee_attendance_trends_chart"></div>
+        </div>
+    </div>
+</div>

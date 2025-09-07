@@ -1,0 +1,611 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Gainers & Losers
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Crypto Trader
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Gainers & Losers
+        </li>
+    </ol>
+</div>
+
+<!-- Gainers & Losers -->
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle g-15 d-sm-flex align-items-center">
+            <button class="add-btn d-inline-block transition fw-medium border-radius" type="button" (click)="toggleClass()">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add Crypto
+                </span>
+            </button>
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        24h
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                24h
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                48h
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                72h
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-medium">
+                                Name
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Price
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                1h %
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                24h %
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                7d %
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Market Cap
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Volume (24h)
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Last 7 Days
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/bitcoin.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Bitcoin
+                                        <span class="text-body fw-normal text-xs m-0">(BTC)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $85,818.27
+                            </td>
+                            <td class="fw-medium text-success">
+                                +0.47%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +2.65%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +3.01%
+                            </td>
+                            <td class="fw-medium">
+                                $1,702,262,413,645
+                            </td>
+                            <td class="fw-medium">
+                                $37,182,010,584
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline1.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/ethereum.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Ethereum
+                                        <span class="text-body fw-normal text-xs m-0">(ETH)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $1,993.88
+                            </td>
+                            <td class="fw-medium text-danger">
+                                -1.03%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +2.44%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +5.59%
+                            </td>
+                            <td class="fw-medium">
+                                $240,652,882,527
+                            </td>
+                            <td class="fw-medium">
+                                $19,913,301,026
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline2.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/binance.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Binance
+                                        <span class="text-body fw-normal text-xs m-0">(BNB)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $2.49
+                            </td>
+                            <td class="fw-medium text-success">
+                                +0.16%
+                            </td>
+                            <td class="fw-medium text-danger">
+                                -7.75%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +10.25%
+                            </td>
+                            <td class="fw-medium">
+                                $145,187,520,169
+                            </td>
+                            <td class="fw-medium">
+                                $10,614,863,319
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline3.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/tether.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Tether
+                                        <span class="text-body fw-normal text-xs m-0">(USDT)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $1.00
+                            </td>
+                            <td class="fw-medium text-success">
+                                +0.01%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +0.04%
+                            </td>
+                            <td class="fw-medium text-danger">
+                                -0.01%
+                            </td>
+                            <td class="fw-medium">
+                                $143,685,783,527
+                            </td>
+                            <td class="fw-medium">
+                                $78,972,924,872
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline4.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/xrp.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        XRP
+                                        <span class="text-body fw-normal text-xs m-0">(XRP)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $628.38
+                            </td>
+                            <td class="fw-medium text-success">
+                                +0.96%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +2.38%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +8.31%
+                            </td>
+                            <td class="fw-medium">
+                                $89,534,085,091
+                            </td>
+                            <td class="fw-medium">
+                                $2,236,753,285
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline5.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/solana.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Solana
+                                        <span class="text-body fw-normal text-xs m-0">(SOL)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $132.46
+                            </td>
+                            <td class="fw-medium text-success">
+                                +1.45%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +4.79%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +4.31%	
+                            </td>
+                            <td class="fw-medium">
+                                $67,541,375,453
+                            </td>
+                            <td class="fw-medium">
+                                $3,658,703,755
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline1.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/usdc.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        USDC
+                                        <span class="text-body fw-normal text-xs m-0">(USDC)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $0.9999
+                            </td>
+                            <td class="fw-medium text-danger">
+                                -0.01%
+                            </td>
+                            <td class="fw-medium text-danger">
+                                -0.01%
+                            </td>
+                            <td class="fw-medium text-danger">
+                                -0.01%
+                            </td>
+                            <td class="fw-medium">
+                                $59,247,883,103
+                            </td>
+                            <td class="fw-medium">
+                                $12,917,680,329
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline2.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/tron.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Tron
+                                        <span class="text-body fw-normal text-xs m-0">(TRX)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $0.7263
+                            </td>
+                            <td class="fw-medium text-success">
+                                +1.03%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +1.45%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +0.45%
+                            </td>
+                            <td class="fw-medium">
+                                $25,577,902,356
+                            </td>
+                            <td class="fw-medium">
+                                $1,121,882,828
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline3.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/avalanche.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Avalanche
+                                        <span class="text-body fw-normal text-xs m-0">(AVAX)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $18.84
+                            </td>
+                            <td class="fw-medium text-success">
+                                +1.30%
+                            </td>
+                            <td class="fw-medium text-danger">
+                                -2.09%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +0.22%
+                            </td>
+                            <td class="fw-medium">
+                                $25,510,949,845
+                            </td>
+                            <td class="fw-medium">
+                                $1,367,466,333
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline4.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/chainlink.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Chainlink
+                                        <span class="text-body fw-normal text-xs m-0">(LINK)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                $14.43
+                            </td>
+                            <td class="fw-medium text-success">
+                                +2.46%
+                            </td>
+                            <td class="fw-medium text-success">
+                                +61.89%
+                            </td>
+                            <td class="fw-medium text-danger">
+                                +2.37%
+                            </td>
+                            <td class="fw-medium">
+                                $6,765,015,406
+                            </td>
+                            <td class="fw-medium">
+                                $342,511,153
+                            </td>
+                            <td>
+                                <img src="images/sparklines/sparkline5.png" alt="sparkline-chart">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 10 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Add New Crypto
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Name
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Price
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Price">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                1h
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter 1h">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                24h
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter 24h">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                7d
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter 7d">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Market Cap
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Market Cap">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Volume (24h)
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Volume (24h)">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Image
+                            </label>
+                            <file-upload class="file-uploader"></file-upload>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button
+                        (click)="toggleClass()"
+                        class="warn d-inline-block fw-medium border-0 border-radius transition"
+                    >
+                        Cancel
+                    </button>
+                    <button class="primary d-inline-block fw-medium border-0 border-radius transition">
+                        <span class="position-relative d-inline-block">
+                            <i class="material-symbols-outlined">
+                                add
+                            </i>
+                            Create
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,157 @@
+<div class="upcoming-episodes-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Upcoming Episodes
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Add Episode
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Block Episode
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Delete Episode
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-three">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="notice-info d-flex">
+                                    <div class="icon rounded-circle d-flex align-items-center justify-content-center position-relative">
+                                        <img alt="icon" src="images/icons/note.svg">
+                                    </div>
+                                    <div>
+                                        <a routerLink="." class="d-inline-block fw-medium">
+                                            AI for Content Strategy
+                                        </a>
+                                        <p>
+                                            Amanda Garcia
+                                        </p>
+                                        <span class="date d-inline-block text-primary position-relative">
+                                            <i class="ri-calendar-line"></i>
+                                            October 28, 2025
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-end">
+                                <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                    <i class="material-symbols-outlined">
+                                        arrow_outward
+                                    </i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="notice-info d-flex">
+                                    <div class="icon rounded-circle d-flex align-items-center justify-content-center position-relative">
+                                        <img alt="icon" src="images/icons/video-chat.svg">
+                                    </div>
+                                    <div>
+                                        <a routerLink="." class="d-inline-block fw-medium">
+                                            Secrets to Viral Marketing
+                                        </a>
+                                        <p>
+                                            Sarah Johnson
+                                        </p>
+                                        <span class="date d-inline-block text-primary position-relative">
+                                            <i class="ri-calendar-line"></i>
+                                            November 1, 2025
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-end">
+                                <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                    <i class="material-symbols-outlined">
+                                        arrow_outward
+                                    </i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="notice-info d-flex">
+                                    <div class="icon rounded-circle d-flex align-items-center justify-content-center position-relative">
+                                        <img alt="icon" src="images/icons/ball.svg">
+                                    </div>
+                                    <div>
+                                        <a routerLink="." class="d-inline-block fw-medium">
+                                            Social Media Strategy
+                                        </a>
+                                        <p>
+                                            David Chen
+                                        </p>
+                                        <span class="date d-inline-block text-primary position-relative">
+                                            <i class="ri-calendar-line"></i>
+                                            November 12, 2025
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-end">
+                                <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                    <i class="material-symbols-outlined">
+                                        arrow_outward
+                                    </i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="notice-info d-flex">
+                                    <div class="icon rounded-circle d-flex align-items-center justify-content-center position-relative">
+                                        <img alt="icon" src="images/icons/celebration.svg">
+                                    </div>
+                                    <div>
+                                        <a routerLink="." class="d-inline-block fw-medium">
+                                            Content Trends for 2025
+                                        </a>
+                                        <p>
+                                            Tom Richards
+                                        </p>
+                                        <span class="date d-inline-block text-primary position-relative">
+                                            <i class="ri-calendar-line"></i>
+                                            November 28, 2025
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-end">
+                                <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                    <i class="material-symbols-outlined">
+                                        arrow_outward
+                                    </i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

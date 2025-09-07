@@ -1,0 +1,130 @@
+<div
+    class="employee-work-format-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Employee Work Format
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Day')">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Week')">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Month')">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Year')">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="chart">
+            <div id="employee_work_format_chart"></div>
+        </div>
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <tbody>
+                    <tr>
+                        <td class="fw-medium">
+                            <div class="title d-flex align-items-center">
+                                <div class="bg-orange"></div>
+                                Remote
+                            </div>
+                        </td>
+                        <td>
+                            <span class="d-inline-block number position-relative text-success">
+                                34%
+                                <i class="material-symbols-outlined">
+                                    trending_up
+                                </i>
+                            </span>
+                        </td>
+                        <td class="fw-bold text-end">
+                            120
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-medium">
+                            <div class="title d-flex align-items-center">
+                                <div class="bg-primary"></div>
+                                In-office
+                            </div>
+                        </td>
+                        <td>
+                            <span class="d-inline-block number position-relative text-orange">
+                                46%
+                                <i class="material-symbols-outlined">
+                                    trending_down
+                                </i>
+                            </span>
+                        </td>
+                        <td class="fw-bold text-end">
+                            160
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-medium">
+                            <div class="title d-flex align-items-center">
+                                <div class="bg-success"></div>
+                                Hybrid
+                            </div>
+                        </td>
+                        <td>
+                            <span class="d-inline-block number position-relative text-success">
+                                15%
+                                <i class="material-symbols-outlined">
+                                    trending_up
+                                </i>
+                            </span>
+                        </td>
+                        <td class="fw-bold text-end">
+                            50
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-medium">
+                            <div class="title d-flex align-items-center">
+                                <div class="bg-purple"></div>
+                                Shift
+                            </div>
+                        </td>
+                        <td>
+                            <span class="d-inline-block number position-relative text-orange">
+                                5%
+                                <i class="material-symbols-outlined">
+                                    trending_down
+                                </i>
+                            </span>
+                        </td>
+                        <td class="fw-bold text-end">
+                            20
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

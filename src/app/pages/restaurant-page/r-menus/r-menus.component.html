@@ -1,0 +1,855 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Menus
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Restaurant
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Menus
+        </li>
+    </ol>
+</div>
+
+<!-- Menus -->
+<div class="menus-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button class="add-btn d-inline-block transition fw-medium border-radius" type="button" (click)="toggleClass()">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add New Dish
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Code
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Item
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Price
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Ingredients
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #001
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu1.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Buffalo Chicken
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $16.00
+                        </td>
+                        <td class="fw-semibold text-body">
+                            pan-seared chicken, lemon zest, garlic butter, parsley
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #002
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu2.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Chicken Carbonara Spaghetti
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $15.50
+                        </td>
+                        <td class="fw-semibold text-body">
+                            grilled chicken, honey mustard glaze, spinach, garlic
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #003
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu3.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Chicken Piccata Spaghetti
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $14.50
+                        </td>
+                        <td class="fw-semibold text-body">
+                            shredded chicken, buffalo sauce, ranch dressing
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #004
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu4.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Thai Peanut Chicken Spaghetti
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $13.99
+                        </td>
+                        <td class="fw-semibold text-body">
+                            spaghetti, chicken, crispy bacon, egg yolk, parmesan, cream
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #005
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu5.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Chicken Bolognese Spaghetti
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $14.75
+                        </td>
+                        <td class="fw-semibold text-body">
+                            pan-fried chicken, capers, white wine sauce, lemon
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #006
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu6.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Mediterranean Chicken Spaghetti
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $15.99
+                        </td>
+                        <td class="fw-semibold text-body">
+                            grilled chicken, olives, sun-dried tomatoes, feta
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #007
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu7.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Chicken Parmesan Spaghetti
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $16.50
+                        </td>
+                        <td class="fw-semibold text-body">
+                            breaded chicken cutlets, marinara sauce, spaghetti
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #008
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu8.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Chicken and Mushroom Spaghetti
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $12.99
+                        </td>
+                        <td class="fw-semibold text-body">
+                            spaghetti, chicken slices, sautéed mushrooms, garlic
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #009
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu9.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Teriyaki Chicken Spaghetti Stir-Fry
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $13.50
+                        </td>
+                        <td class="fw-semibold text-body">
+                            chicken strips, teriyaki sauce, bell peppers, sesame seeds
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            #010
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="user-image" src="images/restaurant/menu10.png">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Chicken Fajita Spaghetti
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $15.25
+                        </td>
+                        <td class="fw-semibold text-body">
+                            chicken, fajita seasoning, bell peppers
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/restaurant-page/dish-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0" (click)="toggleClass2()">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 10 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Add New Dish
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Dish Code
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. #3215">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Name
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. Parsley Chicken">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Price
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. $12.50">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Calories
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 3215 Kcal">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Carbs
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 525 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Protein
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 125 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Fibres
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 15 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Fat
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 25 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Vitamins
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 13 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Sugar
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 214 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Minerals
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 5 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Ingredients Details
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. Parsley, chicken, mozzarella, buffalo sauce">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Order In Queue
+                            </label>
+                            <input type="text" class="form-control" placeholder="E.g. 17">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Upload Item Images
+                            </label>
+                            <file-upload class="file-uploader"></file-upload>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button
+                        (click)="toggleClass()"
+                        class="warn d-inline-block fw-medium border-0 border-radius transition"
+                    >
+                        Cancel
+                    </button>
+                    <button class="primary d-inline-block fw-medium border-0 border-radius transition">
+                        <span class="position-relative d-inline-block">
+                            <i class="material-symbols-outlined">
+                                add
+                            </i>
+                            Add Dish
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied2"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Edit Dish
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass2()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Dish Code
+                            </label>
+                            <input type="text" class="form-control" value="#3215">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Name
+                            </label>
+                            <input type="text" class="form-control" value="Parsley Chicken">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Price
+                            </label>
+                            <input type="text" class="form-control" value="$12.50">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Calories
+                            </label>
+                            <input type="text" class="form-control" value="3215 Kcal">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Carbs
+                            </label>
+                            <input type="text" class="form-control" value="525 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Protein
+                            </label>
+                            <input type="text" class="form-control" value="125 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Fibres
+                            </label>
+                            <input type="text" class="form-control" value="15 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Fat
+                            </label>
+                            <input type="text" class="form-control" value="25 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Vitamins
+                            </label>
+                            <input type="text" class="form-control" value="13 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Sugar
+                            </label>
+                            <input type="text" class="form-control" value="214 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Minerals
+                            </label>
+                            <input type="text" class="form-control" value="5 gm">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Ingredients Details
+                            </label>
+                            <input type="text" class="form-control" value="Parsley, chicken, mozzarella, buffalo sauce">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Order In Queue
+                            </label>
+                            <input type="text" class="form-control" value="17">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Upload Item Images
+                            </label>
+                            <file-upload class="file-uploader"></file-upload>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button
+                        (click)="toggleClass2()"
+                        class="warn d-inline-block fw-medium border-0 border-radius transition"
+                    >
+                        Cancel
+                    </button>
+                    <button class="primary d-inline-block fw-medium border-0 border-radius transition">
+                        <span class="position-relative d-inline-block">
+                            <i class="material-symbols-outlined">
+                                add
+                            </i>
+                            Save
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div
+    class="overview-card trezo-card mb-25 rounded-0 p-0 d-block bg-transparent border-0 shadow-none"
+    [class.component-card-borderd]="themeService.isCardBordered()"
+    [class.component-card-with-box-shadow]="themeService.isCardWithBoxShadow()"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-body-bg-color]="themeService.isBodyBG()"
+>
+    <div class="trezo-card-content">
+        <div class="d-md-flex align-items-center justify-content-between">
+            <div>
+                <h4 class="fw-semibold">
+                    School Overview Dashboard
+                </h4>
+                <p>
+                    Manage Students, Teachers, and School Data Seamlessly!
+                </p>
+            </div>
+            <div class="date-btn">
+                <span class="d-inline-block position-relative">
+                    <i class="ri-calendar-line"></i>
+                    Today - {{ formattedDate }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

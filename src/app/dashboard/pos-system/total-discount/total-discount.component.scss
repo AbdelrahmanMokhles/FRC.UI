@@ -1,0 +1,89 @@
+.total-discount-card {
+    background: linear-gradient(106deg, #EE3E08 9.72%, #FD5812 79.69%);
+    
+    .trezo-card-header {
+        margin-bottom: 13px;
+        
+        .trezo-card-title {
+            h5 {
+                font-size: 16px;
+            }
+        }
+    }
+    .trezo-card-content {
+        border-width: 0;
+
+        .icon {
+            width: 51px;
+            height: 51px;
+            background-color: #FFE8D4;
+        }
+        .info {
+            margin-top: 14px;
+            padding-left: 29px;
+
+            i {
+                left: 0;
+                top: 50%;
+                font-size: 20px;
+                position: absolute;
+                color: var(--successColor);
+                transform: translateY(-50%);
+            }
+            &.down {
+                i {
+                    color: var(--dangerColor);
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .icon {
+                background-color: #0A0E19;
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .info {
+                padding: {
+                    left: 0;
+                    right: 29px;
+                };
+                i {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .total-discount-card {
+        .trezo-card-content {
+            .info {
+                margin-top: 10px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

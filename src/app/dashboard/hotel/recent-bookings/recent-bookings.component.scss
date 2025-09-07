@@ -1,0 +1,284 @@
+.recent-bookings-card {
+    .trezo-card-header {
+        .trezo-card-subtitle {
+            .menu-btn {
+                pointer-events: none;
+                
+                span {
+                    padding-right: 23px;
+
+                    &::before {
+                        margin-top: 0;
+                        content: "\eb21";
+                    }
+                }
+            }
+        }
+    }
+    .trezo-card-content {
+        .calendar {
+            .header {
+                margin-bottom: 15px;
+
+                button {
+                    background-color: #E6EFF2;
+                    color: var(--blackColor);
+                    height: 30px;
+                    width: 30px;
+
+                    i {
+                        font-size: 22px;
+                    }
+                    &:hover {
+                        background-color: var(--primaryColor);
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+            .weekdays {
+                margin-bottom: 12px;
+                font-size: 12px;
+            }
+            .weekdays, .days {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+            }
+            .days {
+                gap: 2px;
+
+                div {
+                    width: 100%;
+                    height: 50px;
+                    cursor: pointer;
+                    line-height: 50px;
+                    background-color: #E6EFF2;
+                    
+                    &:has(.blank-day) { 
+                        background-color: transparent;
+                    }
+                }
+                .current-day {
+                    line-height: initial;
+                    padding-top: 10px;
+
+                    span {
+                        background-color: var(--primaryColor);
+                        color: var(--whiteColor);
+                        display: inline-block;
+                        border-radius: 50%;
+                        line-height: 30px;
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+            }
+        }
+        .bookings-list {
+            margin-top: 25px;
+            height: 512px;
+
+            .room-item {
+                gap: 15px;
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px solid var(--borderColor);
+
+                .image {
+                    border-radius: 4px;
+                    width: 80px;
+
+                    img {
+                        border-radius: 4px;
+                    }
+                }
+                .content {
+                    h6 {
+                        margin-bottom: 6px;
+                        font-size: var(--fontSize);
+                    }
+                    .trezo-badge {
+                        margin-top: 9px;
+                    }
+                }
+                .link-btn {
+                    right: 0;
+                    top: 50%;
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    color: var(--bodyColor);
+                    background-color: #ECEEF2;
+                    transform: translateY(-50%);
+
+                    &:hover {
+                        color: var(--whiteColor);
+                        background-color: var(--primaryColor);
+                    }
+                }
+                &:first-child {
+                    margin-top: 0;
+                    padding-top: 0;
+                    border-top-width: 0;
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .calendar {
+                .header {
+                    button {
+                        background-color: var(--borderColor);
+                        color: var(--whiteColor);
+                        
+                        &:hover {
+                            background-color: var(--primaryColor);
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+                .days {
+                    div {
+                        background-color: var(--borderColor);
+                        
+                        &:has(.blank-day) { 
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+            .bookings-list {
+                .room-item {
+                    .link-btn {
+                        background-color: var(--borderColor);
+    
+                        &:hover {
+                            background-color: var(--primaryColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                .menu-btn {
+                    span {
+                        padding: {
+                            right: 0;
+                            left: 23px;
+                        };
+                    }
+                }
+            }
+        }
+        .trezo-card-content {
+            .calendar {
+                .header {
+                    button {
+                        i {
+                            transform: scaleX(-1);
+                        }
+                    }
+                }
+            }
+            .bookings-list {
+                .room-item {
+                    direction: rtl;
+
+                    .link-btn {
+                        right: auto;
+                        left: 0;
+
+                        i {
+                            transform: scaleX(-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+::ng-deep {
+    .recent-bookings-card {
+        .trezo-card-content {
+            .bookings-list {
+                margin-right: -25px;
+
+                .ng-scroll-content {
+                    padding: 0;
+                    padding-right: 25px;
+                    --_track-y-thickness: 4px;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .recent-bookings-card {
+        .trezo-card-content {
+            .bookings-list {
+                margin-top: 17px;
+                height: 450px;
+    
+                .room-item {
+                    margin-top: 13px;
+                    padding-top: 13px;
+    
+                    .image {
+                        width: 70px;
+                    }
+                }
+            }
+        }
+    }
+    ::ng-deep {
+        .recent-bookings-card {
+            .trezo-card-content {
+                .bookings-list {
+                    margin-right: -17px;
+                    
+                    .ng-scroll-content {
+                        padding-right: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    ::ng-deep {
+        .recent-bookings-card {
+            .trezo-card-content {
+                .bookings-list {
+                    margin-right: -20px;
+                    
+                    .ng-scroll-content {
+                        padding-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

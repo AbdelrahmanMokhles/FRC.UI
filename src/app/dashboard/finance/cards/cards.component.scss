@@ -1,0 +1,68 @@
+.cards-card {
+    .trezo-card-content {
+        .card-item {
+            padding: 25px;
+            background: {
+                position: center center;
+                repeat: no-repeat;
+                size: cover;
+            };
+            .title {
+                margin-bottom: 10px;
+            }
+            .icon {
+                font-size: 24px;
+            }
+            h5 {
+                word-spacing: 4px;
+                margin: {
+                    top: 15px;
+                    bottom: 50px;
+                };
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .cards-card {
+        padding-bottom: 0 !important;
+
+        .trezo-card-content {
+            .card-item {
+                margin-bottom: 17px;
+                padding: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .cards-card {
+        padding-bottom: 20px !important;
+
+        .trezo-card-content {
+            .card-item {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

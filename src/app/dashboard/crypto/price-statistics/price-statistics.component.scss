@@ -1,0 +1,576 @@
+.market-price-statistics-card {
+    padding-top: 15px;
+    border: 1px solid var(--borderColor);
+
+    .trezo-card-header {
+        border-bottom: 1px solid var(--borderColor);
+        padding: {
+            left: 25px;
+            right: 25px;
+            bottom: 15px;
+        };
+        margin: {
+            left: -25px;
+            right: -25px;
+        };
+        .trezo-card-subtitle {
+            display: flex;
+            align-items: center;
+
+            .statistics-buttons-list {
+                margin-right: 25px;
+
+                button {
+                    border-radius: 0;
+                    padding: 2.5px 10px;
+                    display: inline-block;
+                    color: var(--bodyColor);
+                    background-color: transparent;
+                    transition: var(--transition);
+                    border: {
+                        left-width: 0;
+                        top: 1px solid var(--borderColor);
+                        bottom: 1px solid var(--borderColor);
+                        right: 1px solid var(--borderColor);
+                    };
+                    &:first-child {
+                        border-radius: 7px 0 0 7px;
+                        border-left: 1px solid var(--borderColor);
+                    }
+                    &:last-child {
+                        border-radius: 0 7px 7px 0;
+                    }
+                    &.active, &:hover {
+                        background-color: #ECF0FF;
+                    }
+                }
+            }
+            .cryptocurrency-types {
+                top: 2px;
+                
+                .button {
+                    padding: 0 20px 0 0;
+                    color: var(--blackColor);
+
+                    span {
+                        img {
+                            width: 24px;
+                            margin-right: 6px;
+                        }
+                    }
+                    &::before {
+                        transform: translateY(-50%);
+                        position: absolute;
+                        content: "\ea4e";
+                        right: -4px;
+                        top: 50%;
+                        font: {
+                            size: 20px;
+                            family: remixicon;
+                        };
+                    }
+                }
+                .dropdown-menu {
+                    left: 0;
+                    right: auto;
+                    width: 250px;
+    
+                    li {
+                        .dropdown-item {
+                            img {
+                                width: 22px;
+                                margin-right: 8px;
+                            }
+                            span {
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .trezo-card-content {
+        .info {
+            .coin {
+                div {
+                    margin-left: 10px;
+
+                    h4 {
+                        margin-top: 6px;
+                        font-size: 20px;
+
+                        span {
+                            font-size: 14px;
+                            color: #1E8308;
+                            margin-left: 3px;
+                            padding-left: 25px;
+
+                            i {
+                                left: 0;
+                                top: 50%;
+                                font-size: 20px;
+                                position: absolute;
+                                transform: translateY(-50%);
+                            }
+                            &.down {
+                                color: #C52B09;
+                            }
+                        }
+                    }
+                }
+            }
+            .list {
+                li {
+                    display: inline-block;
+                    margin: {
+                        left: 20px;
+                        right: 20px;
+                    };
+                    span {
+                        margin-bottom: 5px;
+                    }
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .dot-menu {
+                font-size: 26px;
+                margin-right: -7px;
+                color: var(--bodyColor);
+
+                &:hover {
+                    color: var(--primaryColor);
+                }
+            }
+        }
+        .chart {
+            margin: {
+                top: 15px;
+                left: -15px;
+                bottom: -15px;
+            };
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                .statistics-buttons-list {
+                    button {
+                        &.active, &:hover {
+                            background-color: #15203c;
+                        }
+                    }
+                }
+                .cryptocurrency-types {
+                    .button {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                .statistics-buttons-list {
+                    margin: {
+                        right: 0;
+                        left: 25px;
+                    };
+                    button {
+                        border: {
+                            right-width: 0;
+                            left: 1px solid var(--borderColor);
+                        };
+                        &:first-child {
+                            border-radius: 0 7px 7px 0;
+                            border: {
+                                left-width: 0;
+                                right: 1px solid var(--borderColor);
+                            };
+                        }
+                        &:last-child {
+                            border-radius: 7px 0 0 7px;
+                        }
+                    }
+                }
+                .cryptocurrency-types {
+                    .button {
+                        padding: {
+                            left: 20px;
+                            right: 0;
+                        };
+                        span {
+                            img {
+                                margin: {
+                                    right: 0;
+                                    left: 6px;
+                                };
+                            }
+                        }
+                        &::before {
+                            right: auto;
+                            left: -4px;
+                        }
+                    }
+                    .dropdown-menu {
+                        left: auto;
+                        right: 0;
+        
+                        li {
+                            .dropdown-item {
+                                img {
+                                    margin: {
+                                        right: 0;
+                                        left: 8px;
+                                    };
+                                }
+                                span {
+                                    margin: {
+                                        left: 0;
+                                        right: 3px;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .trezo-card-content {
+            .info {
+                .coin {
+                    div {
+                        margin: {
+                            left: 0;
+                            right: 10px;
+                        };
+                        h4 {
+                            span {
+                                margin: {
+                                    left: 0;
+                                    right: 3px;
+                                };
+                                padding: {
+                                    left: 0;
+                                    right: 25px;
+                                };
+                                i {
+                                    left: auto;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .list {
+                    li {
+                        &:first-child {
+                            margin: {
+                                left: 20px;
+                                right: 0;
+                            };
+                        }
+                        &:last-child {
+                            margin: {
+                                right: 20px;
+                                left: 0;
+                            };
+                        }
+                    }
+                }
+                .dot-menu {
+                    margin: {
+                        right: 0;
+                        left: -7px;
+                    };
+                }
+            }
+            .chart {
+                margin: {
+                    left: 0;
+                    right: -15px;
+                };
+            }
+        }
+    }
+    &.component-body-bg-color {
+        box-shadow: unset !important;
+    }
+    &.component-card-with-box-shadow {
+        box-shadow: unset !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .market-price-statistics-card {
+        .trezo-card-header {
+            padding: {
+                left: 17px;
+                right: 17px;
+            };
+            margin: {
+                left: -17px;
+                right: -17px;
+            };
+            .trezo-card-subtitle {
+                display: block;
+                margin-top: 10px;
+
+                .statistics-buttons-list {
+                    margin-right: 0;
+
+                    button {
+                        padding: 1px 8px;
+                    }
+                }
+                .cryptocurrency-types {
+                    margin-top: 10px;
+
+                    .button {
+                        &::before {
+                            font-size: 18px;
+                        }
+                    }
+                    .dropdown {
+                        width: 258px;
+                    }
+                }
+            }
+        }
+        .trezo-card-content {
+            .info {
+                .coin {
+                    margin-bottom: 12px;
+
+                    div {
+                        margin-left: 10px;
+    
+                        h4 {
+                            margin-top: 5px;
+                            font-size: 18px;
+    
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+                .list {
+                    li {
+                        margin: {
+                            left: 15px;
+                            right: 15px;
+                        };
+                    }
+                }
+                .dot-menu {
+                        margin-top: 12px;
+                        margin: {
+                            right: 0;
+                            left: -7px;
+                        };
+                }
+            }
+            .chart {
+                margin-top: 0;
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-header {
+                .trezo-card-subtitle {
+                    .statistics-buttons-list {
+                        margin-left: 0;
+                    }
+                }
+            }
+            .trezo-card-content {
+                .info {
+                    .coin {
+                        div {
+                            margin: {
+                                left: 0;
+                                right: 10px;
+                            };
+                        }
+                    }
+                    .list {
+                        li {
+                            &:first-child {
+                                margin: {
+                                    left: 15px;
+                                };
+                            }
+                            &:last-child {
+                                margin: {
+                                    right: 15px;
+                                };
+                            }
+                        }
+                    }
+                    .dot-menu {
+                            margin: {
+                                left: 0;
+                                right: -7px;
+                            };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .market-price-statistics-card {
+        .trezo-card-header {
+            padding: {
+                left: 20px;
+                right: 20px;
+            };
+            margin: {
+                left: -20px;
+                right: -20px;
+            };
+            .trezo-card-subtitle {
+                margin-top: 0;
+                display: flex;
+
+                .statistics-buttons-list {
+                    margin-right: 10px;
+
+                    button {
+                        padding: 1px 7px;
+                    }
+                }
+                .cryptocurrency-types {
+                    margin-top: 0;
+                }
+            }
+        }
+        .trezo-card-content {
+            .info {
+                .coin {
+                    margin-bottom: 0;
+                }
+                .dot-menu {
+                        margin-top: 0;
+                        margin: {
+                            right: -7px;
+                            left: 0;
+                        };
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-header {
+                .trezo-card-subtitle {
+                    .statistics-buttons-list {
+                        margin: {
+                            left: 10px;
+                            right: 0;
+                        };
+                    }
+                }
+            }
+            .trezo-card-content {
+                .info {
+                    .dot-menu {
+                            margin: {
+                                left: -7px;
+                                right: 0;
+                            };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .market-price-statistics-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                .statistics-buttons-list {
+                    margin-right: 20px;
+
+                    button {
+                        padding: 1px 8px;
+                    }
+                }
+                .cryptocurrency-types {
+                    .dropdown-menu {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-header {
+                .trezo-card-subtitle {
+                    .statistics-buttons-list {
+                        padding: {
+                            right: 0;
+                            left: 20px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .market-price-statistics-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                .statistics-buttons-list {
+                    margin-right: 20px;
+
+                    button {
+                        padding: 1px 7px;
+                    }
+                }
+                .cryptocurrency-types {
+                    .dropdown-menu {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-header {
+                .trezo-card-subtitle {
+                    .statistics-buttons-list {
+                        margin: {
+                            right: 0;
+                            left: 20px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

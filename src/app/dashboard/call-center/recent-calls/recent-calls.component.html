@@ -1,0 +1,257 @@
+<div class="recent-calls-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Recent Calls
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle d-flex align-items-center">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search for a name....">
+            </form>
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-three">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0" id="sortingTable">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-normal cursor-pointer" (click)="sortTable(0)">
+                                Caller Name <i class="ri-expand-up-down-fill"></i>
+                            </th>
+                            <th scope="col" class="fw-normal cursor-pointer" (click)="sortTable(1)">
+                                Call Type <i class="ri-expand-up-down-fill"></i>
+                            </th>
+                            <th scope="col" class="fw-normal cursor-pointer" (click)="sortTable(2)">
+                                Duration <i class="ri-expand-up-down-fill"></i>
+                            </th>
+                            <th scope="col" class="fw-normal cursor-pointer text-end" (click)="sortTable(3)">
+                                Status <i class="ri-expand-up-down-fill"></i>
+                            </th>
+                            <th scope="col" class="fw-normal cursor-pointer text-end" (click)="sortTable(4)">
+                                Time <i class="ri-expand-up-down-fill"></i>
+                            </th>
+                            <th scope="col" class="fw-normal cursor-pointer text-end" (click)="sortTable(5)">
+                                CSAT <i class="ri-expand-up-down-fill"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user60.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Adam Smith
+                                        </span>
+                                        <span class="d-block text-body">
+                                            +1 555-234-5678
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium text-primary">
+                                Inbound
+                            </td>
+                            <td class="fw-medium">
+                                7 mins
+                            </td>
+                            <td class="fw-medium text-success text-end">
+                                Resolved
+                            </td>
+                            <td class="fw-medium text-end">
+                                10:40 AM	
+                            </td>
+                            <td class="fw-medium text-danger text-end">
+                                83%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user61.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Sarah Green
+                                        </span>
+                                        <span class="d-block text-body">
+                                            +44 20 7946 0958
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium text-danger">
+                                Outbound
+                            </td>
+                            <td class="fw-medium">
+                                3 mins
+                            </td>
+                            <td class="fw-medium text-danger text-end">
+                                Pending
+                            </td>
+                            <td class="fw-medium text-end">
+                                10:35 AM
+                            </td>
+                            <td class="fw-medium text-purple text-end">
+                                85%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user62.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Laura Martin
+                                        </span>
+                                        <span class="d-block text-body">
+                                            +61 2 1234 5678
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium text-primary">
+                                Inbound
+                            </td>
+                            <td class="fw-medium">
+                                4 mins
+                            </td>
+                            <td class="fw-medium text-purple text-end">
+                                Dropped
+                            </td>
+                            <td class="fw-medium text-end">
+                                10:45 AM
+                            </td>
+                            <td class="fw-medium text-purple text-end">
+                                87%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user63.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Emily Johnson
+                                        </span>
+                                        <span class="d-block text-body">
+                                            +1 555-123-4567
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium text-primary">
+                                Inbound
+                            </td>
+                            <td class="fw-medium">
+                                5 mins
+                            </td>
+                            <td class="fw-medium text-success text-end">
+                                Resolved
+                            </td>
+                            <td class="fw-medium text-end">
+                                10:30 AM
+                            </td>
+                            <td class="fw-medium text-success text-end">
+                                90%
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 4 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

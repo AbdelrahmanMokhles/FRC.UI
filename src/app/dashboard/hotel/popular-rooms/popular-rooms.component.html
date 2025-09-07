@@ -1,0 +1,160 @@
+<div
+    class="popular-rooms-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Popular Rooms
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <owl-carousel-o [options]="popularRoomsSlides">
+            <ng-template carouselSlide>
+                <div class="image position-relative">
+                    <a routerLink="." class="d-block border-radius">
+                        <img src="images/rooms/room6.jpg" class="border-radius" alt="room-image">
+                    </a>
+                    <span class="trezo-badge with-border cancelled">
+                        Booked
+                    </span>
+                </div>
+                <h6 class="fw-semibold">
+                    <a routerLink=".">
+                        The Velvet - F - 32045
+                    </a>
+                </h6>
+                <span class="d-block">
+                    Code <strong class="fw-semibold">SJ-32056</strong>
+                </span>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="image position-relative">
+                    <a routerLink="." class="d-block border-radius">
+                        <img src="images/rooms/room7.jpg" class="border-radius" alt="room-image">
+                    </a>
+                    <span class="trezo-badge with-border finished">
+                        Available
+                    </span>
+                </div>
+                <h6 class="fw-semibold">
+                    <a routerLink=".">
+                        Duluxe Room - G - 3215
+                    </a>
+                </h6>
+                <span class="d-block">
+                    Code <strong class="fw-semibold">SJ-32056</strong>
+                </span>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="image position-relative">
+                    <a routerLink="." class="d-block border-radius">
+                        <img src="images/rooms/room8.jpg" class="border-radius" alt="room-image">
+                    </a>
+                    <span class="trezo-badge with-border cancelled">
+                        Booked
+                    </span>
+                </div>
+                <h6 class="fw-semibold">
+                    <a routerLink=".">
+                        The Garden Suite 101
+                    </a>
+                </h6>
+                <span class="d-block">
+                    Code <strong class="fw-semibold">SJ-32056</strong>
+                </span>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="image position-relative">
+                    <a routerLink="." class="d-block border-radius">
+                        <img src="images/rooms/room9.jpg" class="border-radius" alt="room-image">
+                    </a>
+                    <span class="trezo-badge with-border finished">
+                        Available
+                    </span>
+                </div>
+                <h6 class="fw-semibold">
+                    <a routerLink=".">
+                        The Tranquil S-02
+                    </a>
+                </h6>
+                <span class="d-block">
+                    Code <strong class="fw-semibold">SJ-32056</strong>
+                </span>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="image position-relative">
+                    <a routerLink="." class="d-block border-radius">
+                        <img src="images/rooms/room6.jpg" class="border-radius" alt="room-image">
+                    </a>
+                    <span class="trezo-badge with-border cancelled">
+                        Booked
+                    </span>
+                </div>
+                <h6 class="fw-semibold">
+                    <a routerLink=".">
+                        The Velvet - F - 32045
+                    </a>
+                </h6>
+                <span class="d-block">
+                    Code <strong class="fw-semibold">SJ-32056</strong>
+                </span>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="image position-relative">
+                    <a routerLink="." class="d-block border-radius">
+                        <img src="images/rooms/room7.jpg" class="border-radius" alt="room-image">
+                    </a>
+                    <span class="trezo-badge with-border finished">
+                        Available
+                    </span>
+                </div>
+                <h6 class="fw-semibold">
+                    <a routerLink=".">
+                        Duluxe Room - G - 3215
+                    </a>
+                </h6>
+                <span class="d-block">
+                    Code <strong class="fw-semibold">SJ-32056</strong>
+                </span>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="image position-relative">
+                    <a routerLink="." class="d-block border-radius">
+                        <img src="images/rooms/room8.jpg" class="border-radius" alt="room-image">
+                    </a>
+                    <span class="trezo-badge with-border cancelled">
+                        Booked
+                    </span>
+                </div>
+                <h6 class="fw-semibold">
+                    <a routerLink=".">
+                        The Garden Suite 101
+                    </a>
+                </h6>
+                <span class="d-block">
+                    Code <strong class="fw-semibold">SJ-32056</strong>
+                </span>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="image position-relative">
+                    <a routerLink="." class="d-block border-radius">
+                        <img src="images/rooms/room9.jpg" class="border-radius" alt="room-image">
+                    </a>
+                    <span class="trezo-badge with-border finished">
+                        Available
+                    </span>
+                </div>
+                <h6 class="fw-semibold">
+                    <a routerLink=".">
+                        The Tranquil S-02
+                    </a>
+                </h6>
+                <span class="d-block">
+                    Code <strong class="fw-semibold">SJ-32056</strong>
+                </span>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>

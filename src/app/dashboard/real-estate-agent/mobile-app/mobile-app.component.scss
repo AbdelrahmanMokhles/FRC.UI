@@ -1,0 +1,90 @@
+.mobile-app-card {
+    background-color: #B2FF97;
+
+    .trezo-card-content {
+        max-width: 210px;
+        padding: {
+            top: 26px;
+            bottom: 26px;
+        };
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .link-btn {
+            padding: 7px 17.5px;
+            margin-bottom: 31px;
+            display: inline-block;
+            border-radius: 0.375rem;
+            color: var(--whiteColor);
+            background-color: #1A5710;
+            font: {
+                size: 16px;
+                weight: 500;
+            };
+            &:hover {
+                color: var(--whiteColor);
+                background-color: var(--successColor);
+            }
+        }
+    }
+    &.component-dark-theme {
+        background-color: #15203c;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .mobile-app-card {
+        .trezo-card-content {
+            padding: {
+                top: 10px;
+                bottom: 10px;
+            };
+            h3 {
+                font-size: 20px;
+                margin-bottom: 17px;
+            }
+            .link-btn {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .mobile-app-card {
+        .trezo-card-content {
+            padding: {
+                top: 20px;
+                bottom: 20px;
+            };
+            h3 {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .link-btn {
+                font-size: 15px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

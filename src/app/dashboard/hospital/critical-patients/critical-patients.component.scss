@@ -1,0 +1,108 @@
+.critical-patients-card {
+    padding: {
+        left: 20px;
+        right: 20px;
+    };
+    .trezo-card-header {
+        p {
+            font-size: var(--fontSize);
+            margin-bottom: 2px;
+        }
+    }
+    .trezo-card-content {
+        .chart {
+            top: 100px;
+            left: 10px;
+            right: 10px;
+            position: absolute;
+        }
+        .list {
+            margin-top: 161px;
+
+            li {
+                font-size: 13px;
+                padding-left: 18px;
+                margin-bottom: 10px;
+
+                &::before {
+                    left: 0;
+                    top: 50%;
+                    width: 12px;
+                    content: '';
+                    height: 2px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                    background: var(--primaryColor);
+                }
+                &:nth-child(2) {
+                    &::before {
+                        background: var(--orangeColor);
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .list {
+                li {
+                    padding: {
+                        left: 0;
+                        right: 18px;
+                    };
+                    &::before {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .critical-patients-card {
+        padding: {
+            left: 17px;
+            right: 17px;
+        };
+        .trezo-card-content {
+            .chart {
+                top: 57px;
+            }
+            .list {
+                margin-top: 120px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .critical-patients-card {
+        padding: {
+            left: 20px;
+            right: 20px;
+        };
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

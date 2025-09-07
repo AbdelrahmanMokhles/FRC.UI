@@ -1,0 +1,88 @@
+<div class="top-properties-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Top Properties
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="p-0 m-0 list-unstyled">
+            <li class="d-flex align-items-center">
+                <img src="images/properties/top1.jpg" alt="propery-image">
+                <div>
+                    <a routerLink="/dashboard/real-estate-page/property-details" class="d-block fw-semibold">
+                        Industrial
+                    </a>
+                    <span class="d-block">
+                        36 Clay Street Indianapolis
+                    </span>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <img src="images/properties/top2.jpg" alt="propery-image">
+                <div>
+                    <a routerLink="/dashboard/real-estate-page/property-details" class="d-block fw-semibold">
+                        Office
+                    </a>
+                    <span class="d-block">
+                        07 Maple Street Los Angeles
+                    </span>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <img src="images/properties/top3.jpg" alt="propery-image">
+                <div>
+                    <a routerLink="/dashboard/real-estate-page/property-details" class="d-block fw-semibold">
+                        Multi-Family
+                    </a>
+                    <span class="d-block">
+                        94 Brooke Street Houston
+                    </span>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <img src="images/properties/top4.jpg" alt="propery-image">
+                <div>
+                    <a routerLink="/dashboard/real-estate-page/property-details" class="d-block fw-semibold">
+                        Retail
+                    </a>
+                    <span class="d-block">
+                        84 Pick Street Centennial
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

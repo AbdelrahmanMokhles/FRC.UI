@@ -1,0 +1,739 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Transactions
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Finance
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Transactions
+        </li>
+    </ol>
+</div>
+
+<!-- Transactions -->
+<div class="transactions-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle g-15 d-sm-flex align-items-center">
+            <button class="add-btn d-inline-block transition fw-medium border-radius" type="button" (click)="toggleClass()">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add Transaction
+                </span>
+            </button>
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Last 30 Days
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 7 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 15 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 30 Days
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-medium">
+                                Transaction ID
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Date
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Description
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Amount
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Type
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Status
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0015
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                30 Apr 2025
+                            </td>
+                            <td>
+                                Payment from Client
+                            </td>
+                            <td class="text-primary">
+                                $5,000
+                            </td>
+                            <td class="text-body">
+                                Income
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0099
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                29 Apr 2025
+                            </td>
+                            <td>
+                                Office Supplies
+                            </td>
+                            <td class="text-primary">
+                                $10,000
+                            </td>
+                            <td class="text-body">
+                                Expense
+                            </td>
+                            <td>
+                                <span class="trezo-badge sPending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0145
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                28 Apr 2025
+                            </td>
+                            <td>
+                                Website Maintenance
+                            </td>
+                            <td class="text-primary">
+                                $35,000
+                            </td>
+                            <td class="text-body">
+                                Expense
+                            </td>
+                            <td>
+                                <span class="trezo-badge sPending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0247
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                27 Apr 2025
+                            </td>
+                            <td>
+                                Payment from Client
+                            </td>
+                            <td class="text-primary">
+                                $2,000
+                            </td>
+                            <td class="text-body">
+                                Income
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0299
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                26 Apr 2025
+                            </td>
+                            <td>
+                                Advertising Campaign
+                            </td>
+                            <td class="text-primary">
+                                $15,500
+                            </td>
+                            <td class="text-body">
+                                Expense
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0015
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                25 Apr 2025
+                            </td>
+                            <td>
+                                Payment from Client
+                            </td>
+                            <td class="text-primary">
+                                $5,000
+                            </td>
+                            <td class="text-body">
+                                Income
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0320
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                24 Apr 2025
+                            </td>
+                            <td>
+                                Office Supplies
+                            </td>
+                            <td class="text-primary">
+                                $10,000
+                            </td>
+                            <td class="text-body">
+                                Expense
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0015
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                30 Apr 2025
+                            </td>
+                            <td>
+                                Payment from Client
+                            </td>
+                            <td class="text-primary">
+                                $5,000
+                            </td>
+                            <td class="text-body">
+                                Income
+                            </td>
+                            <td>
+                                <span class="trezo-badge sPending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0099
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                29 Apr 2025
+                            </td>
+                            <td>
+                                Office Supplies
+                            </td>
+                            <td class="text-primary">
+                                $10,000
+                            </td>
+                            <td class="text-body">
+                                Expense
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TID0145
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                28 Apr 2025
+                            </td>
+                            <td>
+                                Website Maintenance
+                            </td>
+                            <td class="text-primary">
+                                $35,000
+                            </td>
+                            <td class="text-body">
+                                Expense
+                            </td>
+                            <td>
+                                <span class="trezo-badge shipped">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 10 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Add New Transaction
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Transaction ID
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Transaction ID">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Date
+                            </label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Description
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Description">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Amount
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Amount">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Type
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option value="1">
+                                    Income
+                                </option>
+                                <option value="2">
+                                    Expense
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Category
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option value="1">
+                                    Marketing
+                                </option>
+                                <option value="2">
+                                    Payroll
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Payment Method
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option value="1">
+                                    Bank Transfer
+                                </option>
+                                <option value="2">
+                                    Cash
+                                </option>
+                                <option value="3">
+                                    Card
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Status
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option value="1">
+                                    Completed
+                                </option>
+                                <option value="2">
+                                    Pending
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Notes [Optional Notes]
+                            </label>
+                            <textarea name="description" class="form-control" placeholder="Write any additional note here..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button
+                        (click)="toggleClass()"
+                        class="warn d-inline-block fw-medium border-0 border-radius transition"
+                    >
+                        Cancel
+                    </button>
+                    <button class="primary d-inline-block fw-medium border-0 border-radius transition">
+                        <span class="position-relative d-inline-block">
+                            <i class="material-symbols-outlined">
+                                add
+                            </i>
+                            Create
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

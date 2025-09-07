@@ -1,0 +1,28 @@
+<div
+    class="weekly-expenses-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-content">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="inner d-flex align-items-center">
+                <div>
+                    <span class="d-block">
+                        Weekly Expenses
+                    </span>
+                    <h3 class="mb-0 lh-1">
+                        $1,200
+                    </h3>
+                </div>
+                <span class="info-badge down d-inline-block">
+                    -5.1%
+                </span>
+            </div>
+            <span class="d-block">
+                Last 7 days
+            </span>
+        </div>
+        <div class="chart">
+            <div id="weekly_expenses_chart"></div>
+        </div>
+    </div>
+</div>

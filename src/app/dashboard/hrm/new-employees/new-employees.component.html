@@ -1,0 +1,37 @@
+<div
+    class="new-employees-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-content">
+        <div class="title d-flex align-items-center">
+            <div class="icon bg-purple text-white d-flex align-items-center justify-content-center">
+                <i class="material-symbols-outlined">
+                    person_add
+                </i>
+            </div>
+            <div>
+                <span class="d-block">
+                    New Employees
+                </span>
+                <h5 class="mb-0 fw-semibold">
+                    824
+                </h5>
+            </div>
+        </div>
+        <div class="info d-flex align-items-center">
+            <div class="trezo-badge text-success d-flex align-items-center justify-content-center">
+                <i class="ri-arrow-right-up-line"></i>
+            </div>
+            <div>
+                <span class="fw-medium text-black">
+                    +10%
+                </span>
+                last year
+            </div>
+        </div>
+        <div class="chart">
+            <div id="new_employees_chart"></div>
+        </div>
+    </div>
+</div>

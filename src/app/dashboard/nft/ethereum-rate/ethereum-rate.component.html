@@ -1,0 +1,73 @@
+<div
+    class="ethereum-rate-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-content">
+        <span class="d-block">
+            Ethereum Rate
+        </span>
+        <div class="rate d-flex align-items-center">
+            <h3 class="mb-0 lh-1">
+                $1,528
+            </h3>
+            <span class="info-badge d-inline-block">
+                +5.4%
+            </span>
+        </div>
+        <span class="text-xs d-block">
+            vs previous 30 days
+        </span>
+        <div class="buttons-list d-flex align-items-center">
+            <button [ngClass]="{'active': activeTimeframe === '1d'}" (click)="onTimeframeChange('1d')">
+                1d
+            </button>
+            <button [ngClass]="{'active': activeTimeframe === '1w'}" (click)="onTimeframeChange('1w')">
+                1w
+            </button>
+            <button [ngClass]="{'active': activeTimeframe === '1m'}" (click)="onTimeframeChange('1m')">
+                1m
+            </button>
+            <button [ngClass]="{'active': activeTimeframe === '1y'}" (click)="onTimeframeChange('1y')">
+                1y
+            </button>
+        </div>
+        <div class="chart">
+            <div id="ethereum_rate_chart"></div>
+        </div>
+        <ul class="info-list text-xs p-0 m-0 list-unstyled">
+            <li class="d-flex justify-content-between align-items-center fw-semibold">
+                <span class="d-block">
+                    11:30 AM
+                </span>
+                <span class="d-block text-black">
+                    $3,605.08
+                </span>
+                <span class="d-block text-success">
+                    +5.4%
+                </span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center fw-semibold">
+                <span class="d-block">
+                    01:20 PM
+                </span>
+                <span class="d-block text-black">
+                    $3,615.50
+                </span>
+                <span class="d-block text-danger">
+                    -3.21%
+                </span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center fw-semibold">
+                <span class="d-block">
+                    03:33 AM
+                </span>
+                <span class="d-block text-black">
+                    $3,831.13
+                </span>
+                <span class="d-block text-success">
+                    +7.32%
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

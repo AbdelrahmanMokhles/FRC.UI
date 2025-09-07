@@ -1,0 +1,187 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Prescriptions
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Doctor
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Prescriptions
+        </li>
+    </ol>
+</div>
+
+<!-- Prescriptions -->
+<div
+    class="prescriptions-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-content">
+        <div class="doctor-info d-md-flex justify-content-between">
+            <div>
+                <h4 class="fw-semibold">
+                    Dr. Walter White
+                </h4>
+                <span class="d-block">
+                    MBBS, MD, MS (Reg No: 321456)
+                </span>
+                <span class="d-block text-black">
+                    Mobile No: +321 4567 5643
+                </span>
+            </div>
+            <div>
+                <img src="images/logo.svg" class="logo" alt="logo">
+                <img src="images/white-logo.svg" class="logo d-none" alt="logo">
+                <span class="d-block">
+                    S. Arrowhead Court Branford9
+                </span>
+                <span class="d-block">
+                    +1 444 266 5599
+                </span>
+            </div>
+        </div>
+        <div class="prescriptions-info">
+            <img src="images/bar-code.svg" alt="bar-code">
+            <div class="d-md-flex justify-content-between">
+                <ul class="m-0 p-0 list-unstyled">
+                    <li>
+                        ID: <span class="text-black">321456</span>
+                    </li>
+                    <li>
+                        Name: <span class="text-black">Jane Ronan</span>
+                    </li>
+                    <li>
+                        Address: <span class="text-black">Bradford, UK</span>
+                    </li>
+                    <li>
+                        Temperature(Farenhite): <span class="text-black">101 degree</span>
+                    </li>
+                    <li>
+                        Blood Pressure: <span class="text-black">85/123</span>
+                    </li>
+                </ul>
+                <span class="fw-semibold text-black">
+                    Date: 07 November, 2025
+                </span>
+            </div>
+            <span class="sub d-block fw-semibold text-black">
+                R
+            </span>
+        </div>
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-normal text-body position-relative z-1">
+                            Medicine Name
+                        </th>
+                        <th scope="col" class="fw-normal text-body position-relative z-1">
+                            Dosage
+                        </th>
+                        <th scope="col" class="fw-normal text-body position-relative z-1">
+                            Duration
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-semibold">
+                            1. Tab. Ibuprofen
+                        </td>
+                        <td class="fw-semibold">
+                            1 Morning - 1 Night
+                            <span class="d-block text-xs fw-normal text-body">
+                                (Before Food)
+                            </span>
+                        </td>
+                        <td class="fw-semibold">
+                            10 Days
+                            <span class="d-block text-xs fw-normal text-body">
+                                (Total 20 Tablets)
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold">
+                            2. Cap. Acetaminophen
+                        </td>
+                        <td class="fw-semibold">
+                            1 Morning - 1 Midday - 1 Night
+                            <span class="d-block text-xs fw-normal text-body">
+                                (After Food)
+                            </span>
+                        </td>
+                        <td class="fw-semibold">
+                            10 Days
+                            <span class="d-block text-xs fw-normal text-body">
+                                (Total 20 Tablets)
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold">
+                            3. Tab. Naproxen
+                        </td>
+                        <td class="fw-semibold">
+                            1 Morning - 1 Night
+                            <span class="d-block text-xs fw-normal text-body">
+                                (After Food)
+                            </span>
+                        </td>
+                        <td class="fw-semibold">
+                            10 Days
+                            <span class="d-block text-xs fw-normal text-body">
+                                (Total 20 Tablets)
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="note">
+            <span class="d-block text-black fw-semibold">
+                Advice Given:
+            </span>
+            <ul class="mb-0">
+                <li>
+                    Avoid Oily and spicy food.
+                </li>
+            </ul>
+        </div>
+        <div class="signature">
+            <div class="image">
+                <img src="images/signature.svg" alt="signature">
+            </div>
+            <span class="d-block text-black fw-semibold">
+                Dr. Walter White
+            </span>
+            <span class="d-block text-xs">
+                MBBS, MD, MS (Reg No: 321456)
+            </span>
+        </div>
+        <div class="form-btn-box text-center">
+            <button type="button" class="warn d-inline-block fw-medium border-radius border-0 transition">
+                Print
+            </button>
+            <button type="button" class="primary d-inline-block fw-medium border-radius border-0 transition">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        download
+                    </i>
+                    Download
+                </span>
+            </button>
+        </div>
+    </div>
+</div>

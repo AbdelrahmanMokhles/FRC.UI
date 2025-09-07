@@ -1,0 +1,113 @@
+.popular-rooms-card {
+    .trezo-card-content {
+        .image {
+            .trezo-badge {
+                top: 10px;
+                right: 10px;
+                position: absolute;
+                border-radius: 30px;
+            }
+        }
+        h6 {
+            font-size: 16px;
+            margin: {
+                top: 18px;
+                bottom: 6px;
+            };
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .image {
+                .trezo-badge {
+                    right: auto;
+                    left: 10px;
+                }
+            }
+        }
+    }
+}
+::ng-deep {
+    .popular-rooms-card {
+        .trezo-card-content {
+            .owl-theme {
+                .owl-nav {
+                    &.disabled + .owl-dots {
+                        margin-top: 0;
+                    }
+                }
+                .owl-dots {
+                    align-items: center;
+                    position: absolute;
+                    display: flex;
+                    top: -36px;
+                    gap: 5px;
+                    right: 0;
+
+                    .owl-dot {
+                        span {
+                            width: 5px;
+                            height: 5px;
+                            margin: 0;
+                        }
+                        &.active {
+                            span {
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-dots {
+                        right: auto;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .popular-rooms-card {
+        .trezo-card-content {
+            h6 {
+                font-size: 15px;
+                margin-top: 15px;
+            }
+        }
+    }
+    ::ng-deep {
+        .popular-rooms-card {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-dots {
+                        top: -29px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

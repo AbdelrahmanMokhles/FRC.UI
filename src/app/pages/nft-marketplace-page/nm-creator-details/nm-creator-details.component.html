@@ -1,0 +1,655 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Creator Details
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            NFT
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Creators
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Creator Details
+        </li>
+    </ol>
+</div>
+
+<!-- Creator Details -->
+<div class="row">
+    <div class="col-lg-6">
+        <div
+            class="creator-details-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-dark-theme]="themeService.isDark()"
+        >
+            <div class="trezo-card-content">
+                <div class="author d-flex align-items-center">
+                    <img src="images/nfts/creator-author.jpg" class="rounded-circle" alt="creator-author">
+                    <div>
+                        <h3>
+                            Angela Carter
+                        </h3>
+                        <span class="d-block text-xs">
+                            ID: 35246
+                        </span>
+                    </div>
+                </div>
+                <div class="author-info d-sm-flex align-items-center justify-content-between">
+                    <div class="date d-flex align-items-center">
+                        <img src="images/icons/schedule.svg" alt="schedule">
+                        <div>
+                            <span class="d-block text-xs">
+                                Joined Since
+                            </span>
+                            <span class="d-block text-black fw-semibold">
+                                23 June 2025
+                            </span>
+                        </div>
+                    </div>
+                    <button class="follow-btn border-0 fw-medium border-radius d-inline-block" type="button">
+                        Follow
+                    </button>
+                </div>
+                <div class="item-info d-sm-flex align-items-center justify-content-between text-center border-radius">
+                    <div class="item">
+                        <span class="d-block text-xs">
+                            Total NFT
+                        </span>
+                        <span class="d-block text-primary fw-semibold">
+                            156
+                        </span>
+                    </div>
+                    <div class="item">
+                        <span class="d-block text-xs">
+                            Total Earned
+                        </span>
+                        <span class="d-block text-black fw-semibold">
+                            1234ETH
+                        </span>
+                    </div>
+                    <div class="item">
+                        <span class="d-block text-xs">
+                            Auction
+                        </span>
+                        <span class="d-block text-black fw-semibold">
+                            45
+                        </span>
+                    </div>
+                </div>
+                <h5>
+                    Description
+                </h5>
+                <p>
+                    This NFT captures the essence of boundless potential, symbolized by a surreal landscape where the sky meets the earth in a dazzling fusion of colors. The intricate design features flowing lines that blend together, representing the limitless paths we can take in life.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div
+            class="creator-nfts-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-dark-theme]="themeService.isDark()"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Angela’s NFTs
+                    </h5>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <ul class="nfts-tabs p-0 list-unstyled">
+                    <li class="d-inline-block">
+                        <button id="tab1" (click)="switchTab($event, 'tab1')" [ngClass]="{'active': currentTab === 'tab1'}" type="button">
+                            All
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button id="tab2" (click)="switchTab($event, 'tab2')" [ngClass]="{'active': currentTab === 'tab2'}" type="button">
+                            IN AUCTION
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button id="tab3" (click)="switchTab($event, 'tab3')" [ngClass]="{'active': currentTab === 'tab3'}" type="button">
+                            SOLD
+                        </button>
+                    </li>
+                </ul>
+                @if (currentTab === 'tab1') {
+                    <div class="tab-pane">
+                        <div class="basic-table table-responsive">
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction1.gif" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Christmas Eve
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by John Lira
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            11.75 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            10.00 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            30 mins ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction2.gif" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Rotating Flower
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by WalterW.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            9.25 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            6.10 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            1 hr ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction3.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Windows Art
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Christino
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            17.24 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            11.75 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            1.30 hr ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction4.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        3D Logo
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Hater
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            12.12 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            10.24 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            35 mins ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction5.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Awesome Bird
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Liveslong
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            8.15 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            7.15 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            2 hrs ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction1.gif" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Christmas Eve
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by John Lira
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            11.75 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            10.00 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            30 mins ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction2.gif" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Rotating Flower
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by WalterW.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            9.25 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            6.10 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            1 hr ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction3.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Windows Art
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Christino
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            17.24 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            11.75 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            1.30 hr ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction4.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        3D Logo
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Hater
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            12.12 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            10.24 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            35 mins ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction5.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Awesome Bird
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Liveslong
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            8.15 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            7.15 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            2 hrs ago
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+                @if (currentTab === 'tab2') {
+                    <div class="tab-pane">
+                        <div class="basic-table table-responsive">
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction1.gif" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Christmas Eve
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by John Lira
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            11.75 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            10.00 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            30 mins ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction3.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Windows Art
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Christino
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            17.24 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            11.75 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            1.30 hr ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction2.gif" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Rotating Flower
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by WalterW.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            9.25 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            6.10 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            1 hr ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction5.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Awesome Bird
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Liveslong
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            8.15 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            7.15 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            2 hrs ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction4.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        3D Logo
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Hater
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            12.12 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            10.24 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            35 mins ago
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+                @if (currentTab === 'tab3') {
+                    <div class="tab-pane">
+                        <div class="basic-table table-responsive">
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction1.gif" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Christmas Eve
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by John Lira
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            11.75 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            10.00 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            30 mins ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction2.gif" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Rotating Flower
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by WalterW.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            9.25 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            6.10 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            1 hr ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction3.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        Windows Art
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Christino
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            17.24 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            11.75 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            1.30 hr ago
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="employee-info d-flex align-items-center">
+                                                <div class="img border-radius">
+                                                    <img alt="user-image" src="images/nfts/auction4.jpg" class="border-radius">
+                                                </div>
+                                                <div>
+                                                    <span class="d-block fw-medium">
+                                                        3D Logo
+                                                    </span>
+                                                    <span class="d-block text-body">
+                                                        by Hater
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="fw-medium">
+                                            12.12 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            10.24 ETH
+                                        </td>
+                                        <td class="fw-medium">
+                                            35 mins ago
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

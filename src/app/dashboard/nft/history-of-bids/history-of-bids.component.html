@@ -1,0 +1,191 @@
+<div
+    class="history-of-bids-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                History Of Bids
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user6.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Johhna Loren
+                                    </span>
+                                    <span class="d-block text-body">
+                                        &#64;queensland
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            624 ETH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user7.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Zara Loren
+                                    </span>
+                                    <span class="d-block text-body">
+                                        &#64;neverdies
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            121.1 ETH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user8.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Walter White
+                                    </span>
+                                    <span class="d-block text-body">
+                                        &#64;emoticons
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            72.78 ETH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user9.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Viktor James
+                                    </span>
+                                    <span class="d-block text-body">
+                                        &#64;puzzleworld
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            25.8 ETH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user10.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Zinia Loren
+                                    </span>
+                                    <span class="d-block text-body">
+                                        &#64;liveslong
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            12 ETH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user8.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Walter White
+                                    </span>
+                                    <span class="d-block text-body">
+                                        &#64;emoticons
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            11.2 ETH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user9.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Viktor James
+                                    </span>
+                                    <span class="d-block text-body">
+                                        &#64;puzzleworld
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            10.5 ETH
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="low-stock-alerts-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Low Stock Alerts
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="p-0 m-0 list-unstyled">
+            <li class="d-flex align-items-center justify-content-between">
+                <a routerLink="." class="d-block fw-semibold">
+                    Thai Bean Soup
+                </a>
+                <span class="d-block text-danger fw-bold">
+                    1
+                </span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <a routerLink="." class="d-block fw-semibold">
+                    Banana Shake
+                </a>
+                <span class="d-block text-danger fw-bold">
+                    3
+                </span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <a routerLink="." class="d-block fw-semibold">
+                    Chicken Tandoori
+                </a>
+                <span class="d-block text-danger fw-bold">
+                    5
+                </span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <a routerLink="." class="d-block fw-semibold">
+                    Thai Chicken Masala
+                </a>
+                <span class="d-block text-danger fw-bold">
+                    5
+                </span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <a routerLink="." class="d-block fw-semibold">
+                    Chicken Club Sandwich
+                </a>
+                <span class="d-block text-danger fw-bold">
+                    6
+                </span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <a routerLink="." class="d-block fw-semibold">
+                    Shrimp Fried Rice
+                </a>
+                <span class="d-block text-danger fw-bold">
+                    2
+                </span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <a routerLink="." class="d-block fw-semibold">
+                    Grilled Salmon
+                </a>
+                <span class="d-block text-danger fw-bold">
+                    4
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

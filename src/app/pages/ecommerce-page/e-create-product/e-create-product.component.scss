@@ -1,0 +1,10 @@
+.component-body-bg-color, .component-card-with-box-shadow {
+    &.shadow-none {
+        box-shadow: unset !important;
+    }
+}
+.component-body-bg-color, .component-card-borderd {
+    &.shadow-none {
+        border-width: 0 !important;
+    }
+}

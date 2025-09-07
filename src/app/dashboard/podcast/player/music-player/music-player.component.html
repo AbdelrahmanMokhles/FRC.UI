@@ -1,0 +1,43 @@
+<div
+    class="player"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="time-duration d-flex align-items-center justify-content-between">
+        @if (duration > 0) {
+            <span class="d-block">
+                {{ formatTime(currentTime) }}
+            </span>
+        }
+        @if (duration > 0) {
+            <span class="d-block">
+                {{ formatTime(duration) }}
+            </span>
+        }
+    </div>
+    <div class="progress">
+        <div class="progress-bar" [style.width]="progress + '%'"></div>
+    </div>
+    <audio #audioElement (timeupdate)="updateProgressBar()" (canplay)="updateDuration()" (loadedmetadata)="updateDuration()">
+        <source src="https://cldup.com/qR72ozoaiQ.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+    <div class="player-settings text-center d-flex align-items-center justify-content-between">
+        <div class="icons-list d-flex align-items-center">
+            <button type="button" class="icon-btn p-0 border-0 bg-transparent lh-1" (click)="rewind()">
+                <i class="ri-skip-left-fill"></i>
+            </button>
+            <button type="button" class="icon-btn p-0 border-0 bg-transparent lh-1" (click)="fastForward()">
+                <i class="ri-skip-right-fill"></i>
+            </button>
+        </div>
+        <div class="d-flex align-items-center">
+            <button type="button" class="play-btn border-0 p-0 d-flex align-items-center justify-content-center rounded-circle" (click)="togglePlayPause()">
+                {{ isPlaying ? '⏸' : '▶' }}
+            </button>
+        </div>
+        <button type="button" class="restart-btn p-0 border-0 bg-transparent lh-1" (click)="restart()">
+            <i class="ri-reset-right-line"></i>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.buttons-list {
+    margin-bottom: 5px;
+
+    .btn {
+        margin: {
+            right: 15px;
+            bottom: 15px;
+        };
+        &.btn-outline-dark {
+            border-color: var(--borderColor);
+
+            &:hover {
+                border-color: var(--darkColor);
+            }
+        }
+    }
+}
+.component-dark-theme {
+    .buttons-list {
+        .btn {
+            &.btn-outline-dark {
+                color: var(--whiteColor);
+            }
+        }
+    }
+}

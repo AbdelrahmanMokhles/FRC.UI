@@ -1,0 +1,146 @@
+<div
+    class="recent-instagram-followers-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Recent Instagram Followers
+            </h5>
+            <p class="fw-normal">
+                Check out your latest followers
+            </p>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="p-0 m-0 list-unstyled">
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user69.jpg" class="rounded-circle" alt="user-image">
+                    <span class="d-block fw-medium text-black">
+                        Mason Lee
+                    </span>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="follow-btn d-inline-block border-0">
+                        Follow Back
+                    </button>
+                    <button type="button" class="message-btn d-flex align-items-center justify-content-center border-0 p-0">
+                        <i class="ri-message-2-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user70.jpg" class="rounded-circle" alt="user-image">
+                    <span class="d-block fw-medium text-black">
+                        Mia Patel
+                    </span>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="follow-btn d-inline-block border-0">
+                        Follow Back
+                    </button>
+                    <button type="button" class="message-btn d-flex align-items-center justify-content-center border-0 p-0">
+                        <i class="ri-message-2-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user71.jpg" class="rounded-circle" alt="user-image">
+                    <span class="d-block fw-medium text-black">
+                        James Nguyen
+                    </span>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="follow-btn d-inline-block border-0">
+                        Follow Back
+                    </button>
+                    <button type="button" class="message-btn d-flex align-items-center justify-content-center border-0 p-0">
+                        <i class="ri-message-2-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user72.jpg" class="rounded-circle" alt="user-image">
+                    <span class="d-block fw-medium text-black">
+                        Benjamin Kim
+                    </span>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="follow-btn d-inline-block border-0">
+                        Follow Back
+                    </button>
+                    <button type="button" class="message-btn d-flex align-items-center justify-content-center border-0 p-0">
+                        <i class="ri-message-2-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user73.jpg" class="rounded-circle" alt="user-image">
+                    <span class="d-block fw-medium text-black">
+                        Elijah Watson
+                    </span>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="follow-btn d-inline-block border-0">
+                        Follow Back
+                    </button>
+                    <button type="button" class="message-btn d-flex align-items-center justify-content-center border-0 p-0">
+                        <i class="ri-message-2-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user74.jpg" class="rounded-circle" alt="user-image">
+                    <span class="d-block fw-medium text-black">
+                        Daniel Flores
+                    </span>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="follow-btn d-inline-block border-0">
+                        Follow Back
+                    </button>
+                    <button type="button" class="message-btn d-flex align-items-center justify-content-center border-0 p-0">
+                        <i class="ri-message-2-line"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

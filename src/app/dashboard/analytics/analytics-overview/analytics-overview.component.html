@@ -1,0 +1,132 @@
+<div
+    class="analytics-overview-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-sm-flex justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Analytics Overview
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button type="button" [class.active]="selectedTimeframe === 'Day'" (click)="onTimeframeChange('Day')">
+                Day
+            </button>
+            <button type="button" [class.active]="selectedTimeframe === 'Week'" (click)="onTimeframeChange('Week')">
+                Week
+            </button>
+            <button type="button" [class.active]="selectedTimeframe === 'Month'" (click)="onTimeframeChange('Month')">
+                Month
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <p>
+            Track, Analyze, and Optimize Performance
+        </p>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="chart">
+                    <div id="analytics_overview_chart"></div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <ul class="content p-0 list-unstyled">
+                    <li>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span class="d-block text-black">
+                                    New Users
+                                </span>
+                                <h5 class="mb-0">
+                                    19.5k
+                                </h5>
+                            </div>
+                            <div>
+                                <span class="d-block text-black">
+                                    Goal Reached
+                                </span>
+                                <h5 class="mb-0 text-body text-end">
+                                    75%
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="progress trezo-progress w-100" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span class="d-block text-black">
+                                    Page Views
+                                </span>
+                                <h5 class="mb-0">
+                                    48k
+                                </h5>
+                            </div>
+                            <div>
+                                <span class="d-block text-black">
+                                    Goal Reached
+                                </span>
+                                <h5 class="mb-0 text-body text-end">
+                                    45%
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="progress trezo-progress w-100 page-views-progressbar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 45%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span class="d-block text-black">
+                                    Page Sessions
+                                </span>
+                                <h5 class="mb-0">
+                                    33.3k
+                                </h5>
+                            </div>
+                            <div>
+                                <span class="d-block text-black">
+                                    Goal Reached
+                                </span>
+                                <h5 class="mb-0 text-body text-end">
+                                    55%
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="progress trezo-progress w-100 page-sessions-progressbar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 55%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span class="d-block text-black">
+                                    Bounce Rate
+                                </span>
+                                <h5 class="mb-0">
+                                    22.45%
+                                </h5>
+                            </div>
+                            <div>
+                                <span class="d-block text-black">
+                                    Goal Reached
+                                </span>
+                                <h5 class="mb-0 text-body text-end">
+                                    35%
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="progress trezo-progress w-100 bounce-rate-progressbar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 35%"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

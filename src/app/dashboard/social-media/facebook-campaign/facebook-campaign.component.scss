@@ -1,0 +1,236 @@
+.facebook-campaign-card {
+    .trezo-card-header {
+        margin-bottom: 20px;
+        
+        .trezo-card-title {
+            h5 {
+                font-size: 20px;
+            }
+            p {
+                color: #8695AA;
+            }
+        }
+    }
+    .trezo-card-content {
+        .title {
+            font-size: 16px;
+            padding-left: 22px;
+
+            i {
+                left: 0;
+                top: 50%;
+                font-size: 18px;
+                position: absolute;
+                color: var(--orangeColor);
+                transform: translateY(-50%);
+            }
+        }
+        .chart {
+            padding-right: 150px;
+            margin: {
+                top: 5px;
+                left: -15px;
+                bottom: -25px;
+            };
+            .items {
+                right: 0;
+                top: 50%;
+                position: absolute;
+                transform: translateY(-50%);
+
+                .item {
+                    gap: 10px;
+                    margin-bottom: 25px;
+    
+                    .dot {
+                        width: 10px;
+                        height: 10px;
+                    }
+                    span {
+                        margin: {
+                            top: -5.5px;
+                            bottom: -3px;
+                        };
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .title {
+                padding: {
+                    left: 0;
+                    right: 22px;
+                };
+                i {
+                    left: auto;
+                    right: 0;
+                }
+            }
+            .chart {
+                padding: {
+                    right: 0;
+                    left: 150px;
+                };
+                margin: {
+                    left: 0;
+                    right: -15px;
+                };
+                .items {
+                    right: auto;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .facebook-campaign-card {
+        .trezo-card-header {
+            .trezo-card-title {
+                margin-bottom: 8px;
+
+                h5 {
+                    font-size: 16px;
+                }
+                p {
+                    margin-top: 2px;
+                }
+            }
+        }
+        .trezo-card-content {
+            .title {
+                font-size: 14px;
+                padding-left: 20px;
+    
+                i {
+                    font-size: 16px;
+                    margin-top: -1px;
+                }
+            }
+            .chart {
+                padding-right: 0;
+                margin-bottom: 0;
+
+                .items {
+                    top: 0;
+                    position: relative;
+                    padding-left: 17px;
+                    transform: translateY(0);
+                    
+                    .item {
+                        margin-bottom: 15px;
+        
+                        span {
+                            margin: {
+                                top: -3px;
+                                bottom: -3px;
+                            };
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .title {
+                    padding: {
+                        left: 0;
+                        right: 20px;
+                    };
+                }
+                .chart {
+                    padding-left: 0;
+
+                    .items {
+                        padding: {
+                            left: 0;
+                            right: 17px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .facebook-campaign-card {
+        .trezo-card-content {
+            .chart {
+                padding-right: 150px;
+                margin-bottom: -25px;
+
+                .items {
+                    top: 50%;
+                    padding-left: 0;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .chart {
+                    padding: {
+                        right: 0;
+                        left: 150px;
+                    };
+                    .items {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .facebook-campaign-card {
+        .trezo-card-header {
+            .trezo-card-title {
+                h5 {
+                    font-size: 18px;
+                }
+                p {
+                    margin-top: 1px;
+                }
+            }
+        }
+        .trezo-card-content {
+            .title {
+                font-size: 15px;
+    
+                i {
+                    font-size: 17px;
+                }
+            }
+            .chart {
+                margin-top: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

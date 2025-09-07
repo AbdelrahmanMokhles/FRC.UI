@@ -1,0 +1,20 @@
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Popup Gallery
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="row gallery-list">
+            @for (image of _album; let i = $index; track $index) {
+                <div class="col-lg-3 col-sm-4 col-md-4 mb-25">
+                    <div class="single-gallery-item overflow-hidden border-radius">
+                        <img [src]="image.thumb" (click)="open(i)" class="border-radius transition" alt="gallery-image" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

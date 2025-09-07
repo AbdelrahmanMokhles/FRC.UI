@@ -1,0 +1,150 @@
+<div
+    class="recent-clients-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Recent Clients
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="m-0 p-0 list-unstyled">
+            <li class="d-flex align-items-center position-relative">
+                <div class="image position-relative">
+                    <img src="images/users/user48.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Johhna Loren
+                    </span>
+                    <span class="d-block">
+                        Doctor
+                    </span>
+                </div>
+                <a routerLink="." class="link-btn lh-1">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </li>
+            <li class="d-flex align-items-center position-relative">
+                <div class="image position-relative">
+                    <img src="images/users/user37.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Zinia Watson
+                    </span>
+                    <span class="d-block">
+                        Lawyer
+                    </span>
+                </div>
+                <a routerLink="." class="link-btn lh-1">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </li>
+            <li class="d-flex align-items-center position-relative">
+                <div class="image position-relative">
+                    <img src="images/users/user38.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Angela Carter
+                    </span>
+                    <span class="d-block">
+                        Businesswoman
+                    </span>
+                </div>
+                <a routerLink="." class="link-btn lh-1">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </li>
+            <li class="d-flex align-items-center position-relative">
+                <div class="image position-relative">
+                    <img src="images/users/user39.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status offline"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Skyler White
+                    </span>
+                    <span class="d-block">
+                        Enterpreuner
+                    </span>
+                </div>
+                <a routerLink="." class="link-btn lh-1">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </li>
+            <li class="d-flex align-items-center position-relative">
+                <div class="image position-relative">
+                    <img src="images/users/user40.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Jane Ronan
+                    </span>
+                    <span class="d-block">
+                        Editor
+                    </span>
+                </div>
+                <a routerLink="." class="link-btn lh-1">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </li>
+            <li class="d-flex align-items-center position-relative">
+                <div class="image position-relative">
+                    <img src="images/users/user42.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status offline"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Viktor James
+                    </span>
+                    <span class="d-block">
+                        Editor
+                    </span>
+                </div>
+                <a routerLink="." class="link-btn lh-1">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

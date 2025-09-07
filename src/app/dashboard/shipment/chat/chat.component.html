@@ -1,0 +1,181 @@
+<div
+    class="shipment-chat-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Chat
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                View
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Delete
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Block
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Report
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="chat-body">
+            <ul class="list-unstyled mb-0 mt-0">
+                <li class="position-relative">
+                    <img src="images/users/user31.jpg" width="35" class="rounded-circle user" alt="user">
+                    <div class="message">
+                        <div>
+                            <p>
+                                Hey Olivia, have you had a chance to check out the new admin dashboard?
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                Oh, they've got this Kanban board for task management. You can drag and drop tasks between columns – it's so intuitive. Makes managing tasks a breeze. 🔥
+                            </p>
+                        </div>
+                    </div>
+                    <span class="time d-block">
+                        09:10 AM
+                    </span>
+                </li>
+                <li class="position-relative right">
+                    <!-- <img src="images/admin.png" width="35" class="rounded-circle user" alt="user"> -->
+                    <div class="message">
+                        <div>
+                            <p>
+                                Oh, you mean the one for project management?
+                            </p>
+                        </div>
+                    </div>
+                    <span class="time d-block">
+                        09:20 AM
+                    </span>
+                </li>
+                <li class="position-relative">
+                    <img src="images/users/user31.jpg" width="35" class="rounded-circle user" alt="user">
+                    <div class="message">
+                        <div>
+                            <p>
+                                Yeah, that's the one! It's got a sleek Material Design, and the features are pretty robust.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="time d-block">
+                        09:20 AM
+                    </span>
+                </li>
+                <li class="position-relative right">
+                    <!-- <img src="images/admin.png" width="35" class="rounded-circle user" alt="user"> -->
+                    <div class="message">
+                        <div>
+                            <p>
+                                Nice! What features are you finding interesting?
+                            </p>
+                        </div>
+                    </div>
+                    <span class="time d-block">
+                        09:21 AM
+                    </span>
+                </li>
+                <li class="position-relative">
+                    <img src="images/users/user31.jpg" width="35" class="rounded-circle user" alt="user">
+                    <div class="message">
+                        <div>
+                            <p>
+                                Well, it has a project overview with all the key metrics on the landing page – project
+                            </p>
+                        </div>
+                    </div>
+                    <span class="time d-block">
+                        09:22 AM
+                    </span>
+                </li>
+                <li class="position-relative right">
+                    <!-- <img src="images/admin.png" width="35" class="rounded-circle user" alt="user"> -->
+                    <div class="message">
+                        <div>
+                            <p>
+                                That sounds handy. How about the task management features?
+                            </p>
+                        </div>
+                    </div>
+                    <span class="time d-block">
+                        09:25 AM
+                    </span>
+                </li>
+                <li class="position-relative">
+                    <img src="images/users/user31.jpg" width="35" class="rounded-circle user" alt="user">
+                    <div class="message">
+                        <div>
+                            <p>
+                                Oh, they've got this Kanban board for task management. You can drag and drop tasks between columns – it's so intuitive.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="time d-block">
+                        09:30 AM
+                    </span>
+                </li>
+                <li class="position-relative right">
+                    <!-- <img src="images/admin.png" width="35" class="rounded-circle user" alt="user"> -->
+                    <div class="message">
+                        <div>
+                            <p>
+                                Sweet! What about team collaboration?
+                            </p>
+                        </div>
+                    </div>
+                    <span class="time d-block">
+                        09:31 AM
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="chat-footer border-radius d-md-flex align-items-center">
+            <div class="buttons-list position-relative d-flex align-items-center">
+                <button type="button" class="d-inline-block p-0 border-0 bg-transparent transition">
+                    <i class="material-symbols-outlined">
+                        sentiment_satisfied
+                    </i>
+                </button>
+                <button type="button" class="d-inline-block p-0 border-0 bg-transparent transition">
+                    <i class="material-symbols-outlined">
+                        attach_file
+                    </i>
+                </button>
+            </div>
+            <form class="position-relative">
+                <input type="text" class="d-block w-100 border-0 border-radius" placeholder="Type your message">
+                <button type="button" class="d-inline-block p-0 border-0 transition bg-transparent">
+                    <i class="material-symbols-outlined">
+                        send
+                    </i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

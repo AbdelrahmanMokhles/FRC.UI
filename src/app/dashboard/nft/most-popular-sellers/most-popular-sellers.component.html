@@ -1,0 +1,327 @@
+<div
+    class="most-popular-sellers-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Most Popular Sellers
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn bg-gray transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Monthly
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Weekly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Monthly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Yearly
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-medium">
+                            Seller
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Deliveries
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Earnings
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Ratings
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            View
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user58.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Johhna Loren
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by Queensland
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            6240
+                        </td>
+                        <td class="fw-medium">
+                            624 ETH
+                        </td>
+                        <td class="fw-normal">
+                            <div class="ratings d-flex align-items-center">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <span class="number text-body position-relative">
+                                    5.0
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user53.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Skyler White
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by Neverdies
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            5135
+                        </td>
+                        <td class="fw-medium">
+                            597 ETH
+                        </td>
+                        <td class="fw-normal">
+                            <div class="ratings d-flex align-items-center">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                                <span class="number text-body position-relative">
+                                    4.5
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user37.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Jonathon Watson
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by Emoticons
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            4321
+                        </td>
+                        <td class="fw-medium">
+                            413 ETH
+                        </td>
+                        <td class="fw-normal">
+                            <div class="ratings d-flex align-items-center">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                                <span class="number text-body position-relative">
+                                    4.0
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user36.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Walter White
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by Puzzleworld
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            3124
+                        </td>
+                        <td class="fw-medium">
+                            321 ETH
+                        </td>
+                        <td class="fw-normal">
+                            <div class="ratings d-flex align-items-center">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                                <i class="ri-star-line"></i>
+                                <span class="number text-body position-relative">
+                                    3.5
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user30.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        David Carlen
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by Liveslong
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            2137
+                        </td>
+                        <td class="fw-medium">
+                            246 ETH
+                        </td>
+                        <td class="fw-normal">
+                            <div class="ratings d-flex align-items-center">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <span class="number text-body position-relative">
+                                    5.0
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 5 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

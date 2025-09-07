@@ -1,0 +1,154 @@
+.re-agent-welcome-card {
+    background-color: #FE7A36;
+
+    .trezo-card-content {
+        padding: {
+            top: 10px;
+            left: 25px;
+            right: 25px;
+            bottom: 70px;
+        };
+        .content {
+            max-width: 480px;
+            
+            .sub-title {
+                font-size: 16px;
+                color: #FFE8D4;
+                padding: 1px 13px;
+                margin-bottom: 12px;
+                background-color: var(--darkColor);
+            }
+            h1 {
+                font-size: 32px;
+                letter-spacing: -0.5px;
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .text-lg-end {
+                text-align: left !important;
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .re-agent-welcome-card {
+        .trezo-card-content {
+            padding: 8px 0;
+
+            .content {
+                max-width: 100%;
+                text-align: center;
+                margin-bottom: 17px;
+                
+                .sub-title {
+                    font-size: 14px;
+                }
+                h1 {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .re-agent-welcome-card {
+        .trezo-card-content {
+            padding: {
+                top: 5px;
+                bottom: 5px;
+            };
+            .content {
+                max-width: 400px;
+                margin: {
+                    left: auto;
+                    right: auto;
+                    bottom: 20px;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .re-agent-welcome-card {
+        .trezo-card-content {
+            padding: 10px 0;
+
+            .content {
+                max-width: 440px;
+                text-align: center;
+                margin: {
+                    left: auto;
+                    right: auto;
+                    bottom: 25px;
+                };
+                .sub-title {
+                    font-size: 15px;
+                }
+                h1 {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .re-agent-welcome-card {
+        .trezo-card-content {
+            padding: {
+                top: 10px;
+                bottom: 10px;
+            };
+            .content {
+                h1 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .re-agent-welcome-card {
+        .trezo-card-content {
+            padding: {
+                top: 10px;
+                bottom: 10px;
+            };
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .re-agent-welcome-card {
+        .trezo-card-content {
+            padding: {
+                left: 75px;
+                right: 75px;
+            };
+        }
+    }
+
+}

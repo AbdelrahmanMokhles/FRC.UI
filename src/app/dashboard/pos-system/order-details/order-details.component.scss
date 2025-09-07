@@ -1,0 +1,273 @@
+.order-details-card {
+    .trezo-card-header {
+        .trezo-card-title {
+            h5 {
+                font-size: 20px;
+            }
+        }
+        .trezo-card-subtitle {
+            button {
+                padding: 0;
+                line-height: 1;
+                border-width: 0;
+                color: var(--primaryColor);
+                background-color: transparent;
+                transition: var(--transition);
+
+                &:hover {
+                    transform: rotate(90deg);
+                    color: var(--secondaryColor);
+                }
+            }
+        }
+    }
+    .trezo-card-content {
+        .list {
+            .item {
+                border-bottom: 1px solid var(--borderColor);
+                padding-bottom: 17px;
+                margin-bottom: 17px;
+
+                .info {
+                    gap: 10px;
+
+                    img {
+                        width: 40px;
+                        border-radius: 5px;
+                    }
+                    h6 {
+                        font-size: 14px;
+                        max-width: 80px;
+                    }
+                }
+                .quantity-price {
+                    gap: 15px;
+                    
+                    .price {
+                        width: 45px;
+                        font-size: 18px;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom-width: 0;
+                }
+            }
+        }
+        .payble-total {
+            padding: 20px;
+            margin-top: 25px;
+            background-color: #F6F7F9;
+
+            .item {
+                margin-bottom: 5px;
+
+                &.total {
+                    font-size: 20px;
+                    margin-top: 18px;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .payment-method {
+            margin-top: 25px;
+            max-width: 305px;
+
+            h4 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .method-type {
+                .item {
+                    width: 82px;
+                    height: 66px;
+                    padding-top: 7px;
+                    border-radius: 4px;
+                    background-color: #F6F7F9;
+                    border: 1px solid #DDE4FF;
+                    transition: var(--transition);
+
+                    i {
+                        font-size: 28px;
+                        color: var(--primaryColor);
+                    }
+                    span {
+                        margin-top: -4px;
+                    }
+                    .form-check-input {
+                        top: 0;
+                        left: 0;
+                        margin: 0;
+                        z-index: 1;
+                        opacity: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0;
+                        position: absolute;
+                    }
+                    &:has(input:checked) {
+                        border-color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+        .btn {
+            margin-top: 25px;
+            font-size: 16px;
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .payble-total {
+                background-color: #0A0E19;
+            }
+            .payment-method {
+                margin-top: 25px;
+                max-width: 305px;
+    
+                h4 {
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+                .method-type {
+                    .item {
+                        background-color: #0A0E19;
+                        border-color: var(--borderColor);
+    
+                        &:has(input:checked) {
+                            border-color: var(--primaryColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .order-details-card {
+        .trezo-card-header {
+            .trezo-card-title {
+                h5 {
+                    font-size: 16px;
+                }
+            }
+            .trezo-card-subtitle {
+                button {
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .trezo-card-content {
+            .list {
+                .item {
+                    padding-bottom: 15px;
+                    margin-bottom: 15px;
+    
+                    .info {
+                        img {
+                            width: 40px;
+                        }
+                        h6 {
+                            font-size: 14px;
+                            max-width: 80px;
+                        }
+                    }
+                    .quantity-price {
+                        margin-top: 12px;
+                        
+                        .price {
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .payble-total {
+                padding: 15px;
+                margin-top: 15px;
+    
+                .item {
+                    &.total {
+                        font-size: 16px;
+                        margin-top: 15px;
+                    }
+                }
+            }
+            .payment-method {
+                margin-top: 15px;
+                max-width: 285px;
+    
+                h4 {
+                    font-size: 18px;
+                }
+                .method-type {
+                    .item {
+                        width: 80px;
+    
+                        span {
+                            margin-top: -2px;
+                        }
+                    }
+                }
+            }
+            .btn {
+                margin-top: 15px;
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .order-details-card {
+        .trezo-card-header {
+            .trezo-card-title {
+                h5 {
+                    font-size: 18px;
+                }
+            }
+            .trezo-card-subtitle {
+                button {
+                    i {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+        .trezo-card-content {
+            .payble-total {
+                margin-top: 20px;
+            }
+            .payment-method {
+                margin-top: 20px;
+            }
+            .btn {
+                margin-top: 20px;
+                font-size: 15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

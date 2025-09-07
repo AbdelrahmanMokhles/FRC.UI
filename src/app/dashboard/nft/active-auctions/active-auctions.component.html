@@ -1,0 +1,315 @@
+<div
+    class="active-auctions-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Active Auctions
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn bg-gray transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Monthly
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Weekly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Monthly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Yearly
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-medium">
+                            Item
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Open Price
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Your Offer
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Recent Offer
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Time Left
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            View
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img border-radius">
+                                    <img alt="user-image" src="images/nfts/auction1.gif" class="border-radius">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Christmas Eve
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by John Lira
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            11.75 ETH
+                        </td>
+                        <td class="fw-medium">
+                            10.00 ETH
+                        </td>
+                        <td class="fw-medium">
+                            <div class="d-flex align-items-center" style="gap: 8px;">
+                                <img width="22" alt="user-image" class="rounded-circle" src="images/users/user58.jpg">
+                                10.00 ETH
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            02h 44m 57s
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img border-radius">
+                                    <img alt="user-image" src="images/nfts/auction2.gif" class="border-radius">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Rotating Flower
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by WalterW.
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            9.25 ETH
+                        </td>
+                        <td class="fw-medium">
+                            6.10 ETH
+                        </td>
+                        <td class="fw-medium">
+                            <div class="d-flex align-items-center" style="gap: 8px;">
+                                <img width="22" alt="user-image" class="rounded-circle" src="images/users/user59.jpg">
+                                7.15 ETH
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            01h 20m 58s
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img border-radius">
+                                    <img alt="user-image" src="images/nfts/auction3.jpg" class="border-radius">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Windows Art
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by Christino
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            17.24 ETH
+                        </td>
+                        <td class="fw-medium">
+                            11.75 ETH
+                        </td>
+                        <td class="fw-medium">
+                            <div class="d-flex align-items-center" style="gap: 8px;">
+                                <img width="22" alt="user-image" class="rounded-circle" src="images/users/user60.jpg">
+                                14.11 ETH
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            42m 58s
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img border-radius">
+                                    <img alt="user-image" src="images/nfts/auction4.jpg" class="border-radius">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        3D Logo
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by Hater
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            12.12 ETH
+                        </td>
+                        <td class="fw-medium">
+                            10.24 ETH
+                        </td>
+                        <td class="fw-medium">
+                            <div class="d-flex align-items-center" style="gap: 8px;">
+                                <img width="22" alt="user-image" class="rounded-circle" src="images/users/user61.jpg">
+                                12.08 ETH
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            01h 50m 00s
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img border-radius">
+                                    <img alt="user-image" src="images/nfts/auction5.jpg" class="border-radius">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Awesome Bird
+                                    </span>
+                                    <span class="d-block text-body">
+                                        by Liveslong
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            8.15 ETH
+                        </td>
+                        <td class="fw-medium">
+                            7.15 ETH
+                        </td>
+                        <td class="fw-medium">
+                            <div class="d-flex align-items-center" style="gap: 8px;">
+                                <img width="22" alt="user-image" class="rounded-circle" src="images/users/user62.jpg">
+                                8.08 ETH
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            04h 14m 58s
+                        </td>
+                        <td>
+                            <a routerLink="." class="link-btn d-inline-block rounded-circle position-relative">
+                                <i class="material-symbols-outlined">
+                                    arrow_outward
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 5 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

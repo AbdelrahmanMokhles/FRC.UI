@@ -1,0 +1,310 @@
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Recent Transactions
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Last 30 Days
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 7 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 15 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last 30 Days
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-medium">
+                                Date
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Description
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Category
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Amount ($)
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Status
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-body">
+                                30 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Starbucks Coffee
+                            </td>
+                            <td class="text-body">
+                                Dining
+                            </td>
+                            <td class="text-body">
+                                $500,000
+                            </td>
+                            <td>
+                                <span class="trezo-badge py-0 with-border border-radius finished">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                29 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Whole Foods
+                            </td>
+                            <td class="text-body">
+                                Groceries
+                            </td>
+                            <td class="text-body">
+                                $90.50
+                            </td>
+                            <td>
+                                <span class="trezo-badge py-0 with-border border-radius sPending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                28 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Gas Station
+                            </td>
+                            <td class="text-body">
+                                Transportation
+                            </td>
+                            <td class="text-body">
+                                $15.00
+                            </td>
+                            <td>
+                                <span class="trezo-badge py-0 with-border border-radius cancelled">
+                                    Cancelled
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                27 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Electric Bill
+                            </td>
+                            <td class="text-body">
+                                Utilities
+                            </td>
+                            <td class="text-body">
+                                $150.00
+                            </td>
+                            <td>
+                                <span class="trezo-badge py-0 with-border border-radius finished">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                26 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Spotify Subscription
+                            </td>
+                            <td class="text-body">
+                                Entertainment
+                            </td>
+                            <td class="text-body">
+                                $10.00
+                            </td>
+                            <td>
+                                <span class="trezo-badge py-0 with-border border-radius rejected">
+                                    Rejected
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                25 Apr 2025
+                            </td>
+                            <td class="text-body">
+                                Football Ticket
+                            </td>
+                            <td class="text-body">
+                                Sports
+                            </td>
+                            <td class="text-body">
+                                $99.99
+                            </td>
+                            <td>
+                                <span class="trezo-badge py-0 with-border border-radius finished">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 6 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

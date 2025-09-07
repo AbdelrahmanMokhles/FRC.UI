@@ -1,0 +1,155 @@
+<div
+    class="suggestions-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Suggestions
+            </h5>
+            <p class="fw-normal">
+                People may you know
+            </p>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="p-0 m-0 list-unstyled">
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user40.jpg" class="rounded-circle" alt="user-image">
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            Sophia Adams
+                        </span>
+                        <span class="text-xs">
+                            12 mutual friends
+                        </span>
+                    </div>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-delete-bin-7-line"></i>
+                    </button>
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-user-add-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user37.jpg" class="rounded-circle" alt="user-image">
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            Liam Roberts
+                        </span>
+                        <span class="text-xs">
+                            8 mutual friends
+                        </span>
+                    </div>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-delete-bin-7-line"></i>
+                    </button>
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-user-add-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user54.jpg" class="rounded-circle" alt="user-image">
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            Olivia Martinez
+                        </span>
+                        <span class="text-xs">
+                            15 mutual friends
+                        </span>
+                    </div>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-delete-bin-7-line"></i>
+                    </button>
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-user-add-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user41.jpg" class="rounded-circle" alt="user-image">
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            Ethan Clarke
+                        </span>
+                        <span class="text-xs">
+                            10 mutual friends
+                        </span>
+                    </div>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-delete-bin-7-line"></i>
+                    </button>
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-user-add-line"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="d-flex align-items-center justify-content-between">
+                <div class="user d-flex align-items-center">
+                    <img src="images/users/user43.jpg" class="rounded-circle" alt="user-image">
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            Isabella Cruz
+                        </span>
+                        <span class="text-xs">
+                            7 mutual friends
+                        </span>
+                    </div>
+                </div>
+                <div class="action d-flex align-items-center">
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-delete-bin-7-line"></i>
+                    </button>
+                    <button type="button" class="d-flex align-items-center justify-content-center p-0 rounded-circle">
+                        <i class="ri-user-add-line"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

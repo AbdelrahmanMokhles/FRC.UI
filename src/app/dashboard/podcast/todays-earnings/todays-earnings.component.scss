@@ -1,0 +1,92 @@
+.todays-earnings-card {
+    .trezo-card-header {
+        .trezo-card-title {
+            .title {
+                gap: 7px;
+                margin-bottom: 2px;
+
+                h5 {
+                    font-size: 20px;
+                }
+                .info-badge {
+                    padding: 0 7px;
+                    font-size: 12px;
+                    color: #1E8308;
+                    border-radius: 4px;
+                    background-color: #D8FFC8;
+                  
+                    &.down {
+                        border-color: #FFCEA9;
+                        color: var(--dangerColor);
+                        background-color: #FFE1DD;
+                    }
+                }
+            }
+        }
+    }
+    .trezo-card-content {
+        height: 72px;
+
+        .chart {
+            left: 0;
+            right: 0;
+            bottom: -29px;
+            position: absolute;
+            margin: {
+                left: -12px;
+                right: -10px;
+            };
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-header {
+            .trezo-card-title {
+                .title {
+                    .info-badge {
+                        border-color: #15203c;
+                        background-color: #15203c;
+                      
+                        &.down {
+                            border-color: #15203c;
+                            background-color: #15203c;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .todays-earnings-card {
+        .trezo-card-content {
+            height: 51px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .todays-earnings-card {
+        .trezo-card-content {
+            height: 56px;
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

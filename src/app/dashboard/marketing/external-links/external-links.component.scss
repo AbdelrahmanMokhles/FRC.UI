@@ -1,0 +1,90 @@
+.external-links-card {
+    .trezo-card-content {
+        ul {
+            li {
+                border-bottom: 1px solid var(--borderColor);
+                padding-bottom: 14px;
+                margin-bottom: 14px;
+
+                .title {
+                    padding-left: 28px;
+
+                    img {
+                        left: 0;
+                        top: 50%;
+                        width: 18px;
+                        position: absolute;
+                        transform: translateY(-50%);
+                    }
+                }
+                .link-btn {
+                    padding: 0;
+                    line-height: 1;
+                    display: inline-block;
+                    color: var(--bodyColor);
+
+                    i {
+                        font-size: 18px;
+                    }
+                    &:hover {
+                        color: var(--primaryColor);
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom-width: 0;
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            ul {
+                li {
+                    .title {
+                        padding: {
+                            left: 0;
+                            right: 28px;
+                        };
+                        img {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .external-links-card {
+        .trezo-card-content {
+            ul {
+                li {
+                    padding-bottom: 11px;
+                    margin-bottom: 11px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

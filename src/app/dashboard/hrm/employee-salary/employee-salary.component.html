@@ -1,0 +1,89 @@
+<div
+    class="employee-salary-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Employee Salary
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu style-two p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-2-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Day')">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Week')">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Month')">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Year')">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="info d-flex align-items-center">
+            <div class="icon d-flex align-items-center justify-content-center">
+                <img src="images/icons/total-payroll.svg" alt="total-payroll">
+            </div>
+            <div>
+                <span class="d-block">
+                    Total Payroll
+                </span>
+                <h5 class="mb-0 fw-semibold">
+                    $450,000
+                </h5>
+            </div>
+        </div>
+        <div class="chart">
+            <div id="employee_salary_chart"></div>
+        </div>
+        <div class="info-list d-sm-flex align-items-center">
+            <div class="info d-flex align-items-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <img src="images/icons/salary-paid.svg" alt="salary-paid">
+                </div>
+                <div>
+                    <span class="d-block">
+                        Salary Paid
+                    </span>
+                    <h5 class="mb-0 fw-semibold">
+                        $395k
+                    </h5>
+                </div>
+            </div>
+            <div class="info d-flex align-items-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <img src="images/icons/salary-pending.svg" alt="salary-pending">
+                </div>
+                <div>
+                    <span class="d-block">
+                        Salary Pending
+                    </span>
+                    <h5 class="mb-0 fw-semibold">
+                        $60k
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

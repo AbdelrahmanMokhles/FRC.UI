@@ -1,0 +1,744 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Agents
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Real Estate
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Agents
+        </li>
+    </ol>
+</div>
+
+<!-- Agents -->
+<div class="agents-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header mb-0 d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search agent here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle">
+            <a class="add-btn d-inline-block transition fw-medium border-radius" routerLink="/dashboard/real-estate-page/add-agent">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add Agent
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+<div
+    class="row"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.card-without-border-radius]="themeService.isCardWithoutBorderRadius()"
+>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user1.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Sarah Johnson
+                    </span>
+                    <span class="d-block">
+                        sarah&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (123) 456-7890
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        74 Grim Avenue San Diego
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:sarah@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:sarah@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user2.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Pauline Knott
+                    </span>
+                    <span class="d-block">
+                        pauline&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (987) 654-3210
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        9 Paul Wayne Haggerty Road
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:pauline@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:pauline@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user3.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        James Combs
+                    </span>
+                    <span class="d-block">
+                        james&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (555) 258-1598
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        61 Ottis Street Oklahoma City
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:james@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:james@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user4.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Margaret Wade
+                    </span>
+                    <span class="d-block">
+                        margaret&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (431) 335-2321
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        69 Leverton Cove Road Springfield
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:margaret@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:margaret@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user5.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Mike Harris
+                    </span>
+                    <span class="d-block">
+                        harris&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (605) 823-8868
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        30 Hartway Street Mclaughlin
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:harris@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:harris@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user61.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Emily Jones
+                    </span>
+                    <span class="d-block">
+                        emily&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (617) 756-9911
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        1654 Valley View Drive Brighton
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:emily@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:emily@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user62.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Trent Heiser
+                    </span>
+                    <span class="d-block">
+                        heiser&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (507) 646-1869
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        46 Trymore Road Northfield
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:heiser@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:heiser@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user63.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Amiee Brown
+                    </span>
+                    <span class="d-block">
+                        brown&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (602) 525-5444
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        79 Hall Street Las Vegas
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:brown@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:brown@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user64.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Edward Lebouef
+                    </span>
+                    <span class="d-block">
+                        lebouef&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (337) 456-7858
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        05 Sherwood Circle Lafayette
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:lebouef@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:lebouef@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user65.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Marilyn Kelly
+                    </span>
+                    <span class="d-block">
+                        marilyn&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (864) 933-2339
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        46 Brown Avenue Anderson
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:marilyn@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:marilyn@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user66.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Gary Manes
+                    </span>
+                    <span class="d-block">
+                        manes&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (603) 258-7598
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        75 Wildrose Lane Southfield
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:manes@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:manes@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6 col-lg-4">
+        <div class="agent-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="image">
+                    <img src="images/users/user67.jpg" class="border-radius" alt="user-image">
+                </div>
+                <div class="content">
+                    <span class="title d-block text-black fw-medium">
+                        Francis Berg
+                    </span>
+                    <span class="d-block">
+                        francis&#64;trezo.com
+                    </span>
+                </div>
+                <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Phone:
+                        </span>
+                        (651) 778-2290
+                    </li>
+                    <li class="text-black fw-medium">
+                        <span class="text-body fw-normal">
+                            Location:
+                        </span>
+                        93 Park Boulevard Ottumwa
+                    </li>
+                </ul>
+                <div class="socials-link">
+                    <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="mailto:francis@trezo.com" class="mail d-inline-block text-center position-relative rounded-circle">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <a href="mailto:francis@trezo.com" class="link-btn d-inline-block fw-medium">
+                        Message
+                    </a>
+                    <a routerLink="/dashboard/real-estate-page/agent-details" class="link-btn d-inline-block fw-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pagination -->
+<div class="pagination-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-content">
+        <div class="d-md-flex align-items-center justify-content-between">
+            <p class="mb-0">
+                Showing 12 of 36 results
+            </p>
+            <ol class="list-unstyled mb-0 p-0">
+                <li class="d-inline-block">
+                    <a class="prev" routerLink=".">
+                        <span class="opacity-0">
+                            0
+                        </span>
+                        <i class="material-symbols-outlined">
+                            chevron_left
+                        </i>
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink="." class="active">
+                        1
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        2
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        3
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        4
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a class="next" routerLink=".">
+                        <span class="opacity-0">
+                            0
+                        </span>
+                        <i class="material-symbols-outlined">
+                            chevron_right
+                        </i>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>

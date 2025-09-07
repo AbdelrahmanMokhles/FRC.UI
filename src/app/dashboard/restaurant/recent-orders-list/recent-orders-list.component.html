@@ -1,0 +1,376 @@
+<div
+    class="recent-orders-list-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Recent Orders List
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn bg-gray border-0 transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Monthly
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Weekly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Monthly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Yearly
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-bold">
+                            Code
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Item
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Quantity
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Customer
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Location
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Delivery Time
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Price
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Status
+                        </th>
+                        <th scope="col" class="fw-bold"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #001
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/restaurant/order1.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Fish Cutlet
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            05
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Johnna Loren
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Washington, D.C.
+                        </td>
+                        <td class="fw-semibold text-body">
+                            10:05 AM
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $ 35.75
+                        </td>
+                        <td>
+                            <span class="trezo-badge shipped">
+                                Delivered
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #002
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/restaurant/order2.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Pea Creamy Soup
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            01
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Skyler White
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Los Angeles, CA
+                        </td>
+                        <td class="fw-semibold text-body">
+                            11:15 AM
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $ 24.30
+                        </td>
+                        <td>
+                            <span class="trezo-badge sPending">
+                                Processing
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #003
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/restaurant/order3.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Macaroon 02
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            02
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Jonathon Watson
+                        </td>
+                        <td class="fw-semibold text-body">
+                            New York, NY
+                        </td>
+                        <td class="fw-semibold text-body">
+                            11:30 AM
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $ 21.15
+                        </td>
+                        <td>
+                            <span class="trezo-badge cancelled">
+                                Cancelled
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #004
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/restaurant/order4.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Healthy Salad Bowl
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            01
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Walter White
+                        </td>
+                        <td class="fw-semibold text-body">
+                            San Jose, CA
+                        </td>
+                        <td class="fw-semibold text-body">
+                            11:52 AM
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $ 12.20
+                        </td>
+                        <td>
+                            <span class="trezo-badge shipped">
+                                Delivered
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #005
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/restaurant/order5.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <a routerLink="/dashboard/restaurant-page/dish-details" class="d-block fw-semibold">
+                                        Macaroon
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            01
+                        </td>
+                        <td class="fw-semibold text-body">
+                            David Carlen
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Redmond, WA
+                        </td>
+                        <td class="fw-semibold text-body">
+                            12:05 PM
+                        </td>
+                        <td class="fw-semibold text-body">
+                            $ 21.50
+                        </td>
+                        <td>
+                            <span class="trezo-badge sPending">
+                                Processing
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> visibility </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> edit </i>
+                                </button>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined"> delete </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 5 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

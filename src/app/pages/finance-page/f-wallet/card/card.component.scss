@@ -1,0 +1,89 @@
+.f-finance-card {
+    .trezo-card-content {
+        .card-item {
+            padding: 25px;
+            margin-bottom: 25px;
+            background: {
+                position: center center;
+                repeat: no-repeat;
+                size: cover;
+            };
+            .title {
+                margin-bottom: 5px;
+            }
+            .icon {
+                font-size: 24px;
+            }
+            h5 {
+                word-spacing: 4px;
+                margin: {
+                    top: 14px;
+                    bottom: 33px;
+                };
+            }
+        }
+        .add-btn {
+            padding: 6px 13px;
+            border-radius: 7px;
+            color: var(--primaryColor);
+            background-color: transparent;
+            transition: var(--transition);
+            border: 1px solid var(--primaryColor);
+    
+            span {
+                padding-left: 22px;
+    
+                i {
+                    top: 50%;
+                    left: -4px;
+                    font-size: 22px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+            }
+            &:hover {
+                color: var(--whiteColor);
+                background-color: var(--primaryColor);
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .f-finance-card {
+        .trezo-card-content {
+            .card-item {
+                margin-bottom: 17px;
+                padding: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .f-finance-card {
+        .trezo-card-content {
+            .card-item {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

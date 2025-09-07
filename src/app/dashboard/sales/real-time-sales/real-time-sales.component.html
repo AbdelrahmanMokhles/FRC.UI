@@ -1,0 +1,76 @@
+<div
+    class="real-time-sales-card trezo-card mb-25 border-radius d-block bg-white shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Real-Time Sales
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        {{ selectedTimeframe }}
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Day')">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Week')">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Month')">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Year')">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="chart">
+            <div id="real_time_sales_chart"></div>
+        </div>
+        <div class="info d-flex justify-content-between">
+            <div>
+                <span class="d-block text-body">
+                    Total Sales
+                </span>
+                <h6 class="mb-0 fw-medium">
+                    $150.7k
+                    <span class="text-success position-relative">
+                        <i class="ri-arrow-up-fill"></i>
+                        12%
+                    </span>
+                </h6>
+            </div>
+            <div>
+                <span class="d-block text-body">
+                    Avg. Sales Per Day
+                </span>
+                <h6 class="mb-0 fw-medium">
+                    $19.2k
+                    <span class="text-danger position-relative">
+                        <i class="ri-arrow-down-fill"></i>
+                        7%
+                    </span>
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>

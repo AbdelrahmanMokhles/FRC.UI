@@ -1,0 +1,116 @@
+.bed-occupancy-rate-card {
+    .trezo-card-header {
+        p {
+            font-size: var(--fontSize);
+            margin-top: 2px;
+        }
+    }
+    .trezo-card-content {
+        .content {
+            li {
+                margin-bottom: 25px;
+
+                .icon {
+                    width: 42px;
+                    height: 42px;
+                    margin-right: 10px;
+                }
+                h3 {
+                    font-size: 18px;
+                    margin-bottom: 2px;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .chart {
+            p {
+                font-size: 12px;
+                line-height: 1.6;
+                max-width: 189px;
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .content {
+                li {
+                    .icon {
+                        background-color: #15203c !important;
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .content {
+                li {
+                    .icon {
+                        margin: {
+                            right: 0;
+                            left: 10px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .bed-occupancy-rate-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                margin-top: 5px;
+            }
+        }
+        .trezo-card-content {
+            .content {
+                li {
+                    margin-bottom: 15px;
+
+                    h3 {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .chart {
+                margin-top: 15px;
+                
+                p {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .bed-occupancy-rate-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                margin-top: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

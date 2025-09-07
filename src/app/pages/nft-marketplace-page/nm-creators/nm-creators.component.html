@@ -1,0 +1,356 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Creators
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            NFT
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Creators
+        </li>
+    </ol>
+</div>
+
+<!-- Creators -->
+<div
+    class="creators-filter-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Filter
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group mb-0">
+                    <select class="form-select">
+                        <option selected>
+                            Category
+                        </option>
+                        <option value="1">
+                            Bird
+                        </option>
+                        <option value="2">
+                            Pool
+                        </option>
+                        <option value="3">
+                            Watermelon
+                        </option>
+                        <option value="4">
+                            Flower
+                        </option>
+                        <option value="5">
+                            Cookies
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group mb-0">
+                    <select class="form-select">
+                        <option selected>
+                            File Type
+                        </option>
+                        <option value="1">
+                            .zip
+                        </option>
+                        <option value="2">
+                            .jpg
+                        </option>
+                        <option value="3">
+                            .png
+                        </option>
+                        <option value="4">
+                            .gif
+                        </option>
+                        <option value="5">
+                            .pdf
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group mb-0">
+                    <select class="form-select">
+                        <option selected>
+                            Sales Type
+                        </option>
+                        <option value="1">
+                            Bird
+                        </option>
+                        <option value="2">
+                            Pool
+                        </option>
+                        <option value="3">
+                            Watermelon
+                        </option>
+                        <option value="4">
+                            Flower
+                        </option>
+                        <option value="5">
+                            Cookies
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
+        <div class="creator-card trezo-card text-center mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <img src="images/nfts/creator1.jpg" class="border-radius" alt="creator-image">
+                <div class="content">
+                    <div class="author position-relative d-inline-block">
+                        <img src="images/nfts/user.gif" class="rounded-circle" width="68" alt="user-image">
+                        <img src="images/nfts/verified2.svg" width="20" class="verified mb-0" alt="verified">
+                    </div>
+                    <h5 class="fw-semibold">
+                        Hunny Bunny
+                    </h5>
+                    <span class="d-block">
+                        ITEMS: 3204
+                    </span>
+                    <div class="border-top"></div>
+                    <button class="follow-btn d-inline-block fw-medium border-radius border-0" type="button">
+                        Follow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
+        <div class="creator-card trezo-card text-center mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <img src="images/nfts/creator2.jpg" class="border-radius" alt="creator-image">
+                <div class="content">
+                    <div class="author position-relative d-inline-block">
+                        <img src="images/nfts/user.gif" class="rounded-circle" width="68" alt="user-image">
+                        <img src="images/nfts/verified2.svg" width="20" class="verified mb-0" alt="verified">
+                    </div>
+                    <h5 class="fw-semibold">
+                        Aristocrat
+                    </h5>
+                    <span class="d-block">
+                        ITEMS: 5301
+                    </span>
+                    <div class="border-top"></div>
+                    <button class="follow-btn d-inline-block fw-medium border-radius border-0" type="button">
+                        Follow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
+        <div class="creator-card trezo-card text-center mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <img src="images/nfts/creator3.jpg" class="border-radius" alt="creator-image">
+                <div class="content">
+                    <div class="author position-relative d-inline-block">
+                        <img src="images/nfts/user.gif" class="rounded-circle" width="68" alt="user-image">
+                        <img src="images/nfts/verified2.svg" width="20" class="verified mb-0" alt="verified">
+                    </div>
+                    <h5 class="fw-semibold">
+                        Hooman Robotic
+                    </h5>
+                    <span class="d-block">
+                        ITEMS: 4213
+                    </span>
+                    <div class="border-top"></div>
+                    <button class="follow-btn unfollow d-inline-block fw-medium border-radius border-0" type="button">
+                        Unfollow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
+        <div class="creator-card trezo-card text-center mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <img src="images/nfts/creator4.jpg" class="border-radius" alt="creator-image">
+                <div class="content">
+                    <div class="author position-relative d-inline-block">
+                        <img src="images/nfts/user.gif" class="rounded-circle" width="68" alt="user-image">
+                        <img src="images/nfts/verified2.svg" width="20" class="verified mb-0" alt="verified">
+                    </div>
+                    <h5 class="fw-semibold">
+                        Colorful Life
+                    </h5>
+                    <span class="d-block">
+                        ITEMS: 2314
+                    </span>
+                    <div class="border-top"></div>
+                    <button class="follow-btn d-inline-block fw-medium border-radius border-0" type="button">
+                        Follow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
+        <div class="creator-card trezo-card text-center mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <img src="images/nfts/creator5.jpg" class="border-radius" alt="creator-image">
+                <div class="content">
+                    <div class="author position-relative d-inline-block">
+                        <img src="images/nfts/user.gif" class="rounded-circle" width="68" alt="user-image">
+                        <img src="images/nfts/verified2.svg" width="20" class="verified mb-0" alt="verified">
+                    </div>
+                    <h5 class="fw-semibold">
+                        CryptoCanvas
+                    </h5>
+                    <span class="d-block">
+                        ITEMS: 3204
+                    </span>
+                    <div class="border-top"></div>
+                    <button class="follow-btn unfollow d-inline-block fw-medium border-radius border-0" type="button">
+                        Unfollow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
+        <div class="creator-card trezo-card text-center mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <img src="images/nfts/creator6.jpg" class="border-radius" alt="creator-image">
+                <div class="content">
+                    <div class="author position-relative d-inline-block">
+                        <img src="images/nfts/user.gif" class="rounded-circle" width="68" alt="user-image">
+                        <img src="images/nfts/verified2.svg" width="20" class="verified mb-0" alt="verified">
+                    </div>
+                    <h5 class="fw-semibold">
+                        MetaVisionaries
+                    </h5>
+                    <span class="d-block">
+                        ITEMS: 5301
+                    </span>
+                    <div class="border-top"></div>
+                    <button class="follow-btn d-inline-block fw-medium border-radius border-0" type="button">
+                        Follow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
+        <div class="creator-card trezo-card text-center mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <img src="images/nfts/creator7.jpg" class="border-radius" alt="creator-image">
+                <div class="content">
+                    <div class="author position-relative d-inline-block">
+                        <img src="images/nfts/user.gif" class="rounded-circle" width="68" alt="user-image">
+                        <img src="images/nfts/verified2.svg" width="20" class="verified mb-0" alt="verified">
+                    </div>
+                    <h5 class="fw-semibold">
+                        CryptoCultures
+                    </h5>
+                    <span class="d-block">
+                        ITEMS: 4213
+                    </span>
+                    <div class="border-top"></div>
+                    <button class="follow-btn unfollow d-inline-block fw-medium border-radius border-0" type="button">
+                        Unfollow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
+        <div class="creator-card trezo-card text-center mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <img src="images/nfts/creator8.jpg" class="border-radius" alt="creator-image">
+                <div class="content">
+                    <div class="author position-relative d-inline-block">
+                        <img src="images/nfts/user.gif" class="rounded-circle" width="68" alt="user-image">
+                        <img src="images/nfts/verified2.svg" width="20" class="verified mb-0" alt="verified">
+                    </div>
+                    <h5 class="fw-semibold">
+                        Digital Mystique
+                    </h5>
+                    <span class="d-block">
+                        ITEMS: 2314
+                    </span>
+                    <div class="border-top"></div>
+                    <button class="follow-btn d-inline-block fw-medium border-radius border-0" type="button">
+                        Follow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pagination -->
+<div class="pagination-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-content">
+        <div class="d-md-flex align-items-center justify-content-between">
+            <p class="mb-0">
+                Showing 8 of 36 results
+            </p>
+            <ol class="list-unstyled mb-0 p-0">
+                <li class="d-inline-block">
+                    <a class="prev" routerLink=".">
+                        <span class="opacity-0">
+                            0
+                        </span>
+                        <i class="material-symbols-outlined">
+                            chevron_left
+                        </i>
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink="." class="active">
+                        1
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        2
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        3
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        4
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a class="next" routerLink=".">
+                        <span class="opacity-0">
+                            0
+                        </span>
+                        <i class="material-symbols-outlined">
+                            chevron_right
+                        </i>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>

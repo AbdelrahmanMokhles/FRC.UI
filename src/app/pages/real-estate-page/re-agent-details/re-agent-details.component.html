@@ -1,0 +1,284 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Agent Details
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Real Estate
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Agents
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Agent Details
+        </li>
+    </ol>
+</div>
+
+<!-- Agent Details -->
+<div class="row">
+    <div class="col-lg-8">
+        <div
+            class="agent-details-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        About Harold Cook
+                    </h5>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <p>
+                    With over a decade of experience in the real estate market, Harold Cook has built a reputation for his in-depth knowledge of residential and commercial properties. His commitment to client satisfaction, combined with an extensive network, ensures a smooth and efficient process, whether buying or selling.
+                </p>
+                <p>
+                    Harold’s approach focuses on understanding each client’s unique needs and goals, providing tailored advice and insights. His market expertise and negotiation skills consistently deliver the best outcomes, helping clients make informed real estate decisions.
+                </p>
+                <h5>
+                    Property Status
+                </h5>
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <!-- Properties For Sale -->
+                        <app-properties-for-sale />
+                
+                    </div>
+                    <div class="col-sm-6">
+                
+                        <!-- Properties For Rent -->
+                        <app-properties-for-rent />
+                
+                    </div>
+                </div>
+                <h5 class="mt-0">
+                    Specialization
+                </h5>
+                <ul class="list p-0 mb-0 list-unstyled">
+                    <li class="position-relative">
+                        Expert in City A and surrounding neighborhoods
+                    </li>
+                    <li class="position-relative">
+                        Proficient in handling first-time homebuyers, seasoned investors, and luxury clients
+                    </li>
+                    <li class="position-relative">
+                        Strong understanding of local market trends and pricing strategies
+                    </li>
+                    <li class="position-relative">
+                        Provides comprehensive property assessments and personalized marketing plans
+                    </li>
+                </ul>
+                <h5>
+                    Recent Achievements
+                </h5>
+                <ul class="list p-0 mb-0 list-unstyled">
+                    <li class="position-relative">
+                        Closed over $10 million in sales in 2023
+                    </li>
+                    <li class="position-relative">
+                        Top Agent Award at Prime Realty for 3 consecutive years
+                    </li>
+                    <li class="position-relative">
+                        Successfully negotiated deals for 20+ residential and commercial properties in the past year
+                    </li>
+                    <li class="position-relative">
+                        5-star client satisfaction rating
+                    </li>
+                </ul>
+                <h5>
+                    Client Testimonials
+                </h5>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="user d-flex align-items-center">
+                            <img src="images/users/user65.jpg" width="45" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Irene George
+                                </span>
+                                <span class="d-block">
+                                    15m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings d-flex align-items-center">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "Great service! Found exactly what I needed for my property, and the process was smooth and hassle-free."
+                    </p>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="user d-flex align-items-center">
+                            <img src="images/users/user64.jpg" width="45" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Jose Grafton
+                                </span>
+                                <span class="d-block">
+                                    22m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings d-flex align-items-center">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-line"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "Impressed with the timely responses and professional approach. Highly recommend for anyone seeking real estate solutions!"
+                    </p>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="user d-flex align-items-center">
+                            <img src="images/users/user63.jpg" width="45" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Paula McClelland
+                                </span>
+                                <span class="d-block">
+                                    30m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings d-flex align-items-center">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "The entire process was seamless, and I couldn't be happier with the results. Excellent customer service throughout!"
+                    </p>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="user d-flex align-items-center">
+                            <img src="images/users/user62.jpg" width="45" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Virgil Martin
+                                </span>
+                                <span class="d-block">
+                                    49m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings d-flex align-items-center">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "Highly satisfied with the attention to detail and prompt support. They made everything easy and stress-free!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="agent-info-card trezo-card mb-25 p-0 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="bg-color">
+                    <img src="images/icons/4dot.svg" alt="4dot-image">
+                </div>
+                <div class="content text-center">
+                    <img src="images/users/user13.jpg" class="user-image rounded-circle" alt="user-image">
+                    <h3>
+                        Harold Cook
+                    </h3>
+                    <span class="d-block">
+                        harold&#64;trezo.com
+                    </span>
+                    <div class="socials-link">
+                        <a href="https://www.facebook.com/" target="_blank" class="facebook d-inline-block text-center position-relative rounded-circle">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="x d-inline-block text-center position-relative rounded-circle">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="linkedin d-inline-block text-center position-relative rounded-circle">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                    <ul class="list list-unstyled mb-0 p-0">
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span class="d-block text-black">
+                                Agency:
+                            </span>
+                            <span class="d-block">
+                                Realty Group
+                            </span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span class="d-block text-black">
+                                Phone:
+                            </span>
+                            <span class="d-block">
+                                (123) 456-7890
+                            </span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span class="d-block text-black">
+                                License Number:
+                            </span>
+                            <span class="d-block">
+                                RE123456
+                            </span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span class="d-block text-black">
+                                Years of Experience:
+                            </span>
+                            <span class="d-block">
+                                10+
+                            </span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span class="d-block text-black">
+                                Areas of Expertise:
+                            </span>
+                            <span class="d-block">
+                                Residential Sales
+                            </span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span class="d-block text-black">
+                                Location:
+                            </span>
+                            <span class="d-block">
+                                74 Grim Avenue San Diego
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

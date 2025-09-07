@@ -1,0 +1,150 @@
+<div
+    class="market-price-statistics-card trezo-card mb-25 border-radius d-block bg-white shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-card-with-box-shadow]="themeService.isCardWithBoxShadow()"
+    [class.component-body-bg-color]="themeService.isBodyBG()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Market Price Statistics
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="statistics-buttons-list">
+                <button type="button">
+                    1H
+                </button>
+                <button type="button">
+                    24H
+                </button>
+                <button type="button" class="active">
+                    1W
+                </button>
+                <button type="button">
+                    1M
+                </button>
+                <button type="button">
+                    1Y
+                </button>
+            </div>
+            <div class="cryptocurrency-types position-relative">
+                <button class="button fw-semibold bg-transparent border-0 position-relative" (click)="toggleCryptocurrencyTypesMenu()">
+                    <span class="d-flex align-items-center">
+                        <img src="images/cryptocurrencies/big-bitcoin.svg" alt="bitcoin">
+                        Bitcoin
+                    </span>
+                </button>
+                @if (isCryptocurrencyTypesOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/ethereum.svg" alt="ethereum">
+                                Ethereum
+                                <span class="fw-normal text-body">(ETH)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/bitcoin.svg" alt="bitcoin">
+                                Bitcoin
+                                <span class="fw-normal text-body">(BTC)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/solana.svg" alt="solana">
+                                Solana
+                                <span class="fw-normal text-body">(SOL)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/cardano.png" alt="cardano">
+                                Cardano
+                                <span class="fw-normal text-body">(ADA)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center w-100 position-relative transition">
+                                <img src="images/cryptocurrencies/binance.svg" alt="binance">
+                                Binance
+                                <span class="fw-normal text-body">(BNB)</span>
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="info d-sm-flex align-items-center justify-content-between">
+            <div class="coin d-flex align-items-center">
+                <img src="images/cryptocurrencies/big-bitcoin.svg" alt="bitcoin">
+                <div>
+                    <span class="d-block text-uppercase fw-medium">
+                        Bitcoin <span class="text-body fw-normal">(BTC)</span>
+                    </span>
+                    <h4 class="mb-0 fw-semibold">
+                        $27,500
+                        <span class="fw-medium position-relative">
+                            <i class="material-symbols-outlined">
+                                trending_up
+                            </i>
+                            +2.3%
+                        </span>
+                    </h4>
+                </div>
+            </div>
+            <ul class="list mb-0 mt-0 p-0 list-unstyled">
+                <li class="fw-semibold text-black">
+                    <span class="d-block fw-normal text-body">
+                        Closing Price
+                    </span>
+                    $27,200
+                </li>
+                <li class="fw-semibold text-black">
+                    <span class="d-block fw-normal text-body">
+                        24h Volume
+                    </span>
+                    $35B
+                </li>
+            </ul>
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="material-symbols-outlined">
+                        more_vert
+                    </i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                View
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Block
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Delete
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Report
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+        <div class="chart">
+            <div id="price_statistics_chart"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,995 @@
+<!-- Sidebar Button -->
+<div
+    class="sidebar-settings-buttons"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <button type="button" class="d-block text-center" (click)="toggleClass()">
+        <i class="ri-stack-line"></i>
+        Demos
+    </button>
+    <a href="https://trezo-docs.envytheme.com/" class="d-block text-center" target="_blank">
+        <i class="ri-article-line"></i>
+        Docs
+    </a>
+    <a href="https://1.envato.market/QyqV6P" class="d-block text-center" target="_blank">
+        <i class="ri-shopping-bag-3-line"></i>
+        Buy Now
+    </a>
+</div>
+
+<!-- Sidebar Demos Popup -->
+<div
+    class="sidebar-settings-popup"
+    [class.active]="classApplied"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="demos-inner">
+        <div class="inner-demos">
+            <div class="demos-list position-relative">
+                <ul class="tabs mt-0 p-0 list-unstyled">
+                    <li class="d-inline-block">
+                        <button type="button" class="d-inline-block border-none fw-medium" [ngClass]="{'active': currentTab === 'tab1'}" (click)="switchTab($event, 'tab1')">
+                            <span class="d-inline-block position-relative">
+                                <i class="ri-settings-5-line"></i>
+                                Pre-built Layouts
+                            </span>
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button type="button" class="d-inline-block border-none fw-medium" [ngClass]="{'active': currentTab === 'tab2'}" (click)="switchTab($event, 'tab2')">
+                            <span class="d-inline-block position-relative">
+                                <i class="ri-dashboard-line"></i>
+                                Dashboard
+                            </span>
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button type="button" class="d-inline-block border-none fw-medium" [ngClass]="{'active': currentTab === 'tab3'}" (click)="switchTab($event, 'tab3')">
+                            <span class="d-inline-block position-relative">
+                                <i class="ri-apps-line"></i>
+                                Apps
+                            </span>
+                        </button>
+                    </li>
+                    <li class="d-inline-block">
+                        <button type="button" class="d-inline-block border-none fw-medium" [ngClass]="{'active': currentTab === 'tab4'}" (click)="switchTab($event, 'tab4')">
+                            <span class="d-inline-block position-relative">
+                                <i class="ri-stack-line"></i>
+                                Pages
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+                @if (currentTab === 'tab1') {
+                    <div class="tab-pane">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-1">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Default
+                                        </h3>
+                                        <a href="https://trezo-bs.envytheme.com/dashboard" target="_blank" class="live-demo-btn d-inline-block">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a href="https://trezo-bs.envytheme.com/dashboard" class="d-block image overflow-hidden" target="_blank">
+                                        <img src="images/demos/default.jpg" alt="demo-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-4">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Dark Mode
+                                        </h3>
+                                        <a href="https://trezo-bs-dark.envytheme.com/dashboard" target="_blank" class="live-demo-btn d-inline-block">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a href="https://trezo-bs-dark.envytheme.com/dashboard" class="d-block image overflow-hidden" target="_blank">
+                                        <img src="images/demos/dark-mode.jpg" alt="demo-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-3">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Horizontal Layout
+                                        </h3>
+                                        <a href="https://trezo-horizontal.envytheme.com/dashboard" target="_blank" class="live-demo-btn d-inline-block">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a href="https://trezo-horizontal.envytheme.com/dashboard" class="d-block image overflow-hidden" target="_blank">
+                                        <img src="images/demos/horizontal-layout.jpg" alt="demo-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-3">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Compact Sidebar
+                                        </h3>
+                                        <a href="https://trezo-compact.envytheme.com/dashboard" target="_blank" class="live-demo-btn d-inline-block">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a href="https://trezo-compact.envytheme.com/dashboard" class="d-block image overflow-hidden" target="_blank">
+                                        <img src="images/demos/compact-sidebar.jpg" alt="demo-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-2">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Sidebar Dark
+                                        </h3>
+                                        <a href="https://trezo-dls.envytheme.com/" target="_blank" class="live-demo-btn d-inline-block">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a href="https://trezo-dls.envytheme.com/" class="d-block image overflow-hidden" target="_blank">
+                                        <img src="images/demos/sidebar-dark.jpg" alt="demo-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-5">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            RTL Light
+                                        </h3>
+                                        <a href="https://trezo-bs-rtl.envytheme.com/dashboard" target="_blank" class="live-demo-btn d-inline-block">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a href="https://trezo-bs-rtl.envytheme.com/dashboard" class="d-block image overflow-hidden" target="_blank">
+                                        <img src="images/demos/rtl.jpg" alt="demo-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-6">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            RTL Dark
+                                        </h3>
+                                        <a href="https://trezo-bs-dark-rtl.envytheme.com/dashboard" target="_blank" class="live-demo-btn d-inline-block">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a href="https://trezo-bs-dark-rtl.envytheme.com/dashboard" class="d-block image overflow-hidden" target="_blank">
+                                        <img src="images/demos/rtl-dark.jpg" alt="demo-image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (currentTab === 'tab2') {
+                    <div class="tab-pane">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-1">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            eCommerce
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard">
+                                        <img src="images/demos/ecommerce.jpg" alt="eCommerce">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-2">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            CRM
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/crm">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/crm">
+                                        <img src="images/demos/crm.jpg" alt="CRM">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-3">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            PM
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/project-management">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/project-management">
+                                        <img src="images/demos/project-management.jpg" alt="PM">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-4">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            LMS
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/lms">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/lms">
+                                        <img src="images/demos/lms.jpg" alt="LMS">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-5">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            HelpDesk
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/helpdesk">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/helpdesk">
+                                        <img src="images/demos/helpdesk.jpg" alt="HelpDesk">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-6">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Analytics
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/analytics">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/analytics">
+                                        <img src="images/demos/analytics.jpg" alt="Analytics">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Crypto
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/crypto">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/crypto">
+                                        <img src="images/demos/crypto.jpg" alt="Crypto">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-8">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Sales
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/sales">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/sales">
+                                        <img src="images/demos/sales.jpg" alt="Sales">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-9">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Hospital
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/hospital">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/hospital">
+                                        <img src="images/demos/hospital.jpg" alt="Hospital">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-10">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            HRM
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/hrm">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/hrm">
+                                        <img src="images/demos/hrm.jpg" alt="HRM">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-11">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            School
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/school">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/school">
+                                        <img src="images/demos/school.jpg" alt="School">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-1">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Call Center
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/call-center">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/call-center">
+                                        <img src="images/demos/call-center.jpg" alt="Call Center">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-2">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Marketing
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/marketing">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/marketing">
+                                        <img src="images/demos/marketing.jpg" alt="Marketing">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-3">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            NFT
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/nft">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/nft">
+                                        <img src="images/demos/nft.jpg" alt="NFT">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-4">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            SaaS
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/saas">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/saas">
+                                        <img src="images/demos/saas.jpg" alt="SaaS">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-5">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Real Estate
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/real-estate">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/real-estate">
+                                        <img src="images/demos/real-estate.jpg" alt="Real Estate">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-6">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Shipment
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/shipment">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/shipment">
+                                        <img src="images/demos/shipment.jpg" alt="Shipment">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Finance
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/finance">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/finance">
+                                        <img src="images/demos/finance.jpg" alt="Finance">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            POS System
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/pos-system">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/pos-system">
+                                        <img src="images/demos/pos-system.jpg" alt="POS System">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Podcast
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/podcast">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/podcast">
+                                        <img src="images/demos/podcast.jpg" alt="Podcast">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Social Media
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/social-media">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/social-media">
+                                        <img src="images/demos/social-media.jpg" alt="Social Media">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Doctor
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/doctor">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/doctor">
+                                        <img src="images/demos/doctor.jpg" alt="Doctor">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Beauty Salon
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/beauty-salon">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/beauty-salon">
+                                        <img src="images/demos/beauty-salon.jpg" alt="Beauty Salon">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Store Analysis
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/store-analysis">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/store-analysis">
+                                        <img src="images/demos/store-analysis.jpg" alt="Store Analysis">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Restaurant
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/restaurant">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/restaurant">
+                                        <img src="images/demos/restaurant.jpg" alt="Restaurant">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Hotel
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/hotel">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/hotel">
+                                        <img src="images/demos/hotel.jpg" alt="Hotel">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Real Estate Agent
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/real-estate-agent">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/real-estate-agent">
+                                        <img src="images/demos/real-estate-agent.jpg" alt="Real Estate Agent">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Credit Card
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/credit-card">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/credit-card">
+                                        <img src="images/demos/credit-card.jpg" alt="Credit Card">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Crypto Trader
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/crypto-trader">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/crypto-trader">
+                                        <img src="images/demos/crypto-trader.jpg" alt="Crypto Trader">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Crypto Performance
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/crypto-performance">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/crypto-performance">
+                                        <img src="images/demos/crypto-performance.jpg" alt="Crypto Performance">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Landing
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/">
+                                        <img src="images/demos/landing-page.jpg" alt="landing-page">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (currentTab === 'tab3') {
+                    <div class="tab-pane">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-1">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            To Do List
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/apps">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/apps">
+                                        <img src="images/demos/to-do-list.jpg" alt="To Do List">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-2">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Calendar
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/apps/calendar">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/apps/calendar">
+                                        <img src="images/demos/calendar.jpg" alt="Calendar">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-3">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Contacts
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/apps/contacts">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/apps/contacts">
+                                        <img src="images/demos/contacts.jpg" alt="Contacts">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-4">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Chat
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/apps/chat">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/apps/chat">
+                                        <img src="images/demos/chat.jpg" alt="Chat">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-5">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Email
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/apps/email">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/apps/email">
+                                        <img src="images/demos/email.jpg" alt="Email">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-6">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Kanban Board
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/apps/kanban-board">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/apps/kanban-board">
+                                        <img src="images/demos/kanban-board.jpg" alt="Kanban Board">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            File Manager
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/apps/file-manager">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/apps/file-manager">
+                                        <img src="images/demos/file-manager.jpg" alt="File Manager">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (currentTab === 'tab4') {
+                    <div class="tab-pane">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-1">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Products Grid
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/ecommerce-page">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/ecommerce-page">
+                                        <img src="images/demos/products-grid.jpg" alt="Products Grid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-2">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Events Grid
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/events">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/events">
+                                        <img src="images/demos/events-grid.jpg" alt="Events Grid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-3">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Gallery
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/gallery">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/gallery">
+                                        <img src="images/demos/gallery.jpg" alt="Gallery">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-4">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            NFT Marketplace
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/nft-marketplace-page">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/nft-marketplace-page">
+                                        <img src="images/demos/marketplace.jpg" alt="Marketplace">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-5">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Course Details
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/lms-page/course-details">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/lms-page/course-details">
+                                        <img src="images/demos/course-details.jpg" alt="Course Details">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-6">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            My Profile
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/my-profile">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/my-profile">
+                                        <img src="images/demos/my-profile.jpg" alt="My Profile">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-7">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Pricing
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/pricing">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/pricing">
+                                        <img src="images/demos/pricing.jpg" alt="Pricing">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-8">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Project Details
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/project-management-page">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/project-management-page">
+                                        <img src="images/demos/project-details.jpg" alt="Project Details">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-9">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Property List
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/real-estate-page">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/real-estate-page">
+                                        <img src="images/demos/property-list.jpg" alt="Property List">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-10">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Social Feed
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/social">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/social">
+                                        <img src="images/demos/social-feed.jpg" alt="Social Feed">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-11">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Testimonials
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/testimonials">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/testimonials">
+                                        <img src="images/demos/testimonials.jpg" alt="Testimonials">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-1">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Ticket Details
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/helpdesk-page/ticket-details">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/helpdesk-page/ticket-details">
+                                        <img src="images/demos/ticket-details.jpg" alt="Ticket Details">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-2">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Timeline
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/timeline">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/timeline">
+                                        <img src="images/demos/timeline.jpg" alt="Timeline">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-3">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Wallet
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/finance-page">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/finance-page">
+                                        <img src="images/demos/wallet.jpg" alt="Wallet">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                <div class="single-demo-item position-relative bg-4">
+                                    <div class="top d-flex align-items-center justify-content-between">
+                                        <h3 class="mb-0 fw-medium">
+                                            Widgets
+                                        </h3>
+                                        <a target="_blank" class="live-demo-btn d-inline-block" href="https://trezo-bs.envytheme.com/dashboard/widgets">
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                    <a target="_blank" class="d-block image overflow-hidden" href="https://trezo-bs.envytheme.com/dashboard/widgets">
+                                        <img src="images/demos/widgets.jpg" alt="Widgets">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <button type="button" class="close-btn lh-1 bg-transparent border-none p-0" (click)="toggleClass()">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

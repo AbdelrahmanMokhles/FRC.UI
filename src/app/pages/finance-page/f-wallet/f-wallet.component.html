@@ -1,0 +1,64 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Wallet
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Finance
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Wallet
+        </li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+
+        <!-- Total Balance -->
+        <app-total-balance />
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-12">
+
+                <!-- Total Income -->
+                <app-total-income />
+                
+            </div>
+            <div class="col-sm-6 col-lg-12">
+
+                <!-- Total Expenses -->
+                <app-total-expenses />
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-8">
+
+        <!-- Statistics -->
+        <app-statistics />
+
+    </div>
+    <div class="col-lg-8">
+
+        <!-- Transaction History -->
+        <app-transaction-history />
+
+    </div>
+    <div class="col-lg-4">
+        
+        <!-- Card -->
+        <app-card />
+
+    </div>
+</div>

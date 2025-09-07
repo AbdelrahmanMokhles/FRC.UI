@@ -1,0 +1,137 @@
+.linkedin-net-followers-card {
+    .trezo-card-header {
+        margin-bottom: 15px;
+        
+        .trezo-card-title {
+            h5 {
+                font-size: 20px;
+            }
+            p {
+                color: #8695AA;
+            }
+        }
+    }
+    .trezo-card-content {
+        .funfacts-list {
+            gap: 50px;
+
+            li {
+                span {
+                    &.text-xs {
+                        margin-top: 1px;
+                    }
+                }
+            }
+        }
+        .chart {
+            margin: {
+                left: -15px;
+                right: -10px;
+                bottom: -25px;
+            };
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .linkedin-net-followers-card {
+        .trezo-card-header {
+            margin-bottom: 0;
+            
+            .trezo-card-title {
+                margin-bottom: 8px;
+
+                h5 {
+                    font-size: 16px;
+                }
+                p {
+                    margin-top: 2px;
+                }
+            }
+        }
+        .trezo-card-content {
+            .funfacts-list {
+                gap: 30px;
+                
+                li {
+                    display: inline-block;
+                    margin: {
+                        top: 15px;
+                        right: 15px;
+                    };
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .funfacts-list {
+                    li {
+                        margin: {
+                            left: 15px;
+                            right: 0;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .linkedin-net-followers-card {
+        .trezo-card-content {
+            .funfacts-list {
+                li {
+                    margin-right: 0;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .funfacts-list {
+                    li {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .linkedin-net-followers-card {
+        .trezo-card-header {
+            .trezo-card-title {
+                h5 {
+                    font-size: 18px;
+                }
+                p {
+                    margin-top: 1px;
+                }
+            }
+        }
+        .trezo-card-content {
+            .funfacts-list {
+                gap: 40px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

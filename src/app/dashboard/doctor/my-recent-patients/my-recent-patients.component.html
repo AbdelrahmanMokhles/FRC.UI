@@ -1,0 +1,407 @@
+<div
+    class="my-recent-patients-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                My Recent Patients
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative" id="menu1">
+                <button class="menu-btn bg-gray border-0 transition d-inline-block bg-transparent border-radius" (click)="menuBtn('menu1')">
+                    <span class="d-block position-relative">
+                        This Week
+                    </span>
+                </button>
+                @if (openMenus['menu1']) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-bold">
+                            ID
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Patient Name
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Disease
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Payment Status
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Status
+                        </th>
+                        <th scope="col" class="fw-bold"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #001
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user33.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-semibold">
+                                        Johhna Loren
+                                    </span>
+                                    <span class="d-block text-body">
+                                        loren123&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Heart Attack
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Paid
+                        </td>
+                        <td>
+                            <span class="trezo-badge shipped with-border border-radius">
+                                Completed
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-dropdown-menu position-relative" id="menu2">
+                                <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu2')">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                @if (openMenus['menu2']) {
+                                    <ul class="dropdown-menu border-radius border-0 show">
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                View
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Edit
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Delete
+                                            </button>
+                                        </li>
+                                    </ul>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #002
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user34.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-semibold">
+                                        Skyler White
+                                    </span>
+                                    <span class="d-block text-body">
+                                        skyqueen&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Chest Pain
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Paid
+                        </td>
+                        <td>
+                            <span class="trezo-badge pPending with-border border-radius">
+                                Pending
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-dropdown-menu position-relative" id="menu3">
+                                <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu3')">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                @if (openMenus['menu3']) {
+                                    <ul class="dropdown-menu border-radius border-0 show">
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                View
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Edit
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Delete
+                                            </button>
+                                        </li>
+                                    </ul>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #003
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user35.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-semibold">
+                                        Jonathon Watson
+                                    </span>
+                                    <span class="d-block text-body">
+                                        jona2134&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Breathing Issue
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Unpaid
+                        </td>
+                        <td>
+                            <span class="trezo-badge rejected with-border border-radius">
+                                Failed
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-dropdown-menu position-relative" id="menu4">
+                                <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu4')">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                @if (openMenus['menu4']) {
+                                    <ul class="dropdown-menu border-radius border-0 show">
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                View
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Edit
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Delete
+                                            </button>
+                                        </li>
+                                    </ul>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #004
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user36.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-semibold">
+                                        Walter White
+                                    </span>
+                                    <span class="d-block text-body">
+                                        puzzleworld&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Heart Surgery
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Paid
+                        </td>
+                        <td>
+                            <span class="trezo-badge shipped with-border border-radius">
+                                Completed
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-dropdown-menu position-relative" id="menu5">
+                                <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu5')">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                @if (openMenus['menu5']) {
+                                    <ul class="dropdown-menu border-radius border-0 show">
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                View
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Edit
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Delete
+                                            </button>
+                                        </li>
+                                    </ul>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold text-body">
+                            #005
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user37.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-semibold">
+                                        David Carlen
+                                    </span>
+                                    <span class="d-block text-body">
+                                        liveslong&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-body">
+                            CVD
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Unpaid
+                        </td>
+                        <td>
+                            <span class="trezo-badge pPending with-border border-radius">
+                                Pending
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-dropdown-menu position-relative" id="menu6">
+                                <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu6')">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                @if (openMenus['menu6']) {
+                                    <ul class="dropdown-menu border-radius border-0 show">
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                View
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Edit
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                Delete
+                                            </button>
+                                        </li>
+                                    </ul>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 5 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

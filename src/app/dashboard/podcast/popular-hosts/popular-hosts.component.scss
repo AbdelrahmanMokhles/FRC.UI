@@ -1,0 +1,94 @@
+.popular-hosts-card {
+    .trezo-card-content {
+        .table-style-two {
+            .basic-table {
+                table {
+                    tbody {
+                        tr {
+                            td {
+                                padding: {
+                                    top: 10px;
+                                    bottom: 10px;
+                                };
+                                .employee-info {
+                                    gap: 10px;
+                                }
+                                .btn {
+                                    padding: 3.5px 9.5px;
+                                    color: var(--primaryColor);
+                                    background-color: #ECF0FF;
+
+                                    &:hover, &.following {
+                                        color: var(--whiteColor);
+                                        background-color: var(--primaryColor);
+                                    }
+                                }
+                                &:nth-child(2) {
+                                    padding: {
+                                        left: 0;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    text-align: end;
+                                }
+                            }
+                            &:first-child {
+                                td {
+                                    padding-top: 5px;
+                                }
+                            }
+                            &:last-child {
+                                td {
+                                    border-bottom-width: 0;
+                                    padding-bottom: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .table-style-two {
+                .basic-table {
+                    table {
+                        tbody {
+                            tr {
+                                td {
+                                    .btn {
+                                        background-color: #15203c;
+    
+                                        &:hover, &.following {
+                                            background-color: var(--primaryColor);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,152 @@
+<div
+    class="featured-nft-artworks-card trezo-card p-0 mb-25 d-block bg-transparent border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-card-borderd]="themeService.isCardBordered()"
+    [class.component-card-with-box-shadow]="themeService.isCardWithBoxShadow()"
+    [class.component-body-bg-color]="themeService.isBodyBG()"
+    [class.component-card-without-border-radius]="themeService.isCardWithoutBorderRadius()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Featured NFT Artworks
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <owl-carousel-o [options]="featuredNftArtworksSlides">
+            <ng-template carouselSlide>
+                <div class="nft-item bg-white border-radius">
+                    <div class="image border-radius" style="background-image: url(images/nfts/featured1.jpg);"></div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35246
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Christmas Eve
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">9.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                5.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.2/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="nft-item bg-white border-radius">
+                    <div class="image border-radius" style="background-image: url(images/nfts/featured2.jpg);"></div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35247
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Humming Bird
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">10.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                12.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.5/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="nft-item bg-white border-radius">
+                    <div class="image border-radius" style="background-image: url(images/nfts/featured3.jpg);"></div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35228
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        Naughty Pool
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">8.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                9.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.7/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="nft-item bg-white border-radius">
+                    <div class="image border-radius" style="background-image: url(images/nfts/nft4.gif);"></div>
+                    <div class="content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="title d-flex align-items-center">
+                                <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                                <div>
+                                    <span class="d-block">
+                                        NFT ID: 35246
+                                    </span>
+                                    <a routerLink="/dashboard/nft-marketplace-page/nft-details" class="fw-semibold d-block">
+                                        World Savior
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="images/nfts/verified2.svg" class="verified" alt="verified">
+                        </div>
+                        <span class="bid d-block">
+                            Highest Bid: <span class="fw-semibold text-black">9.75 ETH</span>
+                        </span>
+                        <div class="info d-flex justify-content-between align-items-center">
+                            <span class="d-block fw-semibold text-primary">
+                                5.50 ETH
+                            </span>
+                            <span class="rating position-relative d-block fw-semibold">
+                                <i class="ri-heart-fill"></i>
+                                <span class="text-black">9.2/</span>10
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>

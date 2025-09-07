@@ -1,0 +1,518 @@
+.recent-appointments-card {
+    .trezo-card-header {
+        .trezo-card-subtitle {
+            .menu-btn {
+                pointer-events: none;
+                
+                span {
+                    padding-right: 22px;
+
+                    &::before {
+                        margin-top: 0;
+                        content: "\eb21";
+                    }
+                }
+            }
+        }
+    }
+    .trezo-card-content {
+        .calendar {
+            margin-right: 25px;
+
+            .header {
+                margin-bottom: 12px;
+                display: none !important;
+
+                button {
+                    background-color: #E6EFF2;
+                    color: var(--blackColor);
+                    height: 30px;
+                    width: 30px;
+
+                    i {
+                        font-size: 22px;
+                    }
+                    &:hover {
+                        background-color: var(--primaryColor);
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+            .weekdays {
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+            .weekdays, .days {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+            }
+            .days {
+                gap: 2px;
+
+                div {
+                    width: 100%;
+                    height: 44px;
+                    cursor: pointer;
+                    line-height: 44px;
+                    background-color: #E6EFF2;
+                    
+                    &:has(.blank-day) { 
+                        background-color: transparent;
+                    }
+                }
+                .current-day {
+                    line-height: initial;
+                    padding-top: 7px;
+
+                    span {
+                        background-color: var(--primaryColor);
+                        color: var(--whiteColor);
+                        display: inline-block;
+                        border-radius: 50%;
+                        line-height: 30px;
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+            }
+        }
+        .appointments-list {
+            height: 292px;
+            margin-left: -25px;
+
+            .appointment-item {
+                padding: 20px;
+                background-color: #DDE4FF;
+                margin: {
+                    top: 20px;
+                    left: 25px;
+                };
+                .icon {
+                    top: 50%;
+                    left: -39px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+                .info {
+                    .title {
+                        margin-top: 4px;
+                    }
+                }
+                .status {
+                    .trezo-badge {
+                        border-radius: 30px;
+                        padding: 0 10px;
+                    }
+                }
+                .user-info {
+                    margin-top: 15px;
+                    
+                    .user {
+                        gap: 8px;
+    
+                        img {
+                            width: 35px;
+                            border: 1px solid var(--whiteColor);
+                        }
+                        span {
+                            font-size: 13px;
+    
+                            &.text-xs {
+                                margin-bottom: -2px;
+                            }
+                        }
+                    }
+                }
+                &:first-child {
+                    margin-top: 0;
+
+                    &::before {
+                        margin-top: 0;
+                    }
+                }
+                &::before {
+                    top: 0;
+                    bottom: 0;
+                    width: 1px;
+                    content: '';
+                    left: -28px;
+                    margin-top: -20px;
+                    position: absolute;
+                    background: var(--borderColor);
+                }
+                &:nth-child(2), &:nth-child(4), &:nth-child(6) {
+                    background-color: #F3E8FF;
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .calendar {
+                .header {
+                    button {
+                        background-color: var(--borderColor);
+                        color: var(--whiteColor);
+                        
+                        &:hover {
+                            background-color: var(--primaryColor);
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+                .days {
+                    div {
+                        background-color: var(--borderColor);
+                        
+                        &:has(.blank-day) { 
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+            .appointments-list {
+                .appointment-item {
+                    background-color: var(--borderColor) !important;
+    
+                    .status {
+                        div {
+                            border-color: #0C1427;
+                            background-color: #0C1427;
+    
+                            &.upcoming {
+                                border-color: #0C1427;
+                                background-color: #0C1427;
+                            }
+                        }
+                    }
+                    .user-info {
+                        .user {
+                            img {
+                                border-color: var(--blackColor);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                .menu-btn {
+                    span {
+                        padding: {
+                            right: 0;
+                            left: 22px;
+                        };
+                    }
+                }
+            }
+        }
+        .trezo-card-content {
+            .calendar {
+                margin: {
+                    right: 0;
+                    left: 25px;
+                };
+            }
+            .appointments-list {
+                margin: {
+                    left: 0;
+                    right: -25px;
+                };
+                .appointment-item {
+                    direction: rtl;
+                    margin: {
+                        right: 25px;
+                        left: 0;
+                    };
+                    .icon {
+                        left: auto;
+                        right: -39px;
+                    }
+                    &::before {
+                        left: auto;
+                        right: -28px;
+                    }
+                }
+            }
+        }
+    }
+}
+::ng-deep {
+    .recent-appointments-card {
+        .trezo-card-content {
+            .appointments-list {
+                margin-right: -28px;
+                
+                .ng-scrollbar {
+                    margin-left: -3px;
+                }
+                .ng-scroll-content {
+                    padding: 0;
+                    --_track-y-thickness: 3px;
+                    padding: {
+                        right: 25px;
+                        left: 13px;
+                    };
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .appointments-list {
+                    margin: {
+                        right: 0;
+                        left: -28px !important;
+                    };
+                    .ng-scroll-content {
+                        padding: {
+                            right: 13px;
+                            left: 25px;
+                        };
+                        .ng-scrollbar-sticky {
+                            left: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .recent-appointments-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                margin-top: 12px;
+            }
+        }
+        .trezo-card-content {
+            .calendar {
+                margin: {
+                    right: 0;
+                    bottom: 17px;
+                };
+            }
+            .appointments-list {
+                margin-left: 0;
+    
+                .appointment-item {
+                    padding: 17px;
+                    margin: {
+                        top: 17px;
+                        left: 17px;
+                    };
+                    .icon {
+                        left: -28px;
+                    }
+                    .info {
+                        .title {
+                            margin-top: 4px;
+                        }
+                    }
+                    .user-info {
+                        margin-top: 0;
+                        
+                        .user {
+                            margin-top: 10px;
+                        }
+                    }
+                    &::before {
+                        left: -17px;
+                        margin-top: -17px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .calendar {
+                    margin-left: 0;
+                }
+                .appointments-list {
+                    margin-right: 0;
+        
+                    .appointment-item {
+                        margin: {
+                            right: 17px;
+                            left: 0;
+                        };
+                        .icon {
+                            left: auto;
+                            right: -28px;
+                        }
+                        &::before {
+                            left: auto;
+                            right: -17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ::ng-deep {
+        .recent-appointments-card {
+            .trezo-card-content {
+                .appointments-list {
+                    margin-right: -17px;
+    
+                    .ng-scroll-content {
+                        padding-right: 17px;
+                    }
+                }
+            }
+            &.component-rtl-enabled {
+                .trezo-card-content {
+                    .appointments-list {
+                        margin: {
+                            right: 0;
+                            left: -17px !important;
+                        };
+                        .ng-scroll-content {
+                            padding: {
+                                right: 0;
+                                left: 17px;
+                            };
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .recent-appointments-card {
+        .trezo-card-header {
+            .trezo-card-subtitle {
+                margin-top: 0;
+            }
+        }
+        .trezo-card-content {
+            .calendar {
+                margin-bottom: 20px;
+            }
+            .appointments-list {
+                .appointment-item {
+                    padding: 20px;
+                    margin: {
+                        top: 20px;
+                        left: 20px;
+                    };
+                    .icon {
+                        left: -31px;
+                    }
+                    &::before {
+                        left: -20px;
+                        margin-top: -20px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .appointments-list {
+                    .appointment-item {
+                        margin: {
+                            right: 20px;
+                            left: 0;
+                        };
+                        .icon {
+                            left: auto;
+                            right: -31px;
+                        }
+                        &::before {
+                            left: auto;
+                            right: -20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ::ng-deep {
+        .recent-appointments-card {
+            .trezo-card-content {
+                .appointments-list {
+                    margin-right: -20px;
+    
+                    .ng-scroll-content {
+                        padding-right: 20px;
+                    }
+                }
+            }
+            &.component-rtl-enabled {
+                .trezo-card-content {
+                    .appointments-list {
+                        margin: {
+                            right: 0;
+                            left: -20px !important;
+                        };
+                        .ng-scroll-content {
+                            padding: {
+                                right: 0;
+                                left: 20px;
+                            };
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .recent-appointments-card {
+        .trezo-card-content {
+            .appointments-list {
+                .appointment-item {
+                    .user-info {
+                        margin-top: 0;
+                        
+                        .user {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .recent-appointments-card {
+        .trezo-card-content {
+            .appointments-list {
+                .appointment-item {
+                    .user-info {
+                        margin-top: 0;
+                        
+                        .user {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

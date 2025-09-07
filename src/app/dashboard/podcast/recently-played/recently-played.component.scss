@@ -1,0 +1,159 @@
+.recently-played-card {
+    .trezo-card-content {
+        .table-style-two {
+            margin-bottom: -12px;
+            
+            .basic-table {
+                table {
+                    tbody {
+                        tr {
+                            td {
+                                padding: {
+                                    top: 12.5px;
+                                    bottom: 12.5px;
+                                };
+                                .employee-info {
+                                    gap: 10px;
+
+                                    .play-btn {
+                                        font-size: 24px;
+                                    }
+                                    .img {
+                                        width: 34px;
+                                        border-radius: 5px;
+
+                                        img {
+                                            border-radius: 5px;
+                                        }
+                                    }
+                                }
+                                .play-times {
+                                    padding-left: 27px;
+                                    
+                                    i {
+                                        left: 0;
+                                        top: 50%;
+                                        font-size: 20px;
+                                        position: absolute;
+                                        color: var(--primaryColor);
+                                        transform: translateY(-50%);
+                                    }
+                                }
+                                .bookmark-btn {
+                                    font-size: 24px;
+                                    color: var(--bodyColor);
+                                    transition: var(--transition);
+
+                                    &:focus {
+                                        color: var(--warningColor);
+                                    }
+                                }
+                                .action-dropdown-menu {
+                                    .dot-menu {
+                                        font-size: 20px;
+                                        color: var(--bodyColor);
+
+                                        &:hover {
+                                            color: var(--primaryColor);
+                                        }
+                                    }
+                                    .dropdown-menu {
+                                        right: 0;
+                                        top: 100%;
+                                        text-align: start;
+                                        position: absolute;
+                                        transition: var(--transition);
+                                        border: 1px solid var(--borderColor) !important;
+
+                                        li {
+                                            .dropdown-item {
+                                                i {
+                                                    color: var(--primaryColor);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &:last-child {
+                                    .action-dropdown-menu {
+                                        text-align: end;
+                                    }
+                                }
+                            }
+                            &:first-child {
+                                td {
+                                    padding-top: 0;
+                                }
+                            }
+                            &:last-child, &:nth-child(5) {
+                                td {
+                                    .action-dropdown-menu {
+                                        .dropdown-menu {
+                                            top: auto;
+                                            bottom: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                            &:last-child {
+                                td {
+                                    border-bottom-width: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .table-style-two {
+                .basic-table {
+                    table {
+                        tbody {
+                            tr {
+                                td {
+                                    .play-times {
+                                        padding: {
+                                            left: 0;
+                                            right: 27px;
+                                        };
+                                        i {
+                                            left: auto;
+                                            right: 0;
+                                        }
+                                    }
+                                    .action-dropdown-menu {
+                                        .dropdown-menu {
+                                            right: auto;
+                                            left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,119 @@
+.creator-card {
+    padding: 10px 10px 15px;
+
+    .trezo-card-content {
+        .content {
+            margin-top: -34px;
+
+            .author {
+                margin-bottom: 15px;
+
+                .verified {
+                    right: 0;
+                    bottom: 0;
+                    position: absolute;
+                }
+            }
+            h5 {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            span {
+                font-size: 12px;
+            }
+            .border-top {
+                border-color: var(--borderColor) !important;
+                padding-top: 15px;
+                margin-top: 15px;
+            }
+            .follow-btn {
+                font-size: 16px;
+                padding: 6px 17px;
+                color: var(--whiteColor);
+                background-color: var(--primaryColor);
+                
+                &.unfollow {
+                    background-color: #8695aa;
+                }
+            }
+        }
+    }
+}
+.creators-filter-card {
+    .trezo-card-content {
+        .form-control, .form-select {
+            height: 44px;
+            border-color: #f6f7f9;
+            background-color: #f6f7f9;
+            padding: {
+                left: 17px;
+                right: 17px;
+            };
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .form-control, .form-select {
+                border-color: #0a0e19;
+                background-color: #0a0e19;
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .creator-card {
+        .trezo-card-content {
+            .content {
+                .follow-btn {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .creators-filter-card {
+        padding-bottom: 2px !important;
+
+        .trezo-card-content {
+            .form-group {
+                margin-bottom: 15px !important;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .creators-filter-card {
+        padding-bottom: 5px !important;
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .creator-card {
+        .trezo-card-content {
+            .content {
+                .follow-btn {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

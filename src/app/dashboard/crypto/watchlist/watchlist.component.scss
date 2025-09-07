@@ -1,0 +1,281 @@
+::ng-deep {
+    .cryptocurrency-watchlist-card {
+        .trezo-card-content {
+            .cryptocurrency-watchlist-slides {
+                .box {
+                    padding: 23px;
+                    border-radius: 5px;
+                    background: #ECF0FF;
+
+                    .coin {
+                        img {
+                            width: 48px;
+                        }
+                        div {
+                            margin-left: 10px;
+        
+                            h4 {
+                                margin-top: 6px;
+                                font-size: 20px;
+        
+                                span {
+                                    top: -1px;
+                                    font-size: 14px;
+                                    color: #1E8308;
+                                    margin-left: 2px;
+                                    padding-left: 24px;
+        
+                                    i {
+                                        left: 0;
+                                        top: 50%;
+                                        font-size: 20px;
+                                        position: absolute;
+                                        transform: translateY(-50%);
+                                    }
+                                    &.down {
+                                        color: #C52B09;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .chart {
+                        margin: {
+                            top: -15px;
+                            left: -11px;
+                            bottom: -18px;
+                        };
+                    }
+                    .list {
+                        margin-right: 8px;
+
+                        li {
+                            font-size: 12px;
+
+                            span {
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                    &.bg-faf5ff {
+                        background: #faf5ff;
+                    }
+                    &.bg-fff5ed {
+                        background: #fff5ed;
+                    }
+                    &.bg-eeffe5 {
+                        background: #eeffe5;
+                    }
+                }
+                .owl-theme {
+                    .owl-nav {
+                        position: absolute;
+                        margin-top: 0;
+                        right: -2px;
+                        top: -51px;
+
+                        [class*=owl-] {
+                            border: 1px solid var(--borderColor);
+                            background-color: transparent;
+                            color: var(--bodyColor);
+                            line-height: 29px;
+                            font-size: 22px;
+                            margin: 0 2px;
+                            height: 31px;
+                            width: 31px;
+                            padding: 0;
+                            
+                            &:hover {
+                                background-color: var(--primaryColor);
+                                border-color: var(--primaryColor);
+                                color: var(--whiteColor);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.component-dark-theme {
+            .trezo-card-content {
+                .cryptocurrency-watchlist-slides {
+                    .box {
+                        background: #0A0E19 !important;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .cryptocurrency-watchlist-slides {
+                    .box {
+                        direction: rtl;
+
+                        .coin {
+                            div {
+                                margin: {
+                                    left: 0;
+                                    right: 10px;
+                                };
+                                h4 {
+                                    span {
+                                        margin: {
+                                            left: 0;
+                                            right: 2px;
+                                        };
+                                        padding: {
+                                            left: 0;
+                                            right: 24px;
+                                        };
+                                        i {
+                                            left: auto;
+                                            right: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .chart {
+                            margin: {
+                                left: 0;
+                                right: -11px;
+                            };
+                        }
+                        .list {
+                            margin: {
+                                right: 0;
+                                left: 8px;
+                            };
+                        }
+                    }
+                    .owl-theme {
+                        .owl-nav {
+                            right: auto;
+                            left: -2px;
+                        }
+                    }
+                }
+            }
+        }
+        &.component-card-with-box-shadow, &.component-body-bg-color {
+            &.shadow-none {
+                box-shadow: unset !important;
+            }
+        }
+        &.component-card-borderd, &.component-body-bg-color {
+            border-width: 0 !important;
+        }
+        &.component-card-without-border-radius {
+            .trezo-card-content {
+                .cryptocurrency-watchlist-slides {
+                    .box {
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    ::ng-deep {
+        .cryptocurrency-watchlist-card {
+            .trezo-card-content {
+                .cryptocurrency-watchlist-slides {
+                    .box {
+                        padding: 17px;
+    
+                        .coin {
+                            div {
+                                h4 {
+                                    margin-top: 5px;
+                                    font-size: 18px;
+            
+                                    span {
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+                        .chart {
+                            margin: {
+                                top: -15px;
+                                left: -10px;
+                                bottom: -20px;
+                            };
+                        }
+                        .list {
+                            margin-right: 0;
+                        }
+                    }
+                    .owl-theme {
+                        .owl-nav {
+                            position: relative;
+                            margin-top: 17px;
+                            right: 0;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+            &.component-rtl-enabled {
+                .trezo-card-content {
+                    .cryptocurrency-watchlist-slides {
+                        .box {
+                            .chart {
+                                margin: {
+                                    left: 0;
+                                    right: -10px;
+                                };
+                            }
+                            .list {
+                                margin-left: 0;
+                            }
+                        }
+                        .owl-theme {
+                            .owl-nav {
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    ::ng-deep {
+        .cryptocurrency-watchlist-card {
+            .trezo-card-content {
+                .cryptocurrency-watchlist-slides {
+                    .box {
+                        padding: 20px;
+                    }
+                    .owl-theme {
+                        .owl-nav {
+                            top: -46px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

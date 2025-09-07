@@ -1,0 +1,209 @@
+<div
+    class="my-featured-listings-card trezo-card mb-25 border-radius d-block border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                My Featured Listings
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <owl-carousel-o [options]="myFeaturedListingsSlides">
+            <ng-template carouselSlide>
+                <div
+                    class="image position-relative"
+                    style="background-image: url(images/properties/property13.jpg);"
+                >
+                    <span class="trezo-badge rejected">
+                        For Rent
+                    </span>
+                </div>
+                <div class="content bg-white">
+                    <h6 class="fw-semibold">
+                        <a routerLink=".">
+                            White House Villa
+                        </a>
+                    </h6>
+                    <span class="d-block">
+                        New Castle, United Kingdom
+                    </span>
+                    <ul class="p-0 mb-0 list-unstyled d-flex align-items-center justify-content-between">
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                open_run
+                            </i>
+                            321 Sft
+                        </li>
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            2 Bed
+                        </li>
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            1 Bath
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="price lh-1 fw-bold text-black">
+                            $3,124/m
+                        </div>
+                        <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div
+                    class="image position-relative"
+                    style="background-image: url(images/properties/property14.jpg);"
+                >
+                    <span class="trezo-badge">
+                        For Sale
+                    </span>
+                </div>
+                <div class="content bg-white">
+                    <h6 class="fw-semibold">
+                        <a routerLink=".">
+                            Luxury Comfort Villa
+                        </a>
+                    </h6>
+                    <span class="d-block">
+                        London, United Kingdom
+                    </span>
+                    <ul class="p-0 mb-0 list-unstyled d-flex align-items-center justify-content-between">
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                open_run
+                            </i>
+                            425 Sft
+                        </li>
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            3 Bed
+                        </li>
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            2 Bath
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="price lh-1 fw-bold text-black">
+                            $4,274/m
+                        </div>
+                        <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div
+                    class="image position-relative"
+                    style="background-image: url(images/properties/property13.jpg);"
+                >
+                    <span class="trezo-badge rejected">
+                        For Rent
+                    </span>
+                </div>
+                <div class="content bg-white">
+                    <h6 class="fw-semibold">
+                        <a routerLink=".">
+                            White House Villa
+                        </a>
+                    </h6>
+                    <span class="d-block">
+                        New Castle, United Kingdom
+                    </span>
+                    <ul class="p-0 mb-0 list-unstyled d-flex align-items-center justify-content-between">
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                open_run
+                            </i>
+                            321 Sft
+                        </li>
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            2 Bed
+                        </li>
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            1 Bath
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="price lh-1 fw-bold text-black">
+                            $3,124/m
+                        </div>
+                        <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div
+                    class="image position-relative"
+                    style="background-image: url(images/properties/property14.jpg);"
+                >
+                    <span class="trezo-badge rejected">
+                        For Rent
+                    </span>
+                </div>
+                <div class="content bg-white">
+                    <h6 class="fw-semibold">
+                        <a routerLink=".">
+                            Luxury Comfort Villa
+                        </a>
+                    </h6>
+                    <span class="d-block">
+                        London, United Kingdom
+                    </span>
+                    <ul class="p-0 mb-0 list-unstyled d-flex align-items-center justify-content-between">
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                open_run
+                            </i>
+                            425 Sft
+                        </li>
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            3 Bed
+                        </li>
+                        <li class="text-xs text-black position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            2 Bath
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="price lh-1 fw-bold text-black">
+                            $4,274/m
+                        </div>
+                        <a routerLink="." class="link-btn d-flex align-items-center justify-content-center rounded-circle">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>

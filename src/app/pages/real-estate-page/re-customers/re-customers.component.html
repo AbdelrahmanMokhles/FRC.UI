@@ -1,0 +1,768 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Customers
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Real Estate
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Customers
+        </li>
+    </ol>
+</div>
+
+<!-- Customers -->
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search customer here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button class="add-btn d-inline-block transition fw-medium border-radius" type="button" (click)="toggleClass()">
+                <span class="position-relative d-inline-block">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add New Customer
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-medium">
+                                Customer ID
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Customer Name
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Location
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Join Date
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Phone Number
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Email Address
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Customer Type
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0015
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user1.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Sarah Johnson
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                74 Grim Avenue,
+                                <br>
+                                San Diego
+                            </td>
+                            <td class="text-body">
+                                30 Apr 2025
+                            </td>
+                            <td>
+                                (123) 456-7890
+                            </td>
+                            <td class="text-primary">
+                                sarah&#64;trezo.com
+                            </td>
+                            <td class="text-body">
+                                Buyer
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            visibility
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            edit
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            delete
+                                        </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0099
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user2.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Michael Smith
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                9 Paul Wayne,
+                                <br>
+                                Haggerty Road
+                            </td>
+                            <td class="text-body">
+                                29 Apr 2025
+                            </td>
+                            <td>
+                                (987) 654-3210
+                            </td>
+                            <td class="text-primary">
+                                smith&#64;trezo.com
+                            </td>
+                            <td class="text-body">
+                                Seller
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            visibility
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            edit
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            delete
+                                        </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0145
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user3.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Emily Brown
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                61 Ottis Street,
+                                <br>
+                                Oklahoma City
+                            </td>
+                            <td class="text-body">
+                                28 Apr 2025
+                            </td>
+                            <td>
+                                (555) 258-1598
+                            </td>
+                            <td class="text-primary">
+                                brown&#64;trezo.com
+                            </td>
+                            <td class="text-body">
+                                Commercial
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            visibility
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            edit
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            delete
+                                        </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0247
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user4.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Jason Lee
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Residential
+                            </td>
+                            <td class="text-body">
+                                27 Apr 2025
+                            </td>
+                            <td>
+                                (444) 789-0123
+                            </td>
+                            <td class="text-primary">
+                                lee&#64;trezo.com
+                            </td>
+                            <td class="text-body">
+                                Investor
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            visibility
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            edit
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            delete
+                                        </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0299
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user5.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Ashley Davis
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                01 Lakeland,
+                                <br>
+                                Terrace Detroit
+                            </td>
+                            <td class="text-body">
+                                26 Apr 2025
+                            </td>
+                            <td>
+                                (333) 456-3333
+                            </td>
+                            <td class="text-primary">
+                                davis&#64;trezo.com
+                            </td>
+                            <td class="text-body">
+                                Industrial
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            visibility
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            edit
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            delete
+                                        </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0311
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user66.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Shirley Cooper
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                29 Aviation Way,
+                                <br>
+                                Los Angeles
+                            </td>
+                            <td class="text-body">
+                                25 Apr 2025
+                            </td>
+                            <td>
+                                (111) 775-8890
+                            </td>
+                            <td class="text-primary">
+                                cooper&#64;trezo.com
+                            </td>
+                            <td class="text-body">
+                                Buyer
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            visibility
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            edit
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            delete
+                                        </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0328
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user67.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Bret Brown
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                2 Little Acres,
+                                <br>
+                                Lane Mattoon
+                            </td>
+                            <td class="text-body">
+                                24 Apr 2025
+                            </td>
+                            <td>
+                                (555) 222-3365
+                            </td>
+                            <td class="text-primary">
+                                bret&#64;trezo.com
+                            </td>
+                            <td class="text-body">
+                                Seller
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            visibility
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            edit
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            delete
+                                        </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-body">
+                                <div class="d-flex align-items-center" style="gap: 10px;">
+                                    <div class="form-check mb-0 position-relative">
+                                        <input class="form-check-input" type="checkbox">
+                                    </div>
+                                    <span class="d-block">
+                                        #TRE0333
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img">
+                                        <img alt="user-image" src="images/users/user68.jpg">
+                                    </div>
+                                    <span class="d-block fw-medium">
+                                        Frances Mills
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                74 Grim Avenue,
+                                <br>
+                                San Diego
+                            </td>
+                            <td class="text-body">
+                                23 Apr 2025
+                            </td>
+                            <td>
+                                (222) 722-8750
+                            </td>
+                            <td class="text-primary">
+                                mills&#64;trezo.com
+                            </td>
+                            <td class="text-body">
+                                Commercial
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            visibility
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            edit
+                                        </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined">
+                                            delete
+                                        </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 8 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Add New Customer
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Customer Name
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Customer Email
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Customer Number
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter number">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Phone Number
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter phone number">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Customer Type
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option>
+                                    Buyer
+                                </option>
+                                <option>
+                                    Seller
+                                </option>
+                                <option>
+                                    Commercial
+                                </option>
+                                <option>
+                                    Investor
+                                </option>
+                                <option>
+                                    Industrial
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Joining Date
+                            </label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Customer Address
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter address">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Status
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option value="1">
+                                    Switzerland
+                                </option>
+                                <option value="2">
+                                    New Zealand
+                                </option>
+                                <option value="3">
+                                    Germany
+                                </option>
+                                <option value="4">
+                                    United States
+                                </option>
+                                <option value="5">
+                                    Japan
+                                </option>
+                                <option value="6">
+                                    Netherlands
+                                </option>
+                                <option value="7">
+                                    Sweden
+                                </option>
+                                <option value="8">
+                                    Canada
+                                </option>
+                                <option value="9">
+                                    United Kingdom
+                                </option>
+                                <option value="10">
+                                    Australia
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Add Customer Photo
+                            </label>
+                            <file-upload class="file-uploader"></file-upload>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button
+                        (click)="toggleClass()"
+                        class="warn d-inline-block fw-medium border-0 border-radius transition"
+                    >
+                        Cancel
+                    </button>
+                    <button class="primary d-inline-block fw-medium border-0 border-radius transition">
+                        <span class="position-relative d-inline-block">
+                            <i class="material-symbols-outlined">
+                                add
+                            </i>
+                            Create
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

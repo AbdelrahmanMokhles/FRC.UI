@@ -1,0 +1,132 @@
+<div
+    class="saas-users-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Users
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="m-0 p-0 list-unstyled">
+            <li class="d-flex align-items-center">
+                <div class="image position-relative">
+                    <img src="images/users/user60.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Johhna Loren
+                    </span>
+                    <span class="d-block">
+                        Admin
+                    </span>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="image position-relative">
+                    <img src="images/users/user61.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Zinia Watson
+                    </span>
+                    <span class="d-block">
+                        Moderator
+                    </span>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="image position-relative">
+                    <img src="images/users/user62.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Angela Carter
+                    </span>
+                    <span class="d-block">
+                        Editor
+                    </span>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="image position-relative">
+                    <img src="images/users/user63.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status offline"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Skyler White
+                    </span>
+                    <span class="d-block">
+                        Admin
+                    </span>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="image position-relative">
+                    <img src="images/users/user64.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Jane Ronan
+                    </span>
+                    <span class="d-block">
+                        Editor
+                    </span>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="image position-relative">
+                    <img src="images/users/user65.jpg" alt="user-image" class="rounded-circle">
+                    <span class="active-status offline"></span>
+                </div>
+                <div class="content">
+                    <span class="d-block fw-semibold text-black">
+                        Viktor James
+                    </span>
+                    <span class="d-block">
+                        Editor
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

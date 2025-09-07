@@ -1,0 +1,110 @@
+<div
+    class="hospital-earnings-card trezo-card mb-25 border-radius d-block shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Hospital Earnings
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        This Week
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="image text-center">
+                    <img src="images/hospital.png" alt="hospital-image">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="box bg-white border-radius">
+                                <h3 class="fw-medium">
+                                    $120,000
+                                </h3>
+                                <div class="d-flex align-items-center">
+                                    <span class="d-block text-body">
+                                        Total Profit
+                                    </span>
+                                    <span class="info-badge text-danger fw-medium position-relative">
+                                        <i class="ri-arrow-down-fill"></i>
+                                        5%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box bg-white border-radius">
+                                <h3 class="fw-medium">
+                                    $80,000
+                                </h3>
+                                <div class="d-flex align-items-center">
+                                    <span class="d-block text-body">
+                                        Total Costs
+                                    </span>
+                                    <span class="info-badge text-success fw-medium position-relative">
+                                        <i class="ri-arrow-up-fill"></i>
+                                        3%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="item bg-white border-radius position-relative">
+                                <h3 class="fw-medium">
+                                    $900,000
+                                    <span class="text-success position-relative">
+                                        <i class="ri-arrow-up-fill"></i>
+                                        12%
+                                    </span>
+                                </h3>
+                                <span class="d-block text-body">
+                                    Total Earnings
+                                </span>
+                                <div class="chart">
+                                    <div id="hospital_total_earnings_chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

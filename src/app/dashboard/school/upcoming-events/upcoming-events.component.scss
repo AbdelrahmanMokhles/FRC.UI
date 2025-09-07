@@ -1,0 +1,186 @@
+.upcoming-events-card {
+    .trezo-card-header {
+        margin-bottom: 19px;
+    }
+    .trezo-card-content {
+        .item {
+            background-color: #f6f7f9;
+            border-radius: 0.375rem;
+            padding: 12px 14px;
+
+            .title {
+                margin-bottom: 7px;
+
+                a {
+                    font-size: 16px;
+                }
+            }
+            ul {
+                li {
+                    margin-right: 20px;
+                    padding-left: 22px;
+
+                    i {
+                        left: 0;
+                        top: 50%;
+                        font-size: 16px;
+                        position: absolute;
+                        transform: translateY(-50%);
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .item {
+                background-color: #0A0E19;
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .item {
+                ul {
+                    li {
+                        margin: {
+                            right: 0;
+                            left: 20px;
+                        };
+                        padding: {
+                            left: 0;
+                            right: 22px;
+                        };
+                        i {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+::ng-deep {
+    .upcoming-events-card {
+        .trezo-card-content {
+            .owl-theme {
+                .owl-nav {
+                    &.disabled + .owl-dots {
+                        margin-top: 0;
+                    }
+                }
+                .owl-dots {
+                    align-items: center;
+                    position: absolute;
+                    display: flex;
+                    top: -32px;
+                    gap: 5px;
+                    right: 0;
+
+                    .owl-dot {
+                        span {
+                            width: 5px;
+                            height: 5px;
+                            margin: 0;
+                        }
+                        &.active {
+                            span {
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .upcoming-events-card {
+        .trezo-card-header {
+            margin-bottom: 17px;
+        }
+        .trezo-card-content {
+            .item {
+                .title {
+                    margin-bottom: 5px;
+    
+                    a {
+                        font-size: 15px;
+                    }
+                }
+                ul {
+                    li {
+                        padding-left: 20px;
+                        margin: {
+                            right: 15px;
+                            top: 5px;
+                        };
+                        i {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .item {
+                    ul {
+                        li {
+                            padding: {
+                                left: 0;
+                                right: 20px;
+                            };
+                            margin: {
+                                right: 0;
+                                left: 15px;
+                            };
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ::ng-deep {
+        .upcoming-events-card {
+            .trezo-card-content {
+                .owl-theme {
+                    .owl-dots {
+                        top: -29px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .upcoming-events-card {
+        .trezo-card-header {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

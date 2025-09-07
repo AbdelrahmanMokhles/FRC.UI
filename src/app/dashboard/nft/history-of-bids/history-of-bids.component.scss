@@ -1,0 +1,209 @@
+.history-of-bids-card {
+    .trezo-card-content {
+        margin-right: -25px;
+
+        .basic-table {
+            &.table-responsive {
+                height: 329px;
+                padding-right: 25px;
+            }
+            table, .table {
+                tbody {
+                    tr {
+                        td {
+                            font-size: 12px;
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            };
+                            border: {
+                                left-width: 0;
+                                right-width: 0;
+                            };
+                            .employee-info {
+                                gap: 10px;
+
+                                .img {
+                                    width: 40px;
+                                }
+                                span {
+                                    &:nth-child(1) {
+                                        margin-bottom: 1px;
+                                        font-size: var(--fontSize);
+                                    }
+                                }
+                            }
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                                text-align: end;
+                            }
+                        }
+                        &:last-child {
+                            td {
+                                padding-bottom: 0;
+                                border-bottom-width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            margin: {
+                right: 0;
+                left: -25px;
+            };
+            .basic-table {
+                &.table-responsive {
+                    padding: {
+                        right: 0;
+                        left: 25px;
+                    };
+                }
+                table, .table {
+                    tbody {
+                        tr {
+                            td {
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .history-of-bids-card {
+        .trezo-card-content {
+            margin-right: -17px;
+
+            .basic-table {
+                &.table-responsive {
+                    padding-right: 17px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                margin: {
+                    right: 0;
+                    left: -17px;
+                };
+                .basic-table {
+                    &.table-responsive {
+                        padding: {
+                            right: 0;
+                            left: 17px;
+                        };
+                    }
+                    table, .table {
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .history-of-bids-card {
+        .trezo-card-content {
+            margin-right: -20px;
+
+            .basic-table {
+                &.table-responsive {
+                    padding-right: 20px;
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                margin: {
+                    right: 0;
+                    left: -20px;
+                };
+                .basic-table {
+                    &.table-responsive {
+                        padding: {
+                            right: 0;
+                            left: 20px;
+                        };
+                    }
+                    table, .table {
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

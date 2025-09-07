@@ -1,0 +1,438 @@
+<div
+    class="recently-played-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Recently Played
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <a routerLink="." class="view-all-btn d-inline-block">
+                <span class="d-inline-block position-relative">
+                    View All
+                    <i class="ri-arrow-right-s-line"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <a href="#" target="_blank" class="play-btn lh-1 text-primary">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                    <div class="img">
+                                        <img alt="user-image" src="images/playlists/playlist1.jpg">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Mastering Digital Marketing
+                                        </span>
+                                        <span class="d-block text-body">
+                                            Sarah Johnson
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Played 40min. ago
+                            </td>
+                            <td class="text-body">
+                                <span class="play-times d-block position-relative">
+                                    <i class="material-symbols-outlined">
+                                        headset_mic
+                                    </i>
+                                    8,200
+                                </span>
+                            </td>
+                            <td>
+                                <button type="button" class="bookmark-btn lh-1 p-0 border-0 bg-transparent">
+                                    <i class="ri-heart-line"></i>
+                                </button>
+                            </td>
+                            <td class="text-body">
+                                45:30
+                            </td>
+                            <td>
+                                <div class="action-dropdown-menu position-relative" id="menu1">
+                                    <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu1')">
+                                        <i class="ri-more-fill"></i>
+                                    </button>
+                                    @if (openMenus['menu1']) {
+                                        <ul class="dropdown-menu border-radius border-0 show">
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-add-fill"></i>
+                                                    Add to Playlist
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-multi-image-line"></i>
+                                                    Go to Album
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-dropbox-line"></i>
+                                                    View Credits
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <a href="#" target="_blank" class="play-btn lh-1 text-primary">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                    <div class="img">
+                                        <img alt="user-image" src="images/playlists/playlist2.jpg">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Content Marketing Essentials
+                                        </span>
+                                        <span class="d-block text-body">
+                                            Tom Richards
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Played 1h. ago
+                            </td>
+                            <td class="text-body">
+                                <span class="play-times d-block position-relative">
+                                    <i class="material-symbols-outlined">
+                                        headset_mic
+                                    </i>
+                                    9,500
+                                </span>
+                            </td>
+                            <td>
+                                <button type="button" class="bookmark-btn lh-1 p-0 border-0 bg-transparent">
+                                    <i class="ri-heart-line"></i>
+                                </button>
+                            </td>
+                            <td class="text-body">
+                                25:50
+                            </td>
+                            <td>
+                                <div class="action-dropdown-menu position-relative" id="menu2">
+                                    <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu2')">
+                                        <i class="ri-more-fill"></i>
+                                    </button>
+                                    @if (openMenus['menu2']) {
+                                        <ul class="dropdown-menu border-radius border-0 show">
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-add-fill"></i>
+                                                    Add to Playlist
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-multi-image-line"></i>
+                                                    Go to Album
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-dropbox-line"></i>
+                                                    View Credits
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <a href="#" target="_blank" class="play-btn lh-1 text-primary">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                    <div class="img">
+                                        <img alt="user-image" src="images/playlists/playlist3.jpg">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Social Media Trends for 2025
+                                        </span>
+                                        <span class="d-block text-body">
+                                            David Chen
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Played 1day ago
+                            </td>
+                            <td class="text-body">
+                                <span class="play-times d-block position-relative">
+                                    <i class="material-symbols-outlined">
+                                        headset_mic
+                                    </i>
+                                    7,400
+                                </span>
+                            </td>
+                            <td>
+                                <button type="button" class="bookmark-btn lh-1 p-0 border-0 bg-transparent">
+                                    <i class="ri-heart-line"></i>
+                                </button>
+                            </td>
+                            <td class="text-body">
+                                30:20
+                            </td>
+                            <td>
+                                <div class="action-dropdown-menu position-relative" id="menu3">
+                                    <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu3')">
+                                        <i class="ri-more-fill"></i>
+                                    </button>
+                                    @if (openMenus['menu3']) {
+                                        <ul class="dropdown-menu border-radius border-0 show">
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-add-fill"></i>
+                                                    Add to Playlist
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-multi-image-line"></i>
+                                                    Go to Album
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-dropbox-line"></i>
+                                                    View Credits
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <a href="#" target="_blank" class="play-btn lh-1 text-primary">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                    <div class="img">
+                                        <img alt="user-image" src="images/playlists/playlist4.jpg">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Building Brand Loyalty
+                                        </span>
+                                        <span class="d-block text-body">
+                                            Michael Young
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Played 2days ago
+                            </td>
+                            <td class="text-body">
+                                <span class="play-times d-block position-relative">
+                                    <i class="material-symbols-outlined">
+                                        headset_mic
+                                    </i>
+                                    10,200
+                                </span>
+                            </td>
+                            <td>
+                                <button type="button" class="bookmark-btn lh-1 p-0 border-0 bg-transparent">
+                                    <i class="ri-heart-line"></i>
+                                </button>
+                            </td>
+                            <td class="text-body">
+                                15:35
+                            </td>
+                            <td>
+                                <div class="action-dropdown-menu position-relative" id="menu4">
+                                    <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu4')">
+                                        <i class="ri-more-fill"></i>
+                                    </button>
+                                    @if (openMenus['menu4']) {
+                                        <ul class="dropdown-menu border-radius border-0 show">
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-add-fill"></i>
+                                                    Add to Playlist
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-multi-image-line"></i>
+                                                    Go to Album
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-dropbox-line"></i>
+                                                    View Credits
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <a href="#" target="_blank" class="play-btn lh-1 text-primary">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                    <div class="img">
+                                        <img alt="user-image" src="images/playlists/playlist5.jpg">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Content Creation Techniques
+                                        </span>
+                                        <span class="d-block text-body">
+                                            Lisa Kim
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Played 3days ago
+                            </td>
+                            <td class="text-body">
+                                <span class="play-times d-block position-relative">
+                                    <i class="material-symbols-outlined">
+                                        headset_mic
+                                    </i>
+                                    9,300
+                                </span>
+                            </td>
+                            <td>
+                                <button type="button" class="bookmark-btn lh-1 p-0 border-0 bg-transparent">
+                                    <i class="ri-heart-line"></i>
+                                </button>
+                            </td>
+                            <td class="text-body">
+                                18:45
+                            </td>
+                            <td>
+                                <div class="action-dropdown-menu position-relative" id="menu5">
+                                    <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu5')">
+                                        <i class="ri-more-fill"></i>
+                                    </button>
+                                    @if (openMenus['menu5']) {
+                                        <ul class="dropdown-menu border-radius border-0 show">
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-add-fill"></i>
+                                                    Add to Playlist
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-multi-image-line"></i>
+                                                    Go to Album
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-dropbox-line"></i>
+                                                    View Credits
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <a href="#" target="_blank" class="play-btn lh-1 text-primary">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                    <div class="img">
+                                        <img alt="user-image" src="images/playlists/playlist6.jpg">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            The Future of AI in Marketing
+                                        </span>
+                                        <span class="d-block text-body">
+                                            Tom Richards
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-body">
+                                Played 4days ago
+                            </td>
+                            <td class="text-body">
+                                <span class="play-times d-block position-relative">
+                                    <i class="material-symbols-outlined">
+                                        headset_mic
+                                    </i>
+                                    6,300
+                                </span>
+                            </td>
+                            <td>
+                                <button type="button" class="bookmark-btn lh-1 p-0 border-0 bg-transparent">
+                                    <i class="ri-heart-line"></i>
+                                </button>
+                            </td>
+                            <td class="text-body">
+                                22:15
+                            </td>
+                            <td>
+                                <div class="action-dropdown-menu position-relative" id="menu6">
+                                    <button type="button" class="dot-menu transition border-0 lh-1 p-0 bg-transparent" (click)="menuBtn('menu6')">
+                                        <i class="ri-more-fill"></i>
+                                    </button>
+                                    @if (openMenus['menu1']) {
+                                        <ul class="dropdown-menu border-radius border-0 show">
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-add-fill"></i>
+                                                    Add to Playlist
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-multi-image-line"></i>
+                                                    Go to Album
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                                    <i class="ri-dropbox-line"></i>
+                                                    View Credits
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

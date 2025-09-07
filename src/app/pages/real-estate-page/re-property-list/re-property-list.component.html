@@ -1,0 +1,1269 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Property List
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Real Estate
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Property List
+        </li>
+    </ol>
+</div>
+
+<!-- Property List -->
+<div class="property-list-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header mb-0 d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search property here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle">
+            <a class="add-btn d-inline-block transition fw-medium border-radius" routerLink="/dashboard/real-estate-page/add-property">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add Property
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        New York
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown1')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown1') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property1.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $18,000
+                        </h3>
+                        <span class="trezo-badge inProgress">
+                            Sale
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        35 Prince Consort Road
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            6Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            5Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            1800sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user1.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Harold Cook
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        London
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown2')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown2') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property2.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $220,000
+                        </h3>
+                        <span class="trezo-badge sPending">
+                            Rent
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        58 Gateway Road Portland
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            8Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            6Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            2000sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user2.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Debra Sisk
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        France
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown3')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown3') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="content">
+                    <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                        <img src="images/properties/property3.jpg" class="border-radius" alt="property-image">
+                    </a>
+                    <div class="content">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h3 class="mb-0 text-orange">
+                                $350,000
+                            </h3>
+                            <span class="trezo-badge pInProgress">
+                                Sold
+                            </span>
+                        </div>
+                        <span class="d-block location position-relative">
+                            <i class="material-symbols-outlined">
+                                location_on
+                            </i>
+                            18 Chemin Challet
+                        </span>
+                        <ul class="mb-0 list-unstyled ps-0 pe-0">
+                            <li class="d-inline-block position-relative">
+                                <i class="material-symbols-outlined">
+                                    bed
+                                </i>
+                                8Bed
+                            </li>
+                            <li class="d-inline-block position-relative">
+                                <i class="material-symbols-outlined">
+                                    bathtub
+                                </i>
+                                7Bath
+                            </li>
+                            <li class="d-inline-block position-relative">
+                                <i class="material-symbols-outlined">
+                                    square_foot
+                                </i>
+                                2200sqft
+                            </li>
+                        </ul>
+                        <div class="info d-flex align-items-center justify-content-between">
+                            <div class="author d-flex align-items-center justify-content-between">
+                                <img src="images/users/user3.jpg" width="40" class="rounded-circle" alt="user-image">
+                                <div>
+                                    <span class="d-block fw-semibold text-black">
+                                        Herbert Rojas
+                                    </span>
+                                    <span class="d-block">
+                                        Owner
+                                    </span>
+                                </div>
+                            </div>
+                            <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Australia
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown4')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown4') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property4.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $158,000
+                        </h3>
+                        <span class="trezo-badge sPending">
+                            Rent
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        51 Decca Road GUNN
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            8Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            8Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            2000sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user4.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Steven Bryant
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Italy
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown5')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown5') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property5.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $99,000
+                        </h3>
+                        <span class="trezo-badge pInProgress">
+                            Sold
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        35 Vicolo Tre Marchetti
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            6Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            5Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            1500sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user5.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Jannie James
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Germany
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown6')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown6') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property6.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $110,000
+                        </h3>
+                        <span class="trezo-badge inProgress">
+                            Sale
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        Ansbacher Strasse 44
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            10Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            10Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            2500sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user6.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Larry Greenberg
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Poland
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown7')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown7') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property7.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $150,500
+                        </h3>
+                        <span class="trezo-badge sPending">
+                            Rent
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        Czerwonych Beretów 124
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            6Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            5Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            1800sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user7.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Kara Spangler
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Norway
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown8')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown8') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property8.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $120,000
+                        </h3>
+                        <span class="trezo-badge sPending">
+                            Rent
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        Moeneveien 228 VARTEIG
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            5Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            5Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            1400sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user8.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Benjamin Dinh
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Netherlands
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown9')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown9') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property9.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $190,000
+                        </h3>
+                        <span class="trezo-badge inProgress">
+                            Sale
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        Overburgkade 23
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            6Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            6Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            1900sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user9.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Jane Wright
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Spain
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown10')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown10') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property10.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $155,000
+                        </h3>
+                        <span class="trezo-badge inProgress">
+                            Sale
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        Paseo Junquera, 98
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            6Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            5Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            1800sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user10.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Kirk Jensen
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Hungary
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown11')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown11') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property11.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $340,000
+                        </h3>
+                        <span class="trezo-badge pInProgress">
+                            Sold
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        8985 Becsvölgye Nyár utca
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            10Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            10Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            2500sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user1.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Harold Cook
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-sm-6">
+        <div
+            class="property-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Portugal
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleDropdown('dropdown12')">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        @if (activeDropdown === 'dropdown12') {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        View
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Edit
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        Delete
+                                    </button>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <a routerLink="/dashboard/real-estate-page/property-details" class="d-block border-radius">
+                    <img src="images/properties/property12.jpg" class="border-radius" alt="property-image">
+                </a>
+                <div class="content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="mb-0 text-orange">
+                            $250,000
+                        </h3>
+                        <span class="trezo-badge sPending">
+                            Rent
+                        </span>
+                    </div>
+                    <span class="d-block location position-relative">
+                        <i class="material-symbols-outlined">
+                            location_on
+                        </i>
+                        Largo Prazeres 32
+                    </span>
+                    <ul class="mb-0 list-unstyled ps-0 pe-0">
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bed
+                            </i>
+                            6Bed
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                bathtub
+                            </i>
+                            5Bath
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="material-symbols-outlined">
+                                square_foot
+                            </i>
+                            1800sqft
+                        </li>
+                    </ul>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <div class="author d-flex align-items-center justify-content-between">
+                            <img src="images/users/user11.jpg" width="40" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block fw-semibold text-black">
+                                    Judith Brooks
+                                </span>
+                                <span class="d-block">
+                                    Owner
+                                </span>
+                            </div>
+                        </div>
+                        <a routerLink="/dashboard/real-estate-page/property-details" class="link-btn d-inline-block fw-medium text-primary">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pagination -->
+<div class="pagination-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-content">
+        <div class="d-md-flex align-items-center justify-content-between">
+            <p class="mb-0">
+                Showing 12 of 36 results
+            </p>
+            <ol class="list-unstyled mb-0 p-0">
+                <li class="d-inline-block">
+                    <a class="prev" routerLink=".">
+                        <span class="opacity-0">
+                            0
+                        </span>
+                        <i class="material-symbols-outlined">
+                            chevron_left
+                        </i>
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink="." class="active">
+                        1
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        2
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        3
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a routerLink=".">
+                        4
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a class="next" routerLink=".">
+                        <span class="opacity-0">
+                            0
+                        </span>
+                        <i class="material-symbols-outlined">
+                            chevron_right
+                        </i>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div
+    class="upcoming-events-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Upcoming Events
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <owl-carousel-o [options]="upcomingEventsSlides">
+            <ng-template carouselSlide>
+                <div class="item">
+                    <div class="title d-flex align-items-center justify-content-between">
+                        <a routerLink="." class="fw-medium d-inline-block">
+                            Science Fair
+                        </a>
+                        <span class="d-block">
+                            October 25, 2025
+                        </span>
+                    </div>
+                    <ul class="m-0 p-0 list-unstyled">
+                        <li class="d-inline-block position-relative">
+                            <i class="ri-time-line"></i>
+                            9:00 AM - 3:00 PM
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="ri-map-pin-line"></i>
+                            Auditorium
+                        </li>
+                    </ul>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="item">
+                    <div class="title d-flex align-items-center justify-content-between">
+                        <a routerLink="." class="fw-medium d-inline-block">
+                            Science Fair
+                        </a>
+                        <span class="d-block">
+                            October 25, 2025
+                        </span>
+                    </div>
+                    <ul class="m-0 p-0 list-unstyled">
+                        <li class="d-inline-block position-relative">
+                            <i class="ri-time-line"></i>
+                            9:00 AM - 3:00 PM
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="ri-map-pin-line"></i>
+                            Auditorium
+                        </li>
+                    </ul>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="item">
+                    <div class="title d-flex align-items-center justify-content-between">
+                        <a routerLink="." class="fw-medium d-inline-block">
+                            Science Fair
+                        </a>
+                        <span class="d-block">
+                            October 25, 2025
+                        </span>
+                    </div>
+                    <ul class="m-0 p-0 list-unstyled">
+                        <li class="d-inline-block position-relative">
+                            <i class="ri-time-line"></i>
+                            9:00 AM - 3:00 PM
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="ri-map-pin-line"></i>
+                            Auditorium
+                        </li>
+                    </ul>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="item">
+                    <div class="title d-flex align-items-center justify-content-between">
+                        <a routerLink="." class="fw-medium d-inline-block">
+                            Science Fair
+                        </a>
+                        <span class="d-block">
+                            October 25, 2025
+                        </span>
+                    </div>
+                    <ul class="m-0 p-0 list-unstyled">
+                        <li class="d-inline-block position-relative">
+                            <i class="ri-time-line"></i>
+                            9:00 AM - 3:00 PM
+                        </li>
+                        <li class="d-inline-block position-relative">
+                            <i class="ri-map-pin-line"></i>
+                            Auditorium
+                        </li>
+                    </ul>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>

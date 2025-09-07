@@ -1,0 +1,80 @@
+.most-sales-location-card {
+    .trezo-card-content {
+        .image {
+            img {
+                margin-top: 10px;
+            }
+        }
+        ul {
+            margin-top: 25px;
+
+            li {
+                margin-bottom: 14px;
+                gap: 15px;
+
+                .flag {
+                    width: 30px;
+                }
+                .progressbar {
+                    gap: 15px;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .most-sales-location-card {
+        .trezo-card-content {
+            .image {
+                img {
+                    margin-top: 0;
+                }
+            }
+            ul {
+                margin-top: 17px;
+    
+                li {
+                    margin-bottom: 12px;
+                    gap: 12px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .most-sales-location-card {
+        .trezo-card-content {
+            .image {
+                img {
+                    margin-top: 0;
+                }
+            }
+            ul {
+                margin-top: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

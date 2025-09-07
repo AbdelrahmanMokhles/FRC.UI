@@ -1,0 +1,153 @@
+<div
+    class="browser-used-by-users-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Browser Used By Users
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Oct 01 - Oct 31, 2025
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Sep 01 - Sep 30, 2025
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Aug 01 - Aug 31, 2025
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Jul 01 - Jul 31, 2025
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th class="fw-medium">
+                            Browser
+                        </th>
+                        <th class="fw-medium">
+                            Users (%)
+                        </th>
+                        <th class="fw-medium">
+                            Sessions
+                        </th>
+                        <th class="fw-medium">
+                            Bounce Rate (%)
+                        </th>
+                        <th class="fw-medium">
+                            Avg. Session Duration
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="browser-image" src="images/browsers/google-chrome.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Google Chrome
+                                </span>
+                            </div>
+                        </td>
+                        <td> 58.4% </td>
+                        <td> 12,345 </td>
+                        <td> 34.2% </td>
+                        <td> 3m 15s </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="browser-image" src="images/browsers/safari.svg">
+                                </div>
+                                <span class="d-block fw-medium"> Safari </span>
+                            </div>
+                        </td>
+                        <td> 25.1% </td>
+                        <td> 5,289 </td>
+                        <td> 40.5% </td>
+                        <td> 2m 45s </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="browser-image" src="images/browsers/microsoft-edge.svg">
+                                </div>
+                                <span class="d-block fw-medium"> Microsoft Edge </span>
+                            </div>
+                        </td>
+                        <td> 10.2% </td>
+                        <td> 2,134 </td>
+                        <td> 29.8% </td>
+                        <td> 4m 05s </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="browser-image" src="images/browsers/mozilla-firefox.svg">
+                                </div>
+                                <span class="d-block fw-medium"> Mozilla Firefox </span>
+                            </div>
+                        </td>
+                        <td> 4.3% </td>
+                        <td> 897 </td>
+                        <td> 38.0% </td>
+                        <td> 3m 00s </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="browser-image" src="images/browsers/opera-mini.svg">
+                                </div>
+                                <span class="d-block fw-medium"> Opera Mini </span>
+                            </div>
+                        </td>
+                        <td> 1.5% </td>
+                        <td> 315 </td>
+                        <td> 35.7% </td>
+                        <td> 2m 30s </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="browser-image" src="images/browsers/others.svg">
+                                </div>
+                                <span class="d-block fw-medium"> Others </span>
+                            </div>
+                        </td>
+                        <td> 0.5% </td>
+                        <td> 105 </td>
+                        <td> 42.1% </td>
+                        <td> 2m 10s </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

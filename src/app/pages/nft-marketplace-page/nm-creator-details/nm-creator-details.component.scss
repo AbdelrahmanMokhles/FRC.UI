@@ -1,0 +1,452 @@
+.creator-details-card {
+    .trezo-card-content {
+        .author {
+            margin-bottom: 25px;
+            gap: 17px;
+
+            img {
+                width: 65px;
+            }
+            h3 {
+                font-size: 24px;
+                margin-bottom: 5px;
+            }
+        }
+        .author-info {
+            .date {
+                gap: 15px;
+            }
+            .follow-btn {
+                font-size: 16px;
+                padding: 6px 17px;
+                color: var(--whiteColor);
+                background-color: var(--primaryColor);
+                
+                &.unfollow {
+                    background-color: #8695aa;
+                }
+            }
+        }
+        .item-info {
+            margin-top: 25px;
+            padding: 25px 30px;
+            background-color: #f6f7f9;
+        }
+        h5 {
+            margin: {
+                top: 25px;
+                bottom: 12px;
+            };
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .item-info {
+                background-color: #0a0e19;
+            }
+        }
+    }
+}
+.creator-nfts-card {
+    .trezo-card-content {
+        .nfts-tabs {
+            margin-bottom: 20px;
+
+            li {
+                margin-right: 35px;
+
+                button {
+                    background-color: transparent;
+                    text-transform: uppercase;
+                    color: var(--bodyColor);
+                    display: inline-block;
+                    letter-spacing: 2px;
+                    padding: 0;
+                    border: 0;
+                    font: {
+                        size: 12px;
+                        weight: 600;
+                    };
+                    &:hover, &.active {
+                        color: var(--primaryColor);
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        .basic-table {
+            table, .table {
+                thead {
+                    tr {
+                        th {
+                            font-size: 10px;
+                            letter-spacing: 1px;
+                            color: var(--bodyColor);
+                            text-transform: uppercase;
+                            background-color: transparent;
+                            padding: {
+                                bottom: 11px;
+                                top: 0;
+                            };
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            font-size: 12px;
+                            padding: {
+                                top: 11px;
+                                bottom: 11px;
+                            };
+                            border: {
+                                left-width: 0;
+                                right-width: 0;
+                            };
+                            .employee-info {
+                                gap: 10px;
+                                
+                                .img {
+                                    width: 48px;
+                                }
+                                span {
+                                    &:nth-child(1) {
+                                        margin-bottom: 1px;
+                                        font-size: var(--fontSize);
+                                    }
+                                }
+                            }
+                            .link-btn {
+                                width: 30px;
+                                height: 30px;
+                                font-size: 18px;
+                                background-color: var(--borderColor);
+
+                                &:hover {
+                                    background-color: var(--primaryColor);
+                                }
+                            }
+                            .ratings {
+                                line-height: 1;
+                                font-size: var(--fontSize);
+
+                                .number {
+                                    top: 1.7px;
+                                    font-size: 12px;
+                                    margin-left: 2px;
+                                }
+                            }
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .nfts-tabs {
+                li {
+                    margin: {
+                        right: 0;
+                        left: 35px;
+                    };
+                    &:last-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+            .basic-table {
+                table, .table {
+                    thead {
+                        tr {
+                            th {
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                .ratings {
+                                    .number {
+                                        margin: {
+                                            left: 0;
+                                            right: 2px;
+                                        };
+                                    }
+                                }
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .creator-details-card {
+        .trezo-card-content {
+            .author {
+                margin-bottom: 17px;
+    
+                img {
+                    width: 55px;
+                }
+                h3 {
+                    font-size: 18px;
+                }
+            }
+            .author-info {
+                .date {
+                    gap: 12px;
+                    margin-bottom: 17px;
+                }
+                .follow-btn {
+                    font-size: 14px;
+                }
+            }
+            .item-info {
+                margin-top: 17px;
+                padding: 20px 17px;
+
+                .item {
+                    margin-bottom: 17px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            h5 {
+                margin: {
+                    top: 20px;
+                    bottom: 10px;
+                };
+            }
+        }
+    }
+    .creator-nfts-card {
+        .trezo-card-content {
+            .nfts-tabs {
+                li {
+                    margin-right: 15px;
+    
+                    button {
+                        letter-spacing: .3px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .nfts-tabs {
+                    li {
+                        margin-left: 15px;
+                    }
+                }
+                .basic-table {
+                    table, .table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .creator-details-card {
+        .trezo-card-content {
+            .author {
+                margin-bottom: 20px;
+            }
+            .author-info {
+                .date {
+                    margin-bottom: 0;
+                }
+            }
+            .item-info {
+                margin-top: 20px;
+                padding: 25px 20px;
+
+                .item {
+                    margin-bottom: 0;
+                }
+            }
+            h5 {
+                margin: {
+                    top: 25px;
+                };
+            }
+        }
+    }
+    .creator-nfts-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table, .table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .creator-details-card {
+        .trezo-card-content {
+            .author {
+                img {
+                    width: 60px;
+                }
+                h3 {
+                    font-size: 20px;
+                }
+            }
+            .author-info {
+                .follow-btn {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .creator-details-card {
+        .trezo-card-content {
+            .author {
+                h3 {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

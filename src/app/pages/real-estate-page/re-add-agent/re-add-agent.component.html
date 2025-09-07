@@ -1,0 +1,148 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Add Agent
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Real Estate
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Add Agent
+        </li>
+    </ol>
+</div>
+
+<!-- Add Agent -->
+<form>
+    <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+        <div class="trezo-card-content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Agent Name
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter agent name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Agency
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter agency name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Phone Number
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter phone number">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Email Address
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter email address">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            License Number
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter license number">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Years of Experience
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter years of experience">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Specialization
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter specialization">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Office Location
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter office location">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Recent Achievements
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter recent achievements">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Client Testimonials
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter client testimonials">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Additional Notes
+                        </label>
+                        <div class="NgxEditor__Wrapper">
+                            @if (editor) {
+                                <ng-container>
+                                    <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"></ngx-editor-menu>
+                                    <ngx-editor [editor]="editor"></ngx-editor>
+                                </ng-container>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Add Agent Photo
+                        </label>
+                        <file-upload class="file-uploader"></file-upload>
+                    </div>
+                </div>
+            </div>
+            <div class="form-btn-box">
+                <button type="button" class="warn d-inline-block fw-medium border-radius border-0 transition">
+                    Cancel
+                </button>
+                <button type="button" class="primary d-inline-block fw-medium border-radius border-0 transition">
+                    <span class="d-inline-block position-relative">
+                        <i class="material-symbols-outlined">
+                            add
+                        </i>
+                        Create Agent
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

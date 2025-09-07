@@ -1,0 +1,513 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Wallet
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Crypto Trader
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Wallet
+        </li>
+    </ol>
+</div>
+
+<!-- Wallet -->
+<div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button class="add-btn d-inline-block transition fw-medium border-radius" type="button" (click)="toggleClass()">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add Wallet
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-two">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-medium">
+                                Name
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Address
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Crypto Asset
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Balance
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Last Transaction Date
+                            </th>
+                            <th scope="col" class="fw-medium">
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-primary">
+                                BTC Wallet
+                            </td>
+                            <td>
+                                3FZasd93cpjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/bitcoin.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Bitcoin
+                                        <span class="text-body fw-normal text-xs m-0">(BTC)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                0.25 BTC
+                            </td>
+                            <td>
+                                2025-10-01
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                ETH Wallet
+                            </td>
+                            <td>
+                                0x32Be343pjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/ethereum.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Ethereum
+                                        <span class="text-body fw-normal text-xs m-0">(ETH)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                5.2 ETH
+                            </td>
+                            <td>
+                                2025-10-02
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                BNB Wallet
+                            </td>
+                            <td>
+                                DdzFFzCqrh3cpjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/binance.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Binance
+                                        <span class="text-body fw-normal text-xs m-0">(BNB)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                1000 BNB
+                            </td>
+                            <td>
+                                2025-10-03
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                USDT Wallet
+                            </td>
+                            <td>
+                                Dsbeompjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/tether.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Tether
+                                        <span class="text-body fw-normal text-xs m-0">(USDT)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                2500 USDT
+                            </td>
+                            <td>
+                                2025-10-04
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                XRP Wallet
+                            </td>
+                            <td>
+                                4pN1bycd93cpjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/xrp.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        XRP
+                                        <span class="text-body fw-normal text-xs m-0">(XRP)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                15 XRP
+                            </td>
+                            <td>
+                                2025-10-05
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                SOL Wallet
+                            </td>
+                            <td>
+                                LZjTAtMjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/solana.svg">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Solana
+                                        <span class="text-body fw-normal text-xs m-0">(SOL)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                12 SOL
+                            </td>
+                            <td>
+                                2025-10-06
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                USDC Wallet
+                            </td>
+                            <td>
+                                3FZasd93cpjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/usdc.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        USDC
+                                        <span class="text-body fw-normal text-xs m-0">(USDC)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                0.5 USDC
+                            </td>
+                            <td>
+                                2025-10-07
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                TRX Wallet
+                            </td>
+                            <td>
+                                3FZbc3cpjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/tron.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Tron
+                                        <span class="text-body fw-normal text-xs m-0">(TRX)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                1500 TRX
+                            </td>
+                            <td>
+                                2025-10-08
+                            </td>
+                            <td class="text-danger">
+                                Deactivated
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                AVAX Wallet
+                            </td>
+                            <td>
+                                1FZbt93cpjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/avalanche.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Avalanche
+                                        <span class="text-body fw-normal text-xs m-0">(AVAX)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                100 AVAX
+                            </td>
+                            <td>
+                                2025-10-09
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">
+                                LINK Wallet
+                            </td>
+                            <td>
+                                16cbfe2pjq2LkjuV5qJHunfnkLtktZc4
+                            </td>
+                            <td>
+                                <div class="customer-info d-flex align-items-center">
+                                    <div class="img rounded-0">
+                                        <img alt="coin-image" class="rounded-0" src="images/cryptocurrencies/chainlink.png">
+                                    </div>
+                                    <span class="d-block fw-medium m-0">
+                                        Chainlink
+                                        <span class="text-body fw-normal text-xs m-0">(LINK)</span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                5000 LINK
+                            </td>
+                            <td>
+                                2025-10-10
+                            </td>
+                            <td class="text-success">
+                                Active
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 10 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <div class="trezo-card w-100 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Add New Wallet
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button
+                        (click)="toggleClass()"
+                        class="p-0 border-0 lh-1 bg-transparent transition"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Wallet Name
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Wallet Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Wallet Address
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Wallet Address">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Crypto Asset
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Crypto Asset">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Balance
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Balance">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Last Transaction Date
+                            </label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Status
+                            </label>
+                            <select class="form-select">
+                                <option selected>
+                                    Select
+                                </option>
+                                <option value="1">
+                                    Active
+                                </option>
+                                <option value="2">
+                                    Inactive
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button
+                        (click)="toggleClass()"
+                        class="warn d-inline-block fw-medium border-0 border-radius transition"
+                    >
+                        Cancel
+                    </button>
+                    <button class="primary d-inline-block fw-medium border-0 border-radius transition">
+                        <span class="position-relative d-inline-block">
+                            <i class="material-symbols-outlined">
+                                add
+                            </i>
+                            Create
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

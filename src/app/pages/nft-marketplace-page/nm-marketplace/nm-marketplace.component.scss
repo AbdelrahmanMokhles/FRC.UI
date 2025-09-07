@@ -1,0 +1,96 @@
+.manage-nft-card {
+    background: linear-gradient(92deg, #23272E 7.31%, #3F5272 97.89%);
+    
+    .trezo-card-content {
+        padding: 33.5px 15px;
+
+        h5 {
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+        p {
+            color: #b1bbc8;
+        }
+        .link-btn {
+            padding: 7px 30px;
+            border-radius: 4px;
+            display: inline-block;
+            color: var(--whiteColor);
+            background-color: var(--primaryColor);
+            font: {
+                size: 16px;
+                weight: 500;
+            };
+            &:hover {
+                color: var(--primaryColor);
+                background-color: var(--whiteColor);
+            }
+        }
+    }
+    .shape {
+        top: 0;
+        right: 0;
+        z-index: -1;
+        position: absolute;
+    }
+    &.component-rtl-enabled {
+        .shape {
+            transform: scaleX(-1);
+            right: auto;
+            left: 0;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .manage-nft-card {
+        .trezo-card-content {
+            padding: 0;
+    
+            h5 {
+                font-size: 22px;
+            }
+            .link-btn {
+                padding: 9px 20px;
+                margin-top: 17px;
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .manage-nft-card {
+        .trezo-card-content {
+            h5 {
+                font-size: 24px;
+            }
+            .link-btn {
+                font-size: 15px;
+                margin-top: 20px;
+                padding: {
+                    left: 25px;
+                    right: 25px;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

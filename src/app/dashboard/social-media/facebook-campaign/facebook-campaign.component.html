@@ -1,0 +1,103 @@
+<div
+    class="facebook-campaign-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Facebook Campaign Overview
+            </h5>
+            <p class="fw-normal">
+                Track campaign success at a glance!
+            </p>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        {{ selectedTimeframe }}
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Day')">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Week')">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Month')">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('This Year')">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <span class="title fw-medium text-black d-block position-relative">
+            <i class="ri-bookmark-line"></i>
+            Summer Sale Boost
+        </span>
+        <div class="chart position-relative">
+            <div id="facebook_campaign_chart"></div>
+            <div class="items">
+                <div class="item d-flex">
+                    <div class="dot bg-primary rounded-circle"></div>
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            45,000
+                        </span>
+                        <span class="d-block mt-0 mb-0 text-xs">
+                            Impressions
+                        </span>
+                    </div>
+                </div>
+                <div class="item d-flex">
+                    <div class="dot bg-success rounded-circle"></div>
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            4,200
+                        </span>
+                        <span class="d-block mt-0 mb-0 text-xs">
+                            Clicks
+                        </span>
+                    </div>
+                </div>
+                <div class="item d-flex">
+                    <div class="dot bg-orange rounded-circle"></div>
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            9.3%
+                        </span>
+                        <span class="d-block mt-0 mb-0 text-xs">
+                            CTR
+                        </span>
+                    </div>
+                </div>
+                <div class="item d-flex">
+                    <div class="dot bg-purple rounded-circle"></div>
+                    <div>
+                        <span class="d-block fw-medium text-black">
+                            $5.50
+                        </span>
+                        <span class="d-block mt-0 mb-0 text-xs">
+                            Cost Per Conversion
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

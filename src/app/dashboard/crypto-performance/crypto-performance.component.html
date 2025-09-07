@@ -1,0 +1,81 @@
+<!-- Breadcrumb -->
+<div
+    class="breadcrumb-card border-radius mb-25 d-md-flex align-items-center justify-content-between"
+    style="background-image: url(images/sparklines/sparkline-bg.jpg);"
+>
+    <h5 class="mb-0 text-white">
+        Crypto Performance
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative text-white">
+            <a routerLink="." class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative text-white">
+            Crypto Performance
+        </li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+
+        <!-- Performance Per Investment -->
+        <app-performance-per-investment />
+
+    </div>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <!-- Portfolio Value -->
+                <app-portfolio-value />
+
+            </div>
+            <div class="col-sm-6">
+
+                <!-- Crypto Market Cap -->
+                <app-crypto-market-cap />
+                
+            </div>
+        </div>
+        
+        <!-- Transactions History -->
+        <app-transactions-history />
+
+    </div>
+    <div class="col-lg-5">
+
+        <!-- Market Performance -->
+        <app-market-performance />
+
+    </div>
+    <div class="col-lg-7">
+
+        <!-- Performance Metrics -->
+        <app-performance-metrics />
+
+    </div>
+    <div class="col-lg-12">
+
+        <!-- Individual Asset Performance -->
+        <app-individual-asset-performance />
+
+    </div>
+    <div class="col-lg-4">
+
+        <!-- Risk Stability Indicators -->
+        <app-risk-stability-indicators />
+
+    </div>
+    <div class="col-lg-8">
+
+        <!-- Comparative Analysis -->
+        <app-comparative-analysis />
+        
+    </div>
+</div>

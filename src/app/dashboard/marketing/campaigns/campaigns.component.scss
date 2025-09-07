@@ -1,0 +1,243 @@
+.campaigns-card {
+    .trezo-card-content {
+        .campaigns-tabs {
+            margin: {
+                top: -4px;
+                bottom: 14px;
+            };
+            li {
+                margin-right: 35px;
+
+                button {
+                    background-color: transparent;
+                    text-transform: uppercase;
+                    color: var(--bodyColor);
+                    display: inline-block;
+                    letter-spacing: 2px;
+                    padding: 0;
+                    border: 0;
+                    font: {
+                        size: 12px;
+                        weight: 600;
+                    };
+                    &:hover, &.active {
+                        color: var(--primaryColor);
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        .basic-table {
+            .table, table {
+                tbody {
+                    tr {
+                        td {
+                            padding: {
+                                top: 9.5px;
+                                bottom: 9.5px;
+                            };
+                            .assignees {
+                                div {
+                                    width: 26px;
+                                    height: 26px;
+                                    margin-right: -7px;
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
+                                }
+                            }
+                            .link-btn {
+                                width: 30px;
+                                height: 30px;
+                                background-color: #eceef2;
+
+                                &:hover {
+                                    background-color: var(--primaryColor);
+                                }
+                            }
+                            &:first-child {
+                                border-left-width: 0;
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                border-right-width: 0;
+                                padding-right: 0;
+                                text-align: end;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .campaigns-tabs {
+                li {
+                    margin: {
+                        right: 0;
+                        left: 35px;
+                    };
+                    &:last-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+            .basic-table {
+                .table, table {
+                    tbody {
+                        tr {
+                            td {
+                                .assignees {
+                                    div {
+                                        margin: {
+                                            right: 0;
+                                            left: -7px;
+                                        };
+                                        &:last-child {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                                &:first-child {
+                                    border-right-width: 0;
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    border-left-width: 0;
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .basic-table {
+                .table, table {
+                    tbody {
+                        tr {
+                            td {
+                                .link-btn {
+                                    background-color: #0A0E19;
+    
+                                    &:hover {
+                                        background-color: var(--primaryColor);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .campaigns-card {
+        .trezo-card-content {
+            .campaigns-tabs {
+                li {
+                    margin-right: 15px;
+    
+                    button {
+                        letter-spacing: .3px;
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .campaigns-tabs {
+                    li {
+                        margin-left: 15px;
+                    }
+                }
+                .basic-table {
+                    .table, table {
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .campaigns-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    .table, table {
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

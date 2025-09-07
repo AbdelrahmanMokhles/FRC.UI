@@ -1,0 +1,663 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Patients List
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Doctor
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Patients List
+        </li>
+    </ol>
+</div>
+
+<!-- Patients List -->
+<div
+    class="patients-list-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <form class="search-box position-relative">
+                <label class="text-black">
+                    <i class="material-symbols-outlined">
+                        search
+                    </i>
+                </label>
+                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
+            </form>
+        </div>
+        <div class="trezo-card-subtitle">
+            <a class="add-btn d-inline-block transition fw-medium border-radius" routerLink="/dashboard/doctor-page/add-patient">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        add
+                    </i>
+                    Add New Patient
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-bold">
+                            Code
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Patient
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Email
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Phone No.
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Disease
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Appoint. Date
+                        </th>
+                        <th scope="col" class="fw-bold">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #001
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user33.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Johhna Loren
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            lorenjohna&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-225-4488
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Heart Attack
+                        </td>
+                        <td class="fw-semibold text-body">
+                            05 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #002
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user34.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Skyler White
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            skylerwhite&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-123-4567
+                        </td>
+                        <td class="fw-semibold text-body">
+                            HBP
+                        </td>
+                        <td class="fw-semibold text-body">
+                            04 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #003
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user35.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Jonathon Watson
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            jonathonwatson&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-987-6543
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Chest Pain
+                        </td>
+                        <td class="fw-semibold text-body">
+                            03 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #004
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user36.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Walter White
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            walterwhite&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-456-7890
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Breathing Problem
+                        </td>
+                        <td class="fw-semibold text-body">
+                            03 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #005
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user37.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    David Carlen
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            davidcarlen&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-369-7878
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Minor Heart Attack
+                        </td>
+                        <td class="fw-semibold text-body">
+                            02 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #006
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user36.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Jenny Loren
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            jennyloren&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-658-4488
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Artery Blockage
+                        </td>
+                        <td class="fw-semibold text-body">
+                            02 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #007
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user32.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Bradly Smith
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            bradlysmith&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-558-9966
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Chest Pain
+                        </td>
+                        <td class="fw-semibold text-body">
+                            01 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #008
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user31.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Victor James
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            victorjames&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-357-5888
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Heart Attack
+                        </td>
+                        <td class="fw-semibold text-body">
+                            01 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #009
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user30.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Jenny Carla
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            jennycarla&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-456-8877
+                        </td>
+                        <td class="fw-semibold text-body">
+                            Breathing Problem
+                        </td>
+                        <td class="fw-semibold text-body">
+                            01 Nov, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                                <span class="d-block fw-semibold text-body">
+                                    #010
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img src="images/users/user29.jpg" alt="user-image" class="rounded-circle">
+                                </div>
+                                <span class="d-block fw-semibold">
+                                    Jane Ronan
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-semibold text-primary">
+                            janeronan&#64;gmail.com
+                        </td>
+                        <td class="fw-semibold text-body">
+                            +1 555-622-4488
+                        </td>
+                        <td class="fw-semibold text-body">
+                            HBP
+                        </td>
+                        <td class="fw-semibold text-body">
+                            30 Oct, 2025
+                        </td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-end align-items-center">
+                                <a routerLink="/dashboard/doctor-page/patient-details" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        visibility
+                                    </i>
+                                </a>
+                                <a routerLink="." class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </a>
+                                <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 10 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

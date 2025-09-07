@@ -1,0 +1,193 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Dish Details
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Restaurant
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Menus
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Dish Details
+        </li>
+    </ol>
+</div>
+
+<!-- Dish Details -->
+<div class="row">
+    <div class="col-lg-4">
+        <div class="dish-details-images-card trezo-card border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <owl-carousel-o [options]="{items: 1, dots: false, animateIn: 'fadeIn', margin: 15, animateOut: 'fadeOut'}" #owlCar>
+                    <ng-container>
+                        @for (image of productImages; track $index) {
+                            <ng-template carouselSlide [id]="image.url">
+                                <img [src]="image.url" [alt]="image.url" class="border-radius">
+                            </ng-template>
+                        }
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+        <owl-carousel-o [options]="{items: 4, dots: false, margin: 15, autoWidth: true}">
+            <ng-container>
+                @for (image of productImages; let i = $index; track $index) {
+                    <ng-template carouselSlide [id]="image.url+i">
+                        <a
+                            (click)="owlCar.to(image.url); changeImage(image.url+i)"
+                            class="border-radius cursor-pointer"
+                        >
+                            <img [src]="image.url" [alt]="image.url" class="border-radius">
+                        </a>
+                    </ng-template>
+                }
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+    <div class="col-lg-8">
+        <div
+            class="dish-details-card trezo-card border-radius d-block bg-white border-0 shadow-none"
+            [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+        >
+            <div class="trezo-card-content">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="d-block text-xs">
+                            Code: 3479
+                        </span>
+                        <h3>
+                            Beef Cheesy Burger
+                        </h3>
+                        <span class="price fw-semibold">
+                            $11.50 USD
+                        </span>
+                    </div>
+                    <div class="ratings lh-1">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span class="d-inline-block lh-1 text-xs text-body">
+                            5.0
+                        </span>
+                    </div>
+                </div>
+                <div class="border-top"></div>
+                <h4 class="fw-semibold">
+                    Ingredients Details
+                </h4>
+                <p>
+                    Spaghetti, shredded chicken, buffalo sauce, ranch dressing, mozzarella.
+                </p>
+                <div class="mb-25"></div>
+                <h4 class="fw-semibold">
+                    Nutrition Values
+                </h4>
+                <div class="nutrition-values">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Calories
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">1200</span> Kcal
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Carbs
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">120</span> gm
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Protein
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">120</span> gm
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Fibres
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">400</span> gm
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Fat
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">890</span> gm
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Vitamins
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">350</span> gm
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Sugar
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">30</span> gm
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item d-flex align-items-center justify-content-between">
+                                <span class="d-block">
+                                    Minerals
+                                </span>
+                                <span class="d-block">
+                                    <span class="text-black">5</span> gm
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="fw-semibold mb-0 d-flex align-items-center justify-content-between">
+                    Orders In Queue <span>17</span>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-25"></div>
+
+<!-- Reviews -->
+<app-reviews />

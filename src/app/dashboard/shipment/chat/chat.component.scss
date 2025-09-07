@@ -1,0 +1,415 @@
+.shipment-chat-card {
+    .trezo-card-header {
+        margin-bottom: 20px;
+    }
+    .trezo-card-content {
+        .chat-body {
+            transform: rotate(180deg);
+            margin-right: -25px;
+            overflow-y: scroll;
+            direction: rtl;
+            height: 200px;
+
+            ul {
+                flex-direction: column-reverse;
+                justify-content: flex-end;
+                display: flex;
+                padding: {
+                    left: 25px;
+                    right: 0;
+                };
+                li {
+                    transform: rotate(180deg);
+                    padding-left: 45px;
+                    direction: ltr;
+                    width: 90%;
+    
+                    .user {
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                    }
+                    .message {
+                        text-align: start;
+    
+                        p {
+                            font-size: 13px;
+                            line-height: 1.7;
+                            padding: 8px 15px;
+                            display: inline-block;
+                            background-color: #F6F7F9;
+                            border-radius: 0 7px 7px 7px;
+                        }
+                        div {
+                            margin-bottom: 5px;
+    
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    .time {
+                        font-size: 12px;
+                        text-align: start;
+                        margin: {
+                            bottom: 13px;
+                            top: 5px;
+                        };
+                    }
+                    &.right {
+                        text-align: end;
+                        margin-right: auto;
+                        padding: {
+                            left: 0;
+                            right: 0;
+                            // right: 45px;
+                        };
+                        .user {
+                            left: auto;
+                            right: 0;
+                        }
+                        .message {
+                            text-align: end;
+    
+                            p {
+                                color: var(--whiteColor);
+                                border-radius: 7px 0 7px 7px;
+                                background-color: var(--primaryColor);
+                            }
+                        }
+                        .time {
+                            text-align: end;
+                        }
+                    }
+                }
+            }
+            &::-webkit-scrollbar {
+                width: 2px;
+                height: 2px;
+            }
+            &::-webkit-scrollbar-track {
+                border-radius: 50px;
+                background-color: var(--whiteColor);
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 50px;
+                background: #B5C3D7;
+            }
+        }
+        .chat-footer {
+            .buttons-list {
+                top: 2px;
+                margin-right: 15px;
+
+                button {
+                    margin-left: 10px;
+                    color: var(--bodyColor);
+
+                    i {
+                        font-size: 16px;
+                    }
+                    &:hover {
+                        color: var(--primaryColor);
+                    }
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+            form {
+                flex: 1 1 auto;
+
+                input {
+                    height: 45px;
+                    font-size: 13px;
+                    color: var(--blackColor);
+                    background-color: #f6f7f9;
+                    padding: {
+                        left: 15px;
+                        right: 15px;
+                    };
+                    &::placeholder {
+                        color: var(--bodyColor);
+                        transition: var(--transition);
+                    }
+                    &:focus {
+                        &::placeholder {
+                            color: transparent;
+                        }
+                    }
+                }
+                button {
+                    top: 50%;
+                    right: 15px;
+                    position: absolute;
+                    color: var(--bodyColor);
+                    transform: translateY(-50%);
+
+                    &:hover {
+                        color: var(--secondaryColor);
+                    }
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .chat-body {
+                ul {
+                    li {
+                        .message {
+                            p {
+                                background-color: #15203c;
+                            }
+                        }
+                        &.right {
+                            .message {
+                                p {
+                                    background-color: var(--primaryColor);
+                                }
+                            }
+                        }
+                    }
+                }
+                &::-webkit-scrollbar-track {
+                    background-color: #0C1427;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, .10);
+                }
+            }
+            .chat-footer {
+                form {
+                    input {
+                        background-color: #15203c;
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .chat-body {
+                direction: ltr;
+                margin: {
+                    right: 0;
+                    left: -25px;
+                };
+                ul {
+                    padding: {
+                        left: 0;
+                        right: 25px;
+                    };
+                    li {
+                        direction: rtl;
+                        padding: {
+                            left: 0;
+                            right: 45px;
+                        };
+                        .user {
+                            left: auto;
+                            right: 0;
+                        }
+                        .message {
+                            p {
+                                border-radius: 7px 0 7px 7px;
+                            }
+                        }
+                        &.right {
+                            margin: {
+                                left: auto;
+                                right: 0;
+                            };
+                            padding: {
+                                left: 0;
+                                right: 0;
+                                // left: 45px;
+                            };
+                            .user {
+                                left: 0;
+                                right: auto;
+                            }
+                            .message {
+                                p {
+                                    border-radius: 0 7px 7px 7px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .chat-footer {
+                .buttons-list {
+                    margin: {
+                        right: 0;
+                        left: 15px;
+                    };
+                    button {
+                        margin: {
+                            left: 0;
+                            right: 10px;
+                        };
+                        &:first-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                form {
+                    button {
+                        right: auto;
+                        left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .shipment-chat-card {
+        .trezo-card-header {
+            margin-bottom: 17px;
+        }
+        .trezo-card-content {
+            .chat-body {
+                margin-right: -17px;
+    
+                ul {
+                    padding-left: 17px;
+
+                    li {
+                        width: 100%;
+        
+                        .message {
+                            p {
+                                padding: 10px;
+                            }
+                        }
+                        &.right {
+                            padding: {
+                                // right: 17px;
+                            };
+                        }
+                    }
+                }
+            }
+            .chat-footer {
+                .buttons-list {
+                    top: 0;
+                    margin: {
+                        right: 0;
+                        bottom: 12px;
+                    };
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .chat-body {
+                    margin: {
+                        right: 0;
+                        left: -17px;
+                    };
+                    ul {
+                        padding: {
+                            left: 0;
+                            right: 17px;
+                        };
+                        li {
+                            &.right {
+                                padding: {
+                                    right: 0;
+                                    // left: 17px;
+                                };
+                            }
+                        }
+                    }
+                }
+                .chat-footer {
+                    .buttons-list {
+                        margin: {
+                            left: 0;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .shipment-chat-card {
+        .trezo-card-header {
+            margin-bottom: 20px;
+        }
+        .trezo-card-content {
+            .chat-body {
+                margin-right: -20px;
+    
+                ul {
+                    padding-left: 20px;
+
+                    li {
+                        &.right {
+                            padding: {
+                                // right: 20px;
+                            };
+                        }
+                    }
+                }
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .chat-body {
+                    margin: {
+                        right: 0;
+                        left: -20px;
+                    };
+                    ul {
+                        padding: {
+                            left: 0;
+                            right: 20px;
+                        };
+                        li {
+                            &.right {
+                                padding: {
+                                    // right: 0;
+                                    // left: 20px;
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .shipment-chat-card {
+        .trezo-card-content {
+            .chat-body {
+                height: 195px;
+            }
+        }
+    }
+
+}

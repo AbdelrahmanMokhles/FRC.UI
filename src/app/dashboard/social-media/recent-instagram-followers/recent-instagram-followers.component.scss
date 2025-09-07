@@ -1,0 +1,183 @@
+.recent-instagram-followers-card {
+    .trezo-card-header {
+        margin-bottom: 20px;
+        
+        .trezo-card-title {
+            h5 {
+                font-size: 20px;
+            }
+            p {
+                color: #8695AA;
+            }
+        }
+    }
+    .trezo-card-content {
+        margin: {
+            left: -25px;
+            right: -25px;
+        };
+        ul {
+            li {
+                margin-bottom: 10px;
+                border-bottom: 1px solid #F6F7F9;
+                padding: {
+                    left: 25px;
+                    right: 25px;
+                    bottom: 10px;
+                };
+                .user {
+                    gap: 10px;
+
+                    img {
+                        width: 34px;
+                    }
+                }
+                .action {
+                    gap: 10px;
+
+                    .follow-btn {
+                        font-size: 12px;
+                        border-radius: 4px;
+                        padding: 3.5px 10px;
+                        color: var(--primaryColor);
+                        background-color: #ECF0FF;
+                        transition: var(--transition);
+
+                        &:hover {
+                            color: var(--whiteColor);
+                            background-color: var(--primaryColor);
+                        }
+                    }
+                    .message-btn {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 4px;
+                        color: var(--purpleColor);
+                        background-color: #F3E8FF;
+                        transition: var(--transition);
+
+                        &:hover {
+                            color: var(--whiteColor);
+                            background-color: var(--purpleColor);
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom-width: 0;
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            ul {
+                li {
+                    border-bottom-color: var(--borderColor);
+
+                    .action {
+                        .follow-btn {
+                            background-color: #15203c;
+    
+                            &:hover {
+                                background-color: var(--primaryColor);
+                            }
+                        }
+                        .message-btn {
+                            background-color: #15203c;
+    
+                            &:hover {
+                                background-color: var(--purpleColor);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .recent-instagram-followers-card {
+        .trezo-card-header {
+            .trezo-card-title {
+                h5 {
+                    font-size: 16px;
+                }
+                p {
+                    margin-top: 2px;
+                }
+            }
+        }
+        .trezo-card-content {
+            margin: {
+                left: -17px;
+                right: -17px;
+            };
+            ul {
+                li {
+                    padding: {
+                        left: 17px;
+                        right: 17px;
+                    };
+                    .action {
+                        gap: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .recent-instagram-followers-card {
+        .trezo-card-content {
+            margin: {
+                left: -20px;
+                right: -20px;
+            };
+            ul {
+                li {
+                    padding: {
+                        left: 20px;
+                        right: 20px;
+                    };
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .recent-instagram-followers-card {
+        .trezo-card-header {
+            .trezo-card-title {
+                h5 {
+                    font-size: 18px;
+                }
+                p {
+                    margin-top: 1px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,212 @@
+<div
+    class="todays-schedule-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Today's Schedule
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="calendar">
+            <div class="header d-flex align-items-center justify-content-between">
+                <button (click)="previousMonth()" class="p-0 border-0 d-flex align-items-center justify-content-center rounded-circle transition">
+                    <i class="material-symbols-outlined">
+                        chevron_left
+                    </i>
+                </button>
+                <span class="fw-medium text-black">
+                    {{ monthNames[currentMonth] }} {{ currentYear }}
+                </span>
+                <button (click)="nextMonth()" class="p-0 border-0 d-flex align-items-center justify-content-center rounded-circle transition">
+                    <i class="material-symbols-outlined">
+                        chevron_right
+                    </i>
+                </button>
+            </div>
+            <div class="weekdays text-center">
+                @for (day of weekdays; track day) {
+                    <div>
+                        {{ day }}
+                    </div>
+                }
+            </div>
+            <div class="days text-center">
+                @for (day of daysInMonth; track day) {
+                    <div
+                        class="mx-auto text-black fw-medium border-radius"
+                        [ngClass]="{ 'current-day': isToday(day) }"
+                    >
+                        @if (day !== null) {
+                            <span>
+                                {{ day }}
+                            </span>
+                        }
+                        @if (day === null) {
+                            <span class="blank-day">
+                                &nbsp;
+                            </span> <!-- Placeholder for empty days -->
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="events-list position-relative">
+            <ng-scrollbar visibility="visible">
+                <div class="event-item border-radius position-relative z-1">
+                    <span class="d-block text-black fw-semibold">
+                        10:00 AM
+                    </span>
+                    <p>
+                        Appointment With Cardiac Patient
+                    </p>
+                    <div class="user d-flex align-items-center">
+                        <img src="images/users/user1.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-block fw-medium">
+                            Jonathon Ronan
+                        </span>
+                    </div>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-primary">
+                            View Details
+                        </button>
+                        <button type="button" class="notification-btn p-0 border-0 rounded-circle">
+                            <i class="ri-notification-2-line"></i>
+                        </button>
+                    </div>
+                    <div class="shape position-absolute z-n1 end-0 top-0">
+                        <img src="images/cut-circle.png" alt="cut-circle">
+                    </div>
+                </div>
+                <div class="event-item border-radius position-relative z-1">
+                    <span class="d-block text-black fw-semibold">
+                        12:00 PM
+                    </span>
+                    <p>
+                        Major Cardiac Surgery of the patient
+                    </p>
+                    <div class="user d-flex align-items-center">
+                        <img src="images/users/user2.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-block fw-medium">
+                            Walter White
+                        </span>
+                    </div>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-primary">
+                            View Details
+                        </button>
+                        <button type="button" class="notification-btn p-0 border-0 rounded-circle">
+                            <i class="ri-notification-2-line"></i>
+                        </button>
+                    </div>
+                    <div class="shape position-absolute z-n1 end-0 top-0">
+                        <img src="images/cut-circle.png" alt="cut-circle">
+                    </div>
+                </div>
+                <div class="event-item border-radius position-relative z-1">
+                    <span class="d-block text-black fw-semibold">
+                        02:00 PM
+                    </span>
+                    <p>
+                        Board Meeting With
+                    </p>
+                    <div class="user d-flex align-items-center">
+                        <img src="images/users/user3.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-block fw-medium">
+                            Jessy Pinkman
+                        </span>
+                    </div>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-primary">
+                            View Details
+                        </button>
+                        <button type="button" class="notification-btn p-0 border-0 rounded-circle">
+                            <i class="ri-notification-2-line"></i>
+                        </button>
+                    </div>
+                    <div class="shape position-absolute z-n1 end-0 top-0">
+                        <img src="images/cut-circle.png" alt="cut-circle">
+                    </div>
+                </div>
+                <div class="event-item border-radius position-relative z-1">
+                    <span class="d-block text-black fw-semibold">
+                        10:00 AM
+                    </span>
+                    <p>
+                        Appointment With Cardiac Patient
+                    </p>
+                    <div class="user d-flex align-items-center">
+                        <img src="images/users/user1.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-block fw-medium">
+                            Jonathon Ronan
+                        </span>
+                    </div>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-primary">
+                            View Details
+                        </button>
+                        <button type="button" class="notification-btn p-0 border-0 rounded-circle">
+                            <i class="ri-notification-2-line"></i>
+                        </button>
+                    </div>
+                    <div class="shape position-absolute z-n1 end-0 top-0">
+                        <img src="images/cut-circle.png" alt="cut-circle">
+                    </div>
+                </div>
+                <div class="event-item border-radius position-relative z-1">
+                    <span class="d-block text-black fw-semibold">
+                        12:00 PM
+                    </span>
+                    <p>
+                        Major Cardiac Surgery of the patient
+                    </p>
+                    <div class="user d-flex align-items-center">
+                        <img src="images/users/user2.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-block fw-medium">
+                            Walter White
+                        </span>
+                    </div>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-primary">
+                            View Details
+                        </button>
+                        <button type="button" class="notification-btn p-0 border-0 rounded-circle">
+                            <i class="ri-notification-2-line"></i>
+                        </button>
+                    </div>
+                    <div class="shape position-absolute z-n1 end-0 top-0">
+                        <img src="images/cut-circle.png" alt="cut-circle">
+                    </div>
+                </div>
+                <div class="event-item border-radius position-relative z-1">
+                    <span class="d-block text-black fw-semibold">
+                        02:00 PM
+                    </span>
+                    <p>
+                        Board Meeting With
+                    </p>
+                    <div class="user d-flex align-items-center">
+                        <img src="images/users/user3.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-block fw-medium">
+                            Jessy Pinkman
+                        </span>
+                    </div>
+                    <div class="info d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-primary">
+                            View Details
+                        </button>
+                        <button type="button" class="notification-btn p-0 border-0 rounded-circle">
+                            <i class="ri-notification-2-line"></i>
+                        </button>
+                    </div>
+                    <div class="shape position-absolute z-n1 end-0 top-0">
+                        <img src="images/cut-circle.png" alt="cut-circle">
+                    </div>
+                </div>
+            </ng-scrollbar>
+        </div>
+    </div>
+</div>

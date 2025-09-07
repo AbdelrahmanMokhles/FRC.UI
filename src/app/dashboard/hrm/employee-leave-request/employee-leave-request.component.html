@@ -1,0 +1,325 @@
+<div class="total-sales-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Employee Leave Request
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        This Month
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="table-style-three">
+            <div class="basic-table table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-normal">
+                                Employee
+                            </th>
+                            <th scope="col" class="fw-normal">
+                                Leave Type
+                            </th>
+                            <th scope="col" class="fw-normal">
+                                Days
+                            </th>
+                            <th scope="col" class="fw-normal">
+                                Status
+                            </th>
+                            <th scope="col" class="fw-normal">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user42.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            John Doe
+                                        </span>
+                                        <span class="d-block text-body">
+                                            Marketing
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Vacation
+                            </td>
+                            <td class="fw-medium">
+                                3
+                            </td>
+                            <td>
+                                <span class="trezo-badge inProgress">
+                                    Approved
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user43.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Jane Smith
+                                        </span>
+                                        <span class="d-block text-body">
+                                            HR
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Sick Leave
+                            </td>
+                            <td class="fw-medium">
+                                2
+                            </td>
+                            <td>
+                                <span class="trezo-badge pPending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user44.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Alex Johnson
+                                        </span>
+                                        <span class="d-block text-body">
+                                            Developer
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Maternity Leave
+                            </td>
+                            <td class="fw-medium">
+                                4
+                            </td>
+                            <td>
+                                <span class="trezo-badge rejected">
+                                    Rejected
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user45.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Emily Davis
+                                        </span>
+                                        <span class="d-block text-body">
+                                            UX Designer
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Vacation
+                            </td>
+                            <td class="fw-medium">
+                                2
+                            </td>
+                            <td>
+                                <span class="trezo-badge inProgress">
+                                    Approved
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-info d-flex align-items-center">
+                                    <div class="img rounded-circle">
+                                        <img alt="user-image" src="images/users/user46.jpg" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-medium">
+                                            Michael Brown
+                                        </span>
+                                        <span class="d-block text-body">
+                                            Finance
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fw-medium">
+                                Personal Leave
+                            </td>
+                            <td class="fw-medium">
+                                1
+                            </td>
+                            <td>
+                                <span class="trezo-badge pPending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons d-flex align-items-center">
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> visibility </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> edit </i>
+                                    </button>
+                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                        <i class="material-symbols-outlined"> delete </i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="trezo-card-pagination">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="mb-0">
+                        Showing 5 of 36 results
+                    </p>
+                    <ol class="list-unstyled mb-0 p-0">
+                        <li class="d-inline-block">
+                            <a class="prev" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_left
+                                </i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink="." class="active">
+                                1
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                2
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                3
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a routerLink=".">
+                                4
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="next" routerLink=".">
+                                <span class="opacity-0">
+                                    0
+                                </span>
+                                <i class="material-symbols-outlined">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

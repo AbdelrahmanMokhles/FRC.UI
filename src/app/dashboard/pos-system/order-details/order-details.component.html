@@ -1,0 +1,147 @@
+<div
+    class="order-details-card trezo-card style-two mb-25 border-radius d-block shadow-none"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-medium">
+                Order Details
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <button type="button">
+                <i class="material-symbols-outlined">
+                    autorenew
+                </i>
+            </button>
+        </div>
+    </div>
+    <div class="trezo-card-content bg-white">
+        <div class="list">
+            <div class="item d-md-flex align-items-center justify-content-between">
+                <div class="info position-relative d-flex align-items-center">
+                    <img src="images/products/product15.jpg" alt="product-image">
+                    <h6 class="mb-0 fw-medium">
+                        Maybelline Lash
+                    </h6>
+                    <a routerLink="." class="position-absolute top-0 start-0 end-0 bottom-0 z-1"></a>
+                </div>
+                <div class="quantity-price d-flex align-items-center">
+                    <app-quantity-counter [initialValue]="1" />
+                    <div class="price lh-1 fw-medium text-primary">
+                        $29
+                    </div>
+                </div>
+            </div>
+            <div class="item d-md-flex align-items-center justify-content-between">
+                <div class="info position-relative d-flex align-items-center">
+                    <img src="images/products/product16.jpg" alt="product-image">
+                    <h6 class="mb-0 fw-medium">
+                        Apple iPhone 16
+                    </h6>
+                    <a routerLink="." class="position-absolute top-0 start-0 end-0 bottom-0 z-1"></a>
+                </div>
+                <div class="quantity-price d-flex align-items-center">
+                    <app-quantity-counter [initialValue]="2" />
+                    <div class="price lh-1 fw-medium text-primary">
+                        $799
+                    </div>
+                </div>
+            </div>
+            <div class="item d-md-flex align-items-center justify-content-between">
+                <div class="info position-relative d-flex align-items-center">
+                    <img src="images/products/product17.jpg" alt="product-image">
+                    <h6 class="mb-0 fw-medium">
+                        Adidas Woman
+                    </h6>
+                    <a routerLink="." class="position-absolute top-0 start-0 end-0 bottom-0 z-1"></a>
+                </div>
+                <div class="quantity-price d-flex align-items-center">
+                    <app-quantity-counter [initialValue]="1" />
+                    <div class="price lh-1 fw-medium text-primary">
+                        $85
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payble-total border-radius">
+            <div class="item d-flex align-items-center justify-content-between">
+                <span class="d-block">
+                    Total:
+                </span>
+                <span class="d-block">
+                    3 Items
+                </span>
+            </div>
+            <div class="item d-flex align-items-center justify-content-between">
+                <span class="d-block fw-medium text-black">
+                    Subtotal:
+                </span>
+                <span class="d-block fw-medium text-black">
+                    $913.00
+                </span>
+            </div>
+            <div class="item d-flex align-items-center justify-content-between">
+                <span class="d-block fw-medium text-black">
+                    Shipping:
+                </span>
+                <span class="d-block fw-medium text-black">
+                    $0.00
+                </span>
+            </div>
+            <div class="item d-flex align-items-center justify-content-between">
+                <span class="d-block fw-medium text-black">
+                    Tax (10%):
+                </span>
+                <span class="d-block fw-medium text-black">
+                    $91.30
+                </span>
+            </div>
+            <div class="item total d-flex align-items-center justify-content-between">
+                <span class="d-block fw-medium text-black">
+                    Payble Total:
+                </span>
+                <span class="d-block fw-medium text-black">
+                    $1004.30
+                </span>
+            </div>
+        </div>
+        <div class="payment-method">
+            <h4 class="fw-medium">
+                Payment Method
+            </h4>
+            <div class="method-type d-flex align-items-center justify-content-between">
+                <div class="item text-center position-relative">
+                    <i class="material-symbols-outlined">
+                        paid
+                    </i>
+                    <span class="d-block">
+                        Cash
+                    </span>
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="cashType">
+                </div>
+                <div class="item text-center position-relative">
+                    <i class="material-symbols-outlined">
+                        credit_card
+                    </i>
+                    <span class="d-block">
+                        Card
+                    </span>
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="cardType" checked>
+                </div>
+                <div class="item text-center position-relative">
+                    <i class="material-symbols-outlined">
+                        wallet
+                    </i>
+                    <span class="d-block">
+                        E-Wallet
+                    </span>
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="eWalletType">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary d-block w-100 fw-medium">
+            Place Order
+        </button>
+    </div>
+</div>

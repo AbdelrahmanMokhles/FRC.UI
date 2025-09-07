@@ -1,0 +1,290 @@
+.most-popular-sellers-card {
+    .trezo-card-content {
+        .basic-table {
+            table, .table {
+                thead {
+                    tr {
+                        th {
+                            font-size: 10px;
+                            letter-spacing: 1px;
+                            color: var(--bodyColor);
+                            text-transform: uppercase;
+                            background-color: transparent;
+                            padding: {
+                                bottom: 10px;
+                                top: 0;
+                            };
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                                text-align: end;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            font-size: 12px;
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            };
+                            border: {
+                                left-width: 0;
+                                right-width: 0;
+                            };
+                            .employee-info {
+                                gap: 10px;
+                                
+                                .img {
+                                    width: 40px;
+                                }
+                                span {
+                                    &:nth-child(1) {
+                                        margin-bottom: 1px;
+                                        font-size: var(--fontSize);
+                                    }
+                                }
+                            }
+                            .link-btn {
+                                width: 30px;
+                                height: 30px;
+                                font-size: 18px;
+                                background-color: #eceef2;
+
+                                &:hover {
+                                    background-color: var(--primaryColor);
+                                }
+                            }
+                            .ratings {
+                                line-height: 1;
+                                font-size: var(--fontSize);
+
+                                .number {
+                                    top: 1.7px;
+                                    font-size: 12px;
+                                    margin-left: 2px;
+                                }
+                            }
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child {
+                                padding-right: 0;
+                                text-align: end;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .trezo-card-pagination {
+            border-width: 0;
+            border-radius: 0;
+            padding: {
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 10px;
+            };
+            p {
+                font: {
+                    size: 12px;
+                    weight: 500;
+                };
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .basic-table {
+                table, .table {
+                    tbody {
+                        tr {
+                            td {
+                                .link-btn {
+                                    background-color: #0A0E19;
+
+                                    &:hover {
+                                        background-color: var(--primaryColor);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .basic-table {
+                table, .table {
+                    thead {
+                        tr {
+                            th {
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                .ratings {
+                                    .number {
+                                        margin: {
+                                            left: 0;
+                                            right: 2px;
+                                        };
+                                    }
+                                }
+                                &:first-child {
+                                    padding: {
+                                        left: 20px;
+                                        right: 0;
+                                    };
+                                }
+                                &:last-child {
+                                    padding: {
+                                        right: 20px;
+                                        left: 0;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .most-popular-sellers-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table, .table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 17px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 17px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .most-popular-sellers-card {
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .basic-table {
+                    table, .table {
+                        thead {
+                            tr {
+                                th {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        padding: {
+                                            left: 20px;
+                                            right: 0;
+                                        };
+                                    }
+                                    &:last-child {
+                                        padding: {
+                                            right: 20px;
+                                            left: 0;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

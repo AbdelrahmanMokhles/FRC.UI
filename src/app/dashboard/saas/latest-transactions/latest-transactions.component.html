@@ -1,0 +1,314 @@
+<div
+    class="latest-transactions-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Latest Transactions
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn bg-gray transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Monthly
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Weekly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Monthly
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Yearly
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-medium">
+                            ID
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Client
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Amount
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Subscription Plan
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Payment Method
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-medium">
+                            #001
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user58.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Johhna Loren
+                                    </span>
+                                    <span class="d-block text-body">
+                                        loren123&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $6240
+                        </td>
+                        <td class="fw-medium">
+                            Pro
+                        </td>
+                        <td class="fw-medium">
+                            <div class="payment-method-info d-flex align-items-center">
+                                <img alt="card-image" src="images/payment-method/paypal.svg">
+                                <span class="d-block">
+                                    Paypal
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border finished border-radius">
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-medium">
+                            #002
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user53.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Skyler Queen
+                                    </span>
+                                    <span class="d-block text-body">
+                                        skyqueen&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $5135
+                        </td>
+                        <td class="fw-medium">
+                            Enterprise
+                        </td>
+                        <td class="fw-medium">
+                            <div class="payment-method-info d-flex align-items-center">
+                                <img alt="card-image" src="images/payment-method/wise.svg">
+                                <span class="d-block">
+                                    Wise
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="trezo-badge sPending with-border border-radius">
+                                Pending
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-medium">
+                            #003
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user55.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Jonathon Watson
+                                    </span>
+                                    <span class="d-block text-body">
+                                        jona2134&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $4321
+                        </td>
+                        <td class="fw-medium">
+                            Startup
+                        </td>
+                        <td class="fw-medium">
+                            <div class="payment-method-info d-flex align-items-center">
+                                <img alt="card-image" src="images/payment-method/bank.svg">
+                                <span class="d-block">
+                                    Bank
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="trezo-badge rejected with-border border-radius">
+                                Failed
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-medium">
+                            #004
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user54.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        Walter White
+                                    </span>
+                                    <span class="d-block text-body">
+                                        walterwhite&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $3124
+                        </td>
+                        <td class="fw-medium">
+                            Pro
+                        </td>
+                        <td class="fw-medium">
+                            <div class="payment-method-info d-flex align-items-center">
+                                <img alt="card-image" src="images/payment-method/paypal.svg">
+                                <span class="d-block">
+                                    Paypal
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="trezo-badge with-border finished border-radius">
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-medium">
+                            #005
+                        </td>
+                        <td>
+                            <div class="employee-info d-flex align-items-center">
+                                <div class="img rounded-circle">
+                                    <img alt="user-image" src="images/users/user40.jpg" class="rounded-circle">
+                                </div>
+                                <div>
+                                    <span class="d-block fw-medium">
+                                        David Carlen
+                                    </span>
+                                    <span class="d-block text-body">
+                                        davidcarlen&#64;gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            $2137
+                        </td>
+                        <td class="fw-medium">
+                            Basic
+                        </td>
+                        <td class="fw-medium">
+                            <div class="payment-method-info d-flex align-items-center">
+                                <img alt="card-image" src="images/payment-method/skrill.svg">
+                                <span class="d-block">
+                                    Skrill
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="trezo-badge sPending with-border border-radius">
+                                Pending
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="trezo-card-pagination">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                    Showing 5 of 36 results
+                </p>
+                <ol class="list-unstyled mb-0 p-0">
+                    <li class="d-inline-block">
+                        <a class="prev" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_left
+                            </i>
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink="." class="active">
+                            1
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            2
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            3
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a routerLink=".">
+                            4
+                        </a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="next" routerLink=".">
+                            <span class="opacity-0">
+                                0
+                            </span>
+                            <i class="material-symbols-outlined">
+                                chevron_right
+                            </i>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

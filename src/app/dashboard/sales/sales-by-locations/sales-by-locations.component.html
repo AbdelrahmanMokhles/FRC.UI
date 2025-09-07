@@ -1,0 +1,141 @@
+<div
+    class="sales-by-locations-card trezo-card mb-25 border-radius d-block bg-white shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-card-with-box-shadow]="themeService.isCardWithBoxShadow()"
+    [class.component-body-bg-color]="themeService.isBodyBG()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Sales by Locations
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="text-center">
+            <img src="images/vector-map.png" alt="vector-map">
+        </div>
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th class="fw-medium">
+                            Country
+                        </th>
+                        <th class="fw-medium">
+                            Orders
+                        </th>
+                        <th class="fw-medium">
+                            Earnings
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="flag-image" src="images/flags/usa.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    USA
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            22,124
+                        </td>
+                        <td class="fw-medium">
+                            $250.4k
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="flag-image" src="images/flags/germany.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Germany
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            18,320
+                        </td>
+                        <td class="fw-medium">
+                            $180.3k
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="flag-image" src="images/flags/uk.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    UK
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            12,560
+                        </td>
+                        <td class="fw-medium">
+                            $125.6k
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-info d-flex align-items-center">
+                                <div class="img">
+                                    <img alt="flag-image" src="images/flags/canada.svg">
+                                </div>
+                                <span class="d-block fw-medium">
+                                    Canada
+                                </span>
+                            </div>
+                        </td>
+                        <td class="fw-medium">
+                            8,720
+                        </td>
+                        <td class="fw-medium">
+                            $94.1k
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,210 @@
+<div
+    class="customer-reviews-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-dark-theme]="themeService.isDark()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Customer Reviews
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="dot-menu p-0 border-0 bg-transparent d-inline-block transition lh-1" (click)="toggleCardHeaderMenu()">
+                    <i class="ri-more-fill"></i>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                This Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <owl-carousel-o [options]="customerReviewsSlides">
+            <ng-template carouselSlide>
+                <div class="review-item border-radius">
+                    <div class="d-sm-flex align-items-center justify-content-between">
+                        <div class="reviewer d-flex align-items-center">
+                            <img src="images/users/user64.jpg" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block text-black fw-semibold">
+                                    Jose Grafton
+                                </span>
+                                <span class="d-block">
+                                    22m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings flex align-items-center lh-1">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "Impressed with the timely responses and professional approach. Highly recommend for anyone seeking real estate solutions!"
+                    </p>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="review-item border-radius">
+                    <div class="d-sm-flex align-items-center justify-content-between">
+                        <div class="reviewer d-flex align-items-center">
+                            <img src="images/users/user65.jpg" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block text-black fw-semibold">
+                                    Irene George
+                                </span>
+                                <span class="d-block">
+                                    15m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings flex align-items-center lh-1">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-line"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "Great service! Found exactly what I needed for my property, and the process was smooth and hassle-free."
+                    </p>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="review-item border-radius">
+                    <div class="d-sm-flex align-items-center justify-content-between">
+                        <div class="reviewer d-flex align-items-center">
+                            <img src="images/users/user63.jpg" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block text-black fw-semibold">
+                                    Paula McClelland
+                                </span>
+                                <span class="d-block">
+                                    30m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings flex align-items-center lh-1">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "The entire process was seamless, and I couldn't be happier with the results. Excellent customer service throughout!"
+                    </p>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="review-item border-radius">
+                    <div class="d-sm-flex align-items-center justify-content-between">
+                        <div class="reviewer d-flex align-items-center">
+                            <img src="images/users/user64.jpg" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block text-black fw-semibold">
+                                    Jose Grafton
+                                </span>
+                                <span class="d-block">
+                                    22m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings flex align-items-center lh-1">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "Impressed with the timely responses and professional approach. Highly recommend for anyone seeking real estate solutions!"
+                    </p>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="review-item border-radius">
+                    <div class="d-sm-flex align-items-center justify-content-between">
+                        <div class="reviewer d-flex align-items-center">
+                            <img src="images/users/user65.jpg" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block text-black fw-semibold">
+                                    Irene George
+                                </span>
+                                <span class="d-block">
+                                    15m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings flex align-items-center lh-1">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-line"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "Great service! Found exactly what I needed for my property, and the process was smooth and hassle-free."
+                    </p>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="review-item border-radius">
+                    <div class="d-sm-flex align-items-center justify-content-between">
+                        <div class="reviewer d-flex align-items-center">
+                            <img src="images/users/user63.jpg" class="rounded-circle" alt="user-image">
+                            <div>
+                                <span class="d-block text-black fw-semibold">
+                                    Paula McClelland
+                                </span>
+                                <span class="d-block">
+                                    30m ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ratings flex align-items-center lh-1">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                    <p>
+                        "The entire process was seamless, and I couldn't be happier with the results. Excellent customer service throughout!"
+                    </p>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+<div class="call-center-geography-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Call Center Geography
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        Last Year
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last Day
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last Week
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last Month
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                Last Year
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="text-center">
+            <img src="images/vector-map.png" alt="vector-map">
+        </div>
+        <ul class="p-0 mb-0 list-unstyled">
+            <li class="d-flex align-items-center">
+                <div class="flag flex-shrink-0">
+                    <img src="images/flags/usa.svg" alt="usa">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="position-relative d-flex align-items-center justify-content-between">
+                        <span class="d-block fw-medium">
+                            United States
+                        </span>
+                        <span class="d-block fw-medium">
+                            1,200 calls
+                        </span>
+                        <span class="d-block fw-medium">
+                            90%
+                        </span>
+                    </div>
+                    <div class="progress trezo-progress w-100" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-success" style="width: 90%"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="flag flex-shrink-0">
+                    <img src="images/flags/canada.svg" alt="canada">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="position-relative d-flex align-items-center justify-content-between">
+                        <span class="d-block fw-medium">
+                            Canada
+                        </span>
+                        <span class="d-block fw-medium">
+                            980 calls
+                        </span>
+                        <span class="d-block fw-medium">
+                            88%
+                        </span>
+                    </div>
+                    <div class="progress trezo-progress w-100" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 88%"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="flag flex-shrink-0">
+                    <img src="images/flags/brazil.svg" alt="brazil">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="position-relative d-flex align-items-center justify-content-between">
+                        <span class="d-block fw-medium">
+                            Brazil
+                        </span>
+                        <span class="d-block fw-medium">
+                            850 calls
+                        </span>
+                        <span class="d-block fw-medium">
+                            65%
+                        </span>
+                    </div>
+                    <div class="progress trezo-progress w-100" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-danger" style="width: 65%"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

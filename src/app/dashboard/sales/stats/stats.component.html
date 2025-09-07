@@ -1,0 +1,59 @@
+<div
+    class="sales-stats-card trezo-card p-0 border-radius d-block border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+    [class.component-card-with-box-shadow]="themeService.isCardWithBoxShadow()"
+    [class.component-card-borderd]="themeService.isCardBordered()"
+    [class.component-body-bg-color]="themeService.isBodyBG()"
+>
+    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-normal d-flex align-items-center">
+                Welcome Back, <span class="text-primary fw-medium">Olivia!</span> <img src="images/icons/dog.svg" alt="dog">
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="stats-list d-sm-flex align-items-center">
+                <button type="button" class="date-btn d-inline-block bg-transparent border-radius text-body">
+                    <span class="d-inline-block position-relative">
+                        <i class="ri-calendar-line"></i>
+                        Oct 01 - Oct 31, 2025
+                    </span>
+                </button>
+                <button type="button" class="export-csv-btn d-inline-block border-0 border-radius bg-primary text-white">
+                    <span class="d-inline-block position-relative">
+                        <i class="ri-download-2-line"></i>
+                        Export CSV
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="row">
+            <div class="col-xxl-3 col-sm-6">
+
+                <!-- Total Sales -->
+                <app-total-sales />
+
+            </div>
+            <div class="col-xxl-3 col-sm-6">
+
+                <!-- Total Orders -->
+                <app-total-orders />
+
+            </div>
+            <div class="col-xxl-3 col-sm-6">
+
+                <!-- Total Profit -->
+                <app-total-profit />
+
+            </div>
+            <div class="col-xxl-3 col-sm-6">
+
+                <!-- Total Revenue -->
+                <app-total-revenue />
+
+            </div>
+        </div>
+    </div>
+</div>

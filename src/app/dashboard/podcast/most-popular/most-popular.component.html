@@ -1,0 +1,1083 @@
+<div
+    class="most-popular-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none pb-0"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0 fw-semibold">
+                Most Popular
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <a routerLink="." class="view-all-btn d-inline-block">
+                <span class="d-inline-block position-relative">
+                    View All
+                    <i class="ri-arrow-right-s-line"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <ul class="nav nav-tabs border-0 d-block">
+            <li class="nav-item d-inline-block">
+                <button class="nav-link d-block border-0 fw-medium transition w-100 mb-0" [ngClass]="{'active': currentTab === 'tab1'}" (click)="switchTab($event, 'tab1')">
+                    Marketing
+                </button>
+            </li>
+            <li class="nav-item d-inline-block">
+                <button class="nav-link d-block border-0 fw-medium transition w-100 mb-0" [ngClass]="{'active': currentTab === 'tab2'}" (click)="switchTab($event, 'tab2')">
+                    Content
+                </button>
+            </li>
+            <li class="nav-item d-inline-block">
+                <button class="nav-link d-block border-0 fw-medium transition w-100 mb-0" [ngClass]="{'active': currentTab === 'tab3'}" (click)="switchTab($event, 'tab3')">
+                    Social
+                </button>
+            </li>
+            <li class="nav-item d-inline-block">
+                <button class="nav-link d-block border-0 fw-medium transition w-100 mb-0" [ngClass]="{'active': currentTab === 'tab4'}" (click)="switchTab($event, 'tab4')">
+                    Analytics
+                </button>
+            </li>
+            <li class="nav-item d-inline-block">
+                <button class="nav-link d-block border-0 fw-medium transition w-100 mb-0" [ngClass]="{'active': currentTab === 'tab5'}" (click)="switchTab($event, 'tab5')">
+                    Customer
+                </button>
+            </li>
+            <li class="nav-item d-inline-block">
+                <button class="nav-link d-block border-0 fw-medium transition w-100 mb-0" [ngClass]="{'active': currentTab === 'tab6'}" (click)="switchTab($event, 'tab6')">
+                    Trends
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            @if (currentTab === 'tab1') {
+                <div class="tab-pane fade show active">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast1.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Influencer Marketing
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda Garcia
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            6,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast2.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Data for Better Ads
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: David Chen
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,500
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast3.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Boosting Engagement
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Lisa Kim
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast4.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Real Engagement Metrics
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Sarah Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,700
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast5.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            SEO for E-Commerce
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,900
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast6.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Podcast Marketing 101
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,400
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab2') {
+                <div class="tab-pane fade show active">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast6.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Podcast Marketing 101
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,400
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast5.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            SEO for E-Commerce
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,900
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast4.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Real Engagement Metrics
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Sarah Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,700
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast3.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Boosting Engagement
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Lisa Kim
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast2.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Data for Better Ads
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: David Chen
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,500
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast1.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Influencer Marketing
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda Garcia
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            6,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab3') {
+                <div class="tab-pane fade show active">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast4.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Real Engagement Metrics
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Sarah Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,700
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast2.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Data for Better Ads
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: David Chen
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,500
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast5.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            SEO for E-Commerce
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,900
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast6.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Podcast Marketing 101
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,400
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast3.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Boosting Engagement
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Lisa Kim
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab4') {
+                <div class="tab-pane fade show active">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast2.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Data for Better Ads
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: David Chen
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,500
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast1.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Influencer Marketing
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda Garcia
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            6,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast6.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Podcast Marketing 101
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,400
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast5.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            SEO for E-Commerce
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,900
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab5') {
+                <div class="tab-pane fade show active">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast5.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            SEO for E-Commerce
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,900
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast6.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Podcast Marketing 101
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,400
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast4.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Real Engagement Metrics
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Sarah Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,700
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast2.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Data for Better Ads
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: David Chen
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,500
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast3.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Boosting Engagement
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Lisa Kim
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast1.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Influencer Marketing
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda Garcia
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            6,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab6') {
+                <div class="tab-pane fade show active">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast2.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Data for Better Ads
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: David Chen
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,500
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast3.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Boosting Engagement
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Lisa Kim
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast6.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Podcast Marketing 101
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            9,400
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast1.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Influencer Marketing
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Amanda Garcia
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            6,300
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast4.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            Real Engagement Metrics
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Sarah Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,700
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="podcast-item mb-25">
+                                <div
+                                    class="image position-relative border-radius"
+                                    style="background-image: url(images/podcasts/podcast5.jpg);"
+                                >
+                                    <a href="#" class="play-btn bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" target="_blank">
+                                        <i class="ri-play-large-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="fw-medium">
+                                        <a routerLink=".">
+                                            SEO for E-Commerce
+                                        </a>
+                                    </h4>
+                                    <div class="info d-flex align-items-center">
+                                        <span class="d-block">
+                                            By: Johnson
+                                        </span>
+                                        <span class="d-block position-relative">
+                                            <i class="material-symbols-outlined">
+                                                headset_mic
+                                            </i>
+                                            8,900
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

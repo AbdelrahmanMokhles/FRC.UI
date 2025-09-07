@@ -1,0 +1,76 @@
+<div
+    class="player"
+    [ngClass]="{ 'playing': isPlaying }"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <audio #audioElement (timeupdate)="updateProgressBar()" (canplay)="updateDuration()" (loadedmetadata)="updateDuration()">
+        <source src="https://cldup.com/qR72ozoaiQ.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+    <div class="inner d-flex align-items-center">
+        <button type="button" class="play-btn border-0 p-0 d-flex align-items-center justify-content-center rounded-circle" (click)="togglePlayPause()">
+            {{ isPlaying ? '⏸' : '▶' }}
+        </button>
+        <div class="flex-grow-1 z-1 position-relative">
+            @if (duration > 0) {
+                <span class="duration text-white d-block text-end">
+                    {{ formatTime(duration) }}
+                </span>
+            }
+            <div class="progress">
+                <div class="progress-bar" [style.width]="progress + '%'"></div>
+            </div>
+            <div class="wave-container d-flex align-items-center">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+            </div>
+        </div>
+    </div>
+</div>

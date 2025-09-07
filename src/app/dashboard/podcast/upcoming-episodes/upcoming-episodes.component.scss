@@ -1,0 +1,170 @@
+.upcoming-episodes-card {
+    .trezo-card-content {
+        .basic-table {
+            margin-bottom: -15px;
+
+            table, .table {
+                tbody {
+                    tr {
+                        td {
+                            padding: {
+                                top: 15px;
+                                bottom: 15px;
+                            };
+                            .icon {
+                                top: 3px;
+                            }
+                        }
+                        &:first-child {
+                            td {
+                                padding-top: 0;
+                            }
+                        }
+                        &:nth-child(2) {
+                            td {
+                                .notice-info {
+                                    .icon {
+                                        background-color: var(--primaryColor);
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(3) {
+                            td {
+                                .notice-info {
+                                    .icon {
+                                        background-color: var(--orangeColor);
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(4) {
+                            td {
+                                .notice-info {
+                                    .icon {
+                                        background-color: var(--secondaryColor);
+                                    }
+                                }
+                            }
+                        }
+                        &:last-child {
+                            td {
+                                border-bottom-width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .upcoming-episodes-card {
+        .trezo-card-content {
+            .basic-table {
+                margin-bottom: -10px;
+
+                table, .table {
+                    tbody {
+                        tr {
+                            td {
+                                padding: {
+                                    top: 10px;
+                                    bottom: 10px;
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .upcoming-episodes-card {
+        .trezo-card-content {
+            .basic-table {
+                margin-bottom: 12px;
+
+                table, .table {
+                    tbody {
+                        tr {
+                            td {
+                                padding: {
+                                    top: 12px;
+                                    bottom: 12px;
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .upcoming-episodes-card {
+        .trezo-card-content {
+            .basic-table {
+                margin-bottom: -12px;
+
+                table, .table {
+                    tbody {
+                        tr {
+                            td {
+                                padding: {
+                                    top: 12px;
+                                    bottom: 12px;
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .upcoming-episodes-card {
+        .trezo-card-content {
+            .basic-table {
+                margin-bottom: -12px;
+                
+                table, .table {
+                    tbody {
+                        tr {
+                            td {
+                                padding: {
+                                    top: 12px;
+                                    bottom: 12px;
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,127 @@
+<div
+    class="top-collections-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Top Collections
+            </h5>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <owl-carousel-o [options]="topCollectionsSlides">
+            <ng-template carouselSlide>
+                <div class="author d-flex align-items-center">
+                    <div class="image position-relative">
+                        <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                        <img src="images/nfts/verified.svg" class="verified" alt="verified">
+                    </div>
+                    <div class="content">
+                        <span class="d-block text-black fw-semibold">
+                            Christmas Eve
+                        </span>
+                        <span class="d-block">
+                            3250 Items
+                        </span>
+                    </div>
+                </div>
+                <div class="item d-flex align-items-center">
+                    <div class="image">
+                        <img src="images/nfts/top-collection.gif" alt="top-collection-image">
+                    </div>
+                    <div class="content">
+                        <h5 class="fw-semibold">
+                            Man Walking
+                        </h5>
+                        <span class="d-block">
+                            &#64;queensland
+                        </span>
+                    </div>
+                </div>
+                <a class="view-details-btn" routerLink="/dashboard/nft-marketplace-page/nft-details">
+                    <span class="d-inline-block position-relative">
+                        <i class="material-symbols-outlined">
+                            add
+                        </i>
+                        View Details
+                    </span>
+                </a>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="author d-flex align-items-center">
+                    <div class="image position-relative">
+                        <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                        <img src="images/nfts/verified.svg" class="verified" alt="verified">
+                    </div>
+                    <div class="content">
+                        <span class="d-block text-black fw-semibold">
+                            Christmas Eve
+                        </span>
+                        <span class="d-block">
+                            3250 Items
+                        </span>
+                    </div>
+                </div>
+                <div class="item d-flex align-items-center">
+                    <div class="image">
+                        <img src="images/nfts/top-collection.gif" alt="top-collection-image">
+                    </div>
+                    <div class="content">
+                        <h5 class="fw-semibold">
+                            Man Walking
+                        </h5>
+                        <span class="d-block">
+                            &#64;queensland
+                        </span>
+                    </div>
+                </div>
+                <a class="view-details-btn" routerLink="/dashboard/nft-marketplace-page/nft-details">
+                    <span class="d-inline-block position-relative">
+                        <i class="material-symbols-outlined">
+                            add
+                        </i>
+                        View Details
+                    </span>
+                </a>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="author d-flex align-items-center">
+                    <div class="image position-relative">
+                        <img src="images/nfts/author.gif" class="rounded-circle" alt="author-image">
+                        <img src="images/nfts/verified.svg" class="verified" alt="verified">
+                    </div>
+                    <div class="content">
+                        <span class="d-block text-black fw-semibold">
+                            Christmas Eve
+                        </span>
+                        <span class="d-block">
+                            3250 Items
+                        </span>
+                    </div>
+                </div>
+                <div class="item d-flex align-items-center">
+                    <div class="image">
+                        <img src="images/nfts/top-collection.gif" alt="top-collection-image">
+                    </div>
+                    <div class="content">
+                        <h5 class="fw-semibold">
+                            Man Walking
+                        </h5>
+                        <span class="d-block">
+                            &#64;queensland
+                        </span>
+                    </div>
+                </div>
+                <a class="view-details-btn" routerLink="/dashboard/nft-marketplace-page/nft-details">
+                    <span class="d-inline-block position-relative">
+                        <i class="material-symbols-outlined">
+                            add
+                        </i>
+                        View Details
+                    </span>
+                </a>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>

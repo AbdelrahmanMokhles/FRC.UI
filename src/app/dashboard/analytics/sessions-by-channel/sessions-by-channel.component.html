@@ -1,0 +1,101 @@
+<div
+    class="sessions-by-channel-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <div class="trezo-card-header d-flex align-items-center justify-content-between">
+        <div class="trezo-card-title">
+            <h5 class="mb-0">
+                Sessions by Channel
+            </h5>
+        </div>
+        <div class="trezo-card-subtitle">
+            <div class="trezo-card-header-menu position-relative">
+                <button class="menu-btn without-border transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                    <span class="d-block position-relative">
+                        {{ selectedTimeframe }}
+                    </span>
+                </button>
+                @if (isCardHeaderOpen) {
+                    <ul class="dropdown-menu border-radius border-0 show">
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 7 Days')">
+                                Last 7 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 15 Days')">
+                                Last 15 Days
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-block w-100 position-relative transition" (click)="onTimeframeChange('Last 30 Days')">
+                                Last 30 Days
+                            </button>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="trezo-card-content">
+        <div class="chart">
+            <div id="sessions_by_channel_chart"></div>
+        </div>
+        <ul class="list p-0 list-unstyled">
+            <li>
+                <span class="d-block title text-body d-flex align-items-center justify-content-center">
+                    <span class="dot d-block email"></span>
+                    Email
+                </span>
+                <h6 class="mb-0 fw-medium lh-1">
+                    976
+                </h6>
+            </li>
+            <li>
+                <span class="d-block title text-body d-flex align-items-center justify-content-center">
+                    <span class="dot d-block organic-search"></span>
+                    Organic Search
+                </span>
+                <h6 class="mb-0 fw-medium lh-1">
+                    651
+                </h6>
+            </li>
+            <li>
+                <span class="d-block title text-body d-flex align-items-center justify-content-center">
+                    <span class="dot d-block direct-browse"></span>
+                    Direct Browse
+                </span>
+                <h6 class="mb-0 fw-medium lh-1">
+                    818
+                </h6>
+            </li>
+            <li>
+                <span class="d-block title text-body d-flex align-items-center justify-content-center">
+                    <span class="dot d-block paid-search"></span>
+                    Paid Search
+                </span>
+                <h6 class="mb-0 fw-medium lh-1">
+                    459
+                </h6>
+            </li>
+            <li>
+                <span class="d-block title text-body d-flex align-items-center justify-content-center">
+                    <span class="dot d-block social"></span>
+                    Social
+                </span>
+                <h6 class="mb-0 fw-medium lh-1">
+                    320
+                </h6>
+            </li>
+            <li>
+                <span class="d-block title text-body d-flex align-items-center justify-content-center">
+                    <span class="dot d-block referral"></span>
+                    Referral
+                </span>
+                <h6 class="mb-0 fw-medium lh-1">
+                    209
+                </h6>
+            </li>
+        </ul>
+    </div>
+</div>

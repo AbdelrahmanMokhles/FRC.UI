@@ -1,0 +1,102 @@
+.agents-performance-overview-card {
+    .trezo-card-content {
+        margin-top: -4px;
+
+        .top-agent {
+            margin: {
+                top: 10px;
+                bottom: 13px;
+            };
+            .caller-info {
+                gap: 12px;
+
+                img {
+                    width: 40px;
+                    border-radius: 4px;
+                }
+                div {
+                    .dot {
+                        transform: translateY(-50%);
+                        border-radius: 50%;
+                        position: absolute;
+                        left: -15px;
+                        height: 8px;
+                        width: 8px;
+                        top: 50%;
+                    }
+                }
+            }
+            .trezo-progress {
+                margin-top: 5px;
+                --bs-progress-height: 5px;
+            }
+        }
+        .table-style-four {
+            .basic-table {
+                .table, table {
+                    tbody {
+                        tr {
+                            td {
+                                padding: 8px 8px 18px;
+                            }
+                            &:last-child {
+                                td {
+                                    padding-bottom: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .top-agent {
+                .caller-info {
+                    div {
+                        .dot {
+                            left: auto;
+                            right: -15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .agents-performance-overview-card {
+        .trezo-card-content {
+            .top-agent {
+                margin-bottom: 15px;
+                
+                .caller-info {
+                    margin-bottom: 10px;
+                }
+                .trezo-progress {
+                    --bs-progress-height: 4px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

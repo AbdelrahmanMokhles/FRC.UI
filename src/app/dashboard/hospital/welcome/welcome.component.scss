@@ -1,0 +1,177 @@
+.sales-welcome-card {
+    --primaryColor: #4936F5;
+
+    .trezo-card-content {
+        .content {
+            h3 {
+                font-size: 20px;
+                margin-bottom: 3px;
+
+                span {
+                    color: #FFE8D4;
+                }
+            }
+            .info {
+                margin-top: 76px;
+
+                .item {
+                    margin-right: 30px;
+    
+                    .icon {
+                        width: 42px;
+                        height: 42px;
+                        margin-right: 12px;
+                    }
+                    .title {
+                        font-size: 18px;
+                        margin-bottom: 0;
+                    }
+                    span {
+                        color: #D5D9E2;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    &::before {
+        top: 0;
+        right: 0;
+        z-index: -1;
+        content: '';
+        width: 147px;
+        height: 89px;
+        position: absolute;
+        background: {
+            image: url(../../../../../public/images/vector1.png);
+            position: center center;
+            repeat: no-repeat;
+            size: contain;
+        };
+    }
+    &::after {
+        right: 0;
+        top: auto;
+        bottom: 0;
+        left: auto;
+        z-index: -1;
+        content: '';
+        width: 170px;
+        height: 84px;
+        border-width: 0;
+        border-radius: 0;
+        position: absolute;
+        background: {
+            image: url(../../../../../public/images/vector2.png);
+            position: center center;
+            repeat: no-repeat;
+            size: contain;
+        };
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .content {
+                .info {
+                    .item {
+                        margin: {
+                            right: 0;
+                            left: 30px;
+                        };
+                        .icon {
+                            margin: {
+                                right: 0;
+                                left: 12px;
+                            };
+                        }
+                        &:last-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+        &::before {
+            right: auto;
+            left: 0;
+        }
+        &::after {
+            right: auto;
+            left: 0;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .sales-welcome-card {
+        .trezo-card-content {
+            .content {
+                h3 {
+                    font-size: 18px;
+                }
+                .info {
+                    margin-top: 17px;
+    
+                    .item {
+                        margin-right: 20px;
+        
+                        .title {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .image {
+                margin-top: 20px;
+            }
+        }
+        &.component-rtl-enabled {
+            .trezo-card-content {
+                .content {
+                    .info {
+                        .item {
+                            margin: {
+                                right: 0;
+                                left: 20px;
+                            };
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .sales-welcome-card {
+        .trezo-card-content {
+            .content {
+                .info {
+                    margin-top: 75px;
+                }
+            }
+            .image {
+                margin-top: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

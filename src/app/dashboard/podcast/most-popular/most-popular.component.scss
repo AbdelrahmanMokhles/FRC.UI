@@ -1,0 +1,281 @@
+.most-popular-card {
+    .trezo-card-content {
+        .nav {
+            &.nav-tabs {
+                margin-bottom: 18px;
+
+                .nav-item {
+                    margin: {
+                        right: 7px;
+                        bottom: 7px;
+                    };
+                    .nav-link {
+                        font-size: 12px;
+                        border-radius: 30px;
+                        padding: 4px 12px 3.5px;
+                        color: var(--bodyColor);
+                        background-color: #ECEEF2;
+
+                        &:hover, &.active {
+                            color: var(--whiteColor);
+                            background-color: var(--primaryColor);
+                        }
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        .tab-content {
+            .tab-pane {
+                .podcast-item {
+                    .image {
+                        height: 185.06px;
+                        background: {
+                            position: center center;
+                            repeat: no-repeat;
+                            size: cover;
+                        };
+                        .play-btn {
+                            bottom: 0;
+                            left: 15px;
+                            opacity: 0;
+                            width: 44px;
+                            height: 44px;
+                            font-size: 22px;
+                            position: absolute;
+                            visibility: hidden;
+                        }
+                    }
+                    .content {
+                        margin-top: 17px;
+
+                        h4 {
+                            font-size: 14px;
+                            margin-bottom: 10px;
+                        }
+                        .info {
+                            gap: 24px;
+
+                            span {
+                                font-size: 12px;
+
+                                &:nth-child(2) {
+                                    padding-left: 20px;
+
+                                    i {
+                                        transform: translateY(-50%);
+                                        color: var(--primaryColor);
+                                        position: absolute;
+                                        margin-top: -1px;
+                                        font-size: 14px;
+                                        top: 50%;
+                                        left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        .image {
+                            .play-btn {
+                                opacity: 1;
+                                bottom: 15px;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-dark-theme {
+        .trezo-card-content {
+            .nav {
+                &.nav-tabs {
+                    .nav-item {
+                        .nav-link {
+                            background-color: #0A0E19;
+    
+                            &:hover, &.active {
+                                background-color: var(--primaryColor);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.component-rtl-enabled {
+        .trezo-card-content {
+            .nav {
+                &.nav-tabs {
+                    .nav-item {
+                        margin: {
+                            right: 0;
+                            left: 7px;
+                        };
+                        &:last-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+            .tab-content {
+                .tab-pane {
+                    .podcast-item {
+                        .image {
+                            .play-btn {
+                                left: auto;
+                                right: 15px;
+                            }
+                        }
+                        .content {
+                            .info {
+                                span {
+                                    &:nth-child(2) {
+                                        padding: {
+                                            left: 0;
+                                            right: 20px;
+                                        };
+                                        i {
+                                            left: auto;
+                                            right: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .most-popular-card {
+        .trezo-card-content {
+            .nav {
+                &.nav-tabs {
+                    margin-bottom: 10px;
+                }
+            }
+            .tab-content {
+                .tab-pane {
+                    .podcast-item {
+                        margin-bottom: 17px !important;
+
+                        .image {
+                            .play-btn {
+                                opacity: 1;
+                                bottom: 15px;
+                                visibility: visible;
+                            }
+                        }
+                        .content {
+                            margin-top: 13px;
+    
+                            h4 {
+                                margin-bottom: 7px;
+                            }
+                            .info {
+                                gap: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .most-popular-card {
+        .trezo-card-content {
+            .nav {
+                &.nav-tabs {
+                    margin-bottom: 13px;
+                }
+            }
+            .tab-content {
+                .tab-pane {
+                    .podcast-item {
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .most-popular-card {
+        .trezo-card-content {
+            .tab-content {
+                .tab-pane {
+                    .podcast-item {
+                        .image {
+                            .play-btn {
+                                opacity: 1;
+                                bottom: 15px;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .most-popular-card {
+        .trezo-card-content {
+            .tab-content {
+                .tab-pane {
+                    .podcast-item {
+                        .image {
+                            height: 165px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .most-popular-card {
+        .trezo-card-content {
+            .tab-content {
+                .tab-pane {
+                    .podcast-item {
+                        .image {
+                            height: 168px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

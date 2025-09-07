@@ -1,0 +1,11 @@
+::ng-deep {
+    .patient-bg-age-card {
+        &.component-dark-theme {
+            .apexcharts-canvas {
+                .apexcharts-text {
+                    fill: var(--whiteColor);
+                }
+            }
+        }
+    }
+}
