@@ -62,11 +62,11 @@
                                 <i [ngClass]="isPasswordVisible ? 'ri-eye-line' : 'ri-eye-off-line'"></i>
                             </button>
                         </div>
-                        <!-- <div class="forgot-password">
+                        <div class="forgot-password">
                             <a routerLink="/authentication/forgot-password" class="text-primary fw-semibold">
                                 Forgot Password?
                             </a>
-                        </div> -->
+                        </div>
                         <button type="submit" class="btn-box d-block w-100 border-0 transition fw-medium border-radius">
                             <span class="d-flex align-items-center justify-content-center">
                                 <i class="material-symbols-outlined">
@@ -75,25 +75,41 @@
                                 Sign In
                             </span>
                         </button>
+                        <div class="trezo-card-content example-alerts d-block w-100 border-0 transition fw-medium border-radius">
+                            <div *ngIf="alertType==='success'" class="alert alert-success text-center w-100" role="alert">
+                                Successfully Logged In
+                            </div>
+                            <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
+                                Invalid Credentials
+                            </div>
+                            <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
+                                Warning!!
+                            </div>
+                        </div>
                         <p class="info">
                             Don’t have an account. <a routerLink="/authentication/sign-up" class="fw-semibold text-primary">Sign Up</a>
                         </p>
                     </form>
-                    <div class="col-lg-6">
-                        <div class="d-flex justify-content-center">
-                            <div class="trezo-card-content example-alerts">
-                                <div *ngIf="alertType==='success'" class="alert alert-success text-center w-100" role="alert">
-                                    Successfully Logged In
-                                </div>
-                                <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
-                                    Invalid Credentials
-                                </div>
-                                <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
-                                    Warning!!
+                    <!-- <div class="row">
+                            <div class="col-lg-6">
+                                <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="trezo-card-content example-alerts">
+                                            <div *ngIf="alertType==='success'" class="alert alert-success text-center w-100" role="alert">
+                                                Successfully Logged In
+                                            </div>
+                                            <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
+                                                Invalid Credentials
+                                            </div>
+                                            <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
+                                                Warning!!
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                    </div> -->
+                    
                 </div>
             </div>
         </div>

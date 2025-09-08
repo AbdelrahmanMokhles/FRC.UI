@@ -42,6 +42,21 @@ export class UserService {
         observe: 'response' 
       });
     };
+    
+    ForgotPassword(model: any): Observable<any> {
+      return this._client.post<any>(this.url+"ForgotPassword", model,
+      {
+        headers: { "Content-Type": "application/json" },
+        observe: 'response' 
+      });
+    };
+    ResetPassword(model: any): Observable<any> {
+      return this._client.post<any>(this.url+"ResetPassword", model,
+      {
+        headers: { "Content-Type": "application/json" },
+        observe: 'response' 
+      });
+    };
 
     VerifyEmail(otp:any):Observable<HttpResponse<any>>{
         return this._client.post<any>(this.url+"Verify-otp", otp,

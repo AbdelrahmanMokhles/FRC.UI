@@ -258,6 +258,8 @@ import { RealEstateAgentPageComponent } from './pages/real-estate-agent-page/rea
 import { ReapPropertiesComponent } from './pages/real-estate-agent-page/reap-properties/reap-properties.component';
 import { ReapPropertyDetailsComponent } from './pages/real-estate-agent-page/reap-property-details/reap-property-details.component';
 import { otpComponent } from './authentication/otp/otp.component';
+import { otpResetcomponent } from './authentication/otp-reset/otp-reset.component';
+import { ResetPasswordOtpComponent } from './authentication/reset-password-otp/reset-password-otp.component';
 
 export const routes: Routes = [
     {
@@ -668,8 +670,10 @@ export const routes: Routes = [
             {path: 'sign-up', component: SignUpComponent},
             {path: 'forgot-password', component: ForgotPasswordComponent},
             {path: 'reset-password', component: ResetPasswordComponent},
+            {path: 'reset-password-otp', component: ResetPasswordOtpComponent},
             {path: 'confirm-email', component: ConfirmEmailComponent},
             {path: 'otp', component: otpComponent},
+            {path: 'otp-reset', component: otpResetcomponent},
             {path: 'lock-screen', component: LockScreenComponent},
             {path: 'logout', component: LogoutComponent}
         ]
