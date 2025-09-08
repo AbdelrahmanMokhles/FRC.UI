@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   
-    private url = "https://localhost:44397/api/Users";
+    private url = "https://localhost:44397/api/Users/";
     constructor(private _client : HttpClient)
     {
     }
@@ -28,7 +28,7 @@ export class UserService {
     };
     
     Profile(token:any) : Observable<any>{
-      return this._client.post<any>(this.url+"GetbyToken/",token,
+      return this._client.post<any>(this.url+"GetbyToken",token,
       {
         headers: { "Content-Type": "application/json" },
         observe: 'response'  

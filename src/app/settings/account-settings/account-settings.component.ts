@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { FileUploadModule } from '@iplab/ngx-file-upload';
 import { UserService } from '../../Services/authentication/UserService/user-service';
 
@@ -21,18 +21,21 @@ export class AccountSettingsComponent {
     // File Uploader
     public multiple: boolean = false;
 
-    ngOnit(){
-        this.token = localStorage.getItem("token");
-        this._userService.Profile(this.token).subscribe({
-            next : (res)=>{
-                console.log(this.token);
-                console.log(res);
-                console.log(res.body);
-            },
-            error:(res) =>{
-                console.log(res);
-            }
-        });
+    ngOnInit(){
+        if(localStorage.getItem("token")){
+            const tokk = localStorage.getItem("token");
+            console.log(this.token);
+            this._userService.Profile({token : tokk}).subscribe({
+                next : (res)=>{
+                    console.log(this.token);
+                    console.log(res);
+                    console.log(res.body);
+                },
+                error:(res) =>{
+                    console.log(res);
+                }
+            });
+        }
     }
 
 }
