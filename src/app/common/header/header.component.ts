@@ -58,6 +58,11 @@ export class HeaderComponent {
         this.themeService.toggleTheme();
     }
 
+    Logout(){
+        console.log("jhgkjgl");
+        localStorage.removeItem('token');
+    }
+
     // Header Sticky
     isSticky: boolean = false;
     @HostListener('window:scroll')

@@ -55,21 +55,21 @@ export class SignInComponent {
                             }
                     },
                     error:(res)=>{
-                        debugger
+                        // debugger
                         // console.log(res);
                         if (res.status === 400)
                                 {
                                 console.log(this.alertType);
                                 this.alertType = "error";
                                 console.log("⚠️ Validation error:", res);
-                                console.log(this.alertType);
+                                // console.log(this.alertType);
                             }
                             else if (res.status === 500)
                                 {
                                 console.log(this.alertType);
                                 console.error("🔥 Server error",res);
                                 this.alertType = "warning";
-                                console.log(this.alertType);
+                                // console.log(this.alertType);
                                 }
                         else
                             {
@@ -77,6 +77,9 @@ export class SignInComponent {
                             }
                     }
             });
+        }
+        else{
+            this.alertType='error';
         }
     }
 

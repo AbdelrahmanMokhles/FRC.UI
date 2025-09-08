@@ -1185,7 +1185,7 @@
                         <div class="accordion-body border-radius">
                             <ul class="sidebar-sub-menu p-0 list-unstyled mb-0">
                                 <li class="sidemenu-item">
-                                    <a routerLink="/dashboard/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                    <a routerLink="/dashboard/settings" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
                                         User Profile
                                     </a>
                                 </li>
@@ -1887,7 +1887,7 @@
                         </div>
                     </li>
                     <li class="sidemenu-item">
-                        <a routerLink="/authentication/logout" class="sidemenu-link with-icon border-radius d-block position-relative transition fw-medium" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a (click)="Logout()" routerLink="/authentication/logout" class="sidemenu-link with-icon border-radius d-block position-relative transition fw-medium" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                             <i class="material-symbols-outlined">
                                 logout
                             </i>

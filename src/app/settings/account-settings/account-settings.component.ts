@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { FileUploadModule } from '@iplab/ngx-file-upload';
 import { UserService } from '../../Services/authentication/UserService/user-service';
 import { CommonModule } from '@angular/common';
+import { countries} from 'countries-list';
 
 @Component({
     selector: 'app-account-settings',
@@ -13,16 +14,17 @@ export class AccountSettingsComponent {
 
     token : any;
     user : any ;
-    countries: string[] = [
-        'Egypt',
-        'Saudi Arabia',
-        'United States',
-        'United Kingdom',
-        'Germany',
-        'France',
-        'Canada',
-        'Australia',
-        ];
+    countriesArr: { code: string; name: string }[] = [];
+    // countries: string[] = [
+    //     'Egypt',
+    //     'Saudi Arabia',
+    //     'United States',
+    //     'United Kingdom',
+    //     'Germany',
+    //     'France',
+    //     'Canada',
+    //     'Australia',
+    //     ];
 
     constructor(
         private _userService : UserService
@@ -34,6 +36,12 @@ export class AccountSettingsComponent {
     public multiple: boolean = false;
 
     ngOnInit(){
+        this.countriesArr = Object.entries(countries).map(([code, value]) => ({
+            code,
+            name:value.name
+        }));
+
+
         if(localStorage.getItem("token")){
             const tokk = localStorage.getItem("token");
             this.token = tokk;

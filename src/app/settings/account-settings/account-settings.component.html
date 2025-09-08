@@ -3,7 +3,7 @@
         Profile
     </h5>
     <p>
-        Update your photo and personal details here.
+        Update your personal details here.
     </p>
     <div class="row">
         <div class="col-sm-6">
@@ -37,7 +37,7 @@
                 </label>
                 <select id="country" formControlName="country" class="form-control">
                     <option value="">{{user.country}}</option>
-                    <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+                    <option *ngFor="let c of countriesArr" [value]="c.name">{{ c.name }}</option>
                 </select>
                 <!-- <select class="form-select">
                     <option>

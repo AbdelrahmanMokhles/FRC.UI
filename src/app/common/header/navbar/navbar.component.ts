@@ -15,4 +15,9 @@ export class NavbarComponent {
         public themeService: CustomizerSettingsService
     ) {}
 
+    Logout(){
+        console.log("jhgkjgl");
+        localStorage.removeItem('token');
+    }
+
 }

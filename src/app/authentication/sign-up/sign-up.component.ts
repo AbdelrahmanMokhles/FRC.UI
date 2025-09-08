@@ -5,6 +5,7 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../Services/authentication/UserService/user-service';
 import { error } from 'console';
+import { countries } from 'countries-list';
 import { HttpClientModule } from '@angular/common/http';
 import * as yup from 'yup';
 
@@ -20,21 +21,22 @@ import * as yup from 'yup';
     styleUrl: './sign-up.component.scss'
 })
 export class SignUpComponent {
-    RegisterForm : FormGroup;
+    RegisterForm! : FormGroup;
     url = "https://localhost:44397/api/Users";
     // user : any;
     alertType : 'success' | 'error' | 'warning' | null = null ;
     formErrors : any = {};
-    countries: string[] = [
-        'Egypt',
-        'Saudi Arabia',
-        'United States',
-        'United Kingdom',
-        'Germany',
-        'France',
-        'Canada',
-        'Australia',
-        ];
+    countriesArr: { code: string; name: string }[] = [];
+    // countries: string[] = [
+    //     'Egypt',
+    //     'Saudi Arabia',
+    //     'United States',
+    //     'United Kingdom',
+    //     'Germany',
+    //     'France',
+    //     'Canada',
+    //     'Australia',
+    //     ];
 
     schema = yup.object().shape({
     fullname: yup.string().required('Full name is required').matches(/^[a-zA-Z ]+$/,'Full Name contains only letters'),
@@ -53,21 +55,7 @@ export class SignUpComponent {
         private _service : UserService,
         public themeService: CustomizerSettingsService,
         private _router : Router
-        )
-        {
-            this.RegisterForm = fb.group({
-                
-                fullname : ["",Validators.required],
-                email :["",[Validators.required,Validators.email]],
-                password :["",[Validators.required]],
-                phone :["",[Validators.required]],
-                country: ["",Validators.required],
-                companyName: [""],
-                companyWebsite: [""],
-                companyPhone: [""],
-            });
-
-        }
+        ) {}
 
  
 
@@ -93,12 +81,28 @@ export class SignUpComponent {
     //       error:(err)=>{console.log(err)}
     //     }
     //   );
+        this.RegisterForm = this.fb.group({
+                
+                fullname : ["",Validators.required],
+                email :["",[Validators.required,Validators.email]],
+                password :["",[Validators.required]],
+                phone :["",[Validators.required]],
+                country: ["",Validators.required],
+                companyName: [""],
+                companyWebsite: [""],
+                companyPhone: [""]
+            });
+
+            this.countriesArr = Object.entries(countries).map(([code, value]) => ({
+                code,
+                name: value.name
+            }));
         // Subscribe to changes for onChange validation
         this.RegisterForm.valueChanges.subscribe(values => {
         this.validateForm(values);
         });
     }
-
+    
     async validateForm(values: any) {
     try {
       await this.schema.validate(values, { abortEarly: false });
@@ -115,6 +119,7 @@ export class SignUpComponent {
   }
 
     onSubmit() {
+        debugger
         if (this.RegisterForm.valid) {
             const user = this.RegisterForm.value;
             // console.log('✅******User object******** :', user);

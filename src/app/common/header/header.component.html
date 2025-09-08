@@ -316,7 +316,7 @@
                         </div>
                         <ul class="list p-0 mt-0 mb-0 list-unstyled">
                             <li>
-                                <a routerLink="/dashboard/my-profile" class="d-block position-relative">
+                                <a routerLink="/dashboard/settings" class="d-block position-relative">
                                     <i class="material-symbols-outlined">
                                         account_circle
                                     </i>
@@ -375,7 +375,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a routerLink="/authentication/logout" class="d-block position-relative">
+                                <a (click)="Logout()" routerLink="/authentication/logout" class="d-block position-relative">
                                     <i class="material-symbols-outlined">
                                         logout
                                     </i>
