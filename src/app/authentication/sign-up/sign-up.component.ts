@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../Services/authentication/UserService/user-service';
 import { error } from 'console';
@@ -12,7 +12,7 @@ import * as yup from 'yup';
     selector: 'app-sign-up',
     imports: [RouterLink, NgClass ,FormsModule
         ,ReactiveFormsModule
-        ,HttpClientModule,NgIf
+        ,HttpClientModule,NgIf,NgFor
 
     ],
     // providers:[UserService],
@@ -25,13 +25,27 @@ export class SignUpComponent {
     // user : any;
     alertType : 'success' | 'error' | 'warning' | null = null ;
     formErrors : any = {};
+    countries: string[] = [
+        'Egypt',
+        'Saudi Arabia',
+        'United States',
+        'United Kingdom',
+        'Germany',
+        'France',
+        'Canada',
+        'Australia',
+        ];
 
     schema = yup.object().shape({
-    fullname: yup.string().required('Full name is required').matches(/^(?=.*[a-z])(?=.*[A-Z])$/),
+    fullname: yup.string().required('Full name is required').matches(/^[a-zA-Z ]+$/,'Full Name contains only letters'),
     phone: yup.string().matches(/^[0-9]{10,15}$/, 'Phone must be 10-15 digits').required('Phone is required'),
     email: yup.string().email('Invalid email').required('Email is required'),
-    password: yup.string().min(8, 'Password must be at least 8 characters').required('Password is required').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
-        ,'Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character')
+    password: yup.string().min(8, 'Password must be at least 8 characters').required('Password is required').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/
+        ,'Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character'),
+    country: yup.string().required("Country is required").matches(/^[a-zA-Z ]+$/,'Country Name contains only letters'),
+    companyName: yup.string().matches(/^[a-zA-Z ]+$/,'Country Name contains only letters'),
+    companyWebsite: yup.string(),
+    companyPhone: yup.string().matches(/^[0-9]{10,15}$/, 'Phone must be 10-15 digits')
   });
 
     constructor(
@@ -46,8 +60,12 @@ export class SignUpComponent {
                 fullname : ["",Validators.required],
                 email :["",[Validators.required,Validators.email]],
                 password :["",[Validators.required]],
-                phone :["",[Validators.required]]
-            })
+                phone :["",[Validators.required]],
+                country: ["",Validators.required],
+                companyName: [""],
+                companyWebsite: [""],
+                companyPhone: [""],
+            });
 
         }
 

@@ -76,8 +76,46 @@
                             <button type="button" (click)="togglePasswordVisibility()" class="icon-button p-0 border-0 bg-transparent transition">
                                 <i [ngClass]="isPasswordVisible ? 'ri-eye-line' : 'ri-eye-off-line'"></i>
                             </button>
+                            <div style="color: rgb(248, 89, 89);" class="error text-danger" *ngIf="formErrors.password">{{ formErrors.password }}</div>
                         </div>
-                        <div style="color: rgb(248, 89, 89);" class="error" *ngIf="formErrors.password">{{ formErrors.password }}</div>
+                        <!-- <div  class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Country
+                            </label>
+                            <input formControlName="country" type="text" class="form-control" placeholder="Enter your Country">
+                            <div style="color: rgb(248, 89, 89);" class="error text-danger" *ngIf="formErrors.country">{{ formErrors.country }}</div>
+                        </div> -->
+                        <div  class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Country
+                            </label>
+                            <select id="country" formControlName="country" class="form-control">
+                                <option value="">-- Select Country --</option>
+                                <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+                            </select>
+                            <!-- <div style="color: rgb(248, 89, 89);" class="error text-danger" *ngIf="formErrors.country">{{ formErrors.country }}</div> -->
+                        </div>
+                        <div  class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Company Name
+                            </label>
+                            <input formControlName="companyName" type="text" class="form-control" placeholder="Enter Company Name">
+                            <div style="color: rgb(248, 89, 89);" class="error" *ngIf="formErrors.companyName">{{ formErrors.companyName }}</div>
+                        </div>
+                        <div  class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Company Website
+                            </label>
+                            <input formControlName="companyWebsite" type="text" class="form-control" placeholder="Enter Company Website">
+                            <div style="color: rgb(248, 89, 89);" class="error" *ngIf="formErrors.companyWebsite">{{ formErrors.companyWebsite }}</div>
+                        </div>
+                        <div  class="form-group">
+                            <label class="main-label d-block fw-medium text-black">
+                                Company Phone
+                            </label>
+                            <input formControlName="companyPhone" type="text" class="form-control" placeholder="Enter Company Phone">
+                            <div style="color: rgb(248, 89, 89);" class="error" *ngIf="formErrors.companyPhone">{{ formErrors.companyPhone }}</div>
+                        </div>
                         <button type="submit" class="btn-box d-block w-100 border-0 transition fw-medium border-radius">
                             <span class="d-flex align-items-center justify-content-center">
                                 <i class="material-symbols-outlined">
@@ -86,6 +124,17 @@
                                 Sign Up
                             </span>
                         </button>
+                        <div class="trezo-card-content example-alerts d-block w-100 border-0 transition fw-medium border-radius">
+                            <div *ngIf="alertType==='success'" class="alert alert-success text-center w-100" role="alert">
+                                Successfully Registered
+                            </div>
+                            <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
+                                Invalid Data
+                            </div>
+                            <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
+                                Warning!!
+                            </div>
+                        </div>
                         <p class="info">
                             By confirming your email, you agree to our <a class="fw-medium" routerLink=".">Terms of Service</a> and that you have read and understood our <a class="fw-medium" routerLink=".">Privacy Policy</a>.
                         </p>
@@ -93,24 +142,7 @@
                             Already have an account. <a routerLink="/authentication" class="fw-semibold text-primary">Sign In</a>
                         </p>
                     </form>
-                    <!-- <div class="col-lg-6"> -->
-                        <div class="d-flex justify-content-center">
-                            <div class="trezo-card-content example-alerts">
-                                <!-- <div *ngIf="alertType==='success'" class="alert alert-outline-success text-center w-100" role="alert"> -->
-                                <div *ngIf="alertType==='success'" class="alert alert-success text-center w-100" role="alert">
-                                    Successfully Logged In
-                                </div>
-                                <div *ngIf="alertType==='error'" class="alert alert-outline-danger text-center w-100" role="alert">
-                                <!-- <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert"> -->
-                                    Invalid OTP
-                                </div>
-                                <!-- <div *ngIf="alertType==='warning'" class="alert alert-outline-warning text-center w-100" role="alert"> -->
-                                <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
-                                    Warning!!
-                                </div>
-                                <!-- <div _ngcontent-ng-c3392785362="" role="alert" class="alert alert-danger d-flex justify-content-between align-items-center ng-star-inserted"> A simple danger alert—check it out! <button _ngcontent-ng-c3392785362="" type="button" data-dismiss="alert" aria-label="Close" class="close bg-transparent p-0 border-0"><i _ngcontent-ng-c3392785362="" class="ri-close-line"></i></button></div> -->
-                            </div>
-                        </div>
+                    
                 </div>
             </div>
         </div>

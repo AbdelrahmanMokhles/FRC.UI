@@ -47,7 +47,7 @@ export class SignInComponent {
                             console.log('✅ Success:', res)
                             localStorage.setItem("token",res.body.token)
                             // this._service.setEmail(user.email)
-                            this._router.navigate(["dashboard/settings"]);
+                            this._router.navigate(["dashboard"]);
                         }
                         else
                             {

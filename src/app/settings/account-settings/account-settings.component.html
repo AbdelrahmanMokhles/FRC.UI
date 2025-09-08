@@ -9,17 +9,9 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <label class="main-label d-block fw-medium text-black">
-                    First Name
+                    Full Name
                 </label>
-                <input type="text" class="form-control" value="Olivia">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Last Name
-                </label>
-                <input type="text" class="form-control" value="John">
+                <input type="text" class="form-control" value="{{user.fullName}}">
             </div>
         </div>
         <div class="col-sm-6">
@@ -27,7 +19,7 @@
                 <label class="main-label d-block fw-medium text-black">
                     Email Address
                 </label>
-                <input type="text" class="form-control" value="olivia@trezo.com">
+                <input type="text" class="form-control" value="{{user.email}}">
             </div>
         </div>
         <div class="col-sm-6">
@@ -35,15 +27,7 @@
                 <label class="main-label d-block fw-medium text-black">
                     Phone Number
                 </label>
-                <input type="text" class="form-control" value="+1 444 555 6699">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Address
-                </label>
-                <input type="text" class="form-control" value="84 S. Arrowhead Court Branford">
+                <input type="text" class="form-control" value="{{user.phone}}">
             </div>
         </div>
         <div class="col-sm-6">
@@ -51,7 +35,11 @@
                 <label class="main-label d-block fw-medium text-black">
                     Country
                 </label>
-                <select class="form-select">
+                <select id="country" formControlName="country" class="form-control">
+                    <option value="">{{user.country}}</option>
+                    <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+                </select>
+                <!-- <select class="form-select">
                     <option>
                         Select
                     </option>
@@ -85,18 +73,10 @@
                     <option value="10">
                         Australia
                     </option>
-                </select>
+                </select> -->
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Date Of Birth
-                </label>
-                <input type="date" class="form-control">
-            </div>
-        </div>
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
             <div class="form-group">
                 <label class="main-label d-block fw-medium text-black">
                     Gender
@@ -170,13 +150,13 @@
                     </option>
                 </select>
             </div>
-        </div>
+        </div> -->
         <div class="col-sm-6">
             <div class="form-group">
                 <label class="main-label d-block fw-medium text-black">
                     Company Name
                 </label>
-                <input type="text" class="form-control" value="Trezo Admin">
+                <input type="text" class="form-control" value="{{user.companyName}}">
             </div>
         </div>
         <div class="col-sm-6">
@@ -184,19 +164,27 @@
                 <label class="main-label d-block fw-medium text-black">
                     Company Website
                 </label>
-                <input type="text" class="form-control" value="http://website.com/">
+                <input type="text" class="form-control" value="{{user.companyWebsite}}">
             </div>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="main-label d-block fw-medium text-black">
+                    Company Phone
+                </label>
+                <input type="text" class="form-control" value="{{user.companyPhone}}">
+            </div>
+        </div>
+        <!-- <div class="col-sm-12">
             <div class="form-group">
                 <label class="main-label d-block fw-medium text-black">
                     Add Your Bio
                 </label>
                 <textarea class="form-control">It makes me feel...</textarea>
             </div>
-        </div>
+        </div> -->
     </div>
-    <h4>
+    <!-- <h4>
         Your Photo
     </h4>
     <p>
@@ -242,7 +230,7 @@
                 <input type="text" class="form-control" value="https://www.youtube.com/">
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="form-btn-box">
         <button type="button" class="warn d-inline-block fw-medium border-radius border-0 transition">
             Cancel

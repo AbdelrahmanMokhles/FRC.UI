@@ -10,7 +10,7 @@ import { BehaviorSubject, interval, map, Subscription, takeWhile } from 'rxjs';
 @Component({
   standalone:true,
   selector: 'app-otp',
-  imports: [RouterLink,
+  imports: [
     FormsModule, ReactiveFormsModule,
     HttpClientModule,NgIf
   ],

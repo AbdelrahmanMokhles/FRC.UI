@@ -3,11 +3,12 @@ import { Router, RouterLink } from '@angular/router';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../Services/authentication/UserService/user-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-forgot-password',
     imports: [RouterLink,FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,CommonModule
     ],
     templateUrl: './forgot-password.component.html',
     styleUrl: './forgot-password.component.scss'
