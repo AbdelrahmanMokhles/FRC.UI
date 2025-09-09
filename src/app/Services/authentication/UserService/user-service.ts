@@ -42,6 +42,13 @@ export class UserService {
         observe: 'response' 
       });
     };
+    UpdateUser(user: any): Observable<any> {
+      return this._client.put<any>(this.url+"UpdateUser", user,
+      {
+        headers: { "Content-Type": "application/json" },
+        observe: 'response' 
+      });
+    };
     
     ForgotPassword(model: any): Observable<any> {
       return this._client.post<any>(this.url+"ForgotPassword", model,

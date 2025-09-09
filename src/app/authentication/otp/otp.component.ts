@@ -95,6 +95,7 @@ export class otpComponent {
                                             {
                                               console.log('✅ Success:', res)
                                               this.alertType='success';
+                                              this.startCountdown();
                                             },
                                           error:(res) =>{
                                                           if (res.status === 200) {

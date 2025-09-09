@@ -21,10 +21,16 @@
                 </i>
             </div>
             <a routerLink="/dashboard" class="logo">
-                <img src="images/logo.svg" alt="logo">
+                <!-- <img src="images/logo.svg" alt="logo"> -->
+                 <div class="logo">
+                    <img style="max-width: 40%;" src="images/Logo-Black.png" class="d-none" alt="logo">
+                </div>
             </a>
             <a routerLink="/dashboard" class="logo white-logo">
-                <img src="images/white-logo.svg" alt="logo">
+                <!-- <img src="images/white-logo.svg" alt="logo"> -->
+                <div class="logo">
+                    <img style="max-width: 40%;" src="images/Logo.png" class="d-none" alt="logo">
+                </div>
             </a>
             <form class="search-box position-relative">
                 <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
@@ -34,7 +40,7 @@
                     </i>
                 </button>
             </form>
-            <div class="connected-apps-menu position-relative">
+            <!-- <div class="connected-apps-menu position-relative">
                 <button
                     type="button"
                     (click)="toggleConnectedAppsDropdown()"
@@ -130,7 +136,7 @@
                         </ul>
                     </div>
                 }
-            </div>
+            </div> -->
         </div>
         <ul class="header-right-side d-flex align-items-center m-0 p-0 list-unstyled">
             <li class="position-relative">
@@ -143,7 +149,7 @@
                     </i>
                 </button>
             </li>
-            <li class="position-relative language-menu">
+            <!-- <li class="position-relative language-menu">
                 <button
                     type="button"
                     (click)="toggleLanguageDropdown()"
@@ -202,7 +208,7 @@
                         </ul>
                     </div>
                 }
-            </li>
+            </li> -->
             <li class="position-relative">
                 <button
                     (click)="toggleFullscreen()"
@@ -213,7 +219,7 @@
                     </i>
                 </button>
             </li>
-            <li class="position-relative notifications-menu">
+            <!-- <li class="position-relative notifications-menu">
                 <button
                     type="button"
                     (click)="toggleNotificationsDropdown()"
@@ -289,21 +295,23 @@
                         </div>
                     </div>
                 }
-            </li>
+            </li> -->
             <li class="position-relative profile-menu">
-                <button
-                    type="button"
-                    (click)="toggleProfileDropdown()"
-                    class="profile-menu-btn border-0 bg-transparent position-relative"
-                >
-                    <img src="images/admin.png" class="rounded-circle" alt="admin-image">
-                    <span class="fw-semibold text-black">
-                        Olivia
-                    </span>
-                </button>
+                
+                @if(user.fullName){
+                    <button
+                        type="button"
+                        (click)="toggleProfileDropdown()"
+                        class="profile-menu-btn border-0 bg-transparent position-relative">
+                        <!-- <img src="images/admin.png" class="rounded-circle" alt="admin-image"> -->
+                        <span class="fw-semibold text-black">
+                            {{user.fullName}}
+                        </span>
+                    </button>
+                }
                 @if (isProfileDropdownOpen) {
                     <div class="profile-menu-dropdown bg-white border-radius">
-                        <div class="admin d-flex align-items-center">
+                        <!-- <div class="admin d-flex align-items-center">
                             <img src="images/admin.png" class="rounded-circle" alt="admin-image">
                             <div>
                                 <span class="d-block text-black fw-medium">
@@ -313,7 +321,7 @@
                                     Marketing Manager
                                 </span>
                             </div>
-                        </div>
+                        </div> -->
                         <ul class="list p-0 mt-0 mb-0 list-unstyled">
                             <li>
                                 <a routerLink="/dashboard/settings" class="d-block position-relative">
@@ -323,7 +331,7 @@
                                     My Profile
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a routerLink="/dashboard/apps/chat" class="d-block position-relative">
                                     <i class="material-symbols-outlined">
                                         chat
@@ -346,7 +354,7 @@
                                     </i>
                                     Billing
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                         <div class="border-top"></div>
                         <ul class="list p-0 mt-0 mb-0 list-unstyled">
@@ -358,7 +366,7 @@
                                     Settings
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a routerLink="/dashboard/faq" class="d-block position-relative">
                                     <i class="material-symbols-outlined">
                                         support
@@ -373,7 +381,7 @@
                                     </i>
                                     Lock Screen
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a (click)="Logout()" routerLink="/authentication/logout" class="d-block position-relative">
                                     <i class="material-symbols-outlined">

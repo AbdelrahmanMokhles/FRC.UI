@@ -63,6 +63,9 @@ export class ChangePasswordComponent {
                                           console.error("🔥 Server error",res);
                                           this.alertType='warning';
                                       }
+                                      else{
+                                        this.alertType='warning';
+                                      }
                                   }
                         });
         }

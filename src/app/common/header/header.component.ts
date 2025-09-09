@@ -5,6 +5,7 @@ import { NgClass, isPlatformBrowser } from '@angular/common';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
 import { filter } from 'rxjs/operators';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UserService } from '../../Services/authentication/UserService/user-service';
 
 @Component({
     selector: 'app-header',
@@ -14,18 +15,23 @@ import { NavbarComponent } from './navbar/navbar.component';
 })
 export class HeaderComponent {
 
+    user:any;
     // isSidebarToggled
     isSidebarToggled = false;
 
     // isToggled
     isToggled = false;
+    isBrowser : boolean;
 
     constructor(
+        private _userService : UserService,
         private toggleService: ToggleService,
         public themeService: CustomizerSettingsService,
         @Inject(PLATFORM_ID) private platformId: Object,
         private router: Router
     ) {
+
+        this.isBrowser = isPlatformBrowser(this.platformId);
         this.toggleService.isSidebarToggled$.subscribe(isSidebarToggled => {
             this.isSidebarToggled = isSidebarToggled;
         });
@@ -41,6 +47,20 @@ export class HeaderComponent {
                 this.toggleService.toggle(); // Close the sidebar if it's open
             }
         });
+        if(this.isBrowser){
+            const tokk = localStorage.getItem("token");
+            // this.token = tokk;
+            // console.log(this.token);
+            this._userService.Profile({token : tokk}).subscribe({
+                next : (res)=>{
+                    this.user = res.body;
+                    console.log(this.user);
+                },
+                error:(res) =>{
+                    console.log(res);
+                }
+            });
+        }
     }
 
     // Burger Menu Toggle
@@ -59,7 +79,6 @@ export class HeaderComponent {
     }
 
     Logout(){
-        console.log("jhgkjgl");
         localStorage.removeItem('token');
     }
 

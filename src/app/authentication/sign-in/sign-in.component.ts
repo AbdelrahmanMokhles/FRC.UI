@@ -52,11 +52,16 @@ export class SignInComponent {
                         else
                             {
                                 this._router.navigate(['']);
+                                this.alertType='warning';
                             }
                     },
                     error:(res)=>{
                         // debugger
                         // console.log(res);
+                        if (res.error instanceof ProgressEvent && res.status === 0) {
+                            this.alertType = 'error';
+                            alert('⚠️ Cannot connect to server. Please check if the backend is running.');
+                        } 
                         if (res.status === 400)
                                 {
                                 console.log(this.alertType);
@@ -74,6 +79,7 @@ export class SignInComponent {
                         else
                             {
                                 this._router.navigate(['authentication']);
+                                this.alertType='warning';
                             }
                     }
             });
