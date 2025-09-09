@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -8,7 +8,7 @@ import { UserService } from '../../Services/authentication/UserService/user-serv
 @Component({
     selector: 'app-reset-password',
     imports: [RouterLink, NgClass,FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,CommonModule
     ],
     templateUrl: './reset-password-otp.component.html',
     styleUrl: './reset-password-otp.component.scss'
@@ -17,6 +17,8 @@ export class ResetPasswordOtpComponent {
 
     ResetPassword : FormGroup;
     alertType : 'success' | 'error' | 'warning' | null = null ;
+
+    alertmsg:string='';
 
 
     constructor(
@@ -34,6 +36,11 @@ export class ResetPasswordOtpComponent {
     onSubmit(){
         const newpass = this.ResetPassword.get("NewPassword")?.value;
         const confirmpass = this.ResetPassword.get("ConfirmPassword")?.value;
+        if(newpass != confirmpass){
+            this.alertType='error';
+            this.alertmsg='Passwords do not match';
+            return
+        }
         if(this.ResetPassword.valid && newpass == confirmpass ){
             const model = {Email : this._service.getEmail(),NewPassword : newpass};
 
@@ -49,7 +56,7 @@ export class ResetPasswordOtpComponent {
                                     if (res.status === 400) 
                                       {
                                         console.log("⚠️ Validation error:", res);
-                                        this.alertType='error';
+                                        // this.alertType='error';
                                       }
                                       else if (res.status === 500) 
                                         {
@@ -86,12 +93,12 @@ export class ResetPasswordOtpComponent {
     //     this.password1 = inputElement.value;
     // }
     onPassword2Input(event: Event): void {
-        const inputElement = event.target as HTMLInputElement;
-        this.password2 = inputElement.value;
+        // const inputElement = event.target as HTMLInputElement;
+        // this.password2 = inputElement.value;
     }
     onPassword3Input(event: Event): void {
-        const inputElement = event.target as HTMLInputElement;
-        this.password3 = inputElement.value;
+        // const inputElement = event.target as HTMLInputElement;
+        // this.password3 = inputElement.value;
     }
 
 }

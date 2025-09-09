@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <label class="main-label d-block fw-medium text-black">
-                                Email Address
+                                Email Address  
                             </label>
                             <input formControlName="email" type="text" class="form-control" placeholder="email@example.com">
                             <span style="color: rgb(248, 89, 89);" class="error" *ngIf="formErrors.email">{{ formErrors.email }}</span>
@@ -92,21 +92,21 @@
                         </div>
                         <div  class="form-group">
                             <label class="main-label d-block fw-medium text-black">
-                                Company Name
+                                Company Name <span class="optional-text">(optional)</span>
                             </label>
                             <input formControlName="companyName" type="text" class="form-control" placeholder="Enter Company Name">
                             <div style="color: rgb(248, 89, 89);" class="error" *ngIf="formErrors.companyName">{{ formErrors.companyName }}</div>
                         </div>
                         <div  class="form-group">
                             <label class="main-label d-block fw-medium text-black">
-                                Company Website
+                                Company Website <span class="optional-text">(optional)</span>
                             </label>
                             <input formControlName="companyWebsite" type="text" class="form-control" placeholder="Enter Company Website">
                             <div style="color: rgb(248, 89, 89);" class="error" *ngIf="formErrors.companyWebsite">{{ formErrors.companyWebsite }}</div>
                         </div>
                         <div  class="form-group">
                             <label class="main-label d-block fw-medium text-black">
-                                Company Phone
+                                Company Phone <span class="optional-text">(optional)</span>
                             </label>
                             <input formControlName="companyPhone" type="text" class="form-control" placeholder="Enter Company Phone">
                             <div style="color: rgb(248, 89, 89);" class="error" *ngIf="formErrors.companyPhone">{{ formErrors.companyPhone }}</div>
@@ -124,7 +124,7 @@
                                 Successfully Registered
                             </div>
                             <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
-                                Invalid Credentials
+                                {{alertmsg}}
                             </div>
                             <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
                                 Error connecting to server 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { CommonModule, NgClass, NgFor, NgIf } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../Services/authentication/UserService/user-service';
 import { error } from 'console';
@@ -13,7 +13,7 @@ import * as yup from 'yup';
     selector: 'app-sign-up',
     imports: [RouterLink, NgClass ,FormsModule
         ,ReactiveFormsModule
-        ,HttpClientModule,NgIf,NgFor
+        ,HttpClientModule,NgIf,NgFor,CommonModule
 
     ],
     // providers:[UserService],
@@ -25,6 +25,8 @@ export class SignUpComponent {
     url = "https://localhost:44397/api/Users";
     // user : any;
     alertType : 'success' | 'error' | 'warning' | null = null ;
+    alertmsg:string='';
+
     formErrors : any = {};
     countriesArr: { code: string; name: string }[] = [];
     // countries: string[] = [
@@ -44,10 +46,12 @@ export class SignUpComponent {
     email: yup.string().email('Invalid email').required('Email is required'),
     password: yup.string().min(8, 'Password must be at least 8 characters').required('Password is required').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/
         ,'Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character'),
-    country: yup.string().required("Country is required").matches(/^[a-zA-Z ]+$/,'Country Name contains only letters'),
-    companyName: yup.string().matches(/^[a-zA-Z ]+$/,'Country Name contains only letters'),
+    country: yup.string().required("Country is required"),
+    // companyName: yup.string().matches(/^[a-zA-Z ]+$/,'Country Name contains only letters'),
+    companyName: yup.string(),
     companyWebsite: yup.string(),
-    companyPhone: yup.string().matches(/^[0-9]{10,15}$/, 'Phone must be 10-15 digits')
+    // companyPhone: yup.string().matches(/^[0-9]{10,15}$/, 'Phone must be 10-15 digits')
+    companyPhone: yup.string()
   });
 
     constructor(
@@ -120,6 +124,26 @@ export class SignUpComponent {
 
     onSubmit() {
         debugger
+        if(this.formErrors.fullname){
+            this.alertType = 'error';
+            this.alertmsg = "Invalid Name"+this.formErrors.fullname;
+            return;
+        }
+        if(this.formErrors.email){
+            this.alertType = 'error';
+            this.alertmsg = "Invalid Email"+this.formErrors.email;
+            return;
+        }
+        if(this.formErrors.password){
+            this.alertType = 'error';
+            this.alertmsg = "Invalid Password"+this.formErrors.password;
+            return;
+        }
+        if(this.formErrors.phone){
+            this.alertType = 'error';
+            this.alertmsg = "Invalid Phone"+this.formErrors.phone;
+            return;
+        }
         if (this.RegisterForm.valid) {
             const user = this.RegisterForm.value;
             // console.log('✅******User object******** :', user);
@@ -142,7 +166,8 @@ export class SignUpComponent {
                         else 
                             {
                             this.alertType = 'error';
-                            alert(`Error: ${res.error.message}`);
+                            this.alertmsg='${res.error.message}';
+                            // alert(`Error: ${res.error.message}`);
                             }
                         if (res.status === 400) {console.log("⚠️ Validation error:", res.error);}
                         else if (res.status === 500) {console.error("🔥 Server error",res.error.message);}
