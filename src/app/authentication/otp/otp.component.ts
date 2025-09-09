@@ -85,7 +85,9 @@ export class otpComponent {
       }
       
       ResendOtp(){
+        debugger
         console.log("Resending to "+this.email);
+        this.startCountdown();
         // const email = this.email;
         const model = {email : this.email,otp : ""}
         this._service.ResendOtp(model).

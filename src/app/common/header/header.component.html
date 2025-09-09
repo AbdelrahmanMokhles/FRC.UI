@@ -296,19 +296,18 @@
                     </div>
                 }
             </li> -->
-            <li class="position-relative profile-menu">
-                
-                @if(user.fullName){
-                    <button
+            <li class="position-relative profile-menu">                
+                    <button 
+                        *ngIf="user?.fullName"
                         type="button"
                         (click)="toggleProfileDropdown()"
                         class="profile-menu-btn border-0 bg-transparent position-relative">
                         <!-- <img src="images/admin.png" class="rounded-circle" alt="admin-image"> -->
                         <span class="fw-semibold text-black">
-                            {{user.fullName}}
+                            {{user?.fullName}}
                         </span>
                     </button>
-                }
+                
                 @if (isProfileDropdownOpen) {
                     <div class="profile-menu-dropdown bg-white border-radius">
                         <!-- <div class="admin d-flex align-items-center">

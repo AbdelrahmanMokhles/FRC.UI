@@ -54,7 +54,6 @@ export class AccountSettingsComponent {
             companyPhone: ['']
         });
         
-        this.UpdateForm.get("email")?.disable();
 
         this.countriesArr = Object.entries(countries).map(([code, value]) => ({
             code,
@@ -86,7 +85,9 @@ export class AccountSettingsComponent {
                     console.log(res);
                 }
             });
-        }    
+        }
+        // this.UpdateForm.get("email")?.disable();
+
     }
     
     

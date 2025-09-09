@@ -45,7 +45,7 @@
                             </span>
                         </button>
 
-                        <button [disabled]="isRunning" (click)="ResendOtp()" _ngcontent-ng-c1528691252="" type="button" class="btn btn-primary">
+                        <button style="margin-top : 0px;" [disabled]="isRunning" (click)="ResendOtp()" _ngcontent-ng-c1528691252="" type="button" class="btn btn-primary">
                             <span style="display: inline-flex; align-items: center; justify-content: center; font-weight: bold; ">
                                 <i class="material-symbols-outlined">
                                     autorenew
@@ -68,10 +68,10 @@
                                 Successfully sent OTP
                             </div>
                             <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
-                                Invalid OTP
+                                Invalid OTP 
                             </div>
                             <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
-                                Invalid OTP
+                                Server Error
                             </div>
                         </div>
                     </form>

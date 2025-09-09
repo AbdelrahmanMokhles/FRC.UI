@@ -1,7 +1,7 @@
 import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink, NavigationEnd, Router } from '@angular/router';
 import { ToggleService } from './toggle.service';
-import { NgClass, isPlatformBrowser } from '@angular/common';
+import { CommonModule, NgClass, isPlatformBrowser } from '@angular/common';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
 import { filter } from 'rxjs/operators';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -9,7 +9,7 @@ import { UserService } from '../../Services/authentication/UserService/user-serv
 
 @Component({
     selector: 'app-header',
-    imports: [RouterLink, NgClass, NavbarComponent],
+    imports: [RouterLink, NgClass, NavbarComponent,CommonModule],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })

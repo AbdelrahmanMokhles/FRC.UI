@@ -86,6 +86,7 @@ export class otpResetcomponent {
       
       ResendOtp(){
         console.log("Resending to "+this.email);
+        this.startCountdown();
         // const email = this.email;
         const model = {email : this.email,otp : ""}
         this._service.ResendOtp(model).
@@ -95,6 +96,7 @@ export class otpResetcomponent {
                                             {
                                               console.log('✅ Success:', res)
                                               this.alertType='success';
+                                              this.startCountdown();
                                             },
                                           error:(res) =>{
                                                           if (res.status === 200) {
