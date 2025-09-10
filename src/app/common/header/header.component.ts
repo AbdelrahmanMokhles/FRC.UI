@@ -15,7 +15,8 @@ import { UserService } from '../../Services/authentication/UserService/user-serv
 })
 export class HeaderComponent {
 
-    user:any;
+    user:any = null;
+    
     // isSidebarToggled
     isSidebarToggled = false;
 

@@ -18,6 +18,7 @@ export class SignInComponent {
 
     LoginForm : FormGroup;
     alertType : 'success' | 'error' | 'warning' | null = null ;
+    alertmsg:string ='';
     
 
     constructor(
@@ -60,7 +61,7 @@ export class SignInComponent {
                         // console.log(res);
                         if (res.error instanceof ProgressEvent && res.status === 0) {
                             this.alertType = 'error';
-                            alert('⚠️ Cannot connect to server. Please check if the backend is running.');
+                            this.alertmsg='Cannot connect to server';
                         } 
                         if (res.status === 400)
                                 {
@@ -71,21 +72,24 @@ export class SignInComponent {
                             }
                             else if (res.status === 500)
                                 {
-                                console.log(this.alertType);
-                                console.error("🔥 Server error",res);
-                                this.alertType = "warning";
+                                // console.log(this.alertType);
+                                // console.error("🔥 Server error",res);
+                                this.alertType = 'error';
+                                this.alertmsg='Cannot connect to server';   
                                 // console.log(this.alertType);
                                 }
                         else
                             {
                                 this._router.navigate(['authentication']);
-                                this.alertType='warning';
+                                this.alertType='error';
+                                this.alertmsg='error occured';
                             }
                     }
             });
         }
         else{
-            this.alertType='error';
+            this.alertType= 'error';
+            this.alertmsg = 'All fields are required';
         }
     }
 

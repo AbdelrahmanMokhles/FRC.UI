@@ -1,15 +1,17 @@
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CustomizerSettingsService } from '../../../customizer-settings/customizer-settings.service';
 
 @Component({
     selector: 'app-fp-navbar',
-    imports: [RouterLink, RouterLinkActive, NgClass],
+    imports: [RouterLink, RouterLinkActive, NgClass,CommonModule],
     templateUrl: './fp-navbar.component.html',
     styleUrl: './fp-navbar.component.scss'
 })
 export class FpNavbarComponent {
+
+    token : any = localStorage.getItem("token");
 
     // Toggle Class
     classApplied = false;

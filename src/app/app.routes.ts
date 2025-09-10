@@ -260,6 +260,7 @@ import { ReapPropertyDetailsComponent } from './pages/real-estate-agent-page/rea
 import { otpComponent } from './authentication/otp/otp.component';
 import { otpResetcomponent } from './authentication/otp-reset/otp-reset.component';
 import { ResetPasswordOtpComponent } from './authentication/reset-password-otp/reset-password-otp.component';
+import { UsersDataComponent } from './dashboard/users-data/users-data.component';
 
 export const routes: Routes = [
     {
@@ -303,6 +304,7 @@ export const routes: Routes = [
             {path: 'store-analysis', component: StoreAnalysisComponent},
             {path: 'restaurant', component: RestaurantComponent},
             {path: 'hotel', component: HotelComponent},
+            {path: 'user-data', component: UsersDataComponent},
             {path: 'real-estate-agent', component: RealEstateAgentComponent},
             {path: 'credit-card', component: CreditCardComponent},
             {path: 'crypto-trader', component: CryptoTraderComponent},

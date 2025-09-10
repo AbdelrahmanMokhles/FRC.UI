@@ -56,7 +56,7 @@
                         </a>
                     </li>
                 </ul>
-                <div class="other-options d-flex align-items-center">
+                <div *ngIf="!token" class="other-options d-flex align-items-center">
                     <a routerLink="/authentication" class="btn-box d-inline-block fw-medium border-radius position-relative">
                         <span class="d-inline-block position-relative">
                             <i class="material-symbols-outlined">

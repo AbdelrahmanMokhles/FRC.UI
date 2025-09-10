@@ -77,12 +77,13 @@
                         </button>
                         <div style="margin-left: 10px;" class="trezo-card-content example-alerts d-block w-100 border-0 transition fw-medium border-radius">
                             <div *ngIf="alertType==='success'" class="alert alert-success text-center w-100" role="alert">
-                                Successfully Logged In
+                                {{alertmsg}}
                             </div>
                             <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
-                                Invalid Credentials
+                                {{alertmsg}}
                             </div>
                             <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
+                                {{alertmsg}}
                                 Error connecting to server 
                             </div>
                         </div>

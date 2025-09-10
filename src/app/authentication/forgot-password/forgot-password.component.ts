@@ -3,12 +3,12 @@ import { Router, RouterLink } from '@angular/router';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../Services/authentication/UserService/user-service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-forgot-password',
     imports: [RouterLink,FormsModule,
-        ReactiveFormsModule,CommonModule
+        ReactiveFormsModule,CommonModule,NgIf
     ],
     templateUrl: './forgot-password.component.html',
     styleUrl: './forgot-password.component.scss'
@@ -17,6 +17,7 @@ export class ForgotPasswordComponent {
 
     ForgotForm : FormGroup;
     alertType : 'success' | 'error' | 'warning' | null = null ;
+    alertmsg : string ='';
 
 
     constructor(
@@ -26,7 +27,7 @@ export class ForgotPasswordComponent {
         private _router : Router
     ) {
         this.ForgotForm = fb.group({
-            Email:["",Validators.email]
+            Email:["",[Validators.required,Validators.email]]
         })
     }
 
@@ -48,16 +49,22 @@ export class ForgotPasswordComponent {
                                   error:(res) =>{
                                     if (res.status === 400) 
                                       {
-                                        console.log("⚠️ Validation error:", res);
+                                        // console.log("⚠️ Validation error:", res);
                                         this.alertType='error';
+                                        this.alertmsg='Validation error';
                                       }
                                       else if (res.status === 500) 
                                         {
-                                          console.error("🔥 Server error",res);
+                                          // console.error("🔥 Server error",res);
                                           this.alertType='warning';
+                                          this.alertmsg='Server error';
                                       }
                                   }
                         });
+        }
+        else{
+          this.alertType='error';
+          this.alertmsg='Email field is required';
         }
       }
 }

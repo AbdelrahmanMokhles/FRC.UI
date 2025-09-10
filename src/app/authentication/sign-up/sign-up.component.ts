@@ -123,7 +123,6 @@ export class SignUpComponent {
   }
 
     onSubmit() {
-        debugger
         if(this.formErrors.fullname){
             this.alertType = 'error';
             this.alertmsg = "Invalid Name"+this.formErrors.fullname;
@@ -161,12 +160,13 @@ export class SignUpComponent {
                     error:(res) =>{
                         if (res.error instanceof ProgressEvent && res.status === 0) {
                             this.alertType = 'error';
-                            alert('⚠️ Cannot connect to server. Please check if the backend is running.');
+                            this.alertmsg='Cannot connect to server';
+                            // alert('⚠️ Cannot connect to server. Please check if the backend is running.');
                         } 
                         else 
                             {
                             this.alertType = 'error';
-                            this.alertmsg='${res.error.message}';
+                            this.alertmsg='Cannot connect to server';
                             // alert(`Error: ${res.error.message}`);
                             }
                         if (res.status === 400) {console.log("⚠️ Validation error:", res.error);}
@@ -175,6 +175,10 @@ export class SignUpComponent {
                     } 
                     }
                 )
+        }
+        else{
+            this.alertType= 'error';
+            this.alertmsg = 'All fields are required';
         }
         
         }
