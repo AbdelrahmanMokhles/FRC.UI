@@ -2,6 +2,7 @@ import { CommonModule, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserService } from '../../Services/authentication/UserService/user-service';
+import { AdminService } from '../../Services/AdminService/admin-service';
 
 @Component({
     selector: 'app-change-password',
@@ -14,10 +15,13 @@ export class ChangePasswordComponent {
     token : any;
     user : any;
     alertType : 'success' | 'error' | 'warning' | null = null ;
+    email: string = '';
+
 
 
     constructor(
-        private _userService : UserService
+        private _userService : UserService,
+        private _adminService : AdminService
     ){
 
     }
@@ -31,7 +35,6 @@ export class ChangePasswordComponent {
     isPassword3Visible: boolean = false;
 
     Change(){
-        debugger
         this.token = localStorage.getItem('token');
         this._userService.Profile({token : this.token}).subscribe({
                 next : (res)=>{
@@ -69,6 +72,57 @@ export class ChangePasswordComponent {
                                   }
                         });
         }
+    }
+
+    ChangeForAdmin(){
+        // this.token = localStorage.getItem('token');
+        // this._userService.Profile({token : this.token}).subscribe({
+        //         next : (res)=>{
+        //             this.user = res.body;
+        //             console.log(this.user);
+        //         },
+        //         error:(res) =>{
+        //             console.log(res);
+        //         }
+        //     });
+        debugger
+        this.email = this._userService.getEmail();
+        this._userService.GetByEmail({email : this.email}).subscribe({
+                    next : (res)=>{
+                        this.user = res.body;
+                        console.log(this.user);
+                    },
+                    error:(res) =>{
+                        console.log(res);
+                    }
+                });
+        
+            const model = {Email : this.email,NewPassword : this.password2};
+
+            // console.log('✅******OTP******** :', model);
+            this._adminService.ChangePassword(model)
+                        .subscribe({
+                                  next: (res) =>{
+                                  console.log('✅ Success:', res)
+                                  this.alertType = 'success';
+                                },
+                                  error:(res) =>{
+                                    if (res.status === 400) 
+                                      {
+                                        console.log("⚠️ Validation error:", res);
+                                        this.alertType='error';
+                                      }
+                                      else if (res.status === 500) 
+                                        {
+                                          console.error("🔥 Server error",res);
+                                          this.alertType='warning';
+                                      }
+                                      else{
+                                        this.alertType='warning';
+                                      }
+                                  }
+                        });
+        
     }
 
     togglePassword1Visibility(): void {

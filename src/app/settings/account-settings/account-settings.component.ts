@@ -16,7 +16,9 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 export class AccountSettingsComponent {
     UpdateForm! : FormGroup;
     token : any;
+    email:any='';
     user : any ;
+    userType:'Admin' | 'User' | null = null;
     alertType : 'success' | 'error' | 'warning' | null = null ;
     isBrowser: boolean;
     countriesArr: { code: string; name: string }[] = [];
@@ -59,32 +61,57 @@ export class AccountSettingsComponent {
             code,
             name:value.name
         }));
-
         if(this.isBrowser){
             const tokk = localStorage.getItem("token");
-            this.token = tokk;
-            console.log(this.token);
-            this._userService.Profile({token : tokk}).subscribe({
-                next : (res)=>{
-                    this.user = res.body;
-                    console.log(this.user);
+            if(tokk){
+                this.token = tokk;
+                console.log(this.token);
+                this._userService.Profile({token : tokk}).subscribe({
+                    next : (res)=>{
+                        this.user = res.body;
+                        console.log(this.user);
 
-                    this.UpdateForm.patchValue({
-                        fullName: this.user.fullName,
-                        email: this.user.email,
-                        phone: this.user.phone,
-                        country: this.user.country,
-                        companyName: this.user.companyName,
-                        companyWebsite: this.user.companyWebsite,
-                        companyPhone: this.user.companyPhone
-                    });
+                        this.UpdateForm.patchValue({
+                            fullName: this.user.fullName,
+                            email: this.user.email,
+                            phone: this.user.phone,
+                            country: this.user.country,
+                            companyName: this.user.companyName,
+                            companyWebsite: this.user.companyWebsite,
+                            companyPhone: this.user.companyPhone
+                        });
 
-                    
-                },
-                error:(res) =>{
-                    console.log(res);
-                }
-            });
+                        
+                    },
+                    error:(res) =>{
+                        console.log(res);
+                    }
+                });
+            }
+            else{
+                this.email=this._userService.getEmail();
+                this._userService.GetByEmail({email : this.email}).subscribe({
+                    next : (res)=>{
+                        this.user = res.body;
+                        console.log(this.user);
+
+                        this.UpdateForm.patchValue({
+                            fullName: this.user.fullName,
+                            email: this.user.email,
+                            phone: this.user.phone,
+                            country: this.user.country,
+                            companyName: this.user.companyName,
+                            companyWebsite: this.user.companyWebsite,
+                            companyPhone: this.user.companyPhone
+                        });
+
+                        
+                    },
+                    error:(res) =>{
+                        console.log(res);
+                    }
+                });
+            }
         }
         // this.UpdateForm.get("email")?.disable();
 
@@ -92,7 +119,6 @@ export class AccountSettingsComponent {
     
     
     Update(){
-        debugger
         const userModel = this.UpdateForm.value;
         this._userService.UpdateUser(userModel).subscribe({
             next: (res) =>{

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   
     private url = "https://localhost:44397/api/Users/";
-    // private url = "http://localhost:8082/api/Users/";
+    // private url = "http://192.168.99.126/frc/api/Users/";
     constructor(private _client : HttpClient)
     {
     }
@@ -24,12 +24,18 @@ export class UserService {
       // console.log('📩 [UserService] EmailGot:', this.email);
     }
 
-    GetAllUsers(){
-      return this._client.get(this.url);
-    };
+    
     
     Profile(token:any) : Observable<any>{
       return this._client.post<any>(this.url+"GetbyToken",token,
+      {
+        headers: { "Content-Type": "application/json" },
+        observe: 'response'  
+      });
+    }
+
+    GetByEmail(em:any) : Observable<any>{
+      return this._client.post<any>(this.url+"GetbyEmail",em,
       {
         headers: { "Content-Type": "application/json" },
         observe: 'response'  
@@ -43,13 +49,19 @@ export class UserService {
         observe: 'response' 
       });
     };
+
     UpdateUser(user: any): Observable<any> {
-      return this._client.put<any>(this.url+"UpdateUser", user,
+      return this._client.put<any>(this.url+"updateuser", user,
       {
         headers: { "Content-Type": "application/json" },
         observe: 'response' 
       });
     };
+
+    
+    DeleteUser(email: string): Observable<any> {
+      // return this._client.delete<any>(this.url+"DeleteUser/"+email)};
+      return this._client.delete<any>(`${this.url}DeleteUser/${email}`)};
     
     ForgotPassword(model: any): Observable<any> {
       return this._client.post<any>(this.url+"ForgotPassword", model,

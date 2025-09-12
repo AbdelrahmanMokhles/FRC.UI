@@ -21,6 +21,84 @@
     </ol>
 </div>
 
+<!-- <div class="row">
+    <div class="col-md-6">
+        <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-header d-flex align-items-center justify-content-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Live Demo
+                    </h5>
+                </div>
+            </div>
+            <div class="trezo-card-content">
+                <button type="button" class="btn btn-primary" (click)="toggleClass()">
+                    Launch demo modal
+                </button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Live Demo Modal -->
+<div class="modal fade" tabindex="-1" [class.show]="classApplied">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">{{modalTitle}}</h1>
+                <button type="button" class="btn-close shadow-none" aria-label="Close" (click)="toggleClass()"></button>
+            </div>
+            <div class="modal-body">
+                {{modalBody}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="toggleClass()">Close</button>
+                <button (click)="ApplyChange()" type="button" class="btn btn-danger">{{btnText}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+</div>
+
+
+
+<!-- <button (click)="OpenPopup()" class="inline-block py-[10px] px-[30px] bg-primary-500 text-white transition-all hover:bg-primary-400 rounded-md border border-primary-500 hover:border-primary-400" type="button" id="add-new-popup-toggle">
+    Launch Demo Modal
+</button>
+
+<div *ngIf="isPopup==true" class="add-new-popup z-[999] fixed transition-all inset-0 overflow-x-hidden overflow-y-auto" id="add-new-popup">
+    <div class="popup-dialog flex transition-all max-w-[550px] min-h-full items-center mx-auto">
+        <div class="trezo-card w-full bg-white dark:bg-[#0c1427] p-[20px] md:p-[25px] rounded-md">
+            <div class="trezo-card-header bg-gray-50 dark:bg-[#15203c] mb-[20px] md:mb-[25px] flex items-center justify-between -mx-[20px] md:-mx-[25px] -mt-[20px] md:-mt-[25px] p-[20px] md:p-[25px] rounded-t-md">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Modal Title
+                    </h5>
+                </div>
+                <div class="trezo-card-subtitle">
+                    <button type="button" class="text-[23px] transition-all leading-none text-black dark:text-white hover:text-primary-500" id="add-new-popup-toggle">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="trezo-card-content pb-[20px] md:pb-[25px]">
+                .....
+            </div>
+            <div class="trezo-card-footer flex items-center justify-between -mx-[20px] md:-mx-[25px] px-[20px] md:px-[25px] pt-[20px] md:pt-[25px] border-t border-gray-100 dark:border-[#172036]">
+                <button (click)="ClosePopup()" class="inline-block py-[10px] px-[30px] bg-danger-500 text-white transition-all hover:bg-danger-400 rounded-md border border-danger-500 hover:border-danger-400" type="button" id="add-new-popup-toggle">
+                    Close
+                </button>
+                <button class="inline-block py-[10px] px-[30px] bg-primary-500 text-white transition-all hover:bg-primary-400 rounded-md border border-primary-500 hover:border-primary-400 ltr:mr-[11px] rtl:ml-[11px] mb-[15px]" type="button">
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
 <!-- Users List -->
 <div class="users-list-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
     <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
@@ -34,7 +112,43 @@
                 <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search user here.....">
             </form>
         </div>
-        <div class="trezo-card-subtitle">
+        <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+            <div class="trezo-card-subtitle d-flex align-items-center">
+                <div class="trezo-card-header-menu position-relative">
+                    <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                        <span class="d-block position-relative">
+                            Show All
+                        </span>
+                    </button>
+                    @if (isCardHeaderOpen) {
+                        <ul class="dropdown-menu border-radius border-0 show">
+                            <li>
+                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                    This Day
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                    This Week
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                    This Month
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                    This Year
+                                </button>
+                            </li>
+                        </ul>
+                        }
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="trezo-card-subtitle">
             <a class="add-btn d-inline-block transition fw-medium border-radius" routerLink="/dashboard/users/add-user">
                 <span class="d-inline-block position-relative">
                     <i class="material-symbols-outlined">
@@ -43,72 +157,68 @@
                     Add New User
                 </span>
             </a>
-        </div>
-    </div>
+        </div> -->
+</div>
 
     
-    
+
+    <!-- <div class="trezo-card-content">
+        <div class="table-style-two"> -->
             
-
-
-    <div class="trezo-card-content">
-        <div class="table-style-two">
-            <div class="table-responsive overflow-x-auto">
-        
-            <div class="basic-table table-responsive">
-                <table class="table mb-0">
-                    <thead>
-                        <tr>
-                            <th class="font-medium ltr:text-left rtl:text-right px-[20px] py-[11px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 bg-primary-50 dark:bg-[#15203c] whitespace-nowrap">
-                                <div class="form-check relative top-[2px]">
-                                    <input type="checkbox" class="cursor-pointer">
-                                </div>
-                            </th>
-                            <th scope="col" class="fw-medium"> User </th>
-                            <th scope="col" class="fw-medium"> Email </th>
-                            <th scope="col" class="fw-medium"> Location </th>
-                            <th scope="col" class="fw-medium"> Status </th>
-                            <th scope="col" class="fw-medium"> Join Date </th>
-                            <th scope="col" class="fw-medium"> Action </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                                                
-                        <tr *ngFor="let user of users">
-                            <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">
-                                <div class="form-check relative top-[2px]">
-                                    <input type="checkbox" class="cursor-pointer">
-                                </div>
-                            </td>
-                            <td> {{user.fullName}} </td>
-                            <td> {{user.email}} </td>
-                            <td> {{user.country}} </td>
-                            <!-- <td> Enabled </td> -->
-                             <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">
-                                <span class="px-[8px] py-[3px] inline-block bg-primary-50 dark:bg-[#15203c] text-primary-500 rounded-sm font-medium text-xs">
-                                    Enabled
-                                </span>
-                            </td>
-                            <td> {{user.joinDate}} </td>
-                            <td>
-                                <div class="action-buttons d-flex align-items-center">
-                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
-                                        <i class="material-symbols-outlined"> visibility </i>
-                                    </button>
-                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
-                                        <i class="material-symbols-outlined"> edit </i>
-                                    </button>
-                                    <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
-                                        <i class="material-symbols-outlined"> delete </i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="trezo-card-pagination">
+<div class="table-responsive overflow-x-auto">
+    <div class="basic-table table-responsive">
+        <table class="table mb-0">
+            <thead>
+                <tr>
+                    <th class="font-medium ltr:text-left rtl:text-right px-[20px] py-[11px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 bg-primary-50 dark:bg-[#15203c] whitespace-nowrap">
+                        <div class="form-check relative top-[2px]">
+                            <input type="checkbox" class="cursor-pointer">
+                        </div>
+                    </th>
+                    <th scope="col" class="fw-medium"> User </th>
+                    <th scope="col" class="fw-medium"> Email </th>
+                    <th scope="col" class="fw-medium"> Location </th>
+                    <th scope="col" class="fw-medium"> Status </th>
+                    <th scope="col" class="fw-medium"> Join Date </th>
+                    <th scope="col" class="fw-medium"> Action </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">
+                        <div class="form-check relative top-[2px]">
+                            <input type="checkbox" class="cursor-pointer">
+                        </div>
+                    </td>
+                    <td> {{user.fullName}} </td>
+                    <td> {{user.email}} </td>
+                    <td> {{user.country}} </td>
+                    <!-- <td> Enabled </td> -->
+                        <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">
+                        <span class="px-[8px] py-[3px] inline-block bg-success-50 dark:bg-[#15203c] text-success-500 rounded-sm font-medium text-xs">
+                            Enabled
+                        </span>
+                    </td>
+                    <td> {{user.joinDate}} </td>
+                    <td>
+                        <div class="action-buttons d-flex align-items-center">
+                            <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                <i class="material-symbols-outlined"> mail </i>
+                            </button>
+                            <button (click)="edit(user.email)" type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                <i class="material-symbols-outlined"> edit </i>
+                            </button>
+                            <button (click)="deletePop(user.email)" type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                <i class="material-symbols-outlined"> delete </i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+        <!-- <div class="trezo-card-pagination">
                 <div class="d-md-flex align-items-center justify-content-between">
                     <p class="mb-0">
                         Showing 5 of 36 results
@@ -156,6 +266,6 @@
                         </li>
                     </ol>
                 </div>
-            </div>
-    </div>
+            </div> -->
+</div>
     

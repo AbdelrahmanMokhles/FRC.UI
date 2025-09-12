@@ -39,6 +39,7 @@
     "express": "^5.1.0",
     "jspdf": "^3.0.1",
     "jspdf-autotable": "^5.0.2",
+    "jwt-decode": "^4.0.0",
     "ng-apexcharts": "^2.0.0",
     "ngx-editor": "^19.0.0-beta.1",
     "ngx-lightbox": "^3.0.0",

@@ -4,6 +4,7 @@ import { CustomizerSettingsService } from '../../customizer-settings/customizer-
 import { NgClass, NgIf } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../Services/authentication/UserService/user-service';
+import { jwtDecode } from "jwt-decode";
 
 @Component({
     selector: 'app-sign-in',
@@ -45,8 +46,13 @@ export class SignInComponent {
                         if(res.status === 200 && res.body.isAuthenticated==true)
                         {
                             debugger
-                            console.log('✅ Success:', res)
                             localStorage.setItem("token",res.body.token)
+                            const decoded : any= jwtDecode(res.body.token);
+                            console.log(decoded); 
+                            console.log('✅ Success:', res);
+                            localStorage.setItem("role",decoded.roles)
+
+
                             // this._service.setEmail(user.email)
                             this._router.navigate(["dashboard"]);
                         }
@@ -64,10 +70,11 @@ export class SignInComponent {
                             this.alertmsg='Cannot connect to server';
                         } 
                         if (res.status === 400)
-                                {
+                            {
                                 console.log(this.alertType);
                                 this.alertType = "error";
-                                console.log("⚠️ Validation error:", res);
+                                this.alertmsg='Invalid Credentials';
+                                // console.log("⚠️ Validation error:", res);
                                 // console.log(this.alertType);
                             }
                             else if (res.status === 500)
