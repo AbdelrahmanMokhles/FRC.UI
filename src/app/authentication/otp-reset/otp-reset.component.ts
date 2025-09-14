@@ -21,6 +21,7 @@ export class otpResetcomponent {
       ConfirmForm : FormGroup;
       private email!: string;
       alertType : 'success' | 'error' | 'warning' | null = null ;
+      alertmsg:string='';
 
       private readonly TOTAL_SECONDS = 1 * 60; // 3 minutes
       private timerSub: Subscription | null = null;
@@ -66,21 +67,28 @@ export class otpResetcomponent {
                                   next: (res) =>{
                                   console.log('✅ Success:', res)
                                   this.alertType = 'success';
+                                  this.alertmsg = 'Successfully sent OTP';
                                   this._router.navigate(["/authentication/reset-password-otp"]);
                                 },
-                                  error:(res) =>{
-                                    if (res.status === 400) 
+                                error:(res) =>{
+                                  if (res.status === 400) 
+                                    {
+                                      console.log("⚠️ Validation error:", res);
+                                      this.alertType='error';
+                                      this.alertmsg = 'Invalid OTP';
+                                    }
+                                    else if (res.status === 500) 
                                       {
-                                        console.log("⚠️ Validation error:", res);
-                                        this.alertType='error';
-                                      }
-                                      else if (res.status === 500) 
-                                        {
-                                          console.error("🔥 Server error",res);
-                                          this.alertType='warning';
+                                        console.error("🔥 Server error",res);
+                                        this.alertType='warning';
+                                        this.alertmsg = 'Error Occured';
                                       }
                                   }
                         });
+        }
+        else{
+          this.alertType='error';
+          this.alertmsg = 'Please Enter OTP';
         }
       }
       

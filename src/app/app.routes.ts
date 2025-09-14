@@ -261,6 +261,7 @@ import { otpComponent } from './authentication/otp/otp.component';
 import { otpResetcomponent } from './authentication/otp-reset/otp-reset.component';
 import { ResetPasswordOtpComponent } from './authentication/reset-password-otp/reset-password-otp.component';
 import { UsersDataComponent } from './dashboard/users-data/users-data.component';
+import { SuspensionComponent } from './authentication/suspension/suspension.component';
 
 export const routes: Routes = [
     {
@@ -677,6 +678,7 @@ export const routes: Routes = [
             {path: 'otp', component: otpComponent},
             {path: 'otp-reset', component: otpResetcomponent},
             {path: 'lock-screen', component: LockScreenComponent},
+            {path: 'suspension', component: SuspensionComponent},
             {path: 'logout', component: LogoutComponent}
         ]
     },

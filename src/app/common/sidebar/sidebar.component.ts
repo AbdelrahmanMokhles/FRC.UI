@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { ToggleService } from '../header/toggle.service';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
 
@@ -12,11 +12,15 @@ interface MenuItem {
 
 @Component({
     selector: 'app-sidebar',
-    imports: [NgScrollbarModule, RouterLinkActive, RouterLink, NgClass],
+    imports: [NgScrollbarModule, RouterLinkActive, RouterLink, NgClass,
+        NgIf
+    ],
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+
+    userType:any= localStorage.getItem("role");
 
     // isSidebarToggled
     isSidebarToggled = false;

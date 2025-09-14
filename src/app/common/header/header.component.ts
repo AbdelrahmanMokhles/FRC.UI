@@ -81,6 +81,7 @@ export class HeaderComponent {
 
     Logout(){
         localStorage.removeItem('token');
+        localStorage.removeItem('role');
     }
 
     // Header Sticky

@@ -373,7 +373,7 @@
                     </div> -->
 
 
-                    <div class="accordion-item border-radius border-0">
+                    <div *ngIf="userType=='Admin' " class="accordion-item border-radius border-0">
                         <button
                             type="button"
                             (click)="toggleSection(1)"

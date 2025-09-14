@@ -163,14 +163,19 @@ export class SignUpComponent {
                             this.alertmsg='Cannot connect to server';
                             // alert('⚠️ Cannot connect to server. Please check if the backend is running.');
                         } 
-                        else 
+                        if (res.status === 400) 
                             {
-                            this.alertType = 'error';
-                            this.alertmsg='Cannot connect to server';
-                            // alert(`Error: ${res.error.message}`);
+                                console.log("⚠️ Validation error:", res.error);
+                                this.alertType = 'error';
+                                this.alertmsg=res.error.message;
+                                
                             }
-                        if (res.status === 400) {console.log("⚠️ Validation error:", res.error);}
-                        else if (res.status === 500) {console.error("🔥 Server error",res.error.message);}
+                            else if (res.status === 500) 
+                            {
+                                console.error("🔥 Server error",res.error.message);
+                                this.alertType = 'error';
+                                this.alertmsg=res.error.message;
+                            }
 
                     } 
                     }
@@ -178,7 +183,7 @@ export class SignUpComponent {
         }
         else{
             this.alertType= 'error';
-            this.alertmsg = 'All fields are required';
+            this.alertmsg = 'Please fill reqiured fields';
         }
         
         }

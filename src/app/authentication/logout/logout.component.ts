@@ -18,5 +18,6 @@ export class LogoutComponent {
 
     ngOnIt(){
         localStorage.removeItem('token');
+        localStorage.removeItem('role');
     }
 }
