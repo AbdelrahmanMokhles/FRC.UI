@@ -46,8 +46,8 @@ export class AdminService {
       });
     };
     
-    EnableSelected(emailsList: string[]): Observable<any> {
-      return this._client.post<any>(this.url+"EnableSelected", emailsList,
+    ChangeStatus(model: any): Observable<any> {
+      return this._client.post<any>(this.url+"ChangeStatus", model,
       {
         headers: { "Content-Type": "application/json" },
         observe: 'response' 

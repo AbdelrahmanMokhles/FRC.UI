@@ -241,17 +241,20 @@
                     <td> {{user.country}} </td>
                     <!-- <td> Enabled </td> -->
                     <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">
-                        <span *ngIf="user.status=='Enabled' " class="px-[8px] py-[3px] inline-block bg-success-50 dark:bg-[#15203c] text-success-500 rounded-sm font-medium text-xs">
-                            {{user.status}}
+                        <!-- <span *ngIf="user.status===true" class="px-[8px] py-[3px] inline-block bg-success-50 dark:bg-[#15203c] text-success-500 rounded-sm font-medium text-xs">
+                            Enabled
                         </span>
-                        <span *ngIf="user.status=='Disabled' " class="px-[8px] py-[3px] inline-block bg-danger-50 dark:bg-[#15203c] text-success-500 rounded-sm font-medium text-xs">
-                            {{user.status}}
+                        <span *ngIf="user.status===false" class="px-[8px] py-[3px] inline-block bg-danger-50 dark:bg-[#15203c] text-success-500 rounded-sm font-medium text-xs">
+                            Disabled
+                        </span> -->
+                        <span class="px-[8px] py-[3px] inline-block rounded-sm font-medium text-xs"
+                            [ngClass]="user.status ? 'bg-success-50 text-success-500' : 'bg-danger-50 text-danger-500'">
+                            {{ user.status ? 'Enabled' : 'Disabled' }}
                         </span>
                         <!-- <label class="switch">
                             <input type="checkbox" >
                             <span class="slider round"></span>
                         </label> -->
-
                     </td>
                     <td> {{user.joinDate}} </td>
                     <td>

@@ -43,9 +43,13 @@ export class SignInComponent {
             // console.log('✅******User object******** :', user);
             this._service.Signin(usercredentials).subscribe({
                     next: (res) => {
+                        if(res.body.isAuthenticated==true && res.body.status==false){
+                            this._router.navigate(["authentication/suspension"]);
+                            return
+                        }
                         if(res.status === 200 && res.body.isAuthenticated==true)
                         {
-                            debugger
+                            // debugger
                             localStorage.setItem("token",res.body.token)
                             const decoded : any= jwtDecode(res.body.token);
                             console.log(decoded); 

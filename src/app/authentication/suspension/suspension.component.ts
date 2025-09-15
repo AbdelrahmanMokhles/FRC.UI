@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
 import { NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-lock-screen',
-    imports: [NgClass],
+    imports: [NgClass,RouterLink],
     templateUrl: './suspension.component.html',
     styleUrl: './suspension.component.scss'
 })

@@ -157,25 +157,28 @@ export class UsersDataComponent {
 
     }
 
+    model :any;
+
     ApplySelection(){   
-        debugger
         // let model = {emails : this.SelectedUsers};
         let selectedarr = Array.from(this.SelectedUsers);
         console.log(this.SelectedAction)
         switch (this.SelectedAction) {
             case 'Enable':
-            this._adminService.EnableSelected(selectedarr).subscribe({
+            this.model = {emails:selectedarr ,status : true }
+            this._adminService.ChangeStatus(this.model).subscribe({
                 next: res => {
-                console.log('Users enabled:', res);
-                this.refreshUsers();
-                this.ShowPopUp();
+                    console.log('Users enabled:', res);
+                    this.refreshUsers();
+                    this.ShowPopUp();
                 },
                 error: err => console.error(err)
             });
             break;
-
+            
             case 'Disable':
-            this._adminService.DisableSelected(selectedarr).subscribe({
+            this.model = {emails:selectedarr ,status : false }
+            this._adminService.ChangeStatus(this.model).subscribe({
                 next: res => {
                 console.log('Users disabled:', res);
                 this.refreshUsers();
