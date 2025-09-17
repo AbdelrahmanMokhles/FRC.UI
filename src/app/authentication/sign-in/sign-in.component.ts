@@ -101,6 +101,7 @@ export class SignInComponent {
                     ) {
                         // debugger
                         localStorage.setItem('token', res.body.token);
+                        this._service.setToken(res.body.token);
                         localStorage.setItem(
                             'email',
                             this.LoginForm.get('email')?.value

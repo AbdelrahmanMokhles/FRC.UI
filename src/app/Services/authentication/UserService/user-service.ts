@@ -10,6 +10,7 @@ export class UserService {
     // private url = 'http://192.168.99.126/frc/api/users/';
     constructor(private _client: HttpClient) {}
     private email!: string;
+    private token!: string;
 
     setEmail(email: string) {
         this.email = email;
@@ -17,6 +18,14 @@ export class UserService {
 
     getEmail() {
         return this.email;
+    }
+
+    setToken(token: string) {
+        this.token = token;
+    }
+
+    getToken() {
+        return this.token;
     }
 
     Profile(token: any): Observable<any> {
@@ -35,9 +44,12 @@ export class UserService {
     }
 
     UserData(): Observable<any> {
+        const token = this.getToken();
         return this._client.get<any>(this.url + 'get-user-data', {
-            withCredentials: true,
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                Authorization: token,
+                'Content-Type': 'application/json',
+            },
             observe: 'response',
         });
     }

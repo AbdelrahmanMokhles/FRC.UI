@@ -120,14 +120,14 @@ export class AccountSettingsComponent {
 
         debugger;
         if (this.isBrowser) {
-            const tokk = localStorage.getItem('token');
+            const tokk = this._userService.getToken();
             // const serviceEmail = this._userService.getEmail();
             const serviceEmail = localStorage.getItem('email');
             if (tokk) {
                 this.token = tokk;
                 // console.log(this.token);
-                this._userService.Profile({ token: tokk }).subscribe({
-                    // this._userService.UserData().subscribe({
+                // this._userService.Profile({ token: tokk }).subscribe({
+                this._userService.UserData().subscribe({
                     // this._userService
                     //     .GetByEmail({ email: serviceEmail })
                     //     .subscribe({
