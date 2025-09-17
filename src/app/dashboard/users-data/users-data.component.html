@@ -1,66 +1,59 @@
 <!-- Breadcrumb -->
-<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
-    <h5 class="mb-0">
-        Users List
-    </h5>
+<div
+    class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between"
+>
+    <h5 class="mb-0">Users List</h5>
     <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
         <li class="breadcrumb-item d-inline-block position-relative">
             <a routerLink="/dashboard" class="d-inline-block position-relative">
-                <i class="material-symbols-outlined">
-                    home
-                </i>
+                <i class="material-symbols-outlined"> home </i>
                 Dashboard
             </a>
         </li>
-        <li class="breadcrumb-item d-inline-block position-relative">
-            Users
-        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">Users</li>
         <li class="breadcrumb-item d-inline-block position-relative">
             Users List
         </li>
     </ol>
 </div>
 
-<!-- <div class="row">
-    <div class="col-md-6">
-        <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
-            <div class="trezo-card-header d-flex align-items-center justify-content-between">
-                <div class="trezo-card-title">
-                    <h5 class="mb-0">
-                        Live Demo
-                    </h5>
-                </div>
-            </div>
-            <div class="trezo-card-content">
-                <button type="button" class="btn btn-primary" (click)="toggleClass()">
-                    Launch demo modal
-                </button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <!-- Live Demo Modal -->
 <div class="modal fade" tabindex="-1" [class.show]="classApplied">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5">{{modalTitle}}</h1>
-                <button type="button" class="btn-close shadow-none" aria-label="Close" (click)="toggleClass()"></button>
+                <h1 class="modal-title fs-5">{{ modalTitle }}</h1>
+                <button
+                    type="button"
+                    class="btn-close shadow-none"
+                    aria-label="Close"
+                    (click)="toggleClass()"
+                ></button>
             </div>
             <div class="modal-body">
-                {{modalBody}}
+                {{ modalBody }}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" (click)="toggleClass()">Close</button>
-                <button *ngIf="btnText" (click)="PopUpApplyChange()" type="button" class="btn btn-danger">{{btnText}}</button>
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="toggleClass()"
+                >
+                    Close
+                </button>
+                <button
+                    *ngIf="btnText"
+                    (click)="ApplySelection()"
+                    type="button"
+                    class="btn btn-danger"
+                >
+                    {{ btnText }}
+                </button>
             </div>
         </div>
     </div>
     <div class="modal-backdrop fade show"></div>
 </div>
-
-
 
 <!-- <button (click)="OpenPopup()" class="inline-block py-[10px] px-[30px] bg-primary-500 text-white transition-all hover:bg-primary-400 rounded-md border border-primary-500 hover:border-primary-400" type="button" id="add-new-popup-toggle">
     Launch Demo Modal
@@ -96,186 +89,240 @@
     </div>
 </div> -->
 
-
-
-
 <!-- Users List -->
-<div class="users-list-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
-    <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+
+<div
+    class="users-list-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+>
+    <div
+        class="trezo-card-header d-sm-flex align-items-center justify-content-between"
+    >
         <div class="trezo-card-title">
             <form class="search-box position-relative">
                 <label class="text-black">
-                    <i class="material-symbols-outlined">
-                        search
-                    </i>
+                    <i class="material-symbols-outlined"> search </i>
                 </label>
-                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search user here.....">
+                <input
+                    type="text"
+                    class="input-search d-block w-100 border-radius"
+                    placeholder="Search user here....."
+                />
             </form>
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+                <div
+                    class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+                >
                     <!-- <div class="col-lg-4"> -->
-                        <!-- <div class="trezo-card-content border-radius d-block bg-white border-0 shadow-none"> -->
-                            <!-- <button [disabled]="SelectedUsers.size==0" (click)="ApplySelection()" _ngcontent-ng-c1528691252="" type="button" class="btn btn-primary">Apply</button> -->
-                        <!-- </div> -->
+                    <!-- <div class="trezo-card-content border-radius d-block bg-white border-0 shadow-none"> -->
+                    <!-- <button [disabled]="SelectedUsers.size==0" (click)="ApplySelection()" _ngcontent-ng-c1528691252="" type="button" class="btn btn-primary">Apply</button> -->
+                    <!-- </div> -->
                     <!-- </div> -->
                     <div class="trezo-card-content d-flex gap-2">
                         <!-- <div class="dropdown dropdown1">
-                            <select id="country" formControlName="country" class="dropdown-toggle dropdown dropdown1 btn btn-secondary">
-                                <option class="dropdown-item btn btn-secondary" value="DeleteSelected">Delete</option>
-                                <option class="dropdown-item btn btn-secondary" value="">Enable</option>
-                            </select>
-                        </div> -->
-                        
+                                <select id="country" formControlName="country" class="dropdown-toggle dropdown dropdown1 btn btn-secondary">
+                                    <option class="dropdown-item btn btn-secondary" value="DeleteSelected">Delete</option>
+                                    <option class="dropdown-item btn btn-secondary" value="">Enable</option>
+                                </select>
+                            </div> -->
+
                         <div class="d-flex align-items-center gap-2 mb-4">
-                            <button [disabled]="SelectedUsers.size==0" (click)="ApplySelection()" _ngcontent-ng-c1528691252="" type="button" class="btn btn-primary">Apply</button>
-                            <select class=" btn btn-primary" [(ngModel)]="SelectedAction">
-                                <option [ngValue]="null" disabled selected>Action</option>
+                            <button
+                                [disabled]="SelectedUsers.size == 0"
+                                (click)="ShowPopUp()"
+                                _ngcontent-ng-c1528691252=""
+                                type="button"
+                                class="btn btn-primary"
+                            >
+                                Apply
+                            </button>
+                            <select
+                                class="btn btn-primary"
+                                [(ngModel)]="SelectedAction"
+                            >
+                                <option [ngValue]="null" disabled selected>
+                                    Action
+                                </option>
                                 <option value="Enable">Enable</option>
                                 <option value="Disable">Disable</option>
                                 <option value="DeleteSelected">Delete</option>
                             </select>
                         </div>
-                        
-                        
+
                         <!-- <div class="dropdown dropdown1">
-                            <button [disabled]="SelectedUsers.size==0" (click)="ApplySelection()" _ngcontent-ng-c1528691252="" type="button" class="btn btn-secondary">Apply</button>
-                            <button class="btn btn-secondary dropdown-toggle" type="button" (click)="toggleDropdownBtn()">
-                                Action
-                            </button>
-                            @if (isDropdownOpen) {
-                                <ul class="dropdown-menu show">
-                                    <li><a (click)="SelectedAction='Enable'" class="dropdown-item" routerLink=".">Enable</a></li>
-                                    <li><a (click)="SelectedAction='Disable'" class="dropdown-item" routerLink=".">Disable</a></li>
-                                    <li><a (click)="SelectedAction='DeleteSelected'" class="dropdown-item" >Delete</a></li>
-                                </ul>
-                            }
-                        </div> -->
+                                <button [disabled]="SelectedUsers.size==0" (click)="ApplySelection()" _ngcontent-ng-c1528691252="" type="button" class="btn btn-secondary">Apply</button>
+                                <button class="btn btn-secondary dropdown-toggle" type="button" (click)="toggleDropdownBtn()">
+                                    Action
+                                </button>
+                                @if (isDropdownOpen) {
+                                    <ul class="dropdown-menu show">
+                                        <li><a (click)="SelectedAction='Enable'" class="dropdown-item" routerLink=".">Enable</a></li>
+                                        <li><a (click)="SelectedAction='Disable'" class="dropdown-item" routerLink=".">Disable</a></li>
+                                        <li><a (click)="SelectedAction='DeleteSelected'" class="dropdown-item" >Delete</a></li>
+                                    </ul>
+                                }
+                            </div> -->
                     </div>
                 </div>
             </div>
         </div>
         <!-- DropDown -->
         <!-- <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
-            <div class="trezo-card-subtitle d-flex align-items-center">
-                <div class="trezo-card-header-menu position-relative">
-                    <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
-                        <span class="d-block position-relative">
-                            Show All
-                        </span>
-                    </button>
-                    @if (isCardHeaderOpen) {
-                        <ul class="dropdown-menu border-radius border-0 show">
-                            <li>
-                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
-                                    This Day
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
-                                    This Week
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
-                                    This Month
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="dropdown-item d-block w-100 position-relative transition">
-                                    This Year
-                                </button>
-                            </li>
-                        </ul>
-                        }
+                <div class="trezo-card-subtitle d-flex align-items-center">
+                    <div class="trezo-card-header-menu position-relative">
+                        <button class="menu-btn transition d-inline-block bg-transparent border-radius" (click)="toggleCardHeaderMenu()">
+                            <span class="d-block position-relative">
+                                Show All
+                            </span>
+                        </button>
+                        @if (isCardHeaderOpen) {
+                            <ul class="dropdown-menu border-radius border-0 show">
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        This Day
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        This Week
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        This Month
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-block w-100 position-relative transition">
+                                        This Year
+                                    </button>
+                                </li>
+                            </ul>
+                            }
+                    </div>
                 </div>
-            </div>
-        </div> -->
+            </div> -->
         <!-- End Drpodown -->
 
         <!-- <div class="trezo-card-subtitle">
-            <a class="add-btn d-inline-block transition fw-medium border-radius" routerLink="/dashboard/users/add-user">
-                <span class="d-inline-block position-relative">
-                    <i class="material-symbols-outlined">
-                        add
-                    </i>
-                    Add New User
-                </span>
-            </a>
-        </div> -->
-</div>
-
-    
+                <a class="add-btn d-inline-block transition fw-medium border-radius" routerLink="/dashboard/users/add-user">
+                    <span class="d-inline-block position-relative">
+                        <i class="material-symbols-outlined">
+                            add
+                        </i>
+                        Add New User
+                    </span>
+                </a>
+            </div> -->
+    </div>
 
     <!-- <div class="trezo-card-content">
         <div class="table-style-two"> -->
-            
-<div class="table-responsive overflow-x-auto">
-    <div class="basic-table table-responsive">
-        <table class="table mb-0">
-            <thead>
-                <tr>
-                    <th class="font-medium ltr:text-left rtl:text-right px-[20px] py-[11px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 bg-primary-50 dark:bg-[#15203c] whitespace-nowrap">
-                        <div class="form-check relative top-[2px]">
-                            <input type="checkbox" class="cursor-pointer" [checked]="isAllSelected()" (change)="toggleAll($event)">
-                        </div>
-                    </th>
-                    <th scope="col" class="fw-medium"> User </th>
-                    <th scope="col" class="fw-medium"> Email </th>
-                    <th scope="col" class="fw-medium"> Location </th>
-                    <th scope="col" class="fw-medium"> Status </th>
-                    <th scope="col" class="fw-medium"> Join Date </th>
-                    <th scope="col" class="fw-medium"> Action </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of users">
-                    <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">
-                        <div class="form-check relative top-[2px]">
-                            <input type="checkbox" class="cursor-pointer" [checked]="SelectedUsers.has(user.email)" (change)="toggleSelection(user.email,$event)">
-                        </div>
-                    </td>
-                    <td> {{user.fullName}} </td>
-                    <td> {{user.email}} </td>
-                    <td> {{user.country}} </td>
-                    <!-- <td> Enabled </td> -->
-                    <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">
-                        <!-- <span *ngIf="user.status===true" class="px-[8px] py-[3px] inline-block bg-success-50 dark:bg-[#15203c] text-success-500 rounded-sm font-medium text-xs">
+
+    <div class="table-responsive overflow-x-auto">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th
+                            class="font-medium ltr:text-left rtl:text-right px-[20px] py-[11px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 bg-primary-50 dark:bg-[#15203c] whitespace-nowrap"
+                        >
+                            <div class="form-check relative top-[2px]">
+                                <input
+                                    type="checkbox"
+                                    class="cursor-pointer"
+                                    [checked]="isAllSelected()"
+                                    (change)="toggleAll($event)"
+                                />
+                            </div>
+                        </th>
+                        <th scope="col" class="fw-medium">User</th>
+                        <th scope="col" class="fw-medium">Email</th>
+                        <th scope="col" class="fw-medium">Location</th>
+                        <th scope="col" class="fw-medium">Status</th>
+                        <th scope="col" class="fw-medium">Join Date</th>
+                        <th scope="col" class="fw-medium">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td
+                            class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]"
+                        >
+                            <div class="form-check relative top-[2px]">
+                                <input
+                                    type="checkbox"
+                                    class="cursor-pointer"
+                                    [checked]="SelectedUsers.has(user.email)"
+                                    (change)="
+                                        toggleSelection(user.email, $event)
+                                    "
+                                />
+                            </div>
+                        </td>
+                        <td>{{ user.fullName }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.country }}</td>
+                        <!-- <td> Enabled </td> -->
+                        <td
+                            class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]"
+                        >
+                            <!-- <span *ngIf="user.status===true" class="px-[8px] py-[3px] inline-block bg-success-50 dark:bg-[#15203c] text-success-500 rounded-sm font-medium text-xs">
                             Enabled
                         </span>
                         <span *ngIf="user.status===false" class="px-[8px] py-[3px] inline-block bg-danger-50 dark:bg-[#15203c] text-success-500 rounded-sm font-medium text-xs">
                             Disabled
                         </span> -->
-                        <span class="px-[8px] py-[3px] inline-block rounded-sm font-medium text-xs"
-                            [ngClass]="user.status ? 'bg-success-50 text-success-500' : 'bg-danger-50 text-danger-500'">
-                            {{ user.status ? 'Enabled' : 'Disabled' }}
-                        </span>
-                        <!-- <label class="switch">
+                            <span
+                                class="px-[8px] py-[3px] inline-block rounded-sm font-medium text-xs"
+                                [ngClass]="
+                                    user.status
+                                        ? 'bg-success-50 text-success-500'
+                                        : 'bg-danger-50 text-danger-500'
+                                "
+                            >
+                                {{ user.status ? "Enabled" : "Disabled" }}
+                            </span>
+                            <!-- <label class="switch">
                             <input type="checkbox" >
                             <span class="slider round"></span>
                         </label> -->
-                    </td>
-                    <td> {{user.joinDate}} </td>
-                    <td>
-                        <div class="action-buttons d-flex align-items-center">
-                            <!-- <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                        </td>
+                        <td>{{ user.joinDate }}</td>
+                        <td>
+                            <div
+                                class="action-buttons d-flex align-items-center"
+                            >
+                                <!-- <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
                                 <i class="material-symbols-outlined"> mail </i>
                             </button> -->
-                            <button (click)="edit(user.email)" type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
-                                <i class="material-symbols-outlined"> edit </i>
-                            </button>
-                            <button (click)="deletePop(user.email)" type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
-                                <i class="material-symbols-outlined"> delete </i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                <button
+                                    (click)="edit(user.email)"
+                                    type="button"
+                                    class="p-0 bg-transparent d-inline-block lh-1 border-0"
+                                >
+                                    <i class="material-symbols-outlined">
+                                        edit
+                                    </i>
+                                </button>
+                                <button
+                                    (click)="deletePop(user.email)"
+                                    type="button"
+                                    class="p-0 bg-transparent d-inline-block lh-1 border-0"
+                                >
+                                    <i class="material-symbols-outlined">
+                                        delete
+                                    </i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-        <!-- <div class="trezo-card-pagination">
+    <!-- <div class="trezo-card-pagination">
                 <div class="d-md-flex align-items-center justify-content-between">
                     <p class="mb-0">
                         Showing 5 of 36 results
@@ -325,4 +372,3 @@
                 </div>
             </div> -->
 </div>
-    

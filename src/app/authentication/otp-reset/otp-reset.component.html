@@ -1,7 +1,23 @@
 <div
-    class="forgot-password-area"
-    [class.dark-theme]="themeService.isDark()"
+    class="toast-container transition position-fixed bottom-0 end-0 p-3"
+    [class.show]="toast"
 >
+    <div class="toast" role="alert">
+        <div class="toast-header">
+            <strong class="me-auto">{{ toastTitle }}</strong>
+            <button
+                type="button"
+                class="btn-close shadow-none"
+                aria-label="Close"
+                (click)="toggleToast()"
+            ></button>
+        </div>
+        <div class="toast-body">
+            {{ toastBody }}
+        </div>
+    </div>
+</div>
+<div class="forgot-password-area" [class.dark-theme]="themeService.isDark()">
     <div
         class="trezo-form mx-auto"
         [class.component-dark-theme]="themeService.isDark()"
@@ -10,43 +26,83 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                 <div class="form-image">
-                    <img src="images/forgot-password.jpg" alt="forgot-password-image">
+                    <img
+                        src="images/forgot-password.jpg"
+                        alt="forgot-password-image"
+                    />
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 order-1 order-lg-2">
                 <div class="form-content">
                     <div class="logo">
-                        <img style="max-width: 40%;" src="images/Logo.png" alt="logo">
-                        <img style="max-width: 40%;" src="images/white-Logo.png" class="d-none" alt="logo">
+                        <img
+                            style="max-width: 40%"
+                            src="images/Logo.png"
+                            alt="logo"
+                        />
+                        <img
+                            style="max-width: 40%"
+                            src="images/white-Logo.png"
+                            class="d-none"
+                            alt="logo"
+                        />
                     </div>
                     <div class="title">
-                        <h1 class="fw-semibold">
-                            OTP Verification
-                        </h1>
+                        <h1 class="fw-semibold">OTP Verification</h1>
                         <p class="fw-medium">
-                            Please check your inbox for an email with your verification code. If you don't see it, be sure to check your spam folder. 
+                            Please check your inbox for an email with your
+                            verification code. If you don't see it, be sure to
+                            check your spam folder.
                         </p>
                     </div>
 
-                    <form [formGroup]="ConfirmForm" (ngSubmit)="onSubmit()" >
+                    <form [formGroup]="ConfirmForm" (ngSubmit)="onSubmit()">
                         <div class="form-group">
                             <!-- <label class="main-label d-block fw-medium text-black">
                                 Email Address
                             </label> -->
-                            <input formControlName="otp" type="text" class="form-control text-center">
+                            <input
+                                formControlName="otp"
+                                type="text"
+                                class="form-control text-center"
+                            />
                         </div>
 
-                        <button type="submit" class="btn-box d-block w-100 border-0 transition fw-medium border-radius">
-                            <span class="d-flex align-items-center justify-content-center">
+                        <button
+                            type="submit"
+                            class="btn-box d-block w-100 border-0 transition fw-medium border-radius"
+                        >
+                            <span
+                                class="d-flex align-items-center justify-content-center"
+                            >
                                 <!-- <i class="material-symbols-outlined">
                                     autorenew
                                 </i> -->
-                                Confirm 
+                                Confirm
                             </span>
                         </button>
 
-                        <button style="padding: 11.4px; margin-top: -1px; display: inline-flex;" [disabled]="isRunning" (click)="ResendOtp()" _ngcontent-ng-c1528691252="" type="button" class="btn btn-primary btn-box border-0 transition fw-medium border-radius">
-                            <span style="margin-top : 0px; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; ">
+                        <button
+                            style="
+                                padding: 11.4px;
+                                margin-top: -1px;
+                                display: inline-flex;
+                            "
+                            [disabled]="isRunning"
+                            (click)="ResendOtp()"
+                            _ngcontent-ng-c1528691252=""
+                            type="button"
+                            class="btn btn-primary btn-box border-0 transition fw-medium border-radius"
+                        >
+                            <span
+                                style="
+                                    margin-top: 0px;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: bold;
+                                "
+                            >
                                 <i class="material-symbols-outlined">
                                     autorenew
                                 </i>
@@ -55,25 +111,40 @@
                             </span>
                         </button>
                         <!-- <div class="timer"> -->
-                            <span *ngIf="isRunning;">
-                                {{ formatTime(remaining.value) }}
-                            </span>
-                            <!-- <ng-template #ready>
+                        <span *ngIf="isRunning">
+                            {{ formatTime(remaining.value) }}
+                        </span>
+                        <!-- <ng-template #ready>
                                 <span class="ready-text">Ready</span>
                             </ng-template> -->
                         <!-- </div> -->
 
-                        <div style="margin-left: 10px;" class="trezo-card-content example-alerts d-block w-100 border-0 transition fw-medium border-radius">
-                            <div *ngIf="alertType==='success'" class="alert alert-success text-center w-100" role="alert">
-                                {{alertmsg}}
+                        <!-- <div
+                            style="margin-left: 10px"
+                            class="trezo-card-content example-alerts d-block w-100 border-0 transition fw-medium border-radius"
+                        >
+                            <div
+                                *ngIf="alertType === 'success'"
+                                class="alert alert-success text-center w-100"
+                                role="alert"
+                            >
+                                {{ alertmsg }}
                             </div>
-                            <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
-                                {{alertmsg}}
+                            <div
+                                *ngIf="alertType === 'error'"
+                                class="alert alert-danger text-center w-100"
+                                role="alert"
+                            >
+                                {{ alertmsg }}
                             </div>
-                            <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
-                                {{alertmsg}}
+                            <div
+                                *ngIf="alertType === 'warning'"
+                                class="alert alert-warning text-center w-100"
+                                role="alert"
+                            >
+                                {{ alertmsg }}
                             </div>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
             </div>

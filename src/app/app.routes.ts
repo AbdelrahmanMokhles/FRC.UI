@@ -306,6 +306,7 @@ export const routes: Routes = [
             {path: 'restaurant', component: RestaurantComponent},
             {path: 'hotel', component: HotelComponent},
             {path: 'user-data', component: UsersDataComponent},
+            // {path: 'user-table', component: UserTableComponent},
             {path: 'real-estate-agent', component: RealEstateAgentComponent},
             {path: 'credit-card', component: CreditCardComponent},
             {path: 'crypto-trader', component: CryptoTraderComponent},

@@ -1,47 +1,94 @@
-<div class="account-settings-card">
-    <h5>
-        Profile
-    </h5>
-    <p>
-        Update your personal details here.
-    </p>
-    <form [formGroup]="UpdateForm">
+<div
+    class="toast-container transition position-fixed bottom-0 end-0 p-3"
+    [class.show]="toast"
+>
+    <div class="toast" role="alert">
+        <div class="toast-header">
+            <strong class="me-auto">{{ toastTitle }}</strong>
+            <button
+                type="button"
+                class="btn-close shadow-none"
+                aria-label="Close"
+                (click)="toggleToast()"
+            ></button>
+        </div>
+        <div class="toast-body">
+            {{ toastBody }}
+        </div>
+    </div>
+</div>
 
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Full Name
-                </label>
-                <input formControlName="fullName" type="text" class="form-control">
+<div class="account-settings-card">
+    <h5>Profile</h5>
+    <p>Update your personal details here.</p>
+    <form [formGroup]="UpdateForm">
+        <div class="row">
+            <div class="col-sm-6 position-relative">
+                <div class="position-relative">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Full Name
+                        </label>
+                        <input
+                            formControlName="fullName"
+                            type="text"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+                <span class="text-danger error" *ngIf="formErrors.fullName">
+                    {{ formErrors.fullName }}
+                </span>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Email Address
-                </label>
-                <input formControlName="email" type="text" class="form-control" readonly>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="main-label d-block fw-medium text-black">
+                        Email Address
+                    </label>
+                    <input
+                        formControlName="email"
+                        type="text"
+                        class="form-control"
+                        readonly
+                    />
+                </div>
+                <span class="text-danger error" *ngIf="formErrors.email">
+                    {{ formErrors.email }}
+                </span>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Phone Number
-                </label>
-                <input formControlName="phone" type="text" class="form-control">
+            <div class="col-sm-6 position-relative">
+                <div class="position-relative">
+                    <div class="form-group">
+                        <label class="main-label d-block fw-medium text-black">
+                            Phone Number
+                        </label>
+                        <input
+                            formControlName="phone"
+                            type="text"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+                <span class="text-danger error" *ngIf="formErrors.phone">
+                    {{ formErrors.phone }}
+                </span>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Country
-                </label>
-                <select formControlName="country" id="country"  class="form-control">
-                    <option value="">Select Country</option>
-                    <option *ngFor="let c of countriesArr" [value]="c.name">{{ c.name }}</option>
-                </select>
-                <!-- <select class="form-select">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="main-label d-block fw-medium text-black">
+                        Country
+                    </label>
+                    <select
+                        formControlName="country"
+                        id="country"
+                        class="form-control"
+                    >
+                        <option value="">Select Country</option>
+                        <option *ngFor="let c of countriesArr" [value]="c.name">
+                            {{ c.name }}
+                        </option>
+                    </select>
+                    <!-- <select class="form-select">
                     <option>
                         Select
                     </option>
@@ -76,9 +123,9 @@
                         Australia
                     </option>
                 </select> -->
+                </div>
             </div>
-        </div>
-        <!-- <div class="col-sm-6">
+            <!-- <div class="col-sm-6">
             <div class="form-group">
                 <label class="main-label d-block fw-medium text-black">
                     Gender
@@ -153,31 +200,43 @@
                 </select>
             </div>
         </div> -->
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Company Name
-                </label>
-                <input formControlName="companyName" type="text" class="form-control">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="main-label d-block fw-medium text-black">
+                        Company Name
+                    </label>
+                    <input
+                        formControlName="companyName"
+                        type="text"
+                        class="form-control"
+                    />
+                </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Company Website
-                </label>
-                <input formControlName="companyWebsite" type="text" class="form-control">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="main-label d-block fw-medium text-black">
+                        Company Website
+                    </label>
+                    <input
+                        formControlName="companyWebsite"
+                        type="text"
+                        class="form-control"
+                    />
+                </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="main-label d-block fw-medium text-black">
-                    Company Phone
-                </label>
-                <input formControlName="companyPhone" type="text" class="form-control">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="main-label d-block fw-medium text-black">
+                        Company Phone
+                    </label>
+                    <input
+                        formControlName="companyPhone"
+                        type="text"
+                        class="form-control"
+                    />
+                </div>
             </div>
-        </div>
-        <!-- <div class="col-sm-12">
+            <!-- <div class="col-sm-12">
             <div class="form-group">
                 <label class="main-label d-block fw-medium text-black">
                     Add Your Bio
@@ -185,7 +244,7 @@
                 <textarea class="form-control">It makes me feel...</textarea>
             </div>
         </div> -->
-    </div>
+        </div>
     </form>
 
     <!-- <h4>
@@ -236,27 +295,24 @@
         </div>
     </div> -->
     <div class="form-btn-box">
-        <button type="button" class="warn d-inline-block fw-medium border-radius border-0 transition">
+        <a
+            routerLink="/dashboard"
+            class="btn btn-danger warn d-inline-block fw-medium border-radius border-0 transition"
+        >
             Cancel
+        </a>
+        <button
+            type="button"
+            [disabled]="
+                formErrors.phone ||
+                formErrors.fullName ||
+                formErrors.email ||
+                formErrors.country
+            "
+            (click)="Update()"
+            class="btn btn-primary d-inline-block fw-medium border-radius border-0 transition"
+        >
+            Update Profile
         </button>
-        <button type="button" (click)="Update()" class="primary d-inline-block fw-medium border-radius border-0 transition">
-            <span class="d-inline-block position-relative">
-                <i class="material-symbols-outlined">
-                    check
-                </i>
-                Update Profile
-            </span>
-        </button>
-    </div>
-    <div style="margin-left: 10px;" class="trezo-card-content example-alerts d-block w-100 border-0 transition fw-medium border-radius">
-        <div *ngIf="alertType==='success'" class="alert alert-success text-center w-100" role="alert">
-            Successfully Updated 
-        </div>
-        <div *ngIf="alertType==='error'" class="alert alert-danger text-center w-100" role="alert">
-            Invalid Data
-        </div>
-        <div *ngIf="alertType==='warning'" class="alert alert-warning text-center w-100" role="alert">
-            Error connecting to server 
-        </div>
     </div>
 </div>
