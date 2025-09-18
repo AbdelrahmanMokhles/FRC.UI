@@ -1,6 +1,6 @@
 <div
     class="sidebar-area bg-white transition"
-    [ngClass]="{'active': isSidebarToggled}"
+    [ngClass]="{ active: isSidebarToggled }"
     [class.card-borderd]="themeService.isCardBordered()"
     [class.dark-sidebar]="themeService.isSidebarDark()"
     [class.hide-sidebar]="themeService.isHideSidebar()"
@@ -11,8 +11,16 @@
     [class.component-body-bg-color]="themeService.isBodyBG()"
 >
     <div class="logo bg-white">
-        <a routerLink="" class="d-flex align-items-center position-relative">
-            <img style="max-width: 70%;" src="images/Logo.png" class="transition position-relative" alt="logo-icon">
+        <a
+            routerLink="/dashboard"
+            class="d-flex align-items-center position-relative"
+        >
+            <img
+                style="max-width: 70%"
+                src="images/Logo.png"
+                class="transition position-relative"
+                alt="logo-icon"
+            />
             <!-- <span class="fw-bold text-black position-relative">
                 FIBERME
             </span> -->
@@ -21,7 +29,7 @@
     <div
         (click)="toggle()"
         class="burger-menu transition"
-        [ngClass]="{'active': isSidebarToggled}"
+        [ngClass]="{ active: isSidebarToggled }"
     >
         <span class="top-bar transition d-block bg-black"></span>
         <span class="middle-bar transition d-block bg-black"></span>
@@ -38,213 +46,456 @@
                         <button
                             type="button"
                             (click)="toggleSection(0)"
-                            [ngClass]="{ 'open': isSectionOpen(0) }"
+                            [ngClass]="{ open: isSectionOpen(0) }"
                             class="accordion-button text-start shadow-none fw-medium border-0 transition border-radius"
                         >
-                            <i class="material-symbols-outlined">
-                                dashboard
-                            </i>
-                            <span class="title lh-1">
-                                Dashboard
-                            </span>
-                            <span class="trezo-badge rounded-circle fw-medium d-inline-block text-center">
+                            <i class="material-symbols-outlined"> dashboard </i>
+                            <span class="title lh-1"> Dashboard </span>
+                            <span
+                                class="trezo-badge rounded-circle fw-medium d-inline-block text-center"
+                            >
                                 30
                             </span>
                         </button>
-                        <div class="accordion-collapse" [ngClass]="{ 'open': isSectionOpen(0) }">
+                        <div
+                            class="accordion-collapse"
+                            [ngClass]="{ open: isSectionOpen(0) }"
+                        >
                             <div class="accordion-body">
-                                <ul class="sidebar-sub-menu p-0 list-unstyled mb-0">
+                                <ul
+                                    class="sidebar-sub-menu p-0 list-unstyled mb-0"
+                                >
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             eCommerce
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/crm" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/crm"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             CRM
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/project-management" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/project-management"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Project Management
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/lms" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/lms"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             LMS
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/helpdesk" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/helpdesk"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             HelpDesk
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 Hot
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/analytics" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/analytics"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Analytics
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/crypto" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/crypto"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Crypto
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/sales" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/sales"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Sales
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/hospital" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/hospital"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Hospital
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/hrm" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/hrm"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             HRM
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/school" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/school"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             School
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/call-center" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/call-center"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Call Center
-                                            <span class="trezo-badge d-inline-block position-relative style-two">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative style-two"
+                                            >
                                                 Popular
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/marketing" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/marketing"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Marketing
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/nft" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/nft"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             NFT
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/saas" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/saas"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             SaaS
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/real-estate" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/real-estate"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Real Estate
-                                            <span class="trezo-badge d-inline-block position-relative style-three">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative style-three"
+                                            >
                                                 Top
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/shipment" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/shipment"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Shipment
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/finance" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/finance"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Finance
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/pos-system" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/pos-system"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             POS System
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/podcast" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/podcast"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Podcast
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/social-media" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/social-media"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Social Media
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/doctor" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/doctor"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Doctor
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/beauty-salon" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/beauty-salon"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Beauty Salon
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/store-analysis" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/store-analysis"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Store Analysis
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/restaurant" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/restaurant"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Restaurant
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/hotel" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/hotel"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Hotel
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/real-estate-agent" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/real-estate-agent"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Real Estate Agent
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/credit-card" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/credit-card"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Credit Card
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/crypto-trader" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/crypto-trader"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Crypto Trader
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/crypto-performance" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <a
+                                            routerLink="/dashboard/crypto-performance"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{
+                                                exact: true
+                                            }"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                        >
                                             Crypto Perf.
-                                            <span class="trezo-badge d-inline-block position-relative">
+                                            <span
+                                                class="trezo-badge d-inline-block position-relative"
+                                            >
                                                 New
                                             </span>
                                         </a>
@@ -254,28 +505,35 @@
                         </div>
                     </div>
 
-                    <div *ngIf="userType=='Admin' " class="accordion-item border-radius border-0">
+                    <div
+                        *ngIf="userType == 'Admin'"
+                        class="accordion-item border-radius border-0"
+                    >
                         <button
                             type="button"
                             (click)="toggleSection(1)"
-                            [ngClass]="{ 'open': isSectionOpen(1) }"
-                            class="accordion-button text-start shadow-none fw-medium border-0 transition border-radius">
+                            [ngClass]="{ open: isSectionOpen(1) }"
+                            class="accordion-button text-start shadow-none fw-medium border-0 transition border-radius"
+                        >
                             <i class="material-symbols-outlined">
                                 note_stack
                             </i>
-                            <span class="title lh-1">
-                                Companies
-                            </span>
+                            <span class="title lh-1"> Companies </span>
                         </button>
-                        <div class="accordion-collapse" [ngClass]="{ 'open': isSectionOpen(1) }">
+                        <div
+                            class="accordion-collapse"
+                            [ngClass]="{ open: isSectionOpen(1) }"
+                        >
                             <div class="accordion-body">
-                                <ul class="sidebar-sub-menu p-0 list-unstyled mb-0">
+                                <ul
+                                    class="sidebar-sub-menu p-0 list-unstyled mb-0"
+                                >
                                     <li class="sidemenu-item">
-                                        <div class="accordion-item border-radius border-0">
+                                        <!-- <div class="accordion-item border-radius border-0">
                                             <a routerLink="/dashboard/user-table" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
                                                 Usersssss
                                             </a>
-                                        </div>
+                                        </div> -->
                                         <!-- <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
                                             Partners
                                         </a> -->
@@ -293,8 +551,17 @@
                                         </div> -->
                                     </li>
                                     <li class="sidemenu-item">
-                                        <div class="accordion-item border-radius border-0">
-                                            <a routerLink="/dashboard/user-data" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                        <div
+                                            class="accordion-item border-radius border-0"
+                                        >
+                                            <a
+                                                routerLink="/dashboard/user-data"
+                                                routerLinkActive="active"
+                                                [routerLinkActiveOptions]="{
+                                                    exact: true
+                                                }"
+                                                class="sidemenu-link border-radius d-block position-relative transition fw-medium"
+                                            >
                                                 Users
                                             </a>
                                         </div>
@@ -350,7 +617,6 @@
                             </div>
                         </div>
                     </div> -->
-
 
                     <!-- <span class="sub-title d-block fw-medium text-uppercase">
                         APPS & PAGES
@@ -2041,3 +2307,8 @@
         </div>
     </ng-scrollbar>
 </div> -->
+                </div>
+            </div>
+        </div></ng-scrollbar
+    >
+</div>

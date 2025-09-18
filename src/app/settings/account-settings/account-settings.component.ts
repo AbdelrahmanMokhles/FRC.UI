@@ -117,8 +117,6 @@ export class AccountSettingsComponent {
         this.UpdateForm.valueChanges.subscribe((values) => {
             this.validateForm(values);
         });
-
-        debugger;
         if (this.isBrowser) {
             const tokk = this._userService.getToken();
             // const serviceEmail = this._userService.getEmail();
@@ -173,7 +171,6 @@ export class AccountSettingsComponent {
                 });
             }
         }
-        // this.UpdateForm.get("email")?.disable();
     }
 
     Update() {

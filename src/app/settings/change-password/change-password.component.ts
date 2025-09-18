@@ -1,6 +1,6 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../Services/authentication/UserService/user-service';
 import { AdminService } from '../../Services/AdminService/admin-service';
 import * as yup from 'yup';
@@ -16,7 +16,7 @@ export class ChangePasswordComponent {
     user: any;
     alertType: 'success' | 'error' | 'warning' | null = null;
     alertmsg = '';
-    email: string = '';
+    email = localStorage.getItem('email');
     userType = localStorage.getItem('role');
     formErrors: any = {};
 
@@ -58,7 +58,8 @@ export class ChangePasswordComponent {
 
     constructor(
         private _userService: UserService,
-        private _adminService: AdminService
+        private _adminService: AdminService,
+        private _router: Router
     ) {}
 
     ngOnIt() {
@@ -108,12 +109,18 @@ export class ChangePasswordComponent {
             this.hideAlert();
         }
         if (this.isFormValid()) {
-            this.token = localStorage.getItem('token');
-            this._userService.Profile({ token: this.token }).subscribe({
+            const model = {
+                Email: this.email,
+                NewPassword: this.password2,
+                OldPassword: this.password1,
+            };
+            // this.token = localStorage.getItem('token');
+            // this._userService.Profile({ token: this.token }).subscribe({
+            this._userService.UserData().subscribe({
                 next: (res) => {
                     this.user = res.body;
-                    console.log(this.user);
-                    console.log('✅******OTP******** :', model);
+                    // console.log(this.user);
+                    // console.log('✅******OTP******** :', model);
                     this._userService.ChangePassword(model).subscribe({
                         next: (res) => {
                             console.log(res);
@@ -121,6 +128,16 @@ export class ChangePasswordComponent {
                             this.toastBody = res.body.message;
                             this.toggleToast();
                             this.hideAlert();
+                            setTimeout(() => {
+                                this._userService.Logout().subscribe({
+                                    next: (res) => {
+                                        this._router.navigate([
+                                            '/authentication',
+                                        ]);
+                                    },
+                                });
+                                localStorage.clear();
+                            }, 2000);
                         },
                         error: (res) => {
                             if (res.status === 400) {
@@ -149,12 +166,6 @@ export class ChangePasswordComponent {
                     console.log(res);
                 },
             });
-
-            const model = {
-                Email: this.user.email,
-                NewPassword: this.password2,
-                OldPassword: this.password1,
-            };
         } else {
             this.alertType = 'error';
             this.alertmsg = 'Passwords do not match';

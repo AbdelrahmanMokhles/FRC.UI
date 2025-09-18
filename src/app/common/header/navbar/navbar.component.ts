@@ -7,17 +7,12 @@ import { CustomizerSettingsService } from '../../../customizer-settings/customiz
     selector: 'app-navbar',
     imports: [RouterLinkActive, RouterLink, NgScrollbarModule],
     templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.scss'
+    styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+    constructor(public themeService: CustomizerSettingsService) {}
 
-    constructor(
-        public themeService: CustomizerSettingsService
-    ) {}
-
-    Logout(){
-        console.log("jhgkjgl");
-        localStorage.removeItem('token');
+    Logout() {
+        localStorage.clear();
     }
-
 }

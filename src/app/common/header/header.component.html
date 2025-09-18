@@ -1,43 +1,60 @@
 <div
-    [class.card-without-border-radius]="themeService.isCardWithoutBorderRadius()"
+    [class.card-without-border-radius]="
+        themeService.isCardWithoutBorderRadius()
+    "
     [class.card-with-box-shadow]="themeService.isCardWithBoxShadow()"
     class="header-area bg-white border-bottom-radius transition"
-    [ngClass]="{'active': isSidebarToggled, 'sticky': isSticky}"
+    [ngClass]="{ active: isSidebarToggled, sticky: isSticky }"
     [class.component-rtl-enabled]="themeService.isRTLEnabled()"
     [class.right-sidebar]="themeService.isRightSidebar()"
     [class.hide-sidebar]="themeService.isHideSidebar()"
     [class.card-borderd]="themeService.isCardBordered()"
     [class.dark-header]="themeService.isHeaderDark()"
 >
-    <div class="inner-area d-md-flex align-items-center justify-content-between">
+    <div
+        class="inner-area d-md-flex align-items-center justify-content-between"
+    >
         <div class="header-left-side d-flex align-items-center">
             <div
                 class="burger-menu transition position-relative lh-1"
-                [ngClass]="{'active': isSidebarToggled}"
+                [ngClass]="{ active: isSidebarToggled }"
                 (click)="toggle()"
             >
-                <i class="material-symbols-outlined">
-                    menu
-                </i>
+                <i class="material-symbols-outlined"> menu </i>
             </div>
             <a routerLink="/dashboard" class="logo">
                 <!-- <img src="images/logo.svg" alt="logo"> -->
-                 <div class="logo">
-                    <img style="max-width: 40%;" src="images/Logo-Black.png" class="d-none" alt="logo">
+                <div class="logo">
+                    <img
+                        style="max-width: 40%"
+                        src="images/Logo-Black.png"
+                        class="d-none"
+                        alt="logo"
+                    />
                 </div>
             </a>
             <a routerLink="/dashboard" class="logo white-logo">
                 <!-- <img src="images/white-logo.svg" alt="logo"> -->
                 <div class="logo">
-                    <img style="max-width: 40%;" src="images/Logo.png" class="d-none" alt="logo">
+                    <img
+                        style="max-width: 40%"
+                        src="images/Logo.png"
+                        class="d-none"
+                        alt="logo"
+                    />
                 </div>
             </a>
             <form class="search-box position-relative">
-                <input type="text" class="input-search d-block w-100 border-radius" placeholder="Search here.....">
-                <button type="submit" class="bg-transparent p-0 border-0 transition">
-                    <i class="material-symbols-outlined">
-                        search
-                    </i>
+                <input
+                    type="text"
+                    class="input-search d-block w-100 border-radius"
+                    placeholder="Search here....."
+                />
+                <button
+                    type="submit"
+                    class="bg-transparent p-0 border-0 transition"
+                >
+                    <i class="material-symbols-outlined"> search </i>
                 </button>
             </form>
             <!-- <div class="connected-apps-menu position-relative">
@@ -138,15 +155,15 @@
                 }
             </div> -->
         </div>
-        <ul class="header-right-side d-flex align-items-center m-0 p-0 list-unstyled">
+        <ul
+            class="header-right-side d-flex align-items-center m-0 p-0 list-unstyled"
+        >
             <li class="position-relative">
                 <button
                     (click)="toggleTheme()"
                     class="dark-swtich-btn bg-transparent d-inline-block p-0 border-0 lh-1 position-relative"
                 >
-                    <i class="material-symbols-outlined">
-                        light_mode
-                    </i>
+                    <i class="material-symbols-outlined"> light_mode </i>
                 </button>
             </li>
             <!-- <li class="position-relative language-menu">
@@ -215,7 +232,7 @@
                     class="fullscreen-btn bg-transparent transition p-0 border-0 d-inline-block position-relative lh-1"
                 >
                     <i class="material-symbols-outlined">
-                        {{ isFullscreen ? 'fullscreen_exit' : 'fullscreen' }}
+                        {{ isFullscreen ? "fullscreen_exit" : "fullscreen" }}
                     </i>
                 </button>
             </li>
@@ -296,21 +313,22 @@
                     </div>
                 }
             </li> -->
-            <li class="position-relative profile-menu">                
-                    <button 
-                        *ngIf="user?.fullName"
-                        type="button"
-                        (click)="toggleProfileDropdown()"
-                        class="profile-menu-btn border-0 bg-transparent position-relative">
-                        <!-- <img src="images/admin.png" class="rounded-circle" alt="admin-image"> -->
-                        <span class="fw-semibold text-black">
-                            {{user?.fullName}}
-                        </span>
-                    </button>
-                
+            <li class="position-relative profile-menu">
+                <button
+                    *ngIf="user?.fullName"
+                    type="button"
+                    (click)="toggleProfileDropdown()"
+                    class="profile-menu-btn border-0 bg-transparent position-relative"
+                >
+                    <!-- <img src="images/admin.png" class="rounded-circle" alt="admin-image"> -->
+                    <span class="fw-semibold text-black">
+                        {{ user?.fullName }}
+                    </span>
+                </button>
+
                 @if (isProfileDropdownOpen) {
-                    <div class="profile-menu-dropdown bg-white border-radius">
-                        <!-- <div class="admin d-flex align-items-center">
+                <div class="profile-menu-dropdown bg-white border-radius">
+                    <!-- <div class="admin d-flex align-items-center">
                             <img src="images/admin.png" class="rounded-circle" alt="admin-image">
                             <div>
                                 <span class="d-block text-black fw-medium">
@@ -321,16 +339,19 @@
                                 </span>
                             </div>
                         </div> -->
-                        <ul class="list p-0 mt-0 mb-0 list-unstyled">
-                            <li>
-                                <a routerLink="/dashboard/settings" class="d-block position-relative">
-                                    <i class="material-symbols-outlined">
-                                        account_circle
-                                    </i>
-                                    My Profile
-                                </a>
-                            </li>
-                            <!-- <li>
+                    <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                        <li>
+                            <a
+                                routerLink="/dashboard/settings"
+                                class="d-block position-relative"
+                            >
+                                <i class="material-symbols-outlined">
+                                    account_circle
+                                </i>
+                                My Profile
+                            </a>
+                        </li>
+                        <!-- <li>
                                 <a routerLink="/dashboard/apps/chat" class="d-block position-relative">
                                     <i class="material-symbols-outlined">
                                         chat
@@ -354,18 +375,18 @@
                                     Billing
                                 </a>
                             </li> -->
-                        </ul>
-                        <div class="border-top"></div>
-                        <ul class="list p-0 mt-0 mb-0 list-unstyled">
-                            <li>
+                    </ul>
+                    <div class="border-top"></div>
+                    <ul class="list p-0 mt-0 mb-0 list-unstyled">
+                        <!-- <li>
                                 <a routerLink="/dashboard/settings" class="d-block position-relative">
                                     <i class="material-symbols-outlined">
                                         settings
                                     </i>
                                     Settings
                                 </a>
-                            </li>
-                            <!-- <li>
+                            </li> -->
+                        <!-- <li>
                                 <a routerLink="/dashboard/faq" class="d-block position-relative">
                                     <i class="material-symbols-outlined">
                                         support
@@ -381,16 +402,20 @@
                                     Lock Screen
                                 </a>
                             </li> -->
-                            <li>
-                                <a (click)="Logout()" routerLink="/authentication/logout" class="d-block position-relative">
-                                    <i class="material-symbols-outlined">
-                                        logout
-                                    </i>
-                                    Logout
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                        <li>
+                            <a
+                                (click)="Logout()"
+                                routerLink="/authentication/logout"
+                                class="d-block position-relative"
+                            >
+                                <i class="material-symbols-outlined">
+                                    logout
+                                </i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 }
             </li>
             <!-- <li class="position-relative">

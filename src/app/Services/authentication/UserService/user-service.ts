@@ -6,8 +6,9 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class UserService {
-    private url = 'https://localhost:44397/api/users/';
-    // private url = 'http://192.168.99.126/frc/api/users/';
+    // private url = 'http://localhost:44397/api/users/';
+    // private url = 'http://localhost:5011/api/users/';
+    private url = 'http://192.168.99.126:80/frc/api/users/';
     constructor(private _client: HttpClient) {}
     private email!: string;
     private token!: string;
@@ -46,8 +47,8 @@ export class UserService {
     UserData(): Observable<any> {
         const token = this.getToken();
         return this._client.get<any>(this.url + 'get-user-data', {
+            withCredentials: true,
             headers: {
-                Authorization: token,
                 'Content-Type': 'application/json',
             },
             observe: 'response',
@@ -87,7 +88,7 @@ export class UserService {
         });
     }
     ResetPassword(model: any): Observable<any> {
-        return this._client.post<any>(this.url + 'ResetPassword', model, {
+        return this._client.post<any>(this.url + 'reset-password', model, {
             headers: { 'Content-Type': 'application/json' },
             observe: 'response',
         });
@@ -115,6 +116,14 @@ export class UserService {
 
     Signin(user: any): Observable<any> {
         return this._client.post<any>(this.url + 'login', user, {
+            headers: { 'Content-Type': 'application/json' },
+            observe: 'response',
+            withCredentials: true,
+        });
+    }
+
+    Logout(): Observable<any> {
+        return this._client.post<any>(this.url + 'logout', {
             headers: { 'Content-Type': 'application/json' },
             observe: 'response',
             withCredentials: true,

@@ -1,21 +1,19 @@
 <div
     class="navbar-area position-fixed top-0 start-0 end-0 transition"
-    [ngClass]="{'sticky': isSticky}"
+    [ngClass]="{ sticky: isSticky }"
     [class.component-dark-theme]="themeService.isDark()"
     [class.component-rtl-enabled]="themeService.isRTLEnabled()"
 >
     <div class="container">
-        <nav
-            class="navbar navbar-expand-lg"
-            [class.active]="classApplied"
-        >
+        <nav class="navbar navbar-expand-lg" [class.active]="classApplied">
             <a class="navbar-brand" routerLink="/">
-                <img src="images/Logo.png" alt="logo">
-                <img src="images/white-Logo.png" class="d-none" alt="logo">
+                <img src="images/Logo.png" alt="logo" />
+                <img src="images/white-Logo.png" class="d-none" alt="logo" />
             </a>
             <button
                 class="navbar-toggler"
-                type="button" (click)="toggleClass()"
+                type="button"
+                (click)="toggleClass()"
             >
                 <span class="burger-menu">
                     <span class="top-bar"></span>
@@ -26,50 +24,85 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a routerLink="/" class="nav-link fw-medium" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a
+                            routerLink="/"
+                            class="nav-link fw-medium"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/features" class="nav-link fw-medium" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a
+                            routerLink="/features"
+                            class="nav-link fw-medium"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
                             Features
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/team" class="nav-link fw-medium" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a
+                            routerLink="/team"
+                            class="nav-link fw-medium"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
                             Our Team
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/faq" class="nav-link fw-medium" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a
+                            routerLink="/faq"
+                            class="nav-link fw-medium"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
                             FAQ's
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/contact" class="nav-link fw-medium" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a
+                            routerLink="/contact"
+                            class="nav-link fw-medium"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
                             Contact
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/dashboard" class="nav-link fw-medium" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                            Admin
+                        <a
+                            routerLink="/dashboard"
+                            class="nav-link fw-medium"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                            Dashboard
                         </a>
                     </li>
                 </ul>
-                <div *ngIf="!token" class="other-options d-flex align-items-center">
-                    <a routerLink="/authentication" class="btn-box d-inline-block fw-medium border-radius position-relative">
+                <div
+                    *ngIf="!token"
+                    class="other-options d-flex align-items-center"
+                >
+                    <a
+                        routerLink="/authentication"
+                        class="btn-box d-inline-block fw-medium border-radius position-relative"
+                    >
                         <span class="d-inline-block position-relative">
-                            <i class="material-symbols-outlined">
-                                login
-                            </i>
+                            <i class="material-symbols-outlined"> login </i>
                             Login
                         </span>
                     </a>
-                    <a routerLink="/authentication/sign-up" class="btn-box d-inline-block fw-medium border-radius position-relative">
+                    <a
+                        routerLink="/authentication/sign-up"
+                        class="btn-box d-inline-block fw-medium border-radius position-relative"
+                    >
                         <span class="d-inline-block position-relative">
-                            <i class="material-symbols-outlined">
-                                person
-                            </i>
+                            <i class="material-symbols-outlined"> person </i>
                             Register
                         </span>
                     </a>

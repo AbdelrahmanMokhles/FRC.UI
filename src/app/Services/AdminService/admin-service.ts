@@ -6,8 +6,9 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class AdminService {
-    private url = 'https://localhost:44397/api/admin/';
-    // private url = 'http://192.168.99.126/frc/api/admin/';
+    // private url = 'https://localhost:44397/api/admin/';
+    // private url = 'http://localhost:5011/api/admin/';
+    private url = 'http://192.168.99.126:80/frc/api/admin/';
     constructor(private _client: HttpClient) {}
 
     GetAllUsers() {

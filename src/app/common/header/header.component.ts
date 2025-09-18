@@ -9,57 +9,55 @@ import { UserService } from '../../Services/authentication/UserService/user-serv
 
 @Component({
     selector: 'app-header',
-    imports: [RouterLink, NgClass, NavbarComponent,CommonModule],
+    imports: [RouterLink, NgClass, NavbarComponent, CommonModule],
     templateUrl: './header.component.html',
-    styleUrl: './header.component.scss'
+    styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+    user: any = null;
 
-    user:any = null;
-    
     // isSidebarToggled
     isSidebarToggled = false;
 
     // isToggled
     isToggled = false;
-    isBrowser : boolean;
+    isBrowser: boolean;
 
     constructor(
-        private _userService : UserService,
+        private _userService: UserService,
         private toggleService: ToggleService,
         public themeService: CustomizerSettingsService,
         @Inject(PLATFORM_ID) private platformId: Object,
         private router: Router
     ) {
-
         this.isBrowser = isPlatformBrowser(this.platformId);
-        this.toggleService.isSidebarToggled$.subscribe(isSidebarToggled => {
+        this.toggleService.isSidebarToggled$.subscribe((isSidebarToggled) => {
             this.isSidebarToggled = isSidebarToggled;
         });
-        this.themeService.isToggled$.subscribe(isToggled => {
+        this.themeService.isToggled$.subscribe((isToggled) => {
             this.isToggled = isToggled;
         });
         // Subscribe to router events to toggle the sidebar on navigation
-        this.router.events.pipe(
-            filter(event => event instanceof NavigationEnd)
-        ).subscribe(() => {
-            // Check if the sidebar is currently toggled and if so, toggle it
-            if (this.isSidebarToggled) {
-                this.toggleService.toggle(); // Close the sidebar if it's open
-            }
-        });
-        if(this.isBrowser){
-            const tokk = localStorage.getItem("token");
-            // this.token = tokk;
-            // console.log(this.token);
-            this._userService.Profile({token : tokk}).subscribe({
-                next : (res)=>{
+        this.router.events
+            .pipe(filter((event) => event instanceof NavigationEnd))
+            .subscribe(() => {
+                // Check if the sidebar is currently toggled and if so, toggle it
+                if (this.isSidebarToggled) {
+                    this.toggleService.toggle(); // Close the sidebar if it's open
+                }
+            });
+        if (this.isBrowser) {
+            // const tokk = localStorage.getItem('token');
+
+            // this._userService.Profile({ token: tokk }).subscribe({
+            this._userService.UserData().subscribe({
+                next: (res) => {
                     this.user = res.body;
                     console.log(this.user);
                 },
-                error:(res) =>{
+                error: (res) => {
                     console.log(res);
-                }
+                },
             });
         }
     }
@@ -79,16 +77,22 @@ export class HeaderComponent {
         this.themeService.toggleTheme();
     }
 
-    Logout(){
-        localStorage.removeItem('token');
-        localStorage.removeItem('role');
+    Logout() {
+        localStorage.clear();
+        this._userService.Logout().subscribe({
+            next: (res) => {},
+        });
     }
 
     // Header Sticky
     isSticky: boolean = false;
     @HostListener('window:scroll')
     checkScroll() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const scrollPosition =
+            window.scrollY ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0;
         if (scrollPosition >= 50) {
             this.isSticky = true;
         } else {
@@ -135,10 +139,22 @@ export class HeaderComponent {
     ngAfterViewInit() {
         if (isPlatformBrowser(this.platformId)) {
             // Only add event listeners if the platform is the browser
-            document.addEventListener('fullscreenchange', this.onFullscreenChange.bind(this));
-            document.addEventListener('webkitfullscreenchange', this.onFullscreenChange.bind(this));
-            document.addEventListener('mozfullscreenchange', this.onFullscreenChange.bind(this));
-            document.addEventListener('MSFullscreenChange', this.onFullscreenChange.bind(this));
+            document.addEventListener(
+                'fullscreenchange',
+                this.onFullscreenChange.bind(this)
+            );
+            document.addEventListener(
+                'webkitfullscreenchange',
+                this.onFullscreenChange.bind(this)
+            );
+            document.addEventListener(
+                'mozfullscreenchange',
+                this.onFullscreenChange.bind(this)
+            );
+            document.addEventListener(
+                'MSFullscreenChange',
+                this.onFullscreenChange.bind(this)
+            );
         }
     }
     toggleFullscreen() {
@@ -157,11 +173,14 @@ export class HeaderComponent {
             };
             if (element.requestFullscreen) {
                 element.requestFullscreen();
-            } else if (element.mozRequestFullScreen) { // Firefox
+            } else if (element.mozRequestFullScreen) {
+                // Firefox
                 element.mozRequestFullScreen();
-            } else if (element.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+            } else if (element.webkitRequestFullscreen) {
+                // Chrome, Safari, and Opera
                 element.webkitRequestFullscreen();
-            } else if (element.msRequestFullscreen) { // IE/Edge
+            } else if (element.msRequestFullscreen) {
+                // IE/Edge
                 element.msRequestFullscreen();
             }
         }
@@ -175,11 +194,14 @@ export class HeaderComponent {
             };
             if (document.exitFullscreen) {
                 document.exitFullscreen();
-            } else if (doc.mozCancelFullScreen) { // Firefox
+            } else if (doc.mozCancelFullScreen) {
+                // Firefox
                 doc.mozCancelFullScreen();
-            } else if (doc.webkitExitFullscreen) { // Chrome, Safari, and Opera
+            } else if (doc.webkitExitFullscreen) {
+                // Chrome, Safari, and Opera
                 doc.webkitExitFullscreen();
-            } else if (doc.msExitFullscreen) { // IE/Edge
+            } else if (doc.msExitFullscreen) {
+                // IE/Edge
                 doc.msExitFullscreen();
             }
         }
@@ -191,8 +213,12 @@ export class HeaderComponent {
                 mozFullScreenElement?: Element;
                 msFullscreenElement?: Element;
             };
-            this.isFullscreen = !!(document.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement);
+            this.isFullscreen = !!(
+                document.fullscreenElement ||
+                doc.webkitFullscreenElement ||
+                doc.mozFullScreenElement ||
+                doc.msFullscreenElement
+            );
         }
     }
-
 }
