@@ -115,6 +115,13 @@ export class ResetPasswordOtpComponent {
 
             return;
         }
+        if (this.formErrors.ConfirmPassword || this.formErrors.NewPassword) {
+            this.toastBody = this.alertmsg = 'Invalid password';
+            this.toastTitle = 'Error';
+            this.toggleToast();
+            this.hideAlert();
+            return;
+        }
         if (this.ResetPassword.valid && newpass == confirmpass) {
             const model = {
                 Email: this._service.getEmail(),

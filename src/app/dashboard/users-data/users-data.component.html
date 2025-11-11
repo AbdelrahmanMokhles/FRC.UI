@@ -129,7 +129,10 @@
 
                         <div class="d-flex align-items-center gap-2 mb-4">
                             <button
-                                [disabled]="SelectedUsers.size == 0"
+                                [disabled]="
+                                    SelectedUsers.size == 0 ||
+                                    SelectedAction == null
+                                "
                                 (click)="ShowPopUp()"
                                 _ngcontent-ng-c1528691252=""
                                 type="button"
@@ -298,7 +301,7 @@
                                 <i class="material-symbols-outlined"> mail </i>
                             </button> -->
                                 <button
-                                    (click)="edit(user.email)"
+                                    (click)="edit(user)"
                                     type="button"
                                     class="p-0 bg-transparent d-inline-block lh-1 border-0"
                                 >

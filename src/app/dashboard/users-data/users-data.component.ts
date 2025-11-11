@@ -58,9 +58,11 @@ export class UsersDataComponent {
         this.modalTitle = 'Delete';
     }
 
-    edit(em: any) {
-        this._userService.setEmail(em);
-        this._router.navigate(['dashboard/settings']);
+    edit(user: any) {
+        const userName: string = user.fullName;
+        this._router.navigate([
+            `dashboard/settings/user/${userName.replaceAll(' ', '')}`,
+        ]);
     }
 
     PopUpApplyChange() {

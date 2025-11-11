@@ -8,9 +8,10 @@ import { Observable } from 'rxjs';
 export class UserService {
     // private url = 'http://localhost:44397/api/users/';
     // private url = 'http://localhost:5011/api/users/';
-    private url = 'http://192.168.99.126:80/frc/api/users/';
+    private url = 'http://192.168.99.98/frc/api/users/';
     constructor(private _client: HttpClient) {}
     private email!: string;
+    private emailEdit!: string;
     private token!: string;
 
     setEmail(email: string) {
@@ -19,6 +20,14 @@ export class UserService {
 
     getEmail() {
         return this.email;
+    }
+
+    setEmailEdit(email: string) {
+        this.emailEdit = email;
+    }
+
+    getEmailEdit() {
+        return this.emailEdit;
     }
 
     setToken(token: string) {
@@ -38,7 +47,14 @@ export class UserService {
     }
 
     GetByEmail(em: any): Observable<any> {
-        return this._client.post<any>(this.url + 'get-user-email', em, {
+        return this._client.post<any>(this.url + 'get-by-email', em, {
+            headers: { 'Content-Type': 'application/json' },
+            observe: 'response',
+        });
+    }
+
+    GetByName(userName: any): Observable<any> {
+        return this._client.post<any>(this.url + 'get-user-name', userName, {
             headers: { 'Content-Type': 'application/json' },
             observe: 'response',
         });

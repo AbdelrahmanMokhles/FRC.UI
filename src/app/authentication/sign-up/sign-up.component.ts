@@ -213,7 +213,6 @@ export class SignUpComponent {
         }
         if (this.RegisterForm.valid) {
             const user = this.RegisterForm.value;
-            // console.log('✅******User object******** :', user);
             this._service.RegisterUser(user).subscribe({
                 next: (res) => {
                     console.log(res);
@@ -221,10 +220,14 @@ export class SignUpComponent {
                         res.status === 200 &&
                         res.body.isAuthenticated == true
                     ) {
-                        console.log('✅ Success:', res);
                         this._service.setEmail(user.email);
-                        console.log(user.email);
-                        this._router.navigate(['/authentication/otp']);
+                        this.toastTitle = 'Success';
+                        this.toastBody = 'Registered Successfully';
+                        this.toggleToast();
+                        this.hideAlert();
+                        setTimeout(() => {
+                            this._router.navigate(['/authentication/otp']);
+                        }, 2000);
                     }
                 },
                 error: (res) => {
@@ -232,24 +235,19 @@ export class SignUpComponent {
                         res.error instanceof ProgressEvent ||
                         res.status === 0
                     ) {
-                        this.alertType = 'error';
-                        this.toastTitle = 'Internal Server Error';
-                        this.toastBody = this.alertmsg =
-                            'Cannot connect to server';
+                        this.toastTitle = 'Error';
+                        this.toastBody = 'Internal server error';
                         this.toggleToast();
                         this.hideAlert();
-                        // alert('⚠️ Cannot connect to server. Please check if the backend is running.');
                     }
                     if (res.status === 400) {
-                        console.log('⚠️ Validation error:', res.error);
-                        this.alertType = 'error';
                         this.toastBody = this.alertmsg = res.error.message;
+                        this.toastTitle = 'Error';
                         this.toggleToast();
                         this.hideAlert();
                     } else if (res.status === 500) {
-                        console.error('🔥 Server error', res.error.message);
-                        this.alertType = 'error';
-                        this.toastBody = this.alertmsg = res.error.message;
+                        this.toastTitle = 'Error';
+                        this.toastBody = 'Internal server erro';
                         this.toggleToast();
                         this.hideAlert();
                     }

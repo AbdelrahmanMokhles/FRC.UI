@@ -116,32 +116,38 @@ export class otpComponent {
     }
 
     ResendOtp() {
-        debugger;
-        console.log('Resending to ' + this.email);
-        this.startCountdown();
+        // debugger;
+        // console.log('Resending to ' + this.email);
+        // this.startCountdown();
         // const email = this.email;
         const model = { email: this.email, otp: '' };
         this._service.ResendOtp(model).subscribe({
             next: (res) => {
-                console.log('✅ Success:', res);
-                this.alertType = 'success';
                 this.toastTitle = 'Success';
-                this.toastBody = 'Successfully sent OTP';
+                this.toastBody = '✅Successfully sent OTP';
                 this.toggleToast();
-                this.hideAlert();
                 this.startCountdown();
+                this.hideAlert();
             },
             error: (res) => {
                 if (res.status === 200) {
-                    console.log('✅ Success:', res);
-                    this.alertType = 'success';
+                    this.toastTitle = 'Success';
+                    this.toastBody = '✅Successfully sent OTP';
+                    this.toggleToast();
+                    this.startCountdown();
+                    this.hideAlert();
                 }
 
                 if (res.status === 400) {
-                    console.log('⚠️ Validation error:', res);
-                    this.alertType = 'error';
+                    this.toastTitle = 'Error';
+                    this.toastBody = 'Error occured , please try again later';
+                    this.toggleToast();
+                    this.hideAlert();
                 } else if (res.status === 500) {
-                    console.error('🔥 Server error', res.error.message);
+                    this.toastTitle = 'Error';
+                    this.toastBody = 'Internal server error';
+                    this.toggleToast();
+                    this.hideAlert();
                 }
             },
         });

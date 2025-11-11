@@ -10,7 +10,7 @@ import {
     ReactiveFormsModule,
     Validators,
 } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import * as yup from 'yup';
 
 @Component({
@@ -31,10 +31,11 @@ export class AccountSettingsComponent {
     token: any;
     email: any = '';
     user: any;
-    userType: 'Admin' | 'User' | null = null;
+    userType = localStorage.getItem('role');
     alertType: 'success' | 'error' | 'warning' | null = null;
     isBrowser: boolean;
     countriesArr: { code: string; name: string }[] = [];
+    loggedEmail = localStorage.getItem('email');
 
     // Toast
     toast = false;
@@ -76,7 +77,8 @@ export class AccountSettingsComponent {
         private _userService: UserService,
         private fb: FormBuilder,
         private _router: Router,
-        @Inject(PLATFORM_ID) private platformId: Object
+        @Inject(PLATFORM_ID) private platformId: Object,
+        private route: ActivatedRoute
     ) {
         this.isBrowser = isPlatformBrowser(this.platformId);
     }
@@ -117,44 +119,55 @@ export class AccountSettingsComponent {
         this.UpdateForm.valueChanges.subscribe((values) => {
             this.validateForm(values);
         });
+        const UserName = this.route.snapshot.paramMap.get('name');
+        console.log(UserName);
         if (this.isBrowser) {
             const tokk = this._userService.getToken();
-            // const serviceEmail = this._userService.getEmail();
-            const serviceEmail = localStorage.getItem('email');
-            if (tokk) {
-                this.token = tokk;
-                // console.log(this.token);
-                // this._userService.Profile({ token: tokk }).subscribe({
-                this._userService.UserData().subscribe({
-                    // this._userService
-                    //     .GetByEmail({ email: serviceEmail })
-                    //     .subscribe({
-                    next: (res) => {
-                        console.log(res);
-                        this.user = res.body;
-                        // console.log(this.user);
-
-                        this.UpdateForm.patchValue({
-                            fullName: this.user.fullName,
-                            email: this.user.email,
-                            phone: this.user.phone,
-                            country: this.user.country,
-                            companyName: this.user.companyName,
-                            companyWebsite: this.user.companyWebsite,
-                            companyPhone: this.user.companyPhone,
+            if (this.userType == 'Admin') {
+                if (!UserName) {
+                    this._userService.UserData().subscribe({
+                        next: (res) => {
+                            this.user = res.body;
+                            this.UpdateForm.patchValue({
+                                fullName: this.user.fullName,
+                                email: this.user.email,
+                                phone: this.user.phone,
+                                country: this.user.country,
+                                companyName: this.user.companyName,
+                                companyWebsite: this.user.companyWebsite,
+                                companyPhone: this.user.companyPhone,
+                            });
+                        },
+                        error: (res) => {
+                            console.log(res);
+                        },
+                    });
+                } else {
+                    console.log(this._userService.getEmailEdit());
+                    this._userService
+                        .GetByName({ username: UserName })
+                        .subscribe({
+                            next: (res) => {
+                                this.user = res.body;
+                                this.UpdateForm.patchValue({
+                                    fullName: this.user.fullName,
+                                    email: this.user.email,
+                                    phone: this.user.phone,
+                                    country: this.user.country,
+                                    companyName: this.user.companyName,
+                                    companyWebsite: this.user.companyWebsite,
+                                    companyPhone: this.user.companyPhone,
+                                });
+                            },
+                            error: (res) => {
+                                console.log(res);
+                            },
                         });
-                    },
-                    error: (res) => {
-                        console.log(res);
-                    },
-                });
+                }
             } else {
-                this.email = this._userService.getEmail();
-                this._userService.GetByEmail({ email: this.email }).subscribe({
+                this._userService.UserData().subscribe({
                     next: (res) => {
                         this.user = res.body;
-                        console.log(this.user);
-
                         this.UpdateForm.patchValue({
                             fullName: this.user.fullName,
                             email: this.user.email,
@@ -195,22 +208,18 @@ export class AccountSettingsComponent {
                 console.log('✅ Success:', res);
                 this.alertType = 'success';
                 this.toastTitle = '✅ Success';
-                this.toastBody = 'Password changed successsfully';
+                this.toastBody = 'Updated profile successsfully';
                 this.toggleToast();
                 this.hideAlert();
                 // this._router.navigate(['/dashboard']);
             },
             error: (res) => {
                 if (res.status === 400) {
-                    // console.log('⚠️ Validation error:', res);
-                    this.alertType = 'error';
                     this.toastTitle = 'Error';
                     this.toastBody = 'Please enter valid data';
                     this.toggleToast();
                     this.hideAlert();
                 } else if (res.status === 500) {
-                    // console.error('🔥 Server error', res);
-                    this.alertType = 'warning';
                     this.toastTitle = 'Error';
                     this.toastBody = 'Internal server error';
                     this.toggleToast();
