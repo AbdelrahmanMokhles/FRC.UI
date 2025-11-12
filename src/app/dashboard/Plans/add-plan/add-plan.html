@@ -1,0 +1,206 @@
+<!-- Breadcrumb -->
+<section>
+    <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+        <h5 class="mb-0">
+            Add Plan
+        </h5>
+        <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <a routerLink="/dashboard" class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        home
+                    </i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Plans
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Add Plan
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- End Breadcrumb -->
+
+
+<!-- Form -->
+<section>
+    <div class="col-lg-12">
+        <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <form class="row g-3" [formGroup]="planForm" (ngSubmit)="save()" novalidate>
+                    <div class="col-md-6">
+                        <label for="planName" class="form-label">Plan Name</label>
+                        <input type="text" class="form-control" id="planName" formControlName="planName">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="concurrentCalls" class="form-label">Concurrent Calls</label>
+                        <input type="number" class="form-control" id="concurrentCalls"
+                            formControlName="concurrentCalls">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="period" class="form-label">Period Months</label>
+                        <input type="number" class="form-control" id="period" formControlName="period">
+                    </div>
+                    <div class="trezo-card-content">
+                        <div [formGroup]="addPeriodForm" class="row g-3 align-items-end">
+                            <div class="col-sm">
+                                <label for="period" class="form-label">Period Months</label>
+                                <input type="number" id="period" formControlName="period" class="form-control">
+                            </div>
+                            <div class="col-sm">
+                                <label for="price" class="form-label">End User Price</label>
+                                <input type="number" id="Price" formControlName="price" class="form-control">
+                            </div>
+                            <div class="col-sm">
+                                <label for="distiDiscount" class="form-label">Disti Discount %</label>
+                                <input type="number" id="distiDiscount" formControlName="distiDiscount"
+                                    class="form-control">
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" (click)="addPeriod()" [disabled]="addPeriodForm.invalid"
+                                    class="btn btn-primary disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed">
+                                    + Add
+                                </button>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="my-8 border-t border-gray-200"></div>
+
+                        <!-- Periods Tabled -->
+                        <!-- -------------------------------------- -->
+                        @if (periods.controls.length > 0) {
+                        <div class="trezo-card-content">
+                            <div class="table-style-two">
+                                <div class="basic-table table-responsive">
+                                    <table class="table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="fw-medium">
+                                                    Period
+                                                </th>
+                                                <th scope="col" class="fw-medium">
+                                                    End User Price
+                                                </th>
+                                                <th scope="col" class="fw-medium">
+                                                    Disti Discount
+                                                </th>
+                                                <th scope="col" class="fw-medium">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody formArrayName="periods">
+                                            @for (periodGroup of periods.controls; track periodGroup; let i = $index) {
+                                            <tr>
+                                                <td class="text-body">
+                                                    {{ periodGroup.value.period }} ({{
+                                                    calculateMonths(periodGroup.value.period) }}
+                                                    Months)</td>
+                                                <td class="text-body">
+                                                    $ {{ periodGroup.value.price | number:'1.2-2' }}
+                                                </td>
+                                                <td>
+                                                    <span class="text-body">
+                                                        {{ periodGroup.value.distiDiscount }}%
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div class="action-buttons d-flex align-items-center">
+                                                        <button type="button" (click)="removePeriod(i)"
+                                                            class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                                            <i class="material-symbols-outlined"> delete </i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        @else {
+                        <div class="text-center py-8 px-4 border-2 border-dashed border-gray-200 rounded-lg">
+                            <p class="text-sm text-gray-500">No pricing periods added yet. Use the form above to add
+                                one.
+                            </p>
+                        </div>
+                        }
+                    </div>
+
+                    <!-- Periods Tabled -->
+
+                    <!-- ------------------------------------------------------------------------------- -->
+                    <!-- Pagination -->
+                    <!-- <div class="trezo-card-pagination">
+                                     <div class="d-md-flex align-items-center justify-content-between">
+                                         <p class="mb-0">
+                                             Showing 5 of 36 results
+                                         </p>
+                                         <ol class="list-unstyled mb-0 p-0">
+                                             <li class="d-inline-block">
+                                                 <a class="prev" routerLink=".">
+                                                     <span class="opacity-0">
+                                                         0
+                                                     </span>
+                                                     <i class="material-symbols-outlined">
+                                                         chevron_left
+                                                     </i>
+                                                 </a>
+                                             </li>
+                                             <li class="d-inline-block">
+                                                 <a routerLink="." class="active">
+                                                     1
+                                                 </a>
+                                             </li>
+                                             <li class="d-inline-block">
+                                                 <a routerLink=".">
+                                                     2
+                                                 </a>
+                                             </li>
+                                             <li class="d-inline-block">
+                                                 <a routerLink=".">
+                                                     3
+                                                 </a>
+                                             </li>
+                                             <li class="d-inline-block">
+                                                 <a routerLink=".">
+                                                     4
+                                                 </a>
+                                             </li>
+                                             <li class="d-inline-block">
+                                                 <a class="next" routerLink=".">
+                                                     <span class="opacity-0">
+                                                         0
+                                                     </span>
+                                                     <i class="material-symbols-outlined">
+                                                         chevron_right
+                                                     </i>
+                                                 </a>
+                                             </li>
+                                         </ol>
+                                     </div>
+                                 </div> -->
+                    <!-- Pagination -->
+                    <br><br>
+                    <div class="my-8 border-t border-gray-200"></div>
+                    <div class="mb-0">
+                        <label for="internalNote" class="form-label">Internal Note</label>
+                        <textarea id="internalNote" formControlName="internalNote" class="form-control"
+                            rows="3"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" [disabled]="planForm.invalid" class="btn btn-primary">Save Plan</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Form -->

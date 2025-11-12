@@ -10,12 +10,18 @@ import { SidebarComponent } from '../common/sidebar/sidebar.component';
 
 @Component({
     selector: 'app-dashboard',
-    imports: [RouterOutlet, NgClass, HeaderComponent, SidebarComponent, FooterComponent, CustomizerSettingsComponent],
+    imports: [
+        RouterOutlet,
+        NgClass,
+        HeaderComponent,
+        SidebarComponent,
+        FooterComponent,
+        CustomizerSettingsComponent,
+    ],
     templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.scss'
+    styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-
     // isSidebarToggled
     isSidebarToggled = false;
 
@@ -26,12 +32,11 @@ export class DashboardComponent {
         private toggleService: ToggleService,
         public themeService: CustomizerSettingsService
     ) {
-        this.toggleService.isSidebarToggled$.subscribe(isSidebarToggled => {
+        this.toggleService.isSidebarToggled$.subscribe((isSidebarToggled) => {
             this.isSidebarToggled = isSidebarToggled;
         });
-        this.themeService.isToggled$.subscribe(isToggled => {
+        this.themeService.isToggled$.subscribe((isToggled) => {
             this.isToggled = isToggled;
         });
     }
-
 }

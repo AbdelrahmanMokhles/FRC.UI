@@ -1,0 +1,175 @@
+<!-- Breadcrumb -->
+<section>
+    <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+        <h5 class="mb-0">
+            Plans List
+        </h5>
+        <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <a routerLink="/dashboard" class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        home
+                    </i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Plans
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Plans List
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- End Breadcrumb -->
+
+<!-- Data table -->
+<section>
+    <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+        <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+            <div class="trezo-card-title">
+                <form class="search-box position-relative">
+                    <label class="text-black">
+                        <i class="material-symbols-outlined">
+                            search
+                        </i>
+                    </label>
+                    <input type="text" class="input-search d-block w-100 border-radius"
+                        placeholder="Search plan here.....">
+                </form>
+            </div>
+            <div class="trezo-card-subtitle">
+                <a class="add-btn d-inline-block transition fw-medium border-radius"
+                    routerLink="/dashboard/plans/add-plan">
+                    <span class="d-inline-block position-relative">
+                        <i class="material-symbols-outlined">
+                            add
+                        </i>
+                        Add New Plan
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="trezo-card-content">
+            <div class="table-style-two">
+                <div class="basic-table table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="fw-medium">
+
+                                </th>
+                                <th scope="col" class="fw-medium">
+                                    Plan Name
+                                </th>
+                                <th scope="col" class="fw-medium">
+                                    Concurrent Calls
+                                </th>
+                                <th scope="col" class="fw-medium">
+                                    Period / Months
+                                </th>
+                                <th scope="col" class="fw-medium">
+                                    End user 1 period price
+                                </th>
+                                <th scope="col" class="fw-medium">
+                                    Active Subscribers
+                                </th>
+                                <th scope="col" class="fw-medium">
+                                    Status
+                                </th>
+                                <th scope="col" class="fw-medium">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody formArrayName="periods">
+                            @for (plan of filteredPlans(); track plan.id) {
+                            <tr>
+                                <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input type="checkbox"
+                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                                            [checked]="plan.selected" (change)="toggleOne(plan.id)">
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{{ plan.planName }}
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">{{ plan.concurentCall }}</td>
+                                <td class="px-6 py-4 text-gray-700">{{ plan.period }}</td>
+                                <td class="px-6 py-4 text-gray-700">${{ plan.endUserPeriodPrice }}</td>
+                                <td class="px-6 py-4 text-gray-700">{{ plan.activeSubscribers }}</td>
+                                <td class="px-6 py-4">
+                                    <!-- [class]="'text-teal-600 font-medium' : 'text-red-500 font-medium'" -->
+                                    <span class="font-bold" [ngClass]="plan.status ? 'text-success' : 'text-danger'">
+                                        {{ plan.status }}
+                                    </span>
+
+                                </td>
+                                <td>
+                                    <!-- (click)="removePeriod(i)" -->
+                                    <div class="action-buttons d-flex align-items-center">
+                                        <button type="button" (click)="deletePlan(plan.id)"
+                                            class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                            <i class="material-symbols-outlined text-danger"> delete </i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="trezo-card-pagination">
+                    <div class="d-md-flex align-items-center justify-content-between">
+                        <p class="mb-0">
+                            Showing 10 of 36 results
+                        </p>
+                        <ol class="list-unstyled mb-0 p-0">
+                            <li class="d-inline-block">
+                                <a class="prev" routerLink=".">
+                                    <span class="opacity-0">
+                                        0
+                                    </span>
+                                    <i class="material-symbols-outlined">
+                                        chevron_left
+                                    </i>
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                <a routerLink="." class="active">
+                                    1
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                <a routerLink=".">
+                                    2
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                <a routerLink=".">
+                                    3
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                <a routerLink=".">
+                                    4
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                <a class="next" routerLink=".">
+                                    <span class="opacity-0">
+                                        0
+                                    </span>
+                                    <i class="material-symbols-outlined">
+                                        chevron_right
+                                    </i>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

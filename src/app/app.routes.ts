@@ -262,6 +262,8 @@ import { otpResetcomponent } from './authentication/otp-reset/otp-reset.componen
 import { ResetPasswordOtpComponent } from './authentication/reset-password-otp/reset-password-otp.component';
 import { UsersDataComponent } from './dashboard/users-data/users-data.component';
 import { SuspensionComponent } from './authentication/suspension/suspension.component';
+import { AddPlan } from './dashboard/Plans/add-plan/add-plan';
+import { PlansData } from './dashboard/Plans/plans-data/plans-data';
 
 export const routes: Routes = [
     {
@@ -647,6 +649,14 @@ export const routes: Routes = [
                     { path: '', component: TeamMembersComponent },
                     { path: 'users-list', component: UsersListComponent },
                     { path: 'add-user', component: AddUserComponent },
+                ],
+            },
+            {
+                path: 'plans',
+                component: UsersPageComponent,
+                children: [
+                    { path: 'plans-list', component: PlansData },
+                    { path: 'add-plan', component: AddPlan },
                 ],
             },
             {
