@@ -20,5 +20,5 @@ export interface Plan {
     period: number;
     endUserPeriodPrice: number;
     activeSubscribers: number;
-    status: boolean;
+    status: string;
 }

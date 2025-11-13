@@ -1,3 +1,4 @@
+//#region Old 
 import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Plan } from '../../../Models/Plan/plan.model';
@@ -17,17 +18,10 @@ export class PlansData {
     ) {
         this.loadPlans();
     }
-    // plans = signal<Plan[]>([
-    //     { id: 1, selected: false, planName: 'Free', concurrentCall: 2, periodMonths: 1188, endUserPrice: 0, activeSubscribers: 250, status: 'Active' },
-    //     { id: 2, selected: false, planName: 'Startup', concurrentCall: 4, periodMonths: 12, endUserPrice: 75, activeSubscribers: 50, status: 'Active' },
-    //     { id: 3, selected: false, planName: 'Business', concurrentCall: 8, periodMonths: 12, endUserPrice: 115, activeSubscribers: 20, status: 'Active' },
-    //     { id: 4, selected: false, planName: 'Business Plus', concurrentCall: 16, periodMonths: 12, endUserPrice: 185, activeSubscribers: 25, status: 'Archived' },
-    //     { id: 5, selected: false, planName: 'Business Pro', concurrentCall: 32, periodMonths: 12, endUserPrice: 299, activeSubscribers: 10, status: 'Active' },
-    //     { id: 6, selected: false, planName: 'Enterprise', concurrentCall: 64, periodMonths: 12, endUserPrice: 499, activeSubscribers: 3, status: 'Active' },
-    // ]);
-
     plans = signal<Plan[]>([]);
     searchTerm = signal('');
+    sortColumn = signal<string>('planName');
+    sortDirection = signal<'asc' | 'desc'>('asc');
 
     filteredPlans = computed(() => {
         const term = this.searchTerm().toLowerCase();
@@ -38,6 +32,39 @@ export class PlansData {
             plan.planName.toLowerCase().includes(term)
         );
     });
+
+    // filteredPlans = computed(() => {
+    //     const term = this.searchTerm().toLowerCase();
+    //     let plans = this.plans();
+
+    //     // Filter by search
+    //     if (term) {
+    //         plans = plans.filter(p => p.planName.toLowerCase().includes(term));
+    //     }
+
+    //     // Sort by selected column
+    //     const column = this.sortColumn();
+    //     const direction = this.sortDirection();
+
+    //     return [...plans].sort((a, b) => {
+    //         const valA = String(a[column as keyof Plan] ?? '').toLowerCase();
+    //         const valB = String(b[column as keyof Plan] ?? '').toLowerCase();
+    //         if (valA < valB) return direction === 'asc' ? -1 : 1;
+    //         if (valA > valB) return direction === 'asc' ? 1 : -1;
+    //         return 0;
+    //     });
+    // });
+    // sort(column: string) {
+    //     if (this.sortColumn() === column) {
+    //         // toggle direction
+    //         this.sortDirection.set(this.sortDirection() === 'asc' ? 'desc' : 'asc');
+    //     } else {
+    //         this.sortColumn.set(column);
+    //         this.sortDirection.set('asc');
+    //     }
+    // }
+
+
 
     allSelected = computed(() =>
         this.filteredPlans().length > 0 && this.filteredPlans().every(p => p.selected)
@@ -93,4 +120,10 @@ export class PlansData {
         );
     }
 }
+
+
+
+//#endregion
+
+
 

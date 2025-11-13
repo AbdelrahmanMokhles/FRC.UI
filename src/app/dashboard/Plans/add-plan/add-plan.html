@@ -14,7 +14,9 @@
                 </a>
             </li>
             <li class="breadcrumb-item d-inline-block position-relative">
-                Plans
+                <span routerLink="/dashboard/plans/plans-list">
+                    Plans
+                </span>
             </li>
             <li class="breadcrumb-item d-inline-block position-relative">
                 Add Plan
@@ -24,50 +26,98 @@
 </section>
 <!-- End Breadcrumb -->
 
-
+<section>
+    <!-- Toaster -->
+    @if (toast) {
+    <div class="toast-container transition position-fixed bottom-0 end-0 p-3">
+        <div class="toast" role="alert">
+            <div class="toast-header">
+                <strong class="me-auto">{{ toastTitle }}</strong>
+                <button type="button" class="btn-close shadow-none" aria-label="Close" (click)="toggleToast()"></button>
+            </div>
+            <div class="toast-body">
+                {{ toastBody }}
+            </div>
+        </div>
+    </div>
+    }
+    <!-- Toaster -->
+</section>
 <!-- Form -->
 <section>
     <div class="col-lg-12">
-        <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+        <div class="trezo-card border-radius d-block bg-white border-0 shadow-none">
             <div class="trezo-card-content">
                 <form class="row g-3" [formGroup]="planForm" (ngSubmit)="save()" novalidate>
                     <div class="col-md-6">
                         <label for="planName" class="form-label">Plan Name</label>
                         <input type="text" class="form-control" id="planName" formControlName="planName">
+                        @if (planForm.get('planName')?.touched) {
+                        <div style="color: rgb(248, 89, 89)" class="error2">
+                            {{ planFormErrors.planName }}
+                        </div>
+                        }
                     </div>
                     <div class="col-md-3">
                         <label for="concurrentCalls" class="form-label">Concurrent Calls</label>
                         <input type="number" class="form-control" id="concurrentCalls"
                             formControlName="concurrentCalls">
+                        @if (planForm.get('concurrentCalls')?.touched) {
+                        <div style="color: rgb(248, 89, 89)" class="error2">
+                            {{ planFormErrors.concurrentCalls }}
+                        </div>
+                        }
                     </div>
                     <div class="col-md-3">
                         <label for="period" class="form-label">Period Months</label>
                         <input type="number" class="form-control" id="period" formControlName="period">
+                        @if (planForm.get('period')?.touched) {
+                        <div style="color: rgb(248, 89, 89)" class="error2">
+                            {{ planFormErrors.period }}
+                        </div>
+                        }
                     </div>
                     <div class="trezo-card-content">
-                        <div [formGroup]="addPeriodForm" class="row g-3 align-items-end">
-                            <div class="col-sm">
-                                <label for="period" class="form-label">Period Months</label>
+                        <div [formGroup]="periodForm" class="row g-3 align-items-start">
+                            <div class="col-3">
+                                <label for="period" class="form-label">Period</label>
                                 <input type="number" id="period" formControlName="period" class="form-control">
+                                @if (periodForm.get('period')?.touched) {
+                                <div style="color: rgb(248, 89, 89)" class="error2">
+                                    {{ periodFormErrors.period }}
+                                </div>
+                                }
                             </div>
-                            <div class="col-sm">
+
+                            <div class="col-3">
                                 <label for="price" class="form-label">End User Price</label>
-                                <input type="number" id="Price" formControlName="price" class="form-control">
+                                <input type="number" id="price" formControlName="price" class="form-control">
+                                @if (periodForm.get('price')?.touched) {
+                                <span style="color: rgb(248, 89, 89)" class="error2">
+                                    {{ periodFormErrors.price }}
+                                </span>
+                                }
                             </div>
-                            <div class="col-sm">
+
+                            <div class="col-3">
                                 <label for="distiDiscount" class="form-label">Disti Discount %</label>
                                 <input type="number" id="distiDiscount" formControlName="distiDiscount"
                                     class="form-control">
+                                @if (periodForm.get('distiDiscount')?.touched) {
+                                <span style="color: rgb(248, 89, 89)" class="error2">
+                                    {{ periodFormErrors.distiDiscount }}
+                                </span>
+                                }
                             </div>
-                            <div class="col-sm">
-                                <button type="button" (click)="addPeriod()" [disabled]="addPeriodForm.invalid"
-                                    class="btn btn-primary disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed">
+                            <div style="margin-top: 44px;" class="col-3 ">
+                                <button type="button" (click)="addPeriod()" [disabled]="periodForm.invalid"
+                                    class="btn btn-success disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed">
                                     + Add
                                 </button>
                             </div>
                         </div>
+
                         <br><br>
-                        <div class="my-8 border-t border-gray-200"></div>
 
                         <!-- Periods Tabled -->
                         <!-- -------------------------------------- -->
@@ -135,66 +185,18 @@
                     <!-- Periods Tabled -->
 
                     <!-- ------------------------------------------------------------------------------- -->
-                    <!-- Pagination -->
-                    <!-- <div class="trezo-card-pagination">
-                                     <div class="d-md-flex align-items-center justify-content-between">
-                                         <p class="mb-0">
-                                             Showing 5 of 36 results
-                                         </p>
-                                         <ol class="list-unstyled mb-0 p-0">
-                                             <li class="d-inline-block">
-                                                 <a class="prev" routerLink=".">
-                                                     <span class="opacity-0">
-                                                         0
-                                                     </span>
-                                                     <i class="material-symbols-outlined">
-                                                         chevron_left
-                                                     </i>
-                                                 </a>
-                                             </li>
-                                             <li class="d-inline-block">
-                                                 <a routerLink="." class="active">
-                                                     1
-                                                 </a>
-                                             </li>
-                                             <li class="d-inline-block">
-                                                 <a routerLink=".">
-                                                     2
-                                                 </a>
-                                             </li>
-                                             <li class="d-inline-block">
-                                                 <a routerLink=".">
-                                                     3
-                                                 </a>
-                                             </li>
-                                             <li class="d-inline-block">
-                                                 <a routerLink=".">
-                                                     4
-                                                 </a>
-                                             </li>
-                                             <li class="d-inline-block">
-                                                 <a class="next" routerLink=".">
-                                                     <span class="opacity-0">
-                                                         0
-                                                     </span>
-                                                     <i class="material-symbols-outlined">
-                                                         chevron_right
-                                                     </i>
-                                                 </a>
-                                             </li>
-                                         </ol>
-                                     </div>
-                                 </div> -->
-                    <!-- Pagination -->
                     <br><br>
                     <div class="my-8 border-t border-gray-200"></div>
-                    <div class="mb-0">
+                    <div class="">
                         <label for="internalNote" class="form-label">Internal Note</label>
                         <textarea id="internalNote" formControlName="internalNote" class="form-control"
                             rows="3"></textarea>
                     </div>
-                    <div class="col-12">
-                        <button type="submit" [disabled]="planForm.invalid" class="btn btn-primary">Save Plan</button>
+                    <div class="trezo-card-content example-buttons">
+                        <button type="submit" [disabled]="planForm.invalid" class="btn btn-primary">
+                            SavePlan
+                        </button>
+                        <button type="button" routerLink="/dashboard/plans-list" class="btn btn-danger">Cancel</button>
                     </div>
                 </form>
             </div>

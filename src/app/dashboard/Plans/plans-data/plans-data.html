@@ -53,13 +53,11 @@
         </div>
         <div class="trezo-card-content">
             <div class="table-style-two">
+
                 <div class="basic-table table-responsive">
                     <table class="table mb-0">
                         <thead>
-                            <tr>
-                                <th scope="col" class="fw-medium">
-
-                                </th>
+                            <!-- <tr>
                                 <th scope="col" class="fw-medium">
                                     Plan Name
                                 </th>
@@ -81,18 +79,27 @@
                                 <th scope="col" class="fw-medium">
                                     Action
                                 </th>
+                            </tr> -->
+                            <tr>
+                                <th class="fw-medium sortable">Plan Name</th>
+                                <th class="fw-medium sortable">Concurrent Calls</th>
+                                <th class="fw-medium sortable">Period / Months</th>
+                                <th class="fw-medium sortable">Price</th>
+                                <th scope="col" class="fw-medium">Active Subscribers</th>
+                                <th scope="col" class="fw-medium">Status</th>
+                                <th scope="col" class="fw-medium">Action</th>
                             </tr>
                         </thead>
                         <tbody formArrayName="periods">
                             @for (plan of filteredPlans(); track plan.id) {
                             <tr>
-                                <td class="w-4 p-4">
+                                <!-- <td class="w-4 p-4">
                                     <div class="flex items-center">
                                         <input type="checkbox"
                                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                                             [checked]="plan.selected" (change)="toggleOne(plan.id)">
                                     </div>
-                                </td>
+                                </td> -->
                                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{{ plan.planName }}
                                 </td>
                                 <td class="px-6 py-4 text-gray-700">{{ plan.concurentCall }}</td>
@@ -100,11 +107,10 @@
                                 <td class="px-6 py-4 text-gray-700">${{ plan.endUserPeriodPrice }}</td>
                                 <td class="px-6 py-4 text-gray-700">{{ plan.activeSubscribers }}</td>
                                 <td class="px-6 py-4">
-                                    <!-- [class]="'text-teal-600 font-medium' : 'text-red-500 font-medium'" -->
-                                    <span class="font-bold" [ngClass]="plan.status ? 'text-success' : 'text-danger'">
+                                    <span class="font-bold" [ngClass]="{'text-success': plan.status === 'Active',
+                                                                        'text-danger': plan.status === 'Archived'}">
                                         {{ plan.status }}
                                     </span>
-
                                 </td>
                                 <td>
                                     <!-- (click)="removePeriod(i)" -->
@@ -120,55 +126,61 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="trezo-card-pagination">
-                    <div class="d-md-flex align-items-center justify-content-between">
-                        <p class="mb-0">
-                            Showing 10 of 36 results
-                        </p>
-                        <ol class="list-unstyled mb-0 p-0">
-                            <li class="d-inline-block">
-                                <a class="prev" routerLink=".">
-                                    <span class="opacity-0">
-                                        0
-                                    </span>
-                                    <i class="material-symbols-outlined">
-                                        chevron_left
-                                    </i>
-                                </a>
-                            </li>
-                            <li class="d-inline-block">
-                                <a routerLink="." class="active">
-                                    1
-                                </a>
-                            </li>
-                            <li class="d-inline-block">
-                                <a routerLink=".">
-                                    2
-                                </a>
-                            </li>
-                            <li class="d-inline-block">
-                                <a routerLink=".">
-                                    3
-                                </a>
-                            </li>
-                            <li class="d-inline-block">
-                                <a routerLink=".">
-                                    4
-                                </a>
-                            </li>
-                            <li class="d-inline-block">
-                                <a class="next" routerLink=".">
-                                    <span class="opacity-0">
-                                        0
-                                    </span>
-                                    <i class="material-symbols-outlined">
-                                        chevron_right
-                                    </i>
-                                </a>
-                            </li>
-                        </ol>
+
+                <!-- Pagination -->
+                <section>
+                    <div class="trezo-card-pagination">
+                        <div class="d-md-flex align-items-center justify-content-between">
+                            <p class="mb-0">
+                                Showing 10 of 36 results
+                            </p>
+                            <ol class="list-unstyled mb-0 p-0">
+                                <li class="d-inline-block">
+                                    <a class="prev" routerLink=".">
+                                        <span class="opacity-0">
+                                            0
+                                        </span>
+                                        <i class="material-symbols-outlined">
+                                            chevron_left
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a routerLink="." class="active">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a routerLink=".">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a routerLink=".">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a routerLink=".">
+                                        4
+                                    </a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a class="next" routerLink=".">
+                                        <span class="opacity-0">
+                                            0
+                                        </span>
+                                        <i class="material-symbols-outlined">
+                                            chevron_right
+                                        </i>
+                                    </a>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <!-- Pagination -->
+
             </div>
         </div>
     </div>

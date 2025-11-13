@@ -1,0 +1,20 @@
+.error2 {
+    min-height: 18px;
+    /* reserve space for error message */
+    font-size: 0.875rem;
+    color: rgb(248, 89, 89);
+}
+
+.example-buttons {
+    margin-bottom: -15px;
+
+    button,
+    a {
+        margin: {
+            right: 15px;
+            bottom: 15px;
+        }
+
+        ;
+    }
+}

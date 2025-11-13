@@ -16,6 +16,9 @@ import {
 import { PlanPeriod, PlanDto } from '../../../Models/Plan/plan.model';
 import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
 import { error } from 'console';
+import * as yup from 'yup';
+import { Router, RouterLink } from '@angular/router';
+import { YupValidator } from '../../../Validators/Yup-Validator/yup-validator';
 
 
 
@@ -24,16 +27,37 @@ import { error } from 'console';
   templateUrl: './add-plan.html',
   styleUrl: './add-plan.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
 })
 export class AddPlan implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _planService: PlanService,
+    private _router: Router
   ) { }
 
+  planFormErrors: any = {};
+
+  planSchema = yup.object({
+    planName: yup.string().required('Plan name is required'),
+    concurrentCalls: yup.number().required('Concurrent calls required').min(1, 'Must be at least 1'),
+    period: yup.number().required('Period months required').min(1, 'Must be at least 1'),
+    internalNote: yup.string(),
+  });
+
+  periodFormErrors: any = {};
+
+  periodSchema = yup.object({
+    period: yup.number().required('Period is required').min(1),
+    price: yup.number().required('Price is required').min(1),
+    distiDiscount: yup.number().required('Discount is required').min(0, 'Must be at least 1').max(100, 'Must be at most 100'),
+  });
+
+
+
+
   planForm!: FormGroup;
-  addPeriodForm!: FormGroup;
+  periodForm!: FormGroup;
 
   ngOnInit() {
     this.planForm = this.fb.group({
@@ -43,24 +67,32 @@ export class AddPlan implements OnInit {
       periods: this.fb.array([]),
       internalNote: ['']
     });
-
-    this.addPeriodForm = this.fb.group({
+    this.periodForm = this.fb.group({
       period: [1, [Validators.required, Validators.min(1)]],
       price: ['', [Validators.required, Validators.min(0)]],
       distiDiscount: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
     });
-    this.addInitialPeriods();
+
+    // Subscribe to changes for onChange validation
+    this.planForm.valueChanges.subscribe(async (values) => {
+      await YupValidator(values, this.planSchema, this.planFormErrors);
+    });
+    this.periodForm.valueChanges.subscribe(async (values) => {
+      await YupValidator(values, this.periodSchema, this.periodFormErrors);
+    });
+
+    // this.addInitialPeriods();
     this.updateNextPeriod();
   }
 
-  addInitialPeriods() {
-    const initialPeriods: PlanPeriod[] = [
-      { period: 1, price: 99, distiDiscount: 25 },
-      { period: 2, price: 180, distiDiscount: 20 },];
-    initialPeriods.forEach((p) => {
-      this.periods.push(this.createPeriodGroup(p));
-    });
-  }
+  // addInitialPeriods() {
+  //   const initialPeriods: PlanPeriod[] = [
+  //     { period: 1, price: 99, distiDiscount: 25 },
+  //     { period: 2, price: 180, distiDiscount: 20 },];
+  //   initialPeriods.forEach((p) => {
+  //     this.periods.push(this.createPeriodGroup(p));
+  //   });
+  // }
 
   createPeriodGroup(periodData: PlanPeriod): FormGroup {
     return this.fb.group({
@@ -79,6 +111,7 @@ export class AddPlan implements OnInit {
     });
   }
 
+
   get periods(): FormArray {
     return this.planForm.get('periods') as FormArray;
   }
@@ -93,9 +126,9 @@ export class AddPlan implements OnInit {
   }
 
   addPeriod() {
-    if (this.addPeriodForm.valid) {
-      this.periods.push(this.createPeriodGroup(this.addPeriodForm.value));
-      this.addPeriodForm.reset({
+    if (this.periodForm.valid) {
+      this.periods.push(this.createPeriodGroup(this.periodForm.value));
+      this.periodForm.reset({
         price: '',
         distiDiscount: '',
       });
@@ -113,11 +146,24 @@ export class AddPlan implements OnInit {
       this.periods.length > 0
         ? this.periods.at(this.periods.length - 1).value.period + 1
         : 1;
-    this.addPeriodForm.patchValue({ period: nextPeriod });
+    this.periodForm.patchValue({ period: nextPeriod });
   }
 
-  save() {
 
+
+  // Toast
+  toast = false;
+  toggleToast() {
+    this.toast = true;
+  }
+  toastTitle = 'Validation Error';
+  toastBody = '';
+  hideAlert() {
+    setTimeout(() => {
+      this.toast = false;
+    }, 2000);
+  }
+  save() {
     if (this.planForm.valid) {
       const planDto: PlanDto = this.planForm.value;
 
@@ -125,10 +171,23 @@ export class AddPlan implements OnInit {
       this._planService.AddPlan(planDto).subscribe({
         next: (res) => {
           console.log(res);
+          this._router.navigate(['/dashboard/plans/plans-list']);
+
         },
         error: (error) => {
-          console.log(error);
-        }
+          alert(error.error.message)
+          if (error.error.statusCode === 400) {
+            this.toastBody = error.error.message;
+            this.toastTitle = 'Error';
+            this.toggleToast();
+            this.hideAlert();
+          } else if (error.status === 500) {
+            this.toastTitle = 'Error';
+            this.toastBody = 'Internal server erro';
+            this.toggleToast();
+            this.hideAlert();
+          }
+        },
       })
     } else {
       console.error('Form is invalid.');
@@ -137,21 +196,21 @@ export class AddPlan implements OnInit {
     }
   }
 
-  cancel() {
-    this.periods.clear();
-    this.planForm.reset({
-      planName: 'Startup',
-      concurrentCalls: 4,
-      period: 12,
-      internalNote: '',
-    });
-    this.addInitialPeriods();
-    this.updateNextPeriod();
-    this.addPeriodForm.reset({
-      price: '',
-      distiDiscount: '',
-    });
-    this.updateNextPeriod();
-    console.log('Form cancelled and reset.');
-  }
+  // cancel() {
+  //   this.periods.clear();
+  //   this.planForm.reset({
+  //     planName: 'Startup',
+  //     concurrentCalls: 4,
+  //     period: 12,
+  //     internalNote: '',
+  //   });
+  //   // this.addInitialPeriods();
+  //   this.updateNextPeriod();
+  //   this.periodForm.reset({
+  //     price: '',
+  //     distiDiscount: '',
+  //   });
+  //   this.updateNextPeriod();
+  //   console.log('Form cancelled and reset.');
+  // }
 }
