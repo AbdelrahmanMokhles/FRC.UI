@@ -7,6 +7,14 @@ export interface PlanDto {
     isUpdate?: boolean;
 }
 
+export interface PlanDetailsDto {
+    planName?: string;
+    concurrentCalls?: number;
+    period?: number;
+    internalNote?: string;
+    periods?: PlanPeriod[];
+}
+
 export interface PlanPeriod {
     period: number;
     price: number;

@@ -254,6 +254,7 @@ import { UsersDataComponent } from './dashboard/users-data/users-data.component'
 import { SuspensionComponent } from './authentication/suspension/suspension.component';
 import { AddPlan } from './dashboard/Plans/add-plan/add-plan';
 import { PlansData } from './dashboard/Plans/plans-data/plans-data';
+import { PlanInfoComponent } from './dashboard/Plans/plan-info-component/plan-info-component';
 
 export const routes: Routes = [
     {
@@ -647,6 +648,7 @@ export const routes: Routes = [
                 children: [
                     { path: 'plans-list', component: PlansData },
                     { path: 'add-plan', component: AddPlan },
+                    { path: 'plan-info', component: PlanInfoComponent },
                 ],
             },
             {

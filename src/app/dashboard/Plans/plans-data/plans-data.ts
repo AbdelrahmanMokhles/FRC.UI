@@ -13,6 +13,7 @@ import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlansData {
+
     constructor(
         private _planService: PlanService,
         private _router: Router
@@ -54,6 +55,9 @@ export class PlansData {
         });
     }
 
+    planInfo(planId: number) {
+        this._router.navigate(['/dashboard/plans/plan-info'], { queryParams: { id: planId } });
+    }
     editPlan(planId: number) {
         this._router.navigate(['/dashboard/plans/add-plan'], { queryParams: { id: planId } });
     }

@@ -79,7 +79,6 @@ export class AddPlan implements OnInit {
       distiDiscount: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
     });
 
-    // Subscribe to changes for onChange validation
     this.planForm.valueChanges.subscribe(async (values) => {
       await YupValidator(values, this.planSchema, this.planFormErrors);
     });
@@ -94,20 +93,8 @@ export class AddPlan implements OnInit {
         this.loadPlanForEdit(this.planId);
       }
     });
-    // this.addInitialPeriods();
     this.updateNextPeriod();
   }
-
-
-  // addInitialPeriods() {
-  //   const initialPeriods: PlanPeriod[] = [
-  //     { period: 1, price: 99, distiDiscount: 25 },
-  //     { period: 2, price: 180, distiDiscount: 20 },];
-  //   initialPeriods.forEach((p) => {
-  //     this.periods.push(this.createPeriodGroup(p));
-  //   });
-  // }
-
 
   loadPlanForEdit(id: number) {
     this._planService.getPlanById(id).subscribe({
@@ -234,7 +221,6 @@ export class AddPlan implements OnInit {
           next: (res) => {
             console.log(res);
             this._router.navigate(['/dashboard/plans/plans-list']);
-
           },
           error: (error) => {
             alert(error.error.message)
