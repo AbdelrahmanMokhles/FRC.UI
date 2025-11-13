@@ -17,4 +17,4 @@ import { ReturningCustomerRateComponent } from './returning-customer-rate/return
     templateUrl: './ecommerce.component.html',
     styleUrl: './ecommerce.component.scss'
 })
-export class EcommerceComponent {}
+export class EcommerceComponent { }

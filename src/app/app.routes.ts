@@ -101,16 +101,6 @@ import { PProjectsComponent } from './pages/profile-page/p-projects/p-projects.c
 import { IconsComponent } from './icons/icons.component';
 import { MaterialSymbolsComponent } from './icons/material-symbols/material-symbols.component';
 import { RemixiconComponent } from './icons/remixicon/remixicon.component';
-import { ChartsComponent } from './charts/charts.component';
-import { LineChartsComponent } from './charts/line-charts/line-charts.component';
-import { AreaChartsComponent } from './charts/area-charts/area-charts.component';
-import { ColumnChartsComponent } from './charts/column-charts/column-charts.component';
-import { MixedChartsComponent } from './charts/mixed-charts/mixed-charts.component';
-import { RadialbarChartsComponent } from './charts/radialbar-charts/radialbar-charts.component';
-import { RadarChartsComponent } from './charts/radar-charts/radar-charts.component';
-import { PieChartsComponent } from './charts/pie-charts/pie-charts.component';
-import { PolarChartsComponent } from './charts/polar-charts/polar-charts.component';
-import { MoreChartsComponent } from './charts/more-charts/more-charts.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { SignInComponent } from './authentication/sign-in/sign-in.component';
 import { SignUpComponent } from './authentication/sign-up/sign-up.component';
@@ -716,21 +706,6 @@ export const routes: Routes = [
                     { path: 'typography', component: TypographyComponent },
                     { path: 'videos', component: VideosComponent },
                     { path: 'utilities', component: UtilitiesComponent },
-                ],
-            },
-            {
-                path: 'charts',
-                component: ChartsComponent,
-                children: [
-                    { path: '', component: LineChartsComponent },
-                    { path: 'area', component: AreaChartsComponent },
-                    { path: 'column', component: ColumnChartsComponent },
-                    { path: 'mixed', component: MixedChartsComponent },
-                    { path: 'radialbar', component: RadialbarChartsComponent },
-                    { path: 'radar', component: RadarChartsComponent },
-                    { path: 'pie', component: PieChartsComponent },
-                    { path: 'polar', component: PolarChartsComponent },
-                    { path: 'more', component: MoreChartsComponent },
                 ],
             },
             {

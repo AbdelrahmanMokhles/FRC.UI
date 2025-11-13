@@ -1,9 +1,10 @@
 export interface PlanDto {
-    planName: string;
-    concurrentCalls: number;
-    period: number;
-    internalNote: string;
-    periods: PlanPeriod[];
+    planName?: string;
+    concurrentCalls?: number;
+    period?: number;
+    internalNote?: string;
+    periods?: PlanPeriod[];
+    isUpdate?: boolean;
 }
 
 export interface PlanPeriod {

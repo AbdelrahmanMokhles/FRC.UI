@@ -29,7 +29,10 @@
     <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
         <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
             <div class="trezo-card-title">
-                <form class="search-box position-relative">
+                <h5 class="mb-0">
+                    Plans List
+                </h5>
+                <!-- <form class="search-box position-relative">
                     <label class="text-black">
                         <i class="material-symbols-outlined">
                             search
@@ -37,7 +40,7 @@
                     </label>
                     <input type="text" class="input-search d-block w-100 border-radius"
                         placeholder="Search plan here.....">
-                </form>
+                </form> -->
             </div>
             <div class="trezo-card-subtitle">
                 <a class="add-btn d-inline-block transition fw-medium border-radius"
@@ -57,35 +60,12 @@
                 <div class="basic-table table-responsive">
                     <table class="table mb-0">
                         <thead>
-                            <!-- <tr>
-                                <th scope="col" class="fw-medium">
-                                    Plan Name
-                                </th>
-                                <th scope="col" class="fw-medium">
-                                    Concurrent Calls
-                                </th>
-                                <th scope="col" class="fw-medium">
-                                    Period / Months
-                                </th>
-                                <th scope="col" class="fw-medium">
-                                    End user 1 period price
-                                </th>
-                                <th scope="col" class="fw-medium">
-                                    Active Subscribers
-                                </th>
-                                <th scope="col" class="fw-medium">
-                                    Status
-                                </th>
-                                <th scope="col" class="fw-medium">
-                                    Action
-                                </th>
-                            </tr> -->
                             <tr>
                                 <th class="fw-medium sortable">Plan Name</th>
                                 <th class="fw-medium sortable">Concurrent Calls</th>
                                 <th class="fw-medium sortable">Period / Months</th>
                                 <th class="fw-medium sortable">Price</th>
-                                <th scope="col" class="fw-medium">Active Subscribers</th>
+                                <!-- <th scope="col" class="fw-medium">Active Subscribers</th> -->
                                 <th scope="col" class="fw-medium">Status</th>
                                 <th scope="col" class="fw-medium">Action</th>
                             </tr>
@@ -105,19 +85,21 @@
                                 <td class="px-6 py-4 text-gray-700">{{ plan.concurentCall }}</td>
                                 <td class="px-6 py-4 text-gray-700">{{ plan.period }}</td>
                                 <td class="px-6 py-4 text-gray-700">${{ plan.endUserPeriodPrice }}</td>
-                                <td class="px-6 py-4 text-gray-700">{{ plan.activeSubscribers }}</td>
+                                <!-- <td class="px-6 py-4 text-gray-700">{{ plan.activeSubscribers }}</td> -->
                                 <td class="px-6 py-4">
-                                    <span class="font-bold" [ngClass]="{'text-success': plan.status === 'Active',
-                                                                        'text-danger': plan.status === 'Archived'}">
+                                    <span class="font-bold trezo-badge"
+                                        [ngClass]="plan.status === 'Active' ? 'inProgress' : 'cancelled'">
                                         {{ plan.status }}
                                     </span>
                                 </td>
                                 <td>
-                                    <!-- (click)="removePeriod(i)" -->
                                     <div class="action-buttons d-flex align-items-center">
-                                        <button type="button" (click)="deletePlan(plan.id)"
+                                        <button type="button" class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                            <i class="material-symbols-outlined"> info </i>
+                                        </button>
+                                        <button type="button" (click)="editPlan(plan.id)"
                                             class="p-0 bg-transparent d-inline-block lh-1 border-0">
-                                            <i class="material-symbols-outlined text-danger"> delete </i>
+                                            <i class="material-symbols-outlined"> edit </i>
                                         </button>
                                     </div>
                                 </td>

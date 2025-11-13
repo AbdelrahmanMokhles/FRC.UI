@@ -20,7 +20,7 @@ interface MenuItem {
 })
 export class SidebarComponent {
 
-    userType:any= localStorage.getItem("role");
+    userType: any = localStorage.getItem("role");
 
     // isSidebarToggled
     isSidebarToggled = false;

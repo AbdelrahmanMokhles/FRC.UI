@@ -4,6 +4,7 @@ import { UserService } from '../../Services/authentication/UserService/user-serv
 import { CommonModule, NgIf } from '@angular/common';
 import { AdminService } from '../../Services/AdminService/admin-service';
 import { FormsModule } from '@angular/forms';
+import { UserDataTableDto } from '../../Models/User/UserTable.model';
 
 @Component({
     selector: 'app-users-list',
@@ -12,14 +13,14 @@ import { FormsModule } from '@angular/forms';
     styleUrl: './users-data.component.scss',
 })
 export class UsersDataComponent {
-    users: any;
+    users: UserDataTableDto[] = [];
     reqEmail: string = '';
 
     constructor(
         private _userService: UserService,
         private _adminService: AdminService,
         private _router: Router
-    ) {}
+    ) { }
 
     // Card Header Menu
     isCardHeaderOpen = false;
@@ -86,10 +87,9 @@ export class UsersDataComponent {
     ngOnInit() {
         this._adminService.GetUsersOnly().subscribe({
             next: (res) => {
-                console.log(res);
-                this.users = res;
+                // console.log(res.data);
+                this.users = res.data;
                 // this.users = res.map();
-                console.log(this.users);
             },
         });
     }

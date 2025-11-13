@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-lock-screen',
-    imports: [NgClass,RouterLink],
+    imports: [NgClass, RouterLink],
     templateUrl: './suspension.component.html',
     styleUrl: './suspension.component.scss'
 })
@@ -13,7 +13,7 @@ export class SuspensionComponent {
 
     constructor(
         public themeService: CustomizerSettingsService
-    ) {}
+    ) { }
 
     // Password Show/Hide
     password: string = '';

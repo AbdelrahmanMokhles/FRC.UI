@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
 export class AdminService {
     // private url = 'https://localhost:44397/api/admin/';
     // private url = 'http://localhost:5011/api/admin/';
-    private url = 'http://192.168.99.126:80/frc/api/admin/';
-    constructor(private _client: HttpClient) {}
+    private url = 'http://192.168.99.98/frc/api/admin/';
+    constructor(private _client: HttpClient) { }
 
     GetAllUsers() {
         return this._client.get(this.url);
     }
 
-    GetUsersOnly() {
-        return this._client.get(this.url + 'get-users-only');
+    GetUsersOnly(): Observable<any> {
+        return this._client.get<any>(this.url + 'users-data-table');
     }
 
     EditUser(user: any): Observable<any> {

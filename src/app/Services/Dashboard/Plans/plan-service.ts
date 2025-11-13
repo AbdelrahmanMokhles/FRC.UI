@@ -9,29 +9,24 @@ import { Observable } from 'rxjs';
 export class PlanService {
   // private url = 'http://localhost:44397/api/users/';
   // private url = 'http://localhost:5011/api/users/';
-  private url = 'http://192.168.99.98/frc/api/plan/';
-  constructor(private _client: HttpClient) { }
+  private baseUrl = 'http://192.168.99.98/frc/api/plan/';
+  constructor(private http: HttpClient) { }
 
-  getPlans(pageNumber = 1, pageSize = 10): Observable<any> {
-    return this._client.get<any>(this.url + 'data-table', {
-      params: {
-        pageNumber,
-        pageSize,
-        // loggedEmail: 'test@email.com', // or get from auth context
-      },
-    });
+  getPlans(): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'data-table', {});
+  }
+
+  getPlanById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}get-by-id/${id}`);
+  }
+
+  updatePlan(id: number, dto: PlanDto) {
+    return this.http.put<any>(`${this.baseUrl}update-plan/${id}`, dto);
   }
 
 
-  // GetDataTable(): Observable<any> {
-  //   return this._client.post<any>(this.url + 'data-table', {
-  //     headers: { 'Content-Type': 'application/json' },
-  //     observe: 'response',
-  //   });
-  // }
-
   AddPlan(PlanDto: PlanDto): Observable<any> {
-    return this._client.post<any>(this.url + 'add-plan', PlanDto, {
+    return this.http.post<any>(this.baseUrl + 'add-plan', PlanDto, {
       headers: { 'Content-Type': 'application/json' },
       observe: 'response',
     });
