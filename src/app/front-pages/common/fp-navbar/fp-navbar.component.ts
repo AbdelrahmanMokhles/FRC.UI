@@ -5,13 +5,12 @@ import { CustomizerSettingsService } from '../../../customizer-settings/customiz
 
 @Component({
     selector: 'app-fp-navbar',
-    imports: [RouterLink, RouterLinkActive, NgClass,CommonModule],
+    imports: [RouterLink, RouterLinkActive, NgClass, CommonModule],
     templateUrl: './fp-navbar.component.html',
-    styleUrl: './fp-navbar.component.scss'
+    styleUrl: './fp-navbar.component.scss',
 })
 export class FpNavbarComponent {
-
-    token : any = localStorage.getItem("token");
+    token: any = localStorage.getItem('token');
 
     // Toggle Class
     classApplied = false;
@@ -23,7 +22,11 @@ export class FpNavbarComponent {
     isSticky: boolean = false;
     @HostListener('window:scroll')
     checkScroll() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const scrollPosition =
+            window.scrollY ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0;
         if (scrollPosition >= 50) {
             this.isSticky = true;
         } else {
@@ -31,8 +34,5 @@ export class FpNavbarComponent {
         }
     }
 
-    constructor(
-        public themeService: CustomizerSettingsService
-    ) {}
-
+    constructor(public themeService: CustomizerSettingsService) {}
 }

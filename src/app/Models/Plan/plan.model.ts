@@ -27,7 +27,7 @@ export interface Plan {
     id: number;
     selected?: boolean;
     planName: string;
-    concurentCall: number;
+    concurentCalls: number;
     period: number;
     endUserPeriodPrice: number;
     activeSubscribers: number;
