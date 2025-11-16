@@ -29,18 +29,18 @@
     <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
         <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
             <div class="trezo-card-title">
-                <h5 class="mb-0">
+                <!-- <h5 class="mb-0">
                     Plans List
-                </h5>
-                <!-- <form class="search-box position-relative">
+                </h5> -->
+                <form class="search-box position-relative">
                     <label class="text-black">
                         <i class="material-symbols-outlined">
                             search
                         </i>
                     </label>
                     <input type="text" class="input-search d-block w-100 border-radius"
-                        placeholder="Search plan here.....">
-                </form> -->
+                        placeholder="Search plan here....." (input)="searchTerm.set($any($event.target).value)" />
+                </form>
             </div>
             <div class="trezo-card-subtitle">
                 <a class="add-btn d-inline-block transition fw-medium border-radius"
@@ -71,7 +71,10 @@
                             </tr>
                         </thead>
                         <tbody formArrayName="periods">
-                            @for (plan of filteredPlans(); track plan.id) {
+                            @for (plan of filteredPlans() | paginate: { id: 'plans',
+                            itemsPerPage: pageSize,
+                            currentPage: page,
+                            totalItems: total }; track plan.id) {
                             <tr>
                                 <!-- <td class="w-4 p-4">
                                     <div class="flex items-center">
@@ -110,9 +113,15 @@
                     </table>
                 </div>
 
+                <div class="d-flex justify-content-center">
+                    <pagination-controls (pageChange)="ChangePage($event)" id="plans">
+                    </pagination-controls>
+                </div>
+
                 <!-- Pagination -->
                 <section>
-                    <div class="trezo-card-pagination">
+
+                    <!-- <div class="trezo-card-pagination">
                         <div class="d-md-flex align-items-center justify-content-between">
                             <p class="mb-0">
                                 Showing 10 of 36 results
@@ -160,7 +169,8 @@
                                 </li>
                             </ol>
                         </div>
-                    </div>
+                    </div> -->
+
                 </section>
                 <!-- Pagination -->
 

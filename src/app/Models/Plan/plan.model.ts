@@ -13,6 +13,8 @@ export interface PlanDetailsDto {
     period?: number;
     internalNote?: string;
     periods?: PlanPeriod[];
+    status?: string;
+    createdDate?: any;
 }
 
 export interface PlanPeriod {

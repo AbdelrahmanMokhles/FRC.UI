@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-lg-8">
         <div class="creator-details-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none"
             [class.component-dark-theme]="themeService.isDark()">
@@ -11,14 +11,12 @@
                             ID : {{planId}}
                         </span>
                     </div>
-                    <div class="product-details-content">
-                        <span class="stock d-inline-block position-relative">
-                            <i class="material-symbols-outlined">
-                                check
-                            </i>
-                            in stock
-                        </span>
-                    </div>
+                    <!-- <div> -->
+                    <span class="font-bold trezo-badge mb-4"
+                        [ngClass]="planDetails?.status === 'Active' ? 'inProgress' : 'cancelled'">
+                        {{ planDetails?.status }}
+                    </span>
+                    <!-- </div> -->
                 </div>
                 <div class="author-info d-sm-flex align-items-center justify-content-between">
                     <div class="date d-flex align-items-center">
@@ -28,7 +26,7 @@
                                 Created Since
                             </span>
                             <span class="d-block text-black fw-semibold">
-                                23 June 2025
+                                {{planDetails?.createdDate}}
                             </span>
                         </div>
                     </div>
@@ -44,16 +42,17 @@
                                 <thead>
                                     <tr>
                                         <th class="fw-medium sortable">Period</th>
-                                        <th class="fw-medium sortable">Price</th>
-                                        <th class="fw-medium sortable">Disti Discount </th>
+                                        <th class="fw-medium sortable">Price $</th>
+                                        <th class="fw-medium sortable">Disti Discount %</th>
                                     </tr>
                                 </thead>
                                 <tbody formArrayName="periods">
-                                    @for (planPeriod of planPeriods; track planPeriod.period) {
+                                    @for (planPeriod of planDetails?.periods; track planPeriod.period) {
                                     <tr>
-                                        <td class="px-6 py-4 text-gray-700">{{ planPeriod.period }}</td>
-                                        <td class="px-6 py-4 text-gray-700">{{ planPeriod.price }}</td>
-                                        <td class="px-6 py-4 text-gray-700">{{ planPeriod.distiDiscount }}</td>
+                                        <td class="px-6 py-4 text-gray-700">{{ planPeriod.period }}
+                                            ({{calculateMonths(planPeriod.period)}} Months)</td>
+                                        <td class="px-6 py-4 text-gray-700">{{ planPeriod.price }} $</td>
+                                        <td class="px-6 py-4 text-gray-700">{{ planPeriod.distiDiscount }} %</td>
                                     </tr>
                                     }
                                 </tbody>

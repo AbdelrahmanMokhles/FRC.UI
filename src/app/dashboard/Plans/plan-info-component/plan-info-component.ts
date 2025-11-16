@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CustomizerSettingsService } from '../../../customizer-settings/customizer-settings.service';
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
-import { Plan, PlanDto, PlanPeriod } from '../../../Models/Plan/plan.model';
+import { PlanDetailsDto, PlanPeriod } from '../../../Models/Plan/plan.model';
+import { date } from 'yup';
 
 @Component({
   selector: 'app-plan-info-component',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './plan-info-component.html',
   styleUrl: './plan-info-component.scss'
 })
 export class PlanInfoComponent {
 
 
-  planDetails?: PlanDto;
+  planDetails?: PlanDetailsDto;
   planPeriods: PlanPeriod[] = [];
 
   planId?: number;
@@ -34,29 +35,41 @@ export class PlanInfoComponent {
     });
   }
 
+  formatDateOnly(date: Date): string {
+    return [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, '0'),
+      String(date.getDate()).padStart(2, '0')
+    ].join('-');
+  }
+
+
 
   loadPlanDetails(id: number) {
     this._planService.getPlanById(id).subscribe({
       next: (res) => {
+        const dto = res.data;
+        console.log("data", res.data);
 
-        const plan = {
-          ...res.data,
-          status: res.data.isArchived ? 'Archived' : 'Active'
+        const plan: PlanDetailsDto = {
+          planName: dto.planName,
+          concurrentCalls: dto.concurentCalls,
+          period: dto.period,
+          internalNote: dto.internalNote,
+          periods: dto.periods ?? [],
+          status: dto.isArchived ? 'Archived' : 'Active',
+          createdDate: this.formatDateOnly(new Date(dto.createdAt))
         };
 
-        console.log('🟢 Loaded plan:', plan);
+        console.log("Mapped Plan:", plan);
+
         this.planDetails = plan;
-        this.planPeriods = plan.periods ?? [];
       },
-      error: (err) => console.error('❌ Failed to load plan:', err)
+      error: err => alert(err)
     });
   }
-
-  // Tabs
-  currentTab = 'tab1';
-  switchTab(event: MouseEvent, tab: string) {
-    event.preventDefault();
-    this.currentTab = tab;
+  calculateMonths(period: number): number {
+    const periodMonths = this.planDetails?.period || 0;
+    return period * periodMonths;
   }
-
 }

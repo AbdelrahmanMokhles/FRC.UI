@@ -3,11 +3,12 @@ import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/c
 import { CommonModule } from '@angular/common';
 import { Plan } from '../../../Models/Plan/plan.model';
 import { Router, RouterLink } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
 
 @Component({
     selector: 'app-plans-data',
-    imports: [CommonModule, RouterLink],
+    imports: [CommonModule, RouterLink, NgxPaginationModule],
     templateUrl: './plans-data.html',
     styleUrl: './plans-data.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,8 +21,12 @@ export class PlansData {
     ) {
         this.loadPlans();
     }
+    plansPages: any[] = [];
     plans = signal<Plan[]>([]);
     searchTerm = signal('');
+    pageSize = 10;
+    page = 1;
+    total = this.plansPages.length;
 
 
 
@@ -31,8 +36,9 @@ export class PlansData {
             return this.plans();
         }
         return this.plans().filter(plan =>
-            plan.planName.toLowerCase().includes(term)
-        );
+            plan.planName.toLowerCase().includes(term) ||
+            plan.period.toString().includes(term) ||
+            plan.endUserPeriodPrice.toString().includes(term));
     });
 
 
@@ -46,6 +52,7 @@ export class PlansData {
                     ...p,
                     status: p.isArchived ? 'Archived' : 'Active'
                 }));
+                this.plansPages = items;
                 this.plans.set(items);
             },
             error: (err) => {
@@ -64,6 +71,10 @@ export class PlansData {
 
     deletePlan(planId: number) {
         this.plans.update(plans => plans.filter(p => p.id !== planId));
+    }
+
+    ChangePage(event: any) {
+        this.page = event;
     }
 
     // onSearch(event: Event) {
