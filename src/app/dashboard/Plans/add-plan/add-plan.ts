@@ -13,7 +13,7 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
-import { PlanPeriod, PlanDto } from '../../../Models/Plan/plan.model';
+import { PlanPeriod, AddPlanDto } from '../../../Models/Plan/plan.model';
 import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
 import { error } from 'console';
 import * as yup from 'yup';
@@ -36,8 +36,9 @@ export class AddPlan implements OnInit {
   periodFormErrors: any = {};
   planForm!: FormGroup;
   periodForm!: FormGroup;
-  planDto: PlanDto = {}
+  AddPlanDto: AddPlanDto = {}
   isUpdate = false;
+  isArchived!: boolean;
 
 
   constructor(
@@ -50,16 +51,16 @@ export class AddPlan implements OnInit {
 
   planSchema = yup.object({
     planName: yup.string().required('Plan name is required'),
-    concurrentCalls: yup.number().required('Concurrent calls required').min(1, 'Must be at least 1'),
+    concurrentCalls: yup.number().typeError('Must be number').required('Concurrent calls required').min(1, 'Must be at least 1'),
     period: yup.number().required('Period months required').min(1, 'Must be at least 1'),
     internalNote: yup.string(),
   });
 
 
   periodSchema = yup.object({
-    period: yup.number().required('Period is required').min(1),
-    price: yup.number().required('Price is required').min(1),
-    distiDiscount: yup.number().required('Discount is required').min(0, 'Must be at least 1').max(100, 'Must be at most 100'),
+    period: yup.number().typeError('Must be number').required('Period is required').min(1),
+    price: yup.number().typeError('Must be number').required('Price is required').min(1),
+    distiDiscount: yup.number().typeError('Must be number').required('Discount is required').min(0, 'Must be at least 1').max(100, 'Must be at most 100'),
   });
 
 
@@ -69,15 +70,17 @@ export class AddPlan implements OnInit {
     this.planForm = this.fb.group({
       planName: ['', Validators.required],
       concurrentCalls: [, [Validators.required, Validators.min(1)]],
-      period: [, [Validators.required, Validators.min(1)]],
+      period: [1, [Validators.required, Validators.min(1)]],
       periods: this.fb.array([]),
       internalNote: ['']
     });
     this.periodForm = this.fb.group({
-      period: [1, [Validators.required, Validators.min(1)]],
+      tierNumber: [1, [Validators.required, Validators.min(1)]],
       price: ['', [Validators.required, Validators.min(0)]],
       distiDiscount: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
     });
+
+    this.addInitialPeriods();
 
     this.planForm.valueChanges.subscribe(async (values) => {
       await YupValidator(values, this.planSchema, this.planFormErrors);
@@ -96,9 +99,22 @@ export class AddPlan implements OnInit {
     this.updateNextPeriod();
   }
 
+  addInitialPeriods() {
+    const initialPeriods: PlanPeriod[] =
+      [{ tierNumber: 1, price: 20, distiDiscount: 10 },
+      { tierNumber: 3, price: 50, distiDiscount: 15 },
+      { tierNumber: 6, price: 90, distiDiscount: 20 },
+      { tierNumber: 12, price: 150, distiDiscount: 25 }];
+    initialPeriods.forEach(p => {
+      this.periods.push(this.fb.group(p));
+    });
+  }
+
   loadPlanForEdit(id: number) {
     this._planService.getPlanById(id).subscribe({
       next: (res) => {
+        this.isArchived = res.data.isArchived;
+        console.log("archhhh", this.isArchived);
         const plan = res.data ?? res;
         console.log('🟢 Loaded plan:', plan);
 
@@ -111,18 +127,18 @@ export class AddPlan implements OnInit {
         });
 
         // Clear existing periods (if any)
-        this.periods.clear();
+        // this.periods.clear();
 
         // Fill periods array properly
-        if (plan.periods && Array.isArray(plan.periods)) {
-          plan.periods.forEach((p: any) => {
-            this.periods.push(this.createPeriodGroup({
-              period: p.period,
-              price: p.endUserPrice ?? p.price,
-              distiDiscount: p.distiDiscount
-            }));
-          });
-        }
+        // if (plan.periods && Array.isArray(plan.periods)) {
+        //   plan.periods.forEach((p: any) => {
+        //     this.periods.push(this.createPeriodGroup({
+        //       tierNumber: p.tierNumber,
+        //       price: p.endUserPrice ?? p.price,
+        //       distiDiscount: p.distiDiscount
+        //     }));
+        //   });
+        // }
 
         // Prepare next period number for adding new ones
         this.updateNextPeriod();
@@ -135,7 +151,7 @@ export class AddPlan implements OnInit {
   createPeriodGroup(periodData: PlanPeriod): FormGroup {
     return this.fb.group({
       period: [
-        periodData.period,
+        periodData.tierNumber,
         [Validators.required, Validators.min(1)],
       ],
       price: [
@@ -202,22 +218,33 @@ export class AddPlan implements OnInit {
     }, 2000);
   }
 
+  archive() {
+    if (this.planId) {
+      this._planService.archivePlan(this.planId).subscribe({
+        next: (res) => {
+          alert('✅' + res.message);
+          this._router.navigate(['/dashboard/plans/plans-list']);
+        },
+        error: (err) => console.error(err)
+      });
+    }
+  }
+
   save() {
     if (this.planForm.valid) {
-      this.planDto = this.planForm.value;
-      this.planDto.isUpdate = this.isUpdate;
+      this.AddPlanDto = this.planForm.value;
+      this.AddPlanDto.isUpdate = this.isUpdate;
       if (this.isUpdate && this.planId) {
-        this._planService.updatePlan(this.planId, this.planDto).subscribe({
+        this._planService.updatePlan(this.planId, this.AddPlanDto).subscribe({
           next: (res) => {
-            console.log('✅ Updated successfully', res);
-            alert('✅ Updated successfully');
+            alert('✅' + res.message);
             this._router.navigate(['/dashboard/plans/plans-list']);
           },
           error: (err) => console.error(err)
         });
       }
       else {
-        this._planService.AddPlan(this.planDto).subscribe({
+        this._planService.AddPlan(this.AddPlanDto).subscribe({
           next: (res) => {
             console.log(res);
             this._router.navigate(['/dashboard/plans/plans-list']);
@@ -245,21 +272,4 @@ export class AddPlan implements OnInit {
     }
   }
 
-  // cancel() {
-  //   this.periods.clear();
-  //   this.planForm.reset({
-  //     planName: 'Startup',
-  //     concurrentCalls: 4,
-  //     period: 12,
-  //     internalNote: '',
-  //   });
-  //   // this.addInitialPeriods();
-  //   this.updateNextPeriod();
-  //   this.periodForm.reset({
-  //     price: '',
-  //     distiDiscount: '',
-  //   });
-  //   this.updateNextPeriod();
-  //   console.log('Form cancelled and reset.');
-  // }
 }

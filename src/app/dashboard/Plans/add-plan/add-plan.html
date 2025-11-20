@@ -49,7 +49,7 @@
         <div class="trezo-card border-radius d-block bg-white border-0 shadow-none">
             <div class="trezo-card-content">
                 <form class="row g-3" [formGroup]="planForm" (ngSubmit)="save()" novalidate>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="planName" class="form-label">Plan Name</label>
                         <input type="text" class="form-control" id="planName" formControlName="planName">
                         @if (planForm.get('planName')?.touched) {
@@ -68,9 +68,9 @@
                         </div>
                         }
                     </div>
-                    <div class="col-md-3">
+                    <div style="display: none;" class="col-md-3">
                         <label for="period" class="form-label">Period Months</label>
-                        <input type="number" class="form-control" id="period" formControlName="period">
+                        <input type="number" class="form-control" readonly id="period" formControlName="period">
                         @if (planForm.get('period')?.touched) {
                         <div style="color: rgb(248, 89, 89)" class="error2">
                             {{ planFormErrors.period }}
@@ -78,7 +78,7 @@
                         }
                     </div>
                     <div class="trezo-card-content">
-                        <div [formGroup]="periodForm" class="row g-3 align-items-start">
+                        <!-- <div [formGroup]="periodForm" class="row g-3 align-items-start">
                             <div class="col-3">
                                 <label for="period" class="form-label">Period</label>
                                 <input type="number" id="period" formControlName="period" class="form-control">
@@ -115,7 +115,7 @@
                                     + Add
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
 
                         <br><br>
 
@@ -124,7 +124,7 @@
                         @if (periods.controls.length > 0) {
                         <div class="trezo-card-content">
                             <div class="table-style-two">
-                                <div class="basic-table table-responsive">
+                                <div class="basic-table table-responsive col-md-7">
                                     <table class="table mb-0">
                                         <thead>
                                             <tr>
@@ -137,12 +137,44 @@
                                                 <th scope="col" class="fw-medium">
                                                     Disti Discount
                                                 </th>
-                                                <th scope="col" class="fw-medium">
+                                                <!-- <th scope="col" class="fw-medium">
                                                     Action
-                                                </th>
+                                                </th> -->
                                             </tr>
                                         </thead>
                                         <tbody formArrayName="periods">
+                                            @for (periodGroup of periods.controls; track periodGroup; let i = $index) {
+                                            <tr [formGroupName]="i">
+
+                                                <!-- Period -->
+                                                <td class="text-body">
+                                                    {{ periodGroup.value.period }}
+                                                    ({{calculateMonths(periodGroup.value.tierNumber) }} Months)
+                                                </td>
+
+                                                <!-- Price -->
+                                                <td class="text-body">
+                                                    <input type="number" formControlName="price" class="form-control" />
+                                                </td>
+
+                                                <!-- Discount -->
+                                                <td>
+                                                    <input type="number" formControlName="distiDiscount"
+                                                        class="form-control" />
+                                                </td>
+
+                                                <!-- Action -->
+                                                <!-- <td>
+                                                    <button type="button" (click)="removePeriod(i)"
+                                                        class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                                        <i class="material-symbols-outlined"> delete </i>
+                                                    </button>
+                                                </td> -->
+                                            </tr>
+                                            }
+                                        </tbody>
+
+                                        <!-- <tbody formArrayName="periods">
                                             @for (periodGroup of periods.controls; track periodGroup; let i = $index) {
                                             <tr>
                                                 <td class="text-body">
@@ -167,7 +199,7 @@
                                                 </td>
                                             </tr>
                                             }
-                                        </tbody>
+                                        </tbody> -->
                                     </table>
                                 </div>
                             </div>
@@ -196,7 +228,14 @@
                         <button type="submit" [disabled]="planForm.invalid" class="btn btn-primary">
                             SavePlan
                         </button>
-                        <a type="button" routerLink="/dashboard/plans/plans-list" class="btn btn-danger">Cancel</a>
+                        <button type="button" routerLink="/dashboard/plans/plans-list"
+                            class="btn btn-danger">Cancel</button>
+                        <button type="button" class="btn btn-warning" (click)="archive()">Archive</button>
+                        <span class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                                checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Archive</label>
+                        </span>
                     </div>
                 </form>
             </div>

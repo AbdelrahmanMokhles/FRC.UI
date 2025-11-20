@@ -97,7 +97,7 @@
                     <!-- Plans Section -->
                     <div class="accordion-item border-radius border-0">
                         <span class="sub-title d-block fw-medium text-uppercase">
-                            Plans - Licesnses
+                            Plans - Licences
                         </span>
                         <button type="button" (click)="toggleSection(3)" [ngClass]="{ open: isSectionOpen(3) }"
                             class="accordion-button text-start shadow-none fw-medium border-0 transition border-radius">
@@ -117,16 +117,43 @@
                                         </a>
                                     </li>
                                     <li class="sidemenu-item">
-                                        <a routerLink="/dashboard/plans/add-plan" routerLinkActive="active"
+                                        <a routerLink="/dashboard/licences/licences-list" routerLinkActive="active"
                                             [routerLinkActiveOptions]="{exact: true}"
                                             class="sidemenu-link border-radius d-block position-relative transition fw-medium">
-                                            Add Plan
+                                            Licenses List
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Licences Section -->
+                    <!-- <div class="accordion-item border-radius border-0">
+                        <span class="sub-title d-block fw-medium text-uppercase">
+                            Licesnses
+                        </span>
+                        <button type="button" (click)="toggleSection(4)" [ngClass]="{ open: isSectionOpen(4) }"
+                            class="accordion-button text-start shadow-none fw-medium border-0 transition border-radius">
+                            <i class="material-symbols-outlined">
+                                note_stack
+                            </i>
+                            <span class="title lh-1"> Licences </span>
+                        </button>
+                        <div class="accordion-collapse" [ngClass]="{ 'open': isSectionOpen(4) }">
+                            <div class="accordion-body">
+                                <ul class="sidebar-sub-menu p-0 list-unstyled mb-0">
+                                    <li class="sidemenu-item">
+                                        <a routerLink="/dashboard/licences/licences-list" routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{exact: true}"
+                                            class="sidemenu-link border-radius d-block position-relative transition fw-medium">
+                                            Licenses List
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
                 <section>
                     <!-- Old Dashboard sectoin -->

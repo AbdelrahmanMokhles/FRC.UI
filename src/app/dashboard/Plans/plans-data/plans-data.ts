@@ -6,7 +6,7 @@ import {
     computed,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Plan } from '../../../Models/Plan/plan.model';
+import { PlansDataTableDto } from '../../../Models/Plan/plan.model';
 import { Router, RouterLink } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
@@ -22,12 +22,11 @@ export class PlansData {
     constructor(private _planService: PlanService, private _router: Router) {
         this.loadPlans();
     }
-    plansPages: any[] = [];
-    plans = signal<Plan[]>([]);
+    plans = signal<PlansDataTableDto[]>([]);
     searchTerm = signal('');
     pageSize = 10;
     page = 1;
-    total = this.plansPages.length;
+    total = this.plans.length;
 
     filteredPlans = computed(() => {
         const term = this.searchTerm().toLowerCase();
@@ -51,7 +50,6 @@ export class PlansData {
                         status: p.isArchived ? 'Archived' : 'Active',
                     })
                 );
-                this.plansPages = items;
                 this.plans.set(items);
             },
             error: (err) => {
@@ -72,9 +70,9 @@ export class PlansData {
         });
     }
 
-    deletePlan(planId: number) {
-        this.plans.update((plans) => plans.filter((p) => p.id !== planId));
-    }
+    // deletePlan(planId: number) {
+    //     this.plans.update((plans) => plans.filter((p) => p.id !== planId));
+    // }
 
     ChangePage(event: any) {
         this.page = event;

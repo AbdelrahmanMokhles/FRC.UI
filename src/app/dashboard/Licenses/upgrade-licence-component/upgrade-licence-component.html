@@ -1,0 +1,112 @@
+<!-- Breadcrumb -->
+<section>
+    <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+        <h5 class="mb-0">
+            Device Subscription
+        </h5>
+        <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <a routerLink="/dashboard" class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        home
+                    </i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <span routerLink="/dashboard/licences/licences-list">
+                    Licence
+                </span>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Device Subscription
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- End Breadcrumb -->
+
+
+<!-- Form -->
+<section>
+    <div class="col-lg-12">
+        <div class="trezo-card border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <form class="row g-3" [formGroup]="upgradeForm" (ngSubmit)="subscripe()" novalidate>
+                    <div class="col-md-1">
+                        <label for="model" class="form-label">Model Name</label>
+                        <input type="text" class="form-control" readonly disabled id="model"
+                            value="{{licenceDetails?.model}}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="model" class="form-label">MAC Address</label>
+                        <input type="text" class="form-control" readonly disabled id="model"
+                            value="{{licenceDetails?.mac}}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="model" class="form-label">Current Plan</label>
+                        <input type="text" class="form-control" readonly disabled id="model"
+                            value="{{licenceDetails?.plan}}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="model" class="form-label">Concurrent Calls</label>
+                        <input type="text" class="form-control" readonly disabled id="model"
+                            value="{{licenceDetails?.concurrentCalls}}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="model" class="form-label">Expiration Date</label>
+                        <input type="text" class="form-control" readonly disabled id="model"
+                            value="{{licenceDetails?.expireDate}}">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="model" class="form-label">User Email</label>
+                        <input type="text" class="form-control" readonly disabled id="model"
+                            value="{{licenceDetails?.userEmail}}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="model" class="form-label">Upgrade to</label>
+                        <select formControlName="plan" class="form-select" name="plans" id="plans"
+                            (change)="onPlanChange($any($event.target).value)">
+                            <option disabled selected>Select subscription plan</option>
+                            @for (plan of plans; track plan.id) {
+                            <option value="{{plan.id}}">{{plan.planName}}</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="model" class="form-label">Period of subscription</label>
+                        <select formControlName="tier" class="form-select" name="planPeriods" id="planPeriods"
+                            (change)="onTierChange($any($event.target).value)">
+                            <option disabled selected>Select subscription period</option>
+                            @for (period of planPeriods; track period.tierNumber) {
+                            <option value="{{period.id}}">{{period.tierNumber}}</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="model" class="form-label">Price</label>
+                        <input type="text" class="form-control" readonly disabled id="model"
+                            value="{{selectedTier?.price}} $">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="model" class="form-label">Disti Discount</label>
+                        <input type="text" class="form-control" readonly disabled id="model"
+                            value="{{selectedTier?.distiDiscount}} %">
+                    </div>
+                    <div class="my-8 border-t border-gray-200"></div>
+                    <div class="trezo-card-content example-buttons">
+                        <button type="submit" [disabled]="upgradeForm.invalid" class="btn btn-primary">
+                            Subscripe
+                        </button>
+                        <a type="button" routerLink="/dashboard/licences/licences-list"
+                            class="btn btn-danger">Cancel</a>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Form -->

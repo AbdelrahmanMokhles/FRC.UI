@@ -1,4 +1,4 @@
-export interface PlanDto {
+export interface AddPlanDto {
     planName?: string;
     concurrentCalls?: number;
     period?: number;
@@ -18,12 +18,13 @@ export interface PlanDetailsDto {
 }
 
 export interface PlanPeriod {
-    period: number;
+    id?: number;
+    tierNumber: number;
     price: number;
     distiDiscount: number;
 }
 
-export interface Plan {
+export interface PlansDataTableDto {
     id: number;
     selected?: boolean;
     planName: string;

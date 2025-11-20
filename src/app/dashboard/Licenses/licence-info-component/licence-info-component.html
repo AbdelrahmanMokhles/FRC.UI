@@ -1,0 +1,152 @@
+<!-- Breadcrumb -->
+<!-- <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Licence Details
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Licences
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            Licence Details
+        </li>
+    </ol>
+</div> -->
+
+<!-- Invoice Details -->
+<!-- <div class="invoice-details-card trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <div class="trezo-card-content">
+        <div class="invoice-info d-md-flex align-items-center justify-content-between">
+            <div>
+                <span class="title d-block">
+                    Invoice Number: <span class="text-black">#1346</span>
+                </span>
+                <span class="d-block">
+                    Invoice To:
+                </span>
+                <span class="d-block text-black">
+                    Shannon Nelson
+                </span>
+                <span class="d-block text-black">
+                    4545 Seth Street Ballinger, TX 78965
+                </span>
+                <span class="d-block text-black">
+                    +1 444 556 8899
+                </span>
+            </div>
+            <div>
+                <img src="images/qr-code.svg" class="qr-code-image" alt="qr-code-image">
+            </div>
+            <div>
+                <span class="title d-block text-body">
+                    Date: <span class="text-black">01 Dec 2025</span>
+                </span>
+                <span class="d-block text-body">
+                    Pay To:
+                </span>
+                <span class="d-block">
+                    Mercedes Foreman
+                </span>
+                <span class="d-block">
+                    458 Friendship Lane Walnut Creek, CA 5828
+                </span>
+                <span class="d-block">
+                    +1 444 888 0055
+                </span>
+            </div>
+        </div>
+        <div class="basic-table table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fw-medium">
+                            No
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Item Description
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Quantity
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Price
+                        </th>
+                        <th scope="col" class="fw-medium">
+                            Total
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-body">
+                            1
+                        </td>
+                        <td class="fw-medium">
+                            Apple MacBook Pro 16.2' with M3 Pro Chip
+                        </td>
+                        <td class="text-body">
+                            4
+                        </td>
+                        <td class="text-body">
+                            $80
+                        </td>
+                        <td class="text-body">
+                            $320
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-btn-box text-center">
+            <button type="button" class="warn d-inline-block fw-medium border-radius border-0 transition">
+                Print
+            </button>
+            <button type="button" class="primary d-inline-block fw-medium border-radius border-0 transition">
+                <span class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        download
+                    </i>
+                    Download
+                </span>
+            </button>
+        </div>
+    </div>
+</div> -->
+
+<div class="trezo-card-content">
+    <div class="table-style-two">
+        <div class="basic-table table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th class="fw-medium sortable">Device Model</th>
+                        <th class="fw-medium sortable">MAC Address</th>
+                        <th class="fw-medium sortable">Plan</th>
+                        <th class="fw-medium sortable">Concurrent Calls</th>
+                        <th scope="col" class="fw-medium">Expire Date</th>
+                        <th scope="col" class="fw-medium">User Email</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="px-6 py-4 font-medium text-gray-700 ">{{ licenceDetails?.model}}</td>
+                        <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.mac }}</td>
+                        <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.plan }}</td>
+                        <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.concurrentCalls }}</td>
+                        <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.expireDate }}</td>
+                        <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.userEmail }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

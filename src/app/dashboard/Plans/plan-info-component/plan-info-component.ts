@@ -53,7 +53,7 @@ export class PlanInfoComponent {
 
         const plan: PlanDetailsDto = {
           planName: dto.planName,
-          concurrentCalls: dto.concurentCalls,
+          concurrentCalls: dto.concurrentCalls,
           period: dto.period,
           internalNote: dto.internalNote,
           periods: dto.periods ?? [],

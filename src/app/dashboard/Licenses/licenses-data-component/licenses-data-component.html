@@ -1,0 +1,122 @@
+<!-- Breadcrumb -->
+<section>
+    <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+        <h5 class="mb-0"> Licences List</h5>
+        <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <a routerLink="/dashboard" class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined"> home </i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Licences
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Licences List
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- End Breadcrumb -->
+
+<!-- Data table -->
+<section>
+    <div class="trezo-card mb-25 border-radius d-block bg-white border-0 shadow-none">
+        <div class="trezo-card-header d-sm-flex align-items-center justify-content-between">
+            <div class="trezo-card-title">
+                <!-- <h5 class="mb-0">
+                    Plans List
+                </h5> -->
+                <form class="search-box position-relative">
+                    <label class="text-black">
+                        <i class="material-symbols-outlined"> search </i>
+                    </label>
+                    <input type="text" class="input-search d-block w-100 border-radius"
+                        placeholder="Search licence here....." (input)="searchTerm.set($any($event.target).value)" />
+                </form>
+            </div>
+        </div>
+        <div class="trezo-card-content">
+            <div class="table-style-two">
+                <div class="basic-table table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th class="fw-medium sortable">Device Model</th>
+                                <th class="fw-medium sortable">MAC Address</th>
+                                <th class="fw-medium sortable">Plan</th>
+                                <th class="fw-medium sortable">Concurrent Calls</th>
+                                <th scope="col" class="fw-medium">Expire Date</th>
+                                <th scope="col" class="fw-medium">User Email</th>
+                                <th scope="col" class="fw-medium">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody formArrayName="periods">
+                            @for (licence of filteredLicences() | paginate: { id:
+                            'licences', itemsPerPage: pageSize, currentPage: page,
+                            totalItems: total }; track licence.id) {
+                            <tr>
+                                <!-- <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input type="checkbox"
+                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                                            [checked]="plan.selected" (change)="toggleOne(plan.id)">
+                                    </div>
+                                </td> -->
+                                <td class="px-6 py-4 font-medium text-gray-700 ">{{ licence.model}}</td>
+                                <td class="px-6 py-4 text-gray-700">{{ licence.mac }}</td>
+                                <td class="px-6 py-4 text-gray-700">{{ licence.plan }}</td>
+                                <td class="px-6 py-4 text-gray-700">{{ licence.concurrentCalls }}</td>
+                                <td class="px-6 py-4 text-gray-700">{{ licence.expireDate }}</td>
+                                <td class="px-6 py-4 text-gray-700">{{ licence.userEmail }}</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <button (click)="licenceInfo(licence.id)" type="button"
+                                            class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                            <i class="material-symbols-outlined icon-lg">
+                                                info
+                                            </i>
+                                        </button>
+                                        @if (!licence.isSubscriped ) {
+                                        <button (click)="upgradeLicence(licence.id)" title="Fast Forward" type="button"
+                                            class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                            <i class="material-symbols-outlined text-slate-600 text-3xl">
+                                                Add
+                                            </i>
+                                        </button>
+                                        }
+                                        <button (click)="licenceInfo(licence.id)" type="button"
+                                            class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                            <i class="material-symbols-outlined">
+                                                keyboard_double_arrow_up
+                                            </i>
+                                        </button>
+                                        <button (click)="licenceInfo(licence.id)" type="button"
+                                            class="p-0 bg-transparent d-inline-block lh-1 border-0">
+                                            <i class="material-symbols-outlined">
+                                                refresh
+                                            </i>
+                                        </button>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="d-flex justify-content-center">
+                    <pagination-controls (pageChange)="ChangePage($event)" id="licences">
+                    </pagination-controls>
+                </div>
+
+
+                <!-- Pagination -->
+            </div>
+        </div>
+    </div>
+</section>

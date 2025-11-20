@@ -255,6 +255,10 @@ import { SuspensionComponent } from './authentication/suspension/suspension.comp
 import { AddPlan } from './dashboard/Plans/add-plan/add-plan';
 import { PlansData } from './dashboard/Plans/plans-data/plans-data';
 import { PlanInfoComponent } from './dashboard/Plans/plan-info-component/plan-info-component';
+import { LicensesDataComponent } from './dashboard/Licenses/licenses-data-component/licenses-data-component';
+import { UpgradeLicenceComponent } from './dashboard/Licenses/upgrade-licence-component/upgrade-licence-component';
+import { LicenceInfoComponent } from './dashboard/Licenses/licence-info-component/licence-info-component';
+import { LicencePageComponent } from './dashboard/Licenses/licence-page-component/licence-page-component';
 
 export const routes: Routes = [
     {
@@ -644,11 +648,20 @@ export const routes: Routes = [
             },
             {
                 path: 'plans',
-                component: UsersPageComponent,
+                component: LicencePageComponent,
                 children: [
                     { path: 'plans-list', component: PlansData },
                     { path: 'add-plan', component: AddPlan },
                     { path: 'plan-info', component: PlanInfoComponent },
+                ],
+            },
+            {
+                path: 'licences',
+                component: LicencePageComponent,
+                children: [
+                    { path: 'licences-list', component: LicensesDataComponent },
+                    { path: 'licence-info', component: LicenceInfoComponent },
+                    { path: 'upgrade-licence', component: UpgradeLicenceComponent },
                 ],
             },
             {
