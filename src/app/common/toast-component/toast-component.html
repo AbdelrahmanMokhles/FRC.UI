@@ -1,0 +1,15 @@
+<section>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" [class.show]="toastData.show">
+
+        <div class="toast" role="alert">
+            <div class="toast-header">
+                <strong class="me-auto">{{ toastData.title }}</strong>
+                <button type="button" class="btn-close" (click)="close()"></button>
+            </div>
+
+            <div class="toast-body">
+                {{ toastData.body }}
+            </div>
+        </div>
+    </div>
+</section>

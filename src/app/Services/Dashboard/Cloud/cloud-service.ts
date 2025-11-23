@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CloudService {
-  private baseUrl = 'http://192.168.99.98/frc/api/cloud/';
+  private baseUrl = 'http://192.168.99.60/frc/api/cloud/';
 
   constructor(private http: HttpClient) {
 

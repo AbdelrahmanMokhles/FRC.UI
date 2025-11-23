@@ -1,7 +1,6 @@
 import {
   Component,
   ChangeDetectionStrategy,
-  inject,
   OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,6 +18,7 @@ import { error } from 'console';
 import * as yup from 'yup';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { YupValidator } from '../../../Validators/Yup-Validator/yup-validator';
+import { ToastService } from '../../../Services/Common/toast-service';
 
 
 
@@ -26,7 +26,7 @@ import { YupValidator } from '../../../Validators/Yup-Validator/yup-validator';
   selector: 'app-add-plan',
   templateUrl: './add-plan.html',
   styleUrl: './add-plan.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
 })
 export class AddPlan implements OnInit {
@@ -44,6 +44,7 @@ export class AddPlan implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _planService: PlanService,
+    private _toast: ToastService,
     private _router: Router,
     private route: ActivatedRoute
   ) { }
@@ -72,14 +73,14 @@ export class AddPlan implements OnInit {
       concurrentCalls: [, [Validators.required, Validators.min(1)]],
       period: [1, [Validators.required, Validators.min(1)]],
       periods: this.fb.array([]),
-      internalNote: ['']
+      internalNote: [''],
+      isArchived: [false],
     });
     this.periodForm = this.fb.group({
       tierNumber: [1, [Validators.required, Validators.min(1)]],
       price: ['', [Validators.required, Validators.min(0)]],
       distiDiscount: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
     });
-
     this.addInitialPeriods();
 
     this.planForm.valueChanges.subscribe(async (values) => {
@@ -94,9 +95,14 @@ export class AddPlan implements OnInit {
         this.isUpdate = true;
         this.planId = +params['id'];
         this.loadPlanForEdit(this.planId);
+        this.planForm.get('isArchived')?.enable();
       }
     });
-    this.updateNextPeriod();
+    // if (this.isUpdate) {
+    //   this.planForm.get('planName')?.disable();
+    //   this.planForm.get('concurrentCalls')?.disable();
+    // }
+    // this.updateNextPeriod();
   }
 
   addInitialPeriods() {
@@ -114,39 +120,38 @@ export class AddPlan implements OnInit {
     this._planService.getPlanById(id).subscribe({
       next: (res) => {
         this.isArchived = res.data.isArchived;
-        console.log("archhhh", this.isArchived);
         const plan = res.data ?? res;
-        console.log('🟢 Loaded plan:', plan);
-
         // Fill main plan fields
         this.planForm.patchValue({
           planName: plan.planName,
           concurrentCalls: plan.concurrentCalls,
           period: plan.period,
-          internalNote: plan.internalNote || ''
+          internalNote: plan.internalNote || '',
+          isArchived: plan.isArchived
         });
-
-        // Clear existing periods (if any)
-        // this.periods.clear();
-
-        // Fill periods array properly
-        // if (plan.periods && Array.isArray(plan.periods)) {
-        //   plan.periods.forEach((p: any) => {
-        //     this.periods.push(this.createPeriodGroup({
-        //       tierNumber: p.tierNumber,
-        //       price: p.endUserPrice ?? p.price,
-        //       distiDiscount: p.distiDiscount
-        //     }));
-        //   });
-        // }
-
+        if (this.isArchived) {
+          this.planForm.disable();
+        }
         // Prepare next period number for adding new ones
-        this.updateNextPeriod();
+        // this.updateNextPeriod();
       },
       error: (err) => console.error('❌ Failed to load plan:', err)
     });
   }
 
+  onArchiveToggle() {
+    this.isArchived = !this.isArchived;
+    // const archived = this.planForm.get('isArchived')?.value;
+    if (this.isArchived) {
+      this.planForm.disable();
+      this.planForm.get('isArchived')?.enable(); // keep switch usable
+      this.changeArchiveStatus();
+    }
+    else {
+      this.changeArchiveStatus();
+      this.planForm.enable();
+    }
+  }
 
   createPeriodGroup(periodData: PlanPeriod): FormGroup {
     return this.fb.group({
@@ -174,56 +179,47 @@ export class AddPlan implements OnInit {
     return this.planForm.get('period') as FormControl;
   }
 
+  get planName(): FormControl {
+    return this.planForm.get('planName') as FormControl;
+  }
+
   calculateMonths(period: number): number {
     const periodMonths = this.periodMonthsControl.value || 0;
     return period * periodMonths;
   }
 
-  addPeriod() {
-    if (this.periodForm.valid) {
-      this.periods.push(this.createPeriodGroup(this.periodForm.value));
-      this.periodForm.reset({
-        price: '',
-        distiDiscount: '',
-      });
-      this.updateNextPeriod();
-    }
-  }
+  // addPeriod() {
+  //   if (this.periodForm.valid) {
+  //     this.periods.push(this.createPeriodGroup(this.periodForm.value));
+  //     this.periodForm.reset({
+  //       price: '',
+  //       distiDiscount: '',
+  //     });
+  //     this.updateNextPeriod();
+  //   }
+  // }
 
-  removePeriod(index: number) {
-    this.periods.removeAt(index);
-    this.updateNextPeriod();
-  }
+  // removePeriod(index: number) {
+  //   this.periods.removeAt(index);
+  //   this.updateNextPeriod();
+  // }
 
-  updateNextPeriod() {
-    const nextPeriod =
-      this.periods.length > 0
-        ? this.periods.at(this.periods.length - 1).value.period + 1
-        : 1;
-    this.periodForm.patchValue({ period: nextPeriod });
-  }
+  // updateNextPeriod() {
+  //   const nextPeriod =
+  //     this.periods.length > 0
+  //       ? this.periods.at(this.periods.length - 1).value.period + 1
+  //       : 1;
+  //   this.periodForm.patchValue({ period: nextPeriod });
+  // }
 
-
-
-  // Toast
-  toast = false;
-  toggleToast() {
-    this.toast = true;
-  }
-  toastTitle = 'Validation Error';
-  toastBody = '';
-  hideAlert() {
-    setTimeout(() => {
-      this.toast = false;
-    }, 2000);
-  }
-
-  archive() {
+  changeArchiveStatus() {
     if (this.planId) {
       this._planService.archivePlan(this.planId).subscribe({
         next: (res) => {
-          alert('✅' + res.message);
-          this._router.navigate(['/dashboard/plans/plans-list']);
+          this._toast.show("✅ Success", res.message);
+          setTimeout(() => {
+            this._router.navigate(['/dashboard/plans/plans-list']);
+          }, 1000);
         },
         error: (err) => console.error(err)
       });
@@ -237,30 +233,30 @@ export class AddPlan implements OnInit {
       if (this.isUpdate && this.planId) {
         this._planService.updatePlan(this.planId, this.AddPlanDto).subscribe({
           next: (res) => {
-            alert('✅' + res.message);
-            this._router.navigate(['/dashboard/plans/plans-list']);
+            this._toast.show("✅ Success", res.message);
+            setTimeout(() => {
+              this._router.navigate(['/dashboard/plans/plans-list']);
+            }, 1000);
           },
-          error: (err) => console.error(err)
+          error: (err) => {
+            this._toast.show("⚠️ Error", err.error.message);
+          }
         });
       }
       else {
         this._planService.AddPlan(this.AddPlanDto).subscribe({
           next: (res) => {
-            console.log(res);
-            this._router.navigate(['/dashboard/plans/plans-list']);
+            this._toast.show("✅ Success", res.message);
+            setTimeout(() => {
+              this._router.navigate(['/dashboard/plans/plans-list']);
+            }, 1000);
           },
           error: (error) => {
-            alert(error.error.message)
             if (error.error.statusCode === 400) {
-              this.toastBody = error.error.message;
-              this.toastTitle = 'Error';
-              this.toggleToast();
-              this.hideAlert();
+              console.log("ererere", error.error);
+              this._toast.show("⚠️ Error", error.error.message);
             } else if (error.status === 500) {
-              this.toastTitle = 'Error';
-              this.toastBody = 'Internal server erro';
-              this.toggleToast();
-              this.hideAlert();
+              this._toast.show("⚠️ Error", 'Internal server error');
             }
           },
         })

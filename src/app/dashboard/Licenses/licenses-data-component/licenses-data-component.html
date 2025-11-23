@@ -73,32 +73,34 @@
                                 <td class="px-6 py-4 text-gray-700">{{ licence.userEmail }}</td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <button (click)="licenceInfo(licence.id)" type="button"
+                                        <button (click)="licenceInfo(licence.id)" title="Info" type="button"
                                             class="p-0 bg-transparent d-inline-block lh-1 border-0">
                                             <i class="material-symbols-outlined icon-lg">
                                                 info
                                             </i>
                                         </button>
-                                        @if (!licence.isSubscriped ) {
-                                        <button (click)="upgradeLicence(licence.id)" title="Fast Forward" type="button"
+                                        @if (!licence.isSubscriped) {
+                                        <button (click)="upgradeLicence(licence.id)" title="Subscripe" type="button"
                                             class="p-0 bg-transparent d-inline-block lh-1 border-0">
                                             <i class="material-symbols-outlined text-slate-600 text-3xl">
                                                 Add
                                             </i>
                                         </button>
                                         }
-                                        <button (click)="licenceInfo(licence.id)" type="button"
+                                        @if (licence.isSubscriped ) {
+                                        <button (click)="licenceInfo(licence.id)" title="Upgrade" type="button"
                                             class="p-0 bg-transparent d-inline-block lh-1 border-0">
                                             <i class="material-symbols-outlined">
                                                 keyboard_double_arrow_up
                                             </i>
                                         </button>
-                                        <button (click)="licenceInfo(licence.id)" type="button"
+                                        <button (click)="licenceInfo(licence.id)" title="Refresh" type="button"
                                             class="p-0 bg-transparent d-inline-block lh-1 border-0">
                                             <i class="material-symbols-outlined">
                                                 refresh
                                             </i>
                                         </button>
+                                        }
 
                                     </div>
                                 </td>
@@ -113,7 +115,6 @@
                     <pagination-controls (pageChange)="ChangePage($event)" id="licences">
                     </pagination-controls>
                 </div>
-
 
                 <!-- Pagination -->
             </div>

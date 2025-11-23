@@ -5,24 +5,26 @@ import { LicenceService } from '../../../Services/Dashboard/Licenses/licence-ser
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
-import { PlansDataTableDto, PlanPeriod } from '../../../Models/Plan/plan.model';
-import { error } from 'console';
+import { PlansDataTableDto, PlanPeriod, PlanDetailsDto } from '../../../Models/Plan/plan.model';
 import { CloudService } from '../../../Services/Dashboard/Cloud/cloud-service';
+import { ToastService } from '../../../Services/Common/toast-service';
 
 @Component({
   selector: 'app-upgrade-licence-component',
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
-  templateUrl: './upgrade-licence-component.html',
-  styleUrl: './upgrade-licence-component.scss'
+  templateUrl: './subscribe-licence-component.html',
+  styleUrl: './subscribe-licence-component.scss'
 })
-export class UpgradeLicenceComponent {
+export class SubscripeLicenceComponent {
   licenceId?: number;
   licenceDetails?: LicenceDetails;
   upgradeForm!: FormGroup;
-  plans: PlansDataTableDto[] = [];
+  plans: PlanDetailsDto[] = [];
+  filteredPlans: PlanDetailsDto[] = [];
   planPeriods: PlanPeriod[] = [];
   selectedTier?: PlanPeriod;
   upgradeDto?: UpgradeLicenceDto;
+  currentCalls: number = 0;
 
   constructor(
     private _router: Router,
@@ -31,6 +33,7 @@ export class UpgradeLicenceComponent {
     private fb: FormBuilder,
     private _planService: PlanService,
     private _cloudService: CloudService,
+    private _toast: ToastService,
   ) {
 
   }
@@ -47,22 +50,18 @@ export class UpgradeLicenceComponent {
       tier: ['', Validators.required],
     });
 
-    this._planService.getActivePlans().subscribe({
+    this._planService.getActiveHigherPlans().subscribe({
       next: (res) => {
         this.plans = res.data;
+        this.currentCalls = Number(this.upgradeForm.get('concurrentCalls')?.value);
+        this.filteredPlans = this.plans.filter(
+          p => p.concurrentCalls > this.currentCalls
+        );
       },
       error: (err) => {
         alert(err.message);
       }
     });
-    // plan.periods.forEach((p: any) => {
-    //         this.periods.push(this.createPeriodGroup({
-    //           period: p.period,
-    //           price: p.endUserPrice ?? p.price,
-    //           distiDiscount: p.distiDiscount
-    //         }));
-    //       });
-
     this.route.queryParams.subscribe(params => {
       if (params['id']) {
         this.licenceId = +params['id'];
@@ -71,12 +70,12 @@ export class UpgradeLicenceComponent {
       }
     });
   }
+
   loadLicenceDetails(id: number) {
     this._licenceService.getLicenceById(id).subscribe({
       next: (res) => {
         const dto = res.data;
         console.log("data", res.data);
-
         const licence: LicenceDetails = {
           id: dto.id,
           model: dto.model,
@@ -86,7 +85,7 @@ export class UpgradeLicenceComponent {
           expireDate: dto.expireDate,
           userEmail: dto.userEmail
         };
-
+        this.currentCalls = licence.concurrentCalls
         this.licenceDetails = licence;
         this.upgradeForm.patchValue({
           model: this.licenceDetails.model,
@@ -96,31 +95,31 @@ export class UpgradeLicenceComponent {
           expireDate: this.licenceDetails?.expireDate,
           userEmail: this.licenceDetails?.userEmail,
         });
+
       },
       error: err => alert(err.message)
     });
   }
   onPlanChange(planId: number) {
     if (!planId) return;
-
-    this._planService.getPlanById(planId).subscribe({
-      next: (res) => {
-        const plan = res.data;
-
-        this.planPeriods = plan.periods ?? [];
-
-        console.log("Loaded periods:", this.planPeriods);
-      },
-      error: (err) => {
-        console.error("Failed to load plan periods", err);
-      }
-    });
+    this.planPeriods = this.plans.find(p => p.id == planId)?.periods ?? [];
+    console.log("asasas", this.currentCalls);
   }
 
   onTierChange(id: number) {
     if (!id) return;
     this.selectedTier = this.planPeriods.find(p => p.id == id);
-    console.log("Tier ", this.selectedTier);
+    const newDate = new Date();
+    const monthsToAdd = this.selectedTier?.tierNumber ?? 0;
+    // Add months
+    newDate.setMonth(newDate.getMonth() + monthsToAdd);
+    // Generate date
+    const month = newDate.getMonth() + 1;
+    const day = newDate.getDate();
+    const year = newDate.getFullYear();
+    const formatted = `${month}/${day}/${year}`;
+    // Update form control
+    this.upgradeForm.get('expireDate')?.setValue(formatted);
   }
 
   get mac(): string {
@@ -135,17 +134,14 @@ export class UpgradeLicenceComponent {
       mac: this.mac,
       periodId: this.planPeriodId
     }
-    console.log(this.upgradeDto);
-
-    // this._licenceService.subscripe(this.upgradeDto).subscribe({
     this._cloudService.subscripeDevice(this.upgradeDto).subscribe({
       next: (res) => {
-        alert('✅' + res.message);
+        this._toast.show("✅ Success", res.message);
         this._router.navigate(['/dashboard/licences/licences-list']);
-
       },
       error: (err) => {
-        console.error("Failed to load plan periods", err);
+        this._toast.show('⚠️ Error', err.message);
+        console.error('⚠️ Error', err);
       }
     });
   }

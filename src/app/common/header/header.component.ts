@@ -46,20 +46,20 @@ export class HeaderComponent {
                     this.toggleService.toggle(); // Close the sidebar if it's open
                 }
             });
-        if (this.isBrowser) {
-            // const tokk = localStorage.getItem('token');
+        // if (this.isBrowser) {
+        //     // const tokk = localStorage.getItem('token');
 
-            // this._userService.Profile({ token: tokk }).subscribe({
-            this._userService.UserData().subscribe({
-                next: (res) => {
-                    this.user = res.body;
-                    console.log(this.user);
-                },
-                error: (res) => {
-                    console.log(res);
-                },
-            });
-        }
+        //     // this._userService.Profile({ token: tokk }).subscribe({
+        //     this._userService.UserData().subscribe({
+        //         next: (res) => {
+        //             this.user = res.body;
+        //             console.log(this.user);
+        //         },
+        //         error: (res) => {
+        //             console.log(res);
+        //         },
+        //     });
+        // }
     }
 
     // Burger Menu Toggle
@@ -80,7 +80,7 @@ export class HeaderComponent {
     Logout() {
         localStorage.clear();
         this._userService.Logout().subscribe({
-            next: (res) => {},
+            next: (res) => { },
         });
     }
 

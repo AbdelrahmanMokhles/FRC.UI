@@ -32,8 +32,8 @@
     <div class="col-lg-12">
         <div class="trezo-card border-radius d-block bg-white border-0 shadow-none">
             <div class="trezo-card-content">
-                <form class="row g-3" [formGroup]="upgradeForm" (ngSubmit)="subscripe()" novalidate>
-                    <div class="col-md-1">
+                <form class="row g-4" [formGroup]="upgradeForm" (ngSubmit)="subscripe()" novalidate>
+                    <div class="col-md-2">
                         <label for="model" class="form-label">Model Name</label>
                         <input type="text" class="form-control" readonly disabled id="model"
                             value="{{licenceDetails?.model}}">
@@ -43,7 +43,7 @@
                         <input type="text" class="form-control" readonly disabled id="model"
                             value="{{licenceDetails?.mac}}">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-1">
                         <label for="model" class="form-label">Current Plan</label>
                         <input type="text" class="form-control" readonly disabled id="model"
                             value="{{licenceDetails?.plan}}">
@@ -53,22 +53,17 @@
                         <input type="text" class="form-control" readonly disabled id="model"
                             value="{{licenceDetails?.concurrentCalls}}">
                     </div>
-                    <div class="col-md-2">
-                        <label for="model" class="form-label">Expiration Date</label>
-                        <input type="text" class="form-control" readonly disabled id="model"
-                            value="{{licenceDetails?.expireDate}}">
-                    </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <label for="model" class="form-label">User Email</label>
                         <input type="text" class="form-control" readonly disabled id="model"
                             value="{{licenceDetails?.userEmail}}">
                     </div>
                     <div class="col-md-2">
-                        <label for="model" class="form-label">Upgrade to</label>
+                        <label for="model" class="form-label">Subscripe to</label>
                         <select formControlName="plan" class="form-select" name="plans" id="plans"
                             (change)="onPlanChange($any($event.target).value)">
                             <option disabled selected>Select subscription plan</option>
-                            @for (plan of plans; track plan.id) {
+                            @for (plan of filteredPlans; track plan.id) {
                             <option value="{{plan.id}}">{{plan.planName}}</option>
                             }
                         </select>
@@ -79,16 +74,21 @@
                             (change)="onTierChange($any($event.target).value)">
                             <option disabled selected>Select subscription period</option>
                             @for (period of planPeriods; track period.tierNumber) {
-                            <option value="{{period.id}}">{{period.tierNumber}}</option>
+                            <option value="{{period.id}}">{{period.tierNumber}} (months)</option>
                             }
                         </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="model" class="form-label">Expiration Date</label>
+                        <input type="text" class="form-control disabled-look" readonly id="model"
+                            formControlName="expireDate">
                     </div>
                     <div class="col-md-1">
                         <label for="model" class="form-label">Price</label>
                         <input type="text" class="form-control" readonly disabled id="model"
                             value="{{selectedTier?.price}} $">
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <label for="model" class="form-label">Disti Discount</label>
                         <input type="text" class="form-control" readonly disabled id="model"
                             value="{{selectedTier?.distiDiscount}} %">

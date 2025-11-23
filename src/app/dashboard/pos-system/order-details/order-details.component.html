@@ -1,7 +1,5 @@
-<div
-    class="order-details-card trezo-card style-two mb-25 border-radius d-block shadow-none"
-    [class.component-dark-theme]="themeService.isDark()"
->
+<div class="order-details-card trezo-card style-two mb-25 border-radius d-block shadow-none"
+    [class.component-dark-theme]="themeService.isDark()">
     <div class="trezo-card-header d-flex align-items-center justify-content-between">
         <div class="trezo-card-title">
             <h5 class="mb-0 fw-medium">
@@ -57,10 +55,10 @@
                     <a routerLink="." class="position-absolute top-0 start-0 end-0 bottom-0 z-1"></a>
                 </div>
                 <div class="quantity-price d-flex align-items-center">
-                    <app-quantity-counter [initialValue]="1" />
                     <div class="price lh-1 fw-medium text-primary">
                         $85
                     </div>
+
                 </div>
             </div>
         </div>

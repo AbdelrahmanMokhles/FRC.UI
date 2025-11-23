@@ -243,7 +243,6 @@ import { CtWalletComponent } from './pages/crypto-trader-page/ct-wallet/ct-walle
 import { HotelPageComponent } from './pages/hotel-page/hotel-page.component';
 import { HpRoomsListComponent } from './pages/hotel-page/hp-rooms-list/hp-rooms-list.component';
 import { HpGuestsListComponent } from './pages/hotel-page/hp-guests-list/hp-guests-list.component';
-import { HpRoomDetailsComponent } from './pages/hotel-page/hp-room-details/hp-room-details.component';
 import { RealEstateAgentPageComponent } from './pages/real-estate-agent-page/real-estate-agent-page.component';
 import { ReapPropertiesComponent } from './pages/real-estate-agent-page/reap-properties/reap-properties.component';
 import { ReapPropertyDetailsComponent } from './pages/real-estate-agent-page/reap-property-details/reap-property-details.component';
@@ -256,9 +255,9 @@ import { AddPlan } from './dashboard/Plans/add-plan/add-plan';
 import { PlansData } from './dashboard/Plans/plans-data/plans-data';
 import { PlanInfoComponent } from './dashboard/Plans/plan-info-component/plan-info-component';
 import { LicensesDataComponent } from './dashboard/Licenses/licenses-data-component/licenses-data-component';
-import { UpgradeLicenceComponent } from './dashboard/Licenses/upgrade-licence-component/upgrade-licence-component';
 import { LicenceInfoComponent } from './dashboard/Licenses/licence-info-component/licence-info-component';
 import { LicencePageComponent } from './dashboard/Licenses/licence-page-component/licence-page-component';
+import { SubscripeLicenceComponent } from './dashboard/Licenses/subscribe-licence-component/subscribe-licence-component';
 
 export const routes: Routes = [
     {
@@ -564,7 +563,6 @@ export const routes: Routes = [
                 component: HotelPageComponent,
                 children: [
                     { path: '', component: HpRoomsListComponent },
-                    { path: 'room-details', component: HpRoomDetailsComponent },
                     { path: 'guests-list', component: HpGuestsListComponent },
                 ],
             },
@@ -661,7 +659,7 @@ export const routes: Routes = [
                 children: [
                     { path: 'licences-list', component: LicensesDataComponent },
                     { path: 'licence-info', component: LicenceInfoComponent },
-                    { path: 'upgrade-licence', component: UpgradeLicenceComponent },
+                    { path: 'subscripe-licence', component: SubscripeLicenceComponent },
                 ],
             },
             {

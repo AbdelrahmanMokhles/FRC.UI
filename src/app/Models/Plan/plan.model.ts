@@ -8,8 +8,9 @@ export interface AddPlanDto {
 }
 
 export interface PlanDetailsDto {
+    id?: number;
     planName?: string;
-    concurrentCalls?: number;
+    concurrentCalls: number;
     period?: number;
     internalNote?: string;
     periods?: PlanPeriod[];
@@ -26,7 +27,7 @@ export interface PlanPeriod {
 
 export interface PlansDataTableDto {
     id: number;
-    selected?: boolean;
+    // selected?: boolean;
     planName: string;
     concurentCalls: number;
     period: number;

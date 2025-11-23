@@ -2,16 +2,17 @@ import { Component, signal } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
 import { SidebarSettingsComponent } from './sidebar-settings/sidebar-settings.component';
+import { ToastComponent } from './common/toast-component/toast-component';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, CommonModule, SidebarSettingsComponent],
+    imports: [RouterOutlet, CommonModule, SidebarSettingsComponent, ToastComponent],
     templateUrl: './app.html',
     styleUrl: './app.scss'
 })
 export class App {
-    
-    protected readonly title = signal('Trezo - Angular 20 Admin Dashboard Template');
+
+    protected readonly title = signal('FIBERME');
 
     private previousUrl: string | null = null;
 

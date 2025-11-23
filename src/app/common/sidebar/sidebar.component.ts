@@ -12,9 +12,7 @@ interface MenuItem {
 
 @Component({
     selector: 'app-sidebar',
-    imports: [NgScrollbarModule, RouterLinkActive, RouterLink, NgClass,
-        NgIf
-    ],
+    imports: [NgScrollbarModule, RouterLinkActive, RouterLink, NgClass],
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.scss'
 })

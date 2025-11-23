@@ -62,7 +62,7 @@ export class LicensesDataComponent {
     });
   }
   upgradeLicence(planId: number) {
-    this._router.navigate(['/dashboard/licences/upgrade-licence'], {
+    this._router.navigate(['/dashboard/licences/subscripe-licence'], {
       queryParams: { id: planId },
     });
   }

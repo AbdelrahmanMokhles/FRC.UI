@@ -26,32 +26,25 @@
 </section>
 <!-- End Breadcrumb -->
 
-<section>
-    <!-- Toaster -->
-    @if (toast) {
-    <div class="toast-container transition position-fixed bottom-0 end-0 p-3">
-        <div class="toast" role="alert">
-            <div class="toast-header">
-                <strong class="me-auto">{{ toastTitle }}</strong>
-                <button type="button" class="btn-close shadow-none" aria-label="Close" (click)="toggleToast()"></button>
-            </div>
-            <div class="toast-body">
-                {{ toastBody }}
-            </div>
-        </div>
-    </div>
-    }
-    <!-- Toaster -->
-</section>
 <!-- Form -->
 <section>
     <div class="col-lg-12">
         <div class="trezo-card border-radius d-block bg-white border-0 shadow-none">
             <div class="trezo-card-content">
+                <div class="d-flex align-items-center mb-3">
+                    <h5 class="me-3">Plan Name : {{planForm.get("planName")?.value}}</h5>
+                    <!-- Archive Switch -->
+                    <span class="form-check form-switch big-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" [checked]="isArchived"
+                            (change)="onArchiveToggle()" />
+                        <label class="form-check-label ms-1">Archive</label>
+                    </span>
+                </div>
                 <form class="row g-3" [formGroup]="planForm" (ngSubmit)="save()" novalidate>
                     <div class="col-md-4">
                         <label for="planName" class="form-label">Plan Name</label>
-                        <input type="text" class="form-control" id="planName" formControlName="planName">
+                        <input [ngClass]="{ 'disabled-look': isUpdate }" [readOnly]="isUpdate" re type="text"
+                            class="form-control" id="planName" formControlName="planName">
                         @if (planForm.get('planName')?.touched) {
                         <div style="color: rgb(248, 89, 89)" class="error2">
                             {{ planFormErrors.planName }}
@@ -60,8 +53,8 @@
                     </div>
                     <div class="col-md-3">
                         <label for="concurrentCalls" class="form-label">Concurrent Calls</label>
-                        <input type="number" class="form-control" id="concurrentCalls"
-                            formControlName="concurrentCalls">
+                        <input [ngClass]="{ 'disabled-look': isUpdate }" [readOnly]="isUpdate" type="number"
+                            class="form-control" id="concurrentCalls" formControlName="concurrentCalls">
                         @if (planForm.get('concurrentCalls')?.touched) {
                         <div style="color: rgb(248, 89, 89)" class="error2">
                             {{ planFormErrors.concurrentCalls }}
@@ -132,10 +125,10 @@
                                                     Period
                                                 </th>
                                                 <th scope="col" class="fw-medium">
-                                                    End User Price
+                                                    End User Price $
                                                 </th>
                                                 <th scope="col" class="fw-medium">
-                                                    Disti Discount
+                                                    Disti Discount %
                                                 </th>
                                                 <!-- <th scope="col" class="fw-medium">
                                                     Action
@@ -154,13 +147,15 @@
 
                                                 <!-- Price -->
                                                 <td class="text-body">
-                                                    <input type="number" formControlName="price" class="form-control" />
+                                                    <input type="number" formControlName="price"
+                                                        class="form-control me-1" />
+                                                    <span>$</span>
                                                 </td>
 
                                                 <!-- Discount -->
                                                 <td>
                                                     <input type="number" formControlName="distiDiscount"
-                                                        class="form-control" />
+                                                        class="form-control" />%
                                                 </td>
 
                                                 <!-- Action -->
@@ -225,17 +220,19 @@
                             rows="3"></textarea>
                     </div>
                     <div class="trezo-card-content example-buttons">
-                        <button type="submit" [disabled]="planForm.invalid" class="btn btn-primary">
-                            SavePlan
+                        <button type="submit" [disabled]="isArchived" class="btn btn-primary">
+                            Save
                         </button>
                         <button type="button" routerLink="/dashboard/plans/plans-list"
                             class="btn btn-danger">Cancel</button>
-                        <button type="button" class="btn btn-warning" (click)="archive()">Archive</button>
-                        <span class="form-check form-switch">
+
+                        <!-- <button type="button" class="btn btn-warning" (click)="archive()">Archive</button> -->
+                        <!-- <span class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
                                 checked>
                             <label class="form-check-label" for="flexSwitchCheckChecked">Archive</label>
-                        </span>
+                        </span> -->
+
                     </div>
                 </form>
             </div>

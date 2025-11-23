@@ -10,6 +10,7 @@ import { PlansDataTableDto } from '../../../Models/Plan/plan.model';
 import { Router, RouterLink } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
+import { ToastService } from '../../../Services/Common/toast-service';
 
 @Component({
     selector: 'app-plans-data',
@@ -19,14 +20,21 @@ import { PlanService } from '../../../Services/Dashboard/Plans/plan-service';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlansData {
-    constructor(private _planService: PlanService, private _router: Router) {
-        this.loadPlans();
+    constructor(
+        private _planService: PlanService,
+        private _router: Router,
+        private _toast: ToastService) {
     }
     plans = signal<PlansDataTableDto[]>([]);
     searchTerm = signal('');
     pageSize = 10;
     page = 1;
     total = this.plans.length;
+
+    ngOnInit() {
+        this.loadPlans();
+    }
+
 
     filteredPlans = computed(() => {
         const term = this.searchTerm().toLowerCase();
@@ -51,10 +59,12 @@ export class PlansData {
                     })
                 );
                 this.plans.set(items);
+                // this._toast.show("✅ Success", res.message);
             },
             error: (err) => {
                 console.log(err);
-                alert('❌ Failed to load plans:');
+                this._toast.show("❌ Error", err.error.message);
+                // alert('❌ Failed to load plans:');
             },
         });
     }
@@ -78,10 +88,10 @@ export class PlansData {
         this.page = event;
     }
 
-    // onSearch(event: Event) {
-    //     const input = event.target as HTMLInputElement;
-    //     this.searchTerm.set(input.value);
-    // }
+    onSearch(event: Event) {
+        const input = event.target as HTMLInputElement;
+        this.searchTerm.set(input.value);
+    }
 }
 
 //#endregion

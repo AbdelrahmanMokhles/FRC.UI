@@ -14,7 +14,7 @@ export interface LicenceDetails {
     model?: string;
     mac?: string;
     plan?: string;
-    concurrentCalls?: number;
+    concurrentCalls: number;
     expireDate?: any;
     userEmail?: string;
     name?: string;

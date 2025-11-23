@@ -15,7 +15,7 @@ import { BehaviorSubject, interval, map, Subscription, takeWhile } from 'rxjs';
 
 @Component({
     standalone: true,
-    selector: 'app-otp',
+    selector: 'otp',
     imports: [FormsModule, ReactiveFormsModule, HttpClientModule, NgIf],
     templateUrl: './otp.component.html',
     styleUrl: './otp.component.scss',

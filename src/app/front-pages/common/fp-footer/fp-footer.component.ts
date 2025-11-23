@@ -12,6 +12,6 @@ export class FpFooterComponent {
 
     constructor(
         public themeService: CustomizerSettingsService
-    ) {}
+    ) { }
 
 }

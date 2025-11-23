@@ -9,7 +9,7 @@ import { UpgradeLicenceDto } from '../../../Models/PBXDevice/PBXDevice.models';
 export class LicenceService {
 
 
-  private baseUrl = 'http://192.168.99.98/frc/api/pbxdevice/';
+  private baseUrl = 'http://192.168.99.60/frc/api/pbxdevice/';
   constructor(private http: HttpClient) { }
 
   getLicenses(): Observable<any> {

@@ -18,3 +18,23 @@
         ;
     }
 }
+
+input.disabled-look {
+    background-color: #e9ecef;
+    color: #6c757d;
+    border-color: #ced4da;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+// .big-switch .form-check-input {
+//     width: 3rem;
+//     height: 1.5rem;
+//     cursor: pointer;
+//     transform: scale(1.3);
+// }
+
+// .big-switch .form-check-label {
+//     font-size: 1rem;
+//     margin-left: 8px;
+// }

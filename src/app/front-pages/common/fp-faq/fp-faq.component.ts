@@ -25,6 +25,6 @@ export class FpFaqComponent {
 
     constructor(
         public themeService: CustomizerSettingsService
-    ) {}
+    ) { }
 
 }
