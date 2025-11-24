@@ -4,42 +4,40 @@ import { AddPlanDto } from '../../../Models/Plan/plan.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class PlanService {
-  private baseUrl = 'http://192.168.99.60/frc/api/plan/';
-  constructor(private http: HttpClient) { }
+    private baseUrl = 'https://192.168.99.60:7070/api/plan/';
+    constructor(private http: HttpClient) {}
 
-  getPlans(): Observable<any> {
-    return this.http.get<any>(this.baseUrl + 'data-table', {});
-  }
+    getPlans(): Observable<any> {
+        return this.http.get<any>(this.baseUrl + 'data-table', {});
+    }
 
-  getActiveHigherPlans(): Observable<any> {
-    return this.http.get<any>(this.baseUrl + 'active-plans');
-  }
+    getActiveHigherPlans(): Observable<any> {
+        return this.http.get<any>(this.baseUrl + 'active-plans');
+    }
 
-  getPlanById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}get-by-id/${id}`);
-  }
+    getPlanById(id: number): Observable<any> {
+        return this.http.get<any>(`${this.baseUrl}get-by-id/${id}`);
+    }
 
+    // AddPlan(AddPlanDto: AddPlanDto): Observable<any> {
+    //   return this.http.post<any>(this.baseUrl + 'add-plan', AddPlanDto, {
+    //     headers: { 'Content-Type': 'application/json' },
+    //     observe: 'response',
+    //   });
+    // }
 
+    AddPlan(AddPlanDto: AddPlanDto): Observable<any> {
+        return this.http.post<any>(this.baseUrl + 'add-plan', AddPlanDto);
+    }
 
-  // AddPlan(AddPlanDto: AddPlanDto): Observable<any> {
-  //   return this.http.post<any>(this.baseUrl + 'add-plan', AddPlanDto, {
-  //     headers: { 'Content-Type': 'application/json' },
-  //     observe: 'response',
-  //   });
-  // }
+    archivePlan(id: number) {
+        return this.http.put<any>(`${this.baseUrl}archive-plan/${id}`, null);
+    }
 
-  AddPlan(AddPlanDto: AddPlanDto): Observable<any> {
-    return this.http.post<any>(this.baseUrl + 'add-plan', AddPlanDto);
-  }
-
-  archivePlan(id: number) {
-    return this.http.put<any>(`${this.baseUrl}archive-plan/${id}`, null);
-  }
-
-  updatePlan(id: number, dto: AddPlanDto) {
-    return this.http.put<any>(`${this.baseUrl}update-plan/${id}`, dto);
-  }
+    updatePlan(id: number, dto: AddPlanDto) {
+        return this.http.put<any>(`${this.baseUrl}update-plan/${id}`, dto);
+    }
 }

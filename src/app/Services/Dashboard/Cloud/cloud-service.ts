@@ -4,20 +4,17 @@ import { UpgradeLicenceDto } from '../../../Models/PBXDevice/PBXDevice.models';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class CloudService {
-  private baseUrl = 'http://192.168.99.60/frc/api/cloud/';
+    private baseUrl = 'https://192.168.99.60:7070/api/cloud/';
 
-  constructor(private http: HttpClient) {
+    constructor(private http: HttpClient) {}
 
-  }
-
-  subscripeDevice(Dto: UpgradeLicenceDto): Observable<any> {
-    return this.http.post<any>(this.baseUrl + 'subscripe-plan', Dto, {
-      headers: { 'Content-Type': 'application/json' },
-      observe: 'response',
-    });
-  }
-
+    subscripeDevice(Dto: UpgradeLicenceDto): Observable<any> {
+        return this.http.post<any>(this.baseUrl + 'subscripe-plan', Dto, {
+            headers: { 'Content-Type': 'application/json' },
+            observe: 'response',
+        });
+    }
 }
