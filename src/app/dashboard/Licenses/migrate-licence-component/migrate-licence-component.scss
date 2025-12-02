@@ -1,6 +1,23 @@
-.icon-lg {
-    font-size: 30px;
-    /* or any size you want */
+.example-buttons {
+    margin-bottom: -15px;
+
+    button,
+    a {
+        margin: {
+            right: 15px;
+            bottom: 15px;
+        }
+
+        ;
+    }
+}
+
+input.disabled-look {
+    background-color: #e9ecef;
+    color: #6c757d;
+    border-color: #ced4da;
+    cursor: not-allowed;
+    opacity: 1;
 }
 
 .circle-icon-btn {

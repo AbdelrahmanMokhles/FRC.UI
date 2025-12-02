@@ -66,11 +66,30 @@ export class LicensesDataComponent {
             queryParams: { id: planId },
         });
     }
-    upgradeLicence(planId: number) {
+    subscripeLicence(planId: number) {
         this._router.navigate(['/dashboard/licences/subscripe-licence'], {
             queryParams: { id: planId },
         });
     }
+
+    renewalLicence(planId: number) {
+        this._router.navigate(['/dashboard/licences/renewal-licence'], {
+            queryParams: { id: planId },
+        });
+    }
+
+    upgradeLicence(planId: number) {
+        this._router.navigate(['/dashboard/licences/upgrade-licence'], {
+            queryParams: { id: planId },
+        });
+    }
+
+    migrateLicence(planId: number) {
+        this._router.navigate(['/dashboard/licences/migrate-licence'], {
+            queryParams: { id: planId },
+        });
+    }
+
 
     ChangePage(event: any) {
         this.page = event;

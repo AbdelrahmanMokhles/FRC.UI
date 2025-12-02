@@ -10,20 +10,31 @@ export interface LicenceDataTable {
 }
 
 export interface LicenceDetails {
-    id: number;
+    id?: number;
     model?: string;
     mac?: string;
     plan?: string;
-    concurrentCalls: number;
+    planId?: number;
+    concurrentCalls?: number;
     expireDate?: any;
+    subscriptionDate?: any;
     userEmail?: string;
     name?: string;
+    tierNumber?: number;
     paidAmount?: number;
     isSubscriped?: boolean;
     createdAt?: any;
     updatedAt?: any;
 }
-export interface UpgradeLicenceDto {
+export interface CloudLicenceDto {
     mac?: string;
     periodId?: number;
+    periodMultiplier?: number;
+    paidAmount?: number;
+}
+
+export interface MigrateLicenceDto {
+    mac?: string;
+    isRecycled: boolean;
+    mac2?: string;
 }

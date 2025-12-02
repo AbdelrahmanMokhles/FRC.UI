@@ -258,6 +258,9 @@ import { LicensesDataComponent } from './dashboard/Licenses/licenses-data-compon
 import { LicenceInfoComponent } from './dashboard/Licenses/licence-info-component/licence-info-component';
 import { LicencePageComponent } from './dashboard/Licenses/licence-page-component/licence-page-component';
 import { SubscripeLicenceComponent } from './dashboard/Licenses/subscribe-licence-component/subscribe-licence-component';
+import { RenewalLicenceComponent } from './dashboard/Licenses/renewal-licence-component/renewal-licence-component';
+import { UpgradeLicenceComponent } from './dashboard/Licenses/upgrade-licence-component/upgrade-licence-component';
+import { MigrateLicenceComponent } from './dashboard/Licenses/migrate-licence-component/migrate-licence-component';
 
 export const routes: Routes = [
     {
@@ -660,6 +663,9 @@ export const routes: Routes = [
                     { path: 'licences-list', component: LicensesDataComponent },
                     { path: 'licence-info', component: LicenceInfoComponent },
                     { path: 'subscripe-licence', component: SubscripeLicenceComponent },
+                    { path: 'renewal-licence', component: RenewalLicenceComponent },
+                    { path: 'upgrade-licence', component: UpgradeLicenceComponent },
+                    { path: 'migrate-licence', component: MigrateLicenceComponent },
                 ],
             },
             {

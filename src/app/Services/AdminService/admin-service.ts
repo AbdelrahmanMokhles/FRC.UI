@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class AdminService {
     // private url = 'https://localhost:44397/api/admin/';
     // private url = 'http://localhost:5011/api/admin/';
-    private url = 'https://192.168.99.60:7070/api/admin/';
-    constructor(private _client: HttpClient) {}
+    private url = 'https://192.168.99.76:7070/api/admin/';
+    constructor(private _client: HttpClient) { }
 
     GetAllUsers() {
         return this._client.get(this.url);

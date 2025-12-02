@@ -68,7 +68,7 @@ export class PlanInfoComponent {
       error: err => alert(err)
     });
   }
-  calculateMonths(period: number): number {
+  calculateMonths(period: any): number {
     const periodMonths = this.planDetails?.period || 0;
     return period * periodMonths;
   }

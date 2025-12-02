@@ -1,0 +1,119 @@
+<!-- Breadcrumb -->
+<section>
+    <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+        <h5 class="mb-0">
+            Licence Migration
+        </h5>
+        <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <a routerLink="/dashboard" class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        home
+                    </i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <span routerLink="/dashboard/licences/licences-list">
+                    Licence
+                </span>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Licence Migration
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- End Breadcrumb -->
+
+
+<!-- Form -->
+<section>
+    <div class="col-lg-12">
+        <div class="trezo-card border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <form class="row g-4" [formGroup]="upgradeForm" (ngSubmit)="migrate()" novalidate>
+                    <div class="row mt-3">
+
+                        <div class="col-md-3">
+                            <label for="model" class="form-label">Model Name</label>
+                            <input type="text" class="form-control disabled-look" readonly id="model"
+                                formControlName="model">
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="userEmail" class="form-label">User Email</label>
+                            <input type="text" class="form-control disabled-look" readonly id="userEmail"
+                                formControlName="userEmail">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="expireDate" class="form-label">Expiration Date</label>
+                            <input type="text" class="form-control disabled-look" readonly id="expireDate"
+                                formControlName="expireDate">
+                        </div>
+
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-3 mt-3">
+                            <input class="form-check-input" type="checkbox" id="recycleCheckbox"
+                                formControlName="sendToRecycle" (change)="onRecycleToggle()">
+                            <span class="font-bold"> Send to Recycle</span>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <label for="mac" class="form-label">MAC Address</label>
+                            <input type="text" class="form-control disabled-look" formControlName="mac" readonly
+                                id="mac">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="currentPlan" class="form-label">Current Plan</label>
+                            <input type="text" class="form-control disabled-look" readonly id="currentPlan"
+                                formControlName="currentPlan">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="model" class="form-label">Concurrent Calls</label>
+                            <input type="text" formControlName="concurrentCalls" class="form-control disabled-look"
+                                readonly id="model">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <label for="newMac" class="form-label">New MAC Address</label>
+                            <div class="d-flex">
+                                <input type="text" class="form-control" formControlName="newMac" id="newMac">
+                                <button (click)="search()" type="button" class="circle-icon-btn ">
+                                    <i class="material-symbols-outlined">search</i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="newMacModel" class="form-label">Model</label>
+                            <input type="text" class="form-control disabled-look" readonly formControlName="newMacModel"
+                                id="newMacModel">
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="newMacPlan" class="form-label">Plan</label>
+                            <input type="text" class="form-control disabled-look" readonly formControlName="newMacPlan"
+                                id="newMacPlan">
+                        </div>
+                    </div>
+
+                    <div class="my-8 border-t border-gray-200"></div>
+                    <div class="trezo-card-content example-buttons">
+                        <button type="submit" [disabled]="upgradeForm.invalid" class="btn btn-primary">
+                            Migrate
+                        </button>
+                        <a type="button" routerLink="/dashboard/licences/licences-list"
+                            class="btn btn-danger">Cancel</a>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Form -->

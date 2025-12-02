@@ -20,9 +20,9 @@ export interface PlanDetailsDto {
 
 export interface PlanPeriod {
     id?: number;
-    tierNumber: number;
-    price: number;
-    distiDiscount: number;
+    tierNumber?: number;
+    price?: number;
+    distiDiscount?: number;
 }
 
 export interface PlansDataTableDto {

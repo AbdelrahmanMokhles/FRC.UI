@@ -2,7 +2,7 @@
 <section>
     <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
         <h5 class="mb-0">
-            Device Subscription
+            Device Upgrade
         </h5>
         <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
             <li class="breadcrumb-item d-inline-block position-relative">
@@ -19,7 +19,7 @@
                 </span>
             </li>
             <li class="breadcrumb-item d-inline-block position-relative">
-                Device Subscription
+                Device Upgrade
             </li>
         </ol>
     </div>
@@ -32,7 +32,7 @@
     <div class="col-lg-12">
         <div class="trezo-card border-radius d-block bg-white border-0 shadow-none">
             <div class="trezo-card-content">
-                <form class="row g-4" [formGroup]="upgradeForm" (ngSubmit)="subscripe()" novalidate>
+                <form class="row g-4" [formGroup]="upgradeForm" (ngSubmit)="upgrade()" novalidate>
                     <div class="col-md-2">
                         <label for="model" class="form-label">Model Name</label>
                         <input type="text" class="form-control disabled-look" readonly id="model"
@@ -42,7 +42,7 @@
                         <label for="model" class="form-label">MAC Address</label>
                         <input type="text" class="form-control disabled-look" formControlName="mac" readonly id="model">
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <label for="model" class="form-label">Current Plan</label>
                         <input type="text" class="form-control disabled-look" readonly id="model"
                             formControlName="currentPlan">
@@ -52,12 +52,11 @@
                         <input type="text" formControlName="concurrentCalls" class="form-control disabled-look" readonly
                             id="model">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="model" class="form-label">User Email</label>
                         <input type="text" class="form-control disabled-look" readonly id="model"
                             formControlName="userEmail">
                     </div>
-                    @if (!isRenewal){
                     <div class="col-md-2">
                         <label for="model" class="form-label">Subscripe to</label>
                         <select formControlName="plan" class="form-select" name="plans" id="plans"
@@ -67,36 +66,26 @@
                             <option value="{{plan.id}}">{{plan.planName}}</option>
                             }
                         </select>
-                    </div>}
-                    <div class="col-md-2">
-                        <label for="model" class="form-label">Period of subscription</label>
-                        <select formControlName="tier" class="form-select" name="planPeriods" id="planPeriods"
-                            (change)="onTierChange($any($event.target).value)">
-                            <option disabled selected>Select subscription period</option>
-                            @for (period of planPeriods; track period.tierNumber) {
-                            <option value="{{period.id}}">{{period.tierNumber}} (months)</option>
-                            }
-                        </select>
                     </div>
                     <div class="col-md-3">
                         <label for="model" class="form-label">Expiration Date</label>
                         <input type="text" class="form-control disabled-look" readonly id="model"
                             formControlName="expireDate">
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <label for="model" class="form-label">Price</label>
-                        <input type="text" class="form-control" readonly disabled id="model"
-                            value="{{selectedTier?.price}} $">
+                        <input type="text" class="form-control disabled-look" readonly id="model"
+                            formControlName="price">
                     </div>
                     <div class="col-md-2">
                         <label for="model" class="form-label">Disti Discount</label>
-                        <input type="text" class="form-control" readonly disabled id="model"
-                            value="{{selectedTier?.distiDiscount}} %">
+                        <input type="text" class="form-control disabled-look" readonly id="model"
+                            formControlName="distiDiscount">
                     </div>
                     <div class="my-8 border-t border-gray-200"></div>
                     <div class="trezo-card-content example-buttons">
                         <button type="submit" [disabled]="upgradeForm.invalid" class="btn btn-primary">
-                            Subscripe
+                            Upgrade
                         </button>
                         <a type="button" routerLink="/dashboard/licences/licences-list"
                             class="btn btn-danger">Cancel</a>
@@ -105,6 +94,65 @@
 
             </div>
 
+            <div class="trezo-card-content mt-3">
+                <div class="table-style-two p-5">
+                    <div class="basic-table table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <th class="fw-medium sortable"></th>
+                                <th class="fw-medium sortable">Old Plan</th>
+                                <th class="fw-medium sortable">New Plan</th>
+                                <th class="fw-medium sortable">Current Tier</th>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                    <td class="header">Price</td>
+                                    <td>{{licenceDetails.paidAmount}}</td>
+                                    <td>{{this.newPlanPrice}}</td>
+                                    <td>{{licenceDetails.tierNumber}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="header">Days</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="header">Cost</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="header">Balance</td>
+                                    <td>200</td>
+                                </tr> -->
+                                <tr>
+                                    <td class="header">Price</td>
+                                    <td>{{ licenceDetails.paidAmount }} $</td>
+                                    <td>{{ planPeriod?.price }} $</td>
+                                    <td>{{ licenceDetails.tierNumber }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="header">Days</td>
+                                    <td>{{ oldPassedDays }} Days</td>
+                                    <td>{{ newPlanDays }} Days</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="header">Cost</td>
+                                    <td>{{ oldCost | number:'1.2-2' }} $</td>
+                                    <td>{{ newCost | number:'1.2-2' }} $</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="header">Balance</td>
+                                    <td>{{ oldBalance | number:'1.2-2' }} $</td>
+                                    <td><b>{{ amountToPay | number:'1.2-2' }} $</b></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

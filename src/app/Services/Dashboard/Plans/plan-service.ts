@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class PlanService {
-    private baseUrl = 'https://192.168.99.60:7070/api/plan/';
-    constructor(private http: HttpClient) {}
+    private baseUrl = 'https://192.168.99.76:7070/api/plan/';
+    constructor(private http: HttpClient) { }
 
     getPlans(): Observable<any> {
         return this.http.get<any>(this.baseUrl + 'data-table', {});
@@ -18,9 +18,12 @@ export class PlanService {
         return this.http.get<any>(this.baseUrl + 'active-plans');
     }
 
-    getPlanById(id: number): Observable<any> {
+    getPlanById(id?: number): Observable<any> {
         return this.http.get<any>(`${this.baseUrl}get-by-id/${id}`);
     }
+    // getPeriodsByPlan(name?: string): Observable<any> {
+    //     return this.http.get<any>(`${this.baseUrl}get-periods-by-plan-name?planName=${name}`);
+    // }
 
     // AddPlan(AddPlanDto: AddPlanDto): Observable<any> {
     //   return this.http.post<any>(this.baseUrl + 'add-plan', AddPlanDto, {

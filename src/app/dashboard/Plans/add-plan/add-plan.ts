@@ -81,7 +81,9 @@ export class AddPlan implements OnInit {
       price: ['', [Validators.required, Validators.min(0)]],
       distiDiscount: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
     });
-    this.addInitialPeriods();
+    if (!this.isUpdate) {
+      this.addInitialPeriods();
+    }
 
     this.planForm.valueChanges.subscribe(async (values) => {
       await YupValidator(values, this.planSchema, this.planFormErrors);
@@ -98,11 +100,6 @@ export class AddPlan implements OnInit {
         this.planForm.get('isArchived')?.enable();
       }
     });
-    // if (this.isUpdate) {
-    //   this.planForm.get('planName')?.disable();
-    //   this.planForm.get('concurrentCalls')?.disable();
-    // }
-    // this.updateNextPeriod();
   }
 
   addInitialPeriods() {
@@ -122,18 +119,18 @@ export class AddPlan implements OnInit {
         this.isArchived = res.data.isArchived;
         const plan = res.data ?? res;
         // Fill main plan fields
+        console.log("bnbnbnbn", res.data);
         this.planForm.patchValue({
           planName: plan.planName,
           concurrentCalls: plan.concurrentCalls,
           period: plan.period,
           internalNote: plan.internalNote || '',
-          isArchived: plan.isArchived
+          isArchived: plan.isArchived,
+          periods: plan.periods
         });
         if (this.isArchived) {
           this.planForm.disable();
         }
-        // Prepare next period number for adding new ones
-        // this.updateNextPeriod();
       },
       error: (err) => console.error('❌ Failed to load plan:', err)
     });
@@ -188,30 +185,6 @@ export class AddPlan implements OnInit {
     return period * periodMonths;
   }
 
-  // addPeriod() {
-  //   if (this.periodForm.valid) {
-  //     this.periods.push(this.createPeriodGroup(this.periodForm.value));
-  //     this.periodForm.reset({
-  //       price: '',
-  //       distiDiscount: '',
-  //     });
-  //     this.updateNextPeriod();
-  //   }
-  // }
-
-  // removePeriod(index: number) {
-  //   this.periods.removeAt(index);
-  //   this.updateNextPeriod();
-  // }
-
-  // updateNextPeriod() {
-  //   const nextPeriod =
-  //     this.periods.length > 0
-  //       ? this.periods.at(this.periods.length - 1).value.period + 1
-  //       : 1;
-  //   this.periodForm.patchValue({ period: nextPeriod });
-  // }
-
   changeArchiveStatus() {
     if (this.planId) {
       this._planService.archivePlan(this.planId).subscribe({
@@ -229,6 +202,7 @@ export class AddPlan implements OnInit {
   save() {
     if (this.planForm.valid) {
       this.AddPlanDto = this.planForm.value;
+      console.log("adasdsd", this.AddPlanDto);
       this.AddPlanDto.isUpdate = this.isUpdate;
       if (this.isUpdate && this.planId) {
         this._planService.updatePlan(this.planId, this.AddPlanDto).subscribe({
@@ -263,7 +237,7 @@ export class AddPlan implements OnInit {
       }
     } else {
       console.error('Form is invalid.');
-      alert('Please fill out all required fields correctly.');
+      this._toast.show("Error", 'Please fill out all required fields correctly.');
       this.planForm.markAllAsTouched();
     }
   }

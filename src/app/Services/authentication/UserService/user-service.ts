@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class UserService {
     // private url = 'http://localhost:44397/api/users/';
     // private url = 'http://localhost:5011/api/users/';
-    private url = 'https://192.168.99.60:7070/api/users/';
-    constructor(private _client: HttpClient) {}
+    private url = 'https://192.168.99.76:7070/api/users/';
+    constructor(private _client: HttpClient) { }
     private email!: string;
     private emailEdit!: string;
     private token!: string;
