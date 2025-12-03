@@ -118,6 +118,14 @@ export class SubscripeLicenceComponent {
     this.planPeriods = this.plans.find(p => p.id == planId)?.periods ?? [];
   }
 
+  parseDDMMYYYY(dateStr: string): Date {
+    const [day, month, year] = dateStr.split('/').map(Number);
+    return new Date(year, month - 1, day);
+  }
+
+  pad(n: number): string {
+    return n < 10 ? '0' + n : '' + n;
+  }
   onTierChange(id: number) {
     if (!id) return;
     this.selectedTier = this.planPeriods.find(p => p.id == id);
@@ -129,7 +137,7 @@ export class SubscripeLicenceComponent {
     const month = newDate.getMonth() + 1;
     const day = newDate.getDate();
     const year = newDate.getFullYear();
-    const formatted = `${month}/${day}/${year}`;
+    const formatted = `${this.pad(day)}/${this.pad(month)}/${year}`;
     // Update form control
     this.upgradeForm.get('expireDate')?.setValue(formatted);
   }

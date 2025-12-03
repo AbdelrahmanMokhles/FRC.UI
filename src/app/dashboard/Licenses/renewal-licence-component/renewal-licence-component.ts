@@ -135,9 +135,9 @@ export class RenewalLicenceComponent {
 
   calculateDate_Price(expDate: any, tierNumber: number, multiplier: number) {
     const newDate = this.parseDDMMYYYY(expDate);
-    const monthsToAdd = (tierNumber) * multiplier;
+    const daysToAdd = ((this.licenceDetails?.tierNumber ?? 0) * 30 * multiplier);
     // Add months
-    newDate.setMonth(newDate.getMonth() + monthsToAdd);
+    newDate.setDate(newDate.getDate() + daysToAdd);
     // Generate date
     const month = newDate.getMonth() + 1;
     const day = newDate.getDate();
