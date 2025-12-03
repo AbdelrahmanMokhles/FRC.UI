@@ -47,7 +47,8 @@ export class RenewalLicenceComponent {
       currentPlan: ['', Validators.required],
       plan: ['', Validators.required],
       concurrentCalls: ['', Validators.required],
-      expireDate: ['', Validators.required],
+      currentExpireDate: ['', Validators.required],
+      newExpireDate: ['', Validators.required],
       userEmail: ['', Validators.required],
       tier: ['', Validators.required],
       multiplier: [1, Validators.required],
@@ -99,7 +100,8 @@ export class RenewalLicenceComponent {
           plan: this.licenceDetails?.plan,
           currentPlan: this.licenceDetails.plan,
           concurrentCalls: this.licenceDetails?.concurrentCalls,
-          expireDate: this.licenceDetails?.expireDate,
+          currentExpireDate: this.licenceDetails?.expireDate,
+          newExpireDate: this.licenceDetails?.expireDate,
           userEmail: this.licenceDetails?.userEmail,
           tier: this.licenceDetails.tierNumber,
         });
@@ -122,9 +124,13 @@ export class RenewalLicenceComponent {
     });
   }
 
+  parseDDMMYYYY(dateStr: string): Date {
+    const [day, month, year] = dateStr.split('/').map(Number);
+    return new Date(year, month - 1, day);
+  }
 
   calculateDate_Price(expDate: any, tierNumber: number, multiplier: number) {
-    const newDate = new Date(expDate);
+    const newDate = this.parseDDMMYYYY(expDate);
     const monthsToAdd = (tierNumber) * multiplier;
     // Add months
     newDate.setMonth(newDate.getMonth() + monthsToAdd);
@@ -134,7 +140,7 @@ export class RenewalLicenceComponent {
     const year = newDate.getFullYear();
     const formatted = `${month}/${day}/${year}`;
     // Update form control
-    this.upgradeForm.get('expireDate')?.setValue(formatted);
+    this.upgradeForm.get('newExpireDate')?.setValue(formatted);
     const price = (this.planPeriods.find(p => p.tierNumber === this.licenceDetails.tierNumber)?.price ?? 0) * (multiplier ?? 1);
     this.upgradeForm.get('price')?.setValue(`${price} $`);
   }
