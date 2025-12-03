@@ -30,6 +30,7 @@ export class UpgradeLicenceComponent {
   oldBalance: number = 0;
   newPlanDays: number = 0;
   newCost: number = 0;
+  newCostPerDay: number = 0;
   amountToPay: number = 0;
   currentPlanPrice: any;
 
@@ -115,8 +116,6 @@ export class UpgradeLicenceComponent {
     this.licenceDetails.subscriptionDate = dto.subscriptionDate;
     this.licenceDetails.userEmail = dto.userEmail;
     this.licenceDetails.paidAmount = dto.paidAmount;
-    // this.currentCalls = this.licenceDetails.concurrentCalls;
-    // this.tierNumber = this.licenceDetails.tierNumber;
   }
 
   async onPlanChange(planId: number) {
@@ -189,26 +188,27 @@ export class UpgradeLicenceComponent {
     const upgradeYears = (expDate.getFullYear() - upgradeDate.getFullYear());
     // 5️⃣ NEW cost per day
     const newCostPerDay = (newPlanPrice / (30 * (this.licenceDetails.tierNumber ?? 1)));
+    this.newCostPerDay = newCostPerDay;
 
     // 6️⃣ NEW total cost
     this.newCost = Number((this.newPlanDays * newCostPerDay).toFixed(2));
 
     // 7️⃣ Required to pay
     this.amountToPay = Number((this.newCost - this.oldBalance).toFixed(2));
-    console.log("Upgrade Math:", {
-      subscribedDays,
-      renewals,
-      totalDays,
-      newPlanPrice,
-      newCostPerDay,
-      newPlanDays: this.newPlanDays,
-      oldPassedDays: this.oldPassedDays,
-      oldCost: this.oldCost,
-      oldCostPerDay,
-      oldBalance: this.oldBalance,
-      newCost: this.newCost,
-      amountToPay: this.amountToPay
-    });
+    // console.log("Upgrade Math:", {
+    //   subscribedDays,
+    //   renewals,
+    //   totalDays,
+    //   newPlanPrice,
+    //   newCostPerDay,
+    //   newPlanDays: this.newPlanDays,
+    //   oldPassedDays: this.oldPassedDays,
+    //   oldCost: this.oldCost,
+    //   oldCostPerDay,
+    //   oldBalance: this.oldBalance,
+    //   newCost: this.newCost,
+    //   amountToPay: this.amountToPay
+    // });
   }
 
   upgrade() {
