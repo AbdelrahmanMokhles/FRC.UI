@@ -24,23 +24,14 @@ export class UpgradeLicenceComponent {
   filteredPlans: PlanDetailsDto[] = [];
   planPeriods: PlanPeriod[] = [];
   planPeriod: PlanPeriod = {};
-  tierNumber?: number;
   upgradeDto?: CloudLicenceDto;
-  currentCalls: any;
   oldPassedDays: number = 0;
   oldCost: number = 0;
   oldBalance: number = 0;
-
   newPlanDays: number = 0;
   newCost: number = 0;
-
   amountToPay: number = 0;
-
-  newPaidAmount: any;
-  newPlanPrice: any;
-  newExpDate: any;
-  newSubDate: any;
-  newTierNumber: any;
+  currentPlanPrice: any;
 
   constructor(
     private _router: Router,
@@ -73,19 +64,6 @@ export class UpgradeLicenceComponent {
         this.loadLicenceDetails(this.licenceId);
       }
     });
-    // Get plans : 
-    this._planService.getActiveHigherPlans().subscribe({
-      next: (res) => {
-        this.plans = res.data;
-        this.currentCalls = Number(this.upgradeForm.get('concurrentCalls')?.value) ?? 0;
-        this.filteredPlans = this.plans.filter(
-          p => p.concurrentCalls > this.currentCalls
-        );
-      },
-      error: (err) => {
-        this._toast.show('⚠️ Error', err.message);
-      }
-    });
   }
 
   loadLicenceDetails(id: number) {
@@ -94,11 +72,25 @@ export class UpgradeLicenceComponent {
         const dto = res.data;
         this.mapLicence(dto);
         this.mapForm();
+        // Get plans : 
+        this.fetchPlans();
       },
       error: err => this._toast.show('⚠️ Error', err.message)
     });
   }
-
+  fetchPlans() {
+    this._planService.getActiveHigherPlans().subscribe({
+      next: (res) => {
+        this.plans = res.data;
+        this.filteredPlans = this.plans.filter(
+          p => p.concurrentCalls > (this.licenceDetails.concurrentCalls ?? 1)
+        );
+      },
+      error: (err) => {
+        this._toast.show('⚠️ Error', err.message);
+      }
+    });
+  }
   mapForm() {
     this.upgradeForm.patchValue({
       model: this.licenceDetails.model,
@@ -111,11 +103,11 @@ export class UpgradeLicenceComponent {
       tier: this.licenceDetails.tierNumber,
     });
   }
-
   mapLicence(dto: any) {
     this.licenceDetails.id = dto.id;
     this.licenceDetails.model = dto.model;
     this.licenceDetails.mac = dto.mac;
+    this.licenceDetails.planId = dto.planId;
     this.licenceDetails.plan = dto.plan;
     this.licenceDetails.tierNumber = dto.tierNumber;
     this.licenceDetails.concurrentCalls = dto.concurrentCalls;
@@ -123,27 +115,9 @@ export class UpgradeLicenceComponent {
     this.licenceDetails.subscriptionDate = dto.subscriptionDate;
     this.licenceDetails.userEmail = dto.userEmail;
     this.licenceDetails.paidAmount = dto.paidAmount;
-    this.currentCalls = this.licenceDetails.concurrentCalls;
-    this.tierNumber = this.licenceDetails.tierNumber;
+    // this.currentCalls = this.licenceDetails.concurrentCalls;
+    // this.tierNumber = this.licenceDetails.tierNumber;
   }
-
-
-
-  // onPlanChange(planId: number) {
-  //   const now = new Date();
-
-  //   if (!planId) return;
-  //   // console.log("assigned plan ", planId);
-  //   this.loadPlanPeriods(planId);
-  //   console.log("asdasdasd", this.licenceDetails);
-  //   this.calculateDifference(
-  //     this.licenceDetails.paidAmount ?? 0,
-  //     this.planPeriod?.price ?? 0,
-  //     this.licenceDetails.expireDate!,
-  //     this.licenceDetails.subscriptionDate!
-  //   );
-
-  // }
 
   async onPlanChange(planId: number) {
     if (!planId) return;
@@ -168,7 +142,7 @@ export class UpgradeLicenceComponent {
   async loadPlanPeriods(planId: number): Promise<PlanPeriod | null> {
     const res = await firstValueFrom(this._planService.getPlanById(planId));
     this.planPeriods = res.data.periods;
-    this.planPeriod = this.planPeriods.find(p => p.tierNumber == this.tierNumber) || {};
+    this.planPeriod = this.planPeriods.find(p => p.tierNumber == this.licenceDetails.tierNumber) || {};
     return this.planPeriod;
   }
 
@@ -194,32 +168,27 @@ export class UpgradeLicenceComponent {
     const subDate = new Date(sub);
     // 1 day in ms
     const ONE_DAY = 1000 * 60 * 60 * 24;
-
     // 1️⃣ Days passed
-    this.oldPassedDays = Math.floor(
-      (upgradeDate.getTime() - subDate.getTime()) / ONE_DAY
-    );
-
-    if (this.oldPassedDays == 0) {
-      this.oldPassedDays = 1;
-    }
+    this.oldPassedDays = Math.ceil((upgradeDate.getTime() - subDate.getTime()) / ONE_DAY);
+    // Subscription period
+    const subscribedDays = Math.ceil((expDate.getTime() - subDate.getTime()) / ONE_DAY);
+    const renewals = subscribedDays / (this.licenceDetails.tierNumber ?? 1) / 30;
+    const totalDays = renewals * 30 * (this.licenceDetails.tierNumber ?? 1);
+    this.currentPlanPrice = Number(this.licenceDetails.paidAmount ?? 1) / renewals;
 
     // 2️⃣ Days remaining
-    this.newPlanDays = Math.floor(
-      (expDate.getTime() - upgradeDate.getTime()) / ONE_DAY);
-
-    const subYears = (expDate.getFullYear() - subDate.getFullYear());
+    this.newPlanDays = Math.floor((expDate.getTime() - upgradeDate.getTime()) / ONE_DAY);
 
     // 3️⃣ OLD cost per day
-    const oldCostPerDay = (totaPaidAmount / subYears) / 360;
+    const oldCostPerDay = (totaPaidAmount / totalDays);
     this.oldCost = Number((this.oldPassedDays * oldCostPerDay).toFixed(2));
 
     // 4️⃣ OLD balance
-    this.oldBalance = Number(((totaPaidAmount - this.oldCost) * subYears).toFixed(2));
+    this.oldBalance = Number(((totaPaidAmount - this.oldCost)).toFixed(2));
 
     const upgradeYears = (expDate.getFullYear() - upgradeDate.getFullYear());
     // 5️⃣ NEW cost per day
-    const newCostPerDay = (Number(newPlanPrice)) / 360;
+    const newCostPerDay = (newPlanPrice / (30 * (this.licenceDetails.tierNumber ?? 1)));
 
     // 6️⃣ NEW total cost
     this.newCost = Number((this.newPlanDays * newCostPerDay).toFixed(2));
@@ -227,7 +196,9 @@ export class UpgradeLicenceComponent {
     // 7️⃣ Required to pay
     this.amountToPay = Number((this.newCost - this.oldBalance).toFixed(2));
     console.log("Upgrade Math:", {
-      subYears,
+      subscribedDays,
+      renewals,
+      totalDays,
       newPlanPrice,
       newCostPerDay,
       newPlanDays: this.newPlanDays,

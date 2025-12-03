@@ -100,52 +100,60 @@
                         <table class="table mb-0">
                             <thead>
                                 <th class="fw-medium sortable"></th>
-                                <th class="fw-medium sortable">Old Plan</th>
-                                <th class="fw-medium sortable">New Plan</th>
-                                <th class="fw-medium sortable">Current Tier</th>
+                                <th class="fw-medium sortable"> Old Plan</th>
+                                <th class="fw-medium sortable"> New Plan</th>
+                                <th class="fw-medium sortable"> Current Tier</th>
                             </thead>
                             <tbody>
-                                <!-- <tr>
-                                    <td class="header">Price</td>
-                                    <td>{{licenceDetails.paidAmount}}</td>
-                                    <td>{{this.newPlanPrice}}</td>
-                                    <td>{{licenceDetails.tierNumber}}</td>
-                                </tr>
-                                <tr>
-                                    <td class="header">Days</td>
-                                    <td>200</td>
-                                </tr>
-                                <tr>
-                                    <td class="header">Cost</td>
-                                    <td>200</td>
-                                </tr>
-                                <tr>
-                                    <td class="header">Balance</td>
-                                    <td>200</td>
-                                </tr> -->
                                 <tr>
                                     <td class="header">Price</td>
-                                    <td>{{ licenceDetails.paidAmount }} $</td>
-                                    <td>{{ planPeriod?.price }} $</td>
+                                    <td>{{ currentPlanPrice | number:'1.2-2' }} $
+                                    </td>
+                                    <td>{{ planPeriod.price }} $</td>
                                     <td>{{ licenceDetails.tierNumber }}</td>
                                 </tr>
 
                                 <tr>
-                                    <td class="header">Days</td>
+                                    <td class="header">Days Passed</td>
                                     <td>{{ oldPassedDays }} Days</td>
+                                    <td>{{ oldPassedDays }} Days</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="header">Days Left</td>
+                                    <td>{{ newPlanDays }} Days</td>
                                     <td>{{ newPlanDays }} Days</td>
                                 </tr>
 
                                 <tr>
-                                    <td class="header">Cost</td>
+                                    <td class="header">Cost / Day</td>
                                     <td>{{ oldCost | number:'1.2-2' }} $</td>
                                     <td>{{ newCost | number:'1.2-2' }} $</td>
                                 </tr>
 
+
                                 <tr>
-                                    <td class="header">Balance</td>
-                                    <td>{{ oldBalance | number:'1.2-2' }} $</td>
-                                    <td><b>{{ amountToPay | number:'1.2-2' }} $</b></td>
+                                    <td class="header">Paid</td>
+                                    <td>{{ licenceDetails.paidAmount | number:'1.2-2' }} $</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="header">Total Cost</td>
+                                    <td>{{ (oldCost * oldPassedDays)| number:'1.2-2' }} $</td>
+                                    <td class="text-success"><b>{{ newCost | number:'1.2-2' }} $</b></td>
+                                    <td> </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="header"><b>Current Balance</b></td>
+                                    <td></td>
+                                    <td class="text-danger"><b>{{ oldBalance | number:'1.2-2' }} $</b></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="header"><b>Due Amount</b></td>
+                                    <td></td>
+                                    <td class="text-success"><b>{{ amountToPay | number:'1.2-2' }} $</b></td>
                                 </tr>
 
                             </tbody>

@@ -52,18 +52,7 @@ export class SubscripeLicenceComponent {
       tier: ['', Validators.required],
     });
 
-    this._planService.getActiveHigherPlans().subscribe({
-      next: (res) => {
-        this.plans = res.data;
-        this.currentCalls = Number(this.upgradeForm.get('concurrentCalls')?.value);
-        this.filteredPlans = this.plans.filter(
-          p => p.concurrentCalls > this.currentCalls
-        );
-      },
-      error: (err) => {
-        alert(err.message);
-      }
-    });
+
     this.route.queryParams.subscribe(params => {
       if (params['id']) {
         this.licenceId = +params['id'];
@@ -72,29 +61,51 @@ export class SubscripeLicenceComponent {
     });
   }
 
+  mapLicence(dto: any) {
+    this.licenceDetails.id = dto.id;
+    this.licenceDetails.model = dto.model;
+    this.licenceDetails.mac = dto.mac;
+    this.licenceDetails.plan = dto.plan;
+    this.licenceDetails.tierNumber = dto.tierNumber;
+    this.licenceDetails.concurrentCalls = dto.concurrentCalls;
+    this.licenceDetails.expireDate = dto.expireDate;
+    this.licenceDetails.subscriptionDate = dto.subscriptionDate;
+    this.licenceDetails.userEmail = dto.userEmail;
+    this.licenceDetails.paidAmount = dto.paidAmount;
+    this.currentCalls = this.licenceDetails.concurrentCalls;
+  }
+
+  mapForm() {
+    this.upgradeForm.patchValue({
+      model: this.licenceDetails.model,
+      mac: this.licenceDetails?.mac,
+      plan: this.licenceDetails?.plan,
+      currentPlan: this.licenceDetails.plan,
+      concurrentCalls: this.licenceDetails?.concurrentCalls,
+      expireDate: this.licenceDetails?.expireDate,
+      userEmail: this.licenceDetails?.userEmail,
+      tier: this.licenceDetails.tierNumber,
+    });
+  }
+
   loadLicenceDetails(id: number) {
     this._licenceService.getLicenceById(id).subscribe({
       next: (res) => {
         const dto = res.data;
-        this.licenceDetails.id = dto.id;
-        this.licenceDetails.model = dto.model;
-        this.licenceDetails.mac = dto.mac;
-        this.licenceDetails.plan = dto.plan;
-        this.licenceDetails.tierNumber = dto.tierNumber;
-        this.licenceDetails.concurrentCalls = dto.concurrentCalls;
-        this.licenceDetails.expireDate = dto.expireDate;
-        this.licenceDetails.userEmail = dto.userEmail;
-        this.currentCalls = this.licenceDetails.concurrentCalls
-        this.upgradeForm.patchValue({
-          model: this.licenceDetails.model,
-          mac: this.licenceDetails?.mac,
-          plan: this.licenceDetails?.plan,
-          currentPlan: this.licenceDetails.plan,
-          concurrentCalls: this.licenceDetails?.concurrentCalls,
-          expireDate: this.licenceDetails?.expireDate,
-          userEmail: this.licenceDetails?.userEmail,
-        });
+        this.mapLicence(dto);
+        this.mapForm();
 
+        this._planService.getActiveHigherPlans().subscribe({
+          next: (res) => {
+            this.plans = res.data;
+            this.filteredPlans = this.plans.filter(
+              p => p.concurrentCalls > (this.licenceDetails.concurrentCalls ?? 1)
+            );
+          },
+          error: (err) => {
+            alert(err.message);
+          }
+        });
       },
       error: err => alert(err.message)
     });
@@ -108,9 +119,9 @@ export class SubscripeLicenceComponent {
     if (!id) return;
     this.selectedTier = this.planPeriods.find(p => p.id == id);
     const newDate = new Date();
-    const monthsToAdd = this.selectedTier?.tierNumber ?? 0;
-    // Add months
-    newDate.setMonth(newDate.getMonth() + monthsToAdd);
+    const daysToAdd = (this.selectedTier?.tierNumber ?? 0) * 30;
+    // Add days
+    newDate.setDate(newDate.getDate() + daysToAdd);
     // Generate date
     const month = newDate.getMonth() + 1;
     const day = newDate.getDate();
@@ -138,7 +149,7 @@ export class SubscripeLicenceComponent {
         this._router.navigate(['/dashboard/licences/licences-list']);
       },
       error: (err) => {
-        this._toast.show('⚠️ Error', err.body.message);
+        this._toast.show('⚠️ Error', err.message);
       }
     });
   }
