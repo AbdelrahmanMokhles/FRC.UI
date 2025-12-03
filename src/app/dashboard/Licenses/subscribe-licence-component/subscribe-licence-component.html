@@ -60,19 +60,20 @@
                     @if (!isRenewal){
                     <div class="col-md-2">
                         <label for="model" class="form-label">Subscripe to</label>
-                        <select formControlName="plan" class="form-select" name="plans" id="plans"
+                        <select formControlName="plan" class="form-select"
                             (change)="onPlanChange($any($event.target).value)">
-                            <option disabled selected>Select subscription plan</option>
+                            <option value="" disabled selected>Select subscription plan</option>
                             @for (plan of filteredPlans; track plan.id) {
-                            <option value="{{plan.id}}">{{plan.planName}}</option>
+                            <option [value]="plan.id">{{plan.planName}}</option>
                             }
                         </select>
+
                     </div>}
                     <div class="col-md-2">
                         <label for="model" class="form-label">Period of subscription</label>
                         <select formControlName="tier" class="form-select" name="planPeriods" id="planPeriods"
                             (change)="onTierChange($any($event.target).value)">
-                            <option disabled selected>Select subscription period</option>
+                            <option value="" disabled selected>Select subscription period</option>
                             @for (period of planPeriods; track period.tierNumber) {
                             <option value="{{period.id}}">{{period.tierNumber}} (months)</option>
                             }

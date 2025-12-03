@@ -86,6 +86,9 @@ export class SubscripeLicenceComponent {
       userEmail: this.licenceDetails?.userEmail,
       tier: this.licenceDetails.tierNumber,
     });
+    this.upgradeForm.get('plan')?.reset('');
+    this.upgradeForm.get('tier')?.reset('');
+
   }
 
   loadLicenceDetails(id: number) {
