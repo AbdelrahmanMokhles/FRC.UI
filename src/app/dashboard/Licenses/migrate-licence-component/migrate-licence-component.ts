@@ -168,9 +168,9 @@ export class MigrateLicenceComponent {
 
   migrate() {
     this.migrateDto = {
-      mac: this.mac,
+      mac: this.mac.trimEnd(),
       isRecycled: this.isRecycled,
-      mac2: this.newMac,
+      mac2: this.newMac.trimEnd(),
     }
     this._cloudService.migratePlan(this.migrateDto).subscribe({
       next: (res) => {
@@ -178,7 +178,7 @@ export class MigrateLicenceComponent {
         this._router.navigate(['/dashboard/licences/licences-list']);
       },
       error: (err) => {
-        this._toast.show('⚠️ Error', err.message);
+        this._toast.show('⚠️ Error', err.error.message);
       }
     });
   }

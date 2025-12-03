@@ -110,7 +110,7 @@ export class SubscripeLicenceComponent {
           }
         });
       },
-      error: err => alert(err.message)
+      error: err => this._toast.show('⚠️ Error', err.error.message)
     });
   }
   onPlanChange(planId: number) {
@@ -152,7 +152,7 @@ export class SubscripeLicenceComponent {
         this._router.navigate(['/dashboard/licences/licences-list']);
       },
       error: (err) => {
-        this._toast.show('⚠️ Error', err.message);
+        this._toast.show('⚠️ Error', err.error.message);
       }
     });
   }

@@ -218,7 +218,7 @@ export class UpgradeLicenceComponent {
         this._router.navigate(['/dashboard/licences/licences-list']);
       },
       error: (err) => {
-        this._toast.show('⚠️ Error', err.message);
+        this._toast.show('⚠️ Error', err.error.message);
       }
     });
   }
