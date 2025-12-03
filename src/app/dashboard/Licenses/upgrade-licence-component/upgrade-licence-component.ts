@@ -156,15 +156,20 @@ export class UpgradeLicenceComponent {
     return this.upgradeForm.get('plan')?.value;
   }
 
+  parseDDMMYYYY(dateStr: string): Date {
+    const [day, month, year] = dateStr.split('/').map(Number);
+    return new Date(year, month - 1, day);
+  }
+
   private calculateDifference(
     totaPaidAmount: number,
     newPlanPrice: number,
-    exp: Date,
-    sub: Date
+    exp: string,
+    sub: string
   ) {
     const upgradeDate = new Date();
-    const expDate = new Date(exp);
-    const subDate = new Date(sub);
+    const expDate = this.parseDDMMYYYY(exp);
+    const subDate = this.parseDDMMYYYY(sub);
     // 1 day in ms
     const ONE_DAY = 1000 * 60 * 60 * 24;
     // 1️⃣ Days passed
@@ -195,20 +200,10 @@ export class UpgradeLicenceComponent {
 
     // 7️⃣ Required to pay
     this.amountToPay = Number((this.newCost - this.oldBalance).toFixed(2));
-    // console.log("Upgrade Math:", {
-    //   subscribedDays,
-    //   renewals,
-    //   totalDays,
-    //   newPlanPrice,
-    //   newCostPerDay,
-    //   newPlanDays: this.newPlanDays,
-    //   oldPassedDays: this.oldPassedDays,
-    //   oldCost: this.oldCost,
-    //   oldCostPerDay,
-    //   oldBalance: this.oldBalance,
-    //   newCost: this.newCost,
-    //   amountToPay: this.amountToPay
-    // });
+    console.log("Upgrade Math:", {
+      expDate,
+      subDate
+    });
   }
 
   upgrade() {
