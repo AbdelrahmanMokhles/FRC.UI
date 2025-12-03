@@ -76,12 +76,27 @@
                                 <td class="px-6 py-4 text-gray-700">
                                     {{ plan.concurentCalls }}
                                 </td>
+                                @if (plan.id ==1) {
+                                <td class="px-6 py-4 text-gray-700">
+                                    Free
+                                </td>
+                                }
+                                @else {
+
                                 <td class="px-6 py-4 text-gray-700">
                                     {{ plan.period }}
                                 </td>
+                                }
+                                @if (plan.id ==1) {
+                                <td class="px-6 py-4 text-gray-700">
+                                    Free
+                                </td>
+                                }
+                                @else {
                                 <td class="px-6 py-4 text-gray-700">
                                     ${{ plan.endUserPeriodPrice }}
                                 </td>
+                                }
                                 <!-- <td class="px-6 py-4 text-gray-700">{{ plan.activeSubscribers }}</td> -->
                                 <td class="px-6 py-4">
                                     <span class="font-bold trezo-badge" [ngClass]="
@@ -120,59 +135,6 @@
                     </pagination-controls>
                 </div>
 
-                <!-- Pagination -->
-                <section>
-                    <!-- <div class="trezo-card-pagination">
-                        <div class="d-md-flex align-items-center justify-content-between">
-                            <p class="mb-0">
-                                Showing 10 of 36 results
-                            </p>
-                            <ol class="list-unstyled mb-0 p-0">
-                                <li class="d-inline-block">
-                                    <a class="prev" routerLink=".">
-                                        <span class="opacity-0">
-                                            0
-                                        </span>
-                                        <i class="material-symbols-outlined">
-                                            chevron_left
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="d-inline-block">
-                                    <a routerLink="." class="active">
-                                        1
-                                    </a>
-                                </li>
-                                <li class="d-inline-block">
-                                    <a routerLink=".">
-                                        2
-                                    </a>
-                                </li>
-                                <li class="d-inline-block">
-                                    <a routerLink=".">
-                                        3
-                                    </a>
-                                </li>
-                                <li class="d-inline-block">
-                                    <a routerLink=".">
-                                        4
-                                    </a>
-                                </li>
-                                <li class="d-inline-block">
-                                    <a class="next" routerLink=".">
-                                        <span class="opacity-0">
-                                            0
-                                        </span>
-                                        <i class="material-symbols-outlined">
-                                            chevron_right
-                                        </i>
-                                    </a>
-                                </li>
-                            </ol>
-                        </div>
-                    </div> -->
-                </section>
-                <!-- Pagination -->
             </div>
         </div>
     </div>

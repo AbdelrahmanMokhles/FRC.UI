@@ -129,6 +129,10 @@ export class RenewalLicenceComponent {
     return new Date(year, month - 1, day);
   }
 
+  pad(n: number): string {
+    return n < 10 ? '0' + n : '' + n;
+  }
+
   calculateDate_Price(expDate: any, tierNumber: number, multiplier: number) {
     const newDate = this.parseDDMMYYYY(expDate);
     const monthsToAdd = (tierNumber) * multiplier;
@@ -138,7 +142,7 @@ export class RenewalLicenceComponent {
     const month = newDate.getMonth() + 1;
     const day = newDate.getDate();
     const year = newDate.getFullYear();
-    const formatted = `${month}/${day}/${year}`;
+    const formatted = `${this.pad(day)}/${this.pad(month)}/${year}`;
     // Update form control
     this.upgradeForm.get('newExpireDate')?.setValue(formatted);
     const price = (this.planPeriods.find(p => p.tierNumber === this.licenceDetails.tierNumber)?.price ?? 0) * (multiplier ?? 1);

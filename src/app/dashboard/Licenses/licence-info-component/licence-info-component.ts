@@ -41,6 +41,7 @@ export class LicenceInfoComponent {
           mac: dto.mac,
           plan: dto.plan,
           concurrentCalls: dto.concurrentCalls,
+          tierNumber: dto.tierNumber,
           expireDate: dto.expireDate,
           userEmail: dto.userEmail
         };

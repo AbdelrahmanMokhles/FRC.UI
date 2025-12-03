@@ -4,6 +4,7 @@ export interface LicenceDataTable {
     mac?: string;
     plan?: string;
     concurrentCalls?: number;
+    tierNumber?: number;
     expireDate?: any;
     userEmail?: string;
     isSubscriped?: boolean;

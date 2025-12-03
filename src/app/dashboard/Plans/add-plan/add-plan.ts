@@ -104,10 +104,10 @@ export class AddPlan implements OnInit {
 
   addInitialPeriods() {
     const initialPeriods: PlanPeriod[] =
-      [{ tierNumber: 1, price: 20, distiDiscount: 10 },
-      { tierNumber: 3, price: 50, distiDiscount: 15 },
-      { tierNumber: 6, price: 90, distiDiscount: 20 },
-      { tierNumber: 12, price: 150, distiDiscount: 25 }];
+      [{ tierNumber: 1, price: 0, distiDiscount: 20 },
+      { tierNumber: 3, price: 0, distiDiscount: 20 },
+      { tierNumber: 6, price: 0, distiDiscount: 20 },
+      { tierNumber: 12, price: 0, distiDiscount: 20 }];
     initialPeriods.forEach(p => {
       this.periods.push(this.fb.group(p));
     });
@@ -141,7 +141,8 @@ export class AddPlan implements OnInit {
     // const archived = this.planForm.get('isArchived')?.value;
     if (this.isArchived) {
       this.planForm.disable();
-      this.planForm.get('isArchived')?.enable(); // keep switch usable
+      this.planForm.get('isArchived')?.enable();
+      // this.planForm.get('saveBtn')?.enable();
       this.changeArchiveStatus();
     }
     else {
@@ -190,9 +191,9 @@ export class AddPlan implements OnInit {
       this._planService.archivePlan(this.planId).subscribe({
         next: (res) => {
           this._toast.show("✅ Success", res.message);
-          setTimeout(() => {
-            this._router.navigate(['/dashboard/plans/plans-list']);
-          }, 1000);
+          // setTimeout(() => {
+          //   this._router.navigate(['/dashboard/plans/plans-list']);
+          // }, 1000);
         },
         error: (err) => console.error(err)
       });

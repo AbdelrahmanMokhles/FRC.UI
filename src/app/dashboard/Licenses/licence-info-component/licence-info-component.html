@@ -122,7 +122,7 @@
 </div> -->
 
 <div class="trezo-card-content">
-    <div class="table-style-two">
+    <div class="table-style-two p-5">
         <div class="basic-table table-responsive">
             <table class="table mb-0">
                 <thead>
@@ -131,6 +131,7 @@
                         <th class="fw-medium sortable">MAC Address</th>
                         <th class="fw-medium sortable">Plan</th>
                         <th class="fw-medium sortable">Concurrent Calls</th>
+                        <th class="fw-medium sortable">Tier Number</th>
                         <th scope="col" class="fw-medium">Expire Date</th>
                         <th scope="col" class="fw-medium">User Email</th>
 
@@ -142,6 +143,7 @@
                         <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.mac }}</td>
                         <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.plan }}</td>
                         <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.concurrentCalls }}</td>
+                        <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.tierNumber }}</td>
                         <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.expireDate }}</td>
                         <td class="px-6 py-4 text-gray-700">{{ licenceDetails?.userEmail }}</td>
                     </tr>
