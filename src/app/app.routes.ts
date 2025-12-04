@@ -252,6 +252,9 @@ import { SubscripeLicenceComponent } from './dashboard/Licenses/subscribe-licenc
 import { RenewalLicenceComponent } from './dashboard/Licenses/renewal-licence-component/renewal-licence-component';
 import { UpgradeLicenceComponent } from './dashboard/Licenses/upgrade-licence-component/upgrade-licence-component';
 import { MigrateLicenceComponent } from './dashboard/Licenses/migrate-licence-component/migrate-licence-component';
+import { AiPageComponent } from './dashboard/AI/ai-page-component/ai-page-component';
+import { AiPlansListComponent } from './dashboard/AI/ai-plans-list-component/ai-plans-list-component';
+import { AddAiPlanComponent } from './dashboard/AI/add-ai-plan-component/add-ai-plan-component';
 
 export const routes: Routes = [
     {
@@ -645,6 +648,14 @@ export const routes: Routes = [
                     { path: 'renewal-licence', component: RenewalLicenceComponent },
                     { path: 'upgrade-licence', component: UpgradeLicenceComponent },
                     { path: 'migrate-licence', component: MigrateLicenceComponent },
+                ],
+            },
+            {
+                path: 'ai',
+                component: AiPageComponent,
+                children: [
+                    { path: 'ai-plans-list', component: AiPlansListComponent },
+                    { path: 'add-ai-plan', component: AddAiPlanComponent },
                 ],
             },
             {

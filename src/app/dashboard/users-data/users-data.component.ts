@@ -4,7 +4,7 @@ import { UserService } from '../../Services/authentication/UserService/user-serv
 import { CommonModule, NgIf } from '@angular/common';
 import { AdminService } from '../../Services/AdminService/admin-service';
 import { FormsModule } from '@angular/forms';
-import { UserDataTableDto } from '../../Models/User/UserTable.model';
+import { UserDataTableDto } from '../../Models/User/user.models';
 
 @Component({
     selector: 'app-users-list',

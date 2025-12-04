@@ -11,3 +11,8 @@ export interface UserDataTableDto {
     status: boolean,
     userType: number
 }
+
+export interface UserLoginModel {
+    email: string,
+    password: string,
+}

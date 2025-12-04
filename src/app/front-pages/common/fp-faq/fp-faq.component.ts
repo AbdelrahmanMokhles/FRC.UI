@@ -4,7 +4,8 @@ import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-fp-faq',
-    imports: [NgClass],
+    // imports: [NgClass],
+    imports: [],
     templateUrl: './fp-faq.component.html',
     styleUrl: './fp-faq.component.scss'
 })

@@ -12,6 +12,7 @@ import {
 import { UserService } from '../../Services/authentication/UserService/user-service';
 import { jwtDecode } from 'jwt-decode';
 import * as yup from 'yup';
+import { UserLoginModel } from '../../Models/User/user.models';
 
 @Component({
     selector: 'app-sign-in',
@@ -24,6 +25,7 @@ export class SignInComponent {
     formErrors: any = {};
     alertType: 'success' | 'error' | 'warning' | null = null;
     alertmsg: string = '';
+    LoginDto!: UserLoginModel;
 
     // Toast
     toast = false;
@@ -81,12 +83,22 @@ export class SignInComponent {
         }
     }
 
+    get formEmail(): string {
+        return this.LoginForm.get('email')?.value;
+    }
+
+    get formPassword(): string {
+        return this.LoginForm.get('password')?.value;
+    }
+
     onSubmit() {
         if (this.LoginForm.valid) {
-            console.log(this.LoginForm.value);
-            const usercredentials = this.LoginForm.value;
+            this.LoginDto = {
+                email: this.formEmail,
+                password: this.formPassword
+            }
             // console.log('✅******User object******** :', user);
-            this._service.Signin(usercredentials).subscribe({
+            this._service.Signin(this.LoginDto).subscribe({
                 next: (res) => {
                     if (
                         res.body.isAuthenticated == true &&

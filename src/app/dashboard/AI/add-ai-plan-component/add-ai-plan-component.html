@@ -1,0 +1,101 @@
+<!-- Breadcrumb -->
+<section>
+    <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+        <h5 class="mb-0">
+            Add Plan
+        </h5>
+        <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <a routerLink="/dashboard" class="d-inline-block position-relative">
+                    <i class="material-symbols-outlined">
+                        home
+                    </i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                <span routerLink="/dashboard/plans/plans-list">
+                    Plans
+                </span>
+            </li>
+            <li class="breadcrumb-item d-inline-block position-relative">
+                Add Plan
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- End Breadcrumb -->
+
+<!-- Form -->
+<section>
+    <div class="col-lg-12">
+        <div class="trezo-card border-radius d-block bg-white border-0 shadow-none">
+            <div class="trezo-card-content">
+                <div class="d-flex align-items-center mb-3">
+                    <h5 class="me-3">Plan Name : {{planForm.get("aiPlanName")?.value}}</h5>
+                    <!-- Archive Switch -->
+                    <span class="form-check form-switch big-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" [checked]="isArchived"
+                            (change)="onArchiveToggle()" />
+                        <label class="form-check-label ms-1">Archive</label>
+                    </span>
+                </div>
+                <form class="row g-3" [formGroup]="planForm" (ngSubmit)="save()" novalidate>
+                    <div class="col-md-4">
+                        <label for="planName" class="form-label">Plan Name</label>
+                        <input [ngClass]="{ 'disabled-look': isUpdate }" [readOnly]="isUpdate" re type="text"
+                            class="form-control" id="aiPlanName" formControlName="aiPlanName">
+                        @if (planForm.get('aiPlanName')?.touched) {
+                        <div style="color: rgb(248, 89, 89)" class="error2">
+                            {{ planFormErrors.aiPlanName }}
+                        </div>
+                        }
+                    </div>
+                    <div class="col-md-3">
+                        <label for="concurrentCalls" class="form-label">Minutes</label>
+                        <input [ngClass]="{ 'disabled-look': isUpdate }" [readOnly]="isUpdate" type="number"
+                            class="form-control" id="minutes" formControlName="minutes">
+                        @if (planForm.get('minutes')?.touched) {
+                        <div style="color: rgb(248, 89, 89)" class="error2">
+                            {{ planFormErrors.minutes }}
+                        </div>
+                        }
+                    </div>
+                    <div class="col-md-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" class="form-control" [readOnly]="isUpdate" id="price"
+                            formControlName="price">
+                        @if (planForm.get('price')?.touched) {
+                        <div style="color: rgb(248, 89, 89)" class="error2">
+                            {{ planFormErrors.price }}
+                        </div>
+                        }
+                    </div>
+                    <div class="trezo-card-content">
+                        <br><br>
+
+                        <!-- Periods Tabled -->
+                        <!-- -------------------------------------- -->
+                    </div>
+
+                    <!-- Periods Tabled -->
+
+                    <!-- ------------------------------------------------------------------------------- -->
+                    <br><br>
+                    <div class="my-8 border-t border-gray-200"></div>
+                    <div class="trezo-card-content example-buttons">
+                        <button type="submit" [disabled]="isArchived" class="btn btn-primary">
+                            Save
+                        </button>
+                        <button type="button" routerLink="/dashboard/plans/plans-list"
+                            class="btn btn-danger">Back</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Form -->
