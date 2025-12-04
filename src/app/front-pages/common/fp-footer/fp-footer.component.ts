@@ -4,7 +4,8 @@ import { CustomizerSettingsService } from '../../../customizer-settings/customiz
 
 @Component({
     selector: 'app-fp-footer',
-    imports: [RouterLink],
+    // imports: [RouterLink],
+    imports: [],
     templateUrl: './fp-footer.component.html',
     styleUrl: './fp-footer.component.scss'
 })

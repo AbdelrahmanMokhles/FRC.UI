@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EcommerceComponent } from './dashboard/ecommerce/ecommerce.component';
-import { CrmComponent } from './dashboard/crm/crm.component';
 import { ProjectManagementComponent } from './dashboard/project-management/project-management.component';
 import { LmsComponent } from './dashboard/lms/lms.component';
 import { HelpdeskComponent } from './dashboard/helpdesk/helpdesk.component';
@@ -181,15 +180,11 @@ import { InputGroupComponent } from './forms/input-group/input-group.component';
 import { FloatingLabelsComponent } from './forms/floating-labels/floating-labels.component';
 import { LayoutComponent } from './forms/layout/layout.component';
 import { ElementsComponent } from './forms/elements/elements.component';
-import { AnalyticsComponent } from './dashboard/analytics/analytics.component';
-import { CryptoComponent } from './dashboard/crypto/crypto.component';
 import { SalesComponent } from './dashboard/sales/sales.component';
 import { HospitalComponent } from './dashboard/hospital/hospital.component';
 import { HrmComponent } from './dashboard/hrm/hrm.component';
 import { SchoolComponent } from './dashboard/school/school.component';
-import { CallCenterComponent } from './dashboard/call-center/call-center.component';
 import { MarketingComponent } from './dashboard/marketing/marketing.component';
-import { NftComponent } from './dashboard/nft/nft.component';
 import { SaasComponent } from './dashboard/saas/saas.component';
 import { RealEstateComponent } from './dashboard/real-estate/real-estate.component';
 import { ShipmentComponent } from './dashboard/shipment/shipment.component';
@@ -218,7 +213,6 @@ import { PodcastComponent } from './dashboard/podcast/podcast.component';
 import { PosSystemComponent } from './dashboard/pos-system/pos-system.component';
 import { SocialMediaComponent } from './dashboard/social-media/social-media.component';
 import { DoctorComponent } from './dashboard/doctor/doctor.component';
-import { BeautySalonComponent } from './dashboard/beauty-salon/beauty-salon.component';
 import { StoreAnalysisComponent } from './dashboard/store-analysis/store-analysis.component';
 import { RestaurantComponent } from './dashboard/restaurant/restaurant.component';
 import { RestaurantPageComponent } from './pages/restaurant-page/restaurant-page.component';
@@ -233,9 +227,6 @@ import { DPrescriptionsComponent } from './pages/doctor-page/d-prescriptions/d-p
 import { DWritePrescriptionComponent } from './pages/doctor-page/d-write-prescription/d-write-prescription.component';
 import { HotelComponent } from './dashboard/hotel/hotel.component';
 import { RealEstateAgentComponent } from './dashboard/real-estate-agent/real-estate-agent.component';
-import { CreditCardComponent } from './dashboard/credit-card/credit-card.component';
-import { CryptoTraderComponent } from './dashboard/crypto-trader/crypto-trader.component';
-import { CryptoPerformanceComponent } from './dashboard/crypto-performance/crypto-performance.component';
 import { CryptoTraderPageComponent } from './pages/crypto-trader-page/crypto-trader-page.component';
 import { CtTransactionsComponent } from './pages/crypto-trader-page/ct-transactions/ct-transactions.component';
 import { CtGainersLosersComponent } from './pages/crypto-trader-page/ct-gainers-losers/ct-gainers-losers.component';
@@ -279,22 +270,17 @@ export const routes: Routes = [
         component: DashboardComponent,
         children: [
             { path: '', component: EcommerceComponent },
-            { path: 'crm', component: CrmComponent },
             {
                 path: 'project-management',
                 component: ProjectManagementComponent,
             },
             { path: 'lms', component: LmsComponent },
             { path: 'helpdesk', component: HelpdeskComponent },
-            { path: 'analytics', component: AnalyticsComponent },
-            { path: 'crypto', component: CryptoComponent },
             { path: 'sales', component: SalesComponent },
             { path: 'hospital', component: HospitalComponent },
             { path: 'hrm', component: HrmComponent },
             { path: 'school', component: SchoolComponent },
-            { path: 'call-center', component: CallCenterComponent },
             { path: 'marketing', component: MarketingComponent },
-            { path: 'nft', component: NftComponent },
             { path: 'saas', component: SaasComponent },
             { path: 'real-estate', component: RealEstateComponent },
             { path: 'shipment', component: ShipmentComponent },
@@ -303,19 +289,12 @@ export const routes: Routes = [
             { path: 'podcast', component: PodcastComponent },
             { path: 'social-media', component: SocialMediaComponent },
             { path: 'doctor', component: DoctorComponent },
-            { path: 'beauty-salon', component: BeautySalonComponent },
             { path: 'store-analysis', component: StoreAnalysisComponent },
             { path: 'restaurant', component: RestaurantComponent },
             { path: 'hotel', component: HotelComponent },
             { path: 'user-data', component: UsersDataComponent },
             // {path: 'user-table', component: UserTableComponent},
             { path: 'real-estate-agent', component: RealEstateAgentComponent },
-            { path: 'credit-card', component: CreditCardComponent },
-            { path: 'crypto-trader', component: CryptoTraderComponent },
-            {
-                path: 'crypto-performance',
-                component: CryptoPerformanceComponent,
-            },
             {
                 path: 'apps',
                 component: AppsComponent,
